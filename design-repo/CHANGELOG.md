@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.0.1 (2026-10-26): fresh-clone verification fix
+
+- Fixed: `verify_all` failed in any fresh clone because 5 citations in `extraction/measured-values.json`
+  pointed into the gitignored `.playwright-mcp/` recon dumps. They now cite tracked, verbatim one-line
+  excerpts under `extraction/evidence/` (o1440, c1440b, o390; lines copied unedited from the original
+  captures, source sha256 recorded under `externalEvidence.trackedEvidence`). Nothing was re-measured and
+  no value changed. The citation check is not weakened: citations into `extraction/evidence/` are now
+  always re-read, including in a standalone design-repo copy; only citations into the sibling source tree
+  are still skipped (warning) when it is absent.
+- Added to `verify_all`: `gate.thresholds-pinned` (wrapper_gate thresholds pinned in a second place),
+  `gate.whitelist-reviewed`, `mode.schema-required-closed`, `mode.generated-rules-pinned`.
+- `scripts/prove_drift.py` (already present since 1.0.0) extended from 25 to 33 cases: loosened wrapper
+  thresholds, whitelist without justification / stale whitelist, mode removed from the schema, a
+  generated-mode rule dropped, tracked evidence altered / deleted. It no longer depends on `.playwright-mcp/`.
+- `geometry_parity.py` is unchanged; it still reads the full local dumps when present.
+
 ## Unreleased
 
 - Source moved: the sidebar active-section rule now skips off-screen elements (matches the original; nothing active once the CTA/footer is in view); /login and the four legal links now render clone-only placeholder pages via a pathname switch in src/main.jsx. Citations re-pointed to the shifted lines; docs updated (links are no longer dead).

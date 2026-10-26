@@ -226,6 +226,20 @@ def check_retrieval():
     rec("retrieval.contracts-allowlist-pin", not bad, f"{len(RETRIEVAL_INELIGIBLE)} ineligible, {len(SECTIONS) - len(RETRIEVAL_INELIGIBLE)} eligible; contracts, allowlist and pins agree" if not bad else bad[:4])
 
 
+# ----------------------------------------------------------------------------- mode
+PINNED_MODE_RULES = ("GENERATED_MODE_BRAND", "GENERATED_MODE_CTA", "GENERATED_MODE_COPY", "GENERATED_MODE_URL",
+                     "GENERATED_MODE_ASSET", "GENERATED_MODE_PERSON", "GENERATED_MODE_RATING")
+
+
+def check_mode():
+    prop = SCHEMA.get("properties", {}).get("mode", {})
+    ok = "mode" in SCHEMA.get("required", []) and sorted(prop.get("enum", [])) == ["generated", "reference"]
+    rec("mode.schema-required-closed", ok, "mode is required and closed to reference|generated" if ok else "PageSpec schema no longer requires a closed mode enum")
+    src = (REPO / "schema/semantic_validate.py").read_text()
+    missing = [r for r in PINNED_MODE_RULES if r not in tuple(SV.GENERATED_RULES) or f'"{r}"' not in src.split("GENERATED_RULES", 1)[1]]
+    rec("mode.generated-rules-pinned", not missing, f"{len(PINNED_MODE_RULES)} generated-mode leakage rules present" if not missing else f"missing: {missing}")
+
+
 # ----------------------------------------------------------------------------- assets
 def check_assets():
     rec("assets.pin-parity-code", PINNED_AVAILABILITY == SV.PINNED_AVAILABILITY, "verify_all pin == semantic_validate pin" if PINNED_AVAILABILITY == SV.PINNED_AVAILABILITY else f"diverged: {sorted(set(PINNED_AVAILABILITY.items()) ^ set(SV.PINNED_AVAILABILITY.items()))}")
@@ -419,13 +433,16 @@ def walk_cites(o, where):
 
 def check_citations():
     cites = [(str(p.relative_to(REPO)), c) for p in all_json() for _, c in walk_cites(json.loads(p.read_text()), p)]
+    # citations into the package's own tracked evidence are always re-read (even standalone)
+    inpkg = lambda ref: ref.startswith("extraction/evidence/")
+    skipped = 0
     if not SOURCE_PRESENT:
-        rec("citations", "warn", f"{len(cites)} citations; sibling source tree absent (standalone copy) - re-read skipped, citations stay as recorded")
-        return
+        skipped = sum(1 for _, c in cites if not inpkg(c["ref"]))
+        cites = [(w, c) for w, c in cites if inpkg(c["ref"])]
     cache, bad = {}, []
     for where, c in cites:
         m = CITE_RE.match(c["ref"])
-        f = PROJECT / m["file"]
+        f = (REPO if inpkg(c["ref"]) else PROJECT) / m["file"]
         if m["file"] not in cache:
             cache[m["file"]] = f.read_text(errors="ignore").splitlines() if f.is_file() else None
         lines = cache[m["file"]]
@@ -436,6 +453,9 @@ def check_citations():
             bad.append(f"{where}: {c['ref']} out of range (file has {len(lines)} lines)")
         elif not any(c["expect"] in lines[i] for i in range(a - 1, b)):
             bad.append(f"{where}: {c['ref']} does not contain {c['expect'][:60]!r}")
+    if not SOURCE_PRESENT and not bad:
+        rec("citations", "warn", f"{len(cites)} in-package citations re-read OK; {skipped} citations into the sibling source tree skipped (standalone copy)")
+        return
     rec("citations", not bad, f"{len(cites)} citations across {len(cache)} source files resolve in range with the expected text at the cited lines" if not bad else f"{len(bad)} bad: {bad[:4]}")
 
 
@@ -467,12 +487,19 @@ def check_counts():
 
 def check_gate():
     gate = module("extraction/wrapper_gate.py", "wrapper_gate")
-    errors, warnings = gate.check(load("extraction/measured-values.json"), load("extraction/wrapper-whitelist.json"))
+    # thresholds pinned here as well, so loosening wrapper_gate.py alone is caught
+    pinned = {"HERO_WARN_PX": 1800, "HERO_ERROR_PX": 3000, "SHARE_WARN": 0.50, "SHARE_ERROR": 0.60,
+              "MIN_INFLOW_SECTIONS": 3, "REQUIRED_VIEWPORT_WIDTH": 1440}
+    drift = {k: getattr(gate, k, None) for k, v in pinned.items() if getattr(gate, k, None) != v}
+    rec("gate.thresholds-pinned", not drift, "wrapper_gate thresholds == verify_all pin" if not drift else f"loosened/changed: {drift}")
+    wl = load("extraction/wrapper-whitelist.json")
+    rec("gate.whitelist-reviewed", all(w.get("reviewedBy") and len(w.get("justification", "")) >= 30 for w in wl.get("entries", [])), f"{len(wl.get('entries', []))} whitelist entries, each with reviewedBy and a 30+ char justification")
+    errors, warnings = gate.check(load("extraction/measured-values.json"), wl)
     rec("gate.wrapper", not errors, f"{len(errors)} errors, {len(warnings)} warnings" + (f": {errors[:3]}" if errors else ""))
 
 
 def main():
-    for fn in (check_hygiene, check_schema_examples, check_contracts, check_allowlist, check_retrieval, check_assets, check_graph,
+    for fn in (check_hygiene, check_schema_examples, check_contracts, check_mode, check_allowlist, check_retrieval, check_assets, check_graph,
                check_templates, check_tokens, check_motion, check_citations, check_counts, check_gate):
         try:
             fn()

@@ -27,7 +27,7 @@ documents a real company's live site. Do not publish it or make any repository c
 | Graph rules | 11 |
 | Example PageSpecs | 2 |
 | Adversarial mutations | 67 |
-| Drift cases | 25 |
+| Drift cases | 33 |
 
 ## Read this first: what is unusual about this page
 
@@ -127,7 +127,7 @@ templates/              templates.json, routes.json
 compatibility/          graph.json
 assets/                 asset-roles.json, source-identity.json
 schema/                 pagespec + section-contract schemas, semantic_validate.py, examples, tests/
-extraction/             measured-values.json, verify_all.py, wrapper_gate.py, wrapper-whitelist.json,
+extraction/             evidence/ (tracked verbatim recon excerpts), measured-values.json, verify_all.py, wrapper_gate.py, wrapper-whitelist.json,
                         measure_sections.mjs, geometry_parity.py
 scripts/                prove_drift.py
 ```

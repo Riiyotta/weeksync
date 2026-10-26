@@ -1,5 +1,5 @@
 {
-  "$description": "Build-time evidence ledger. External citations point into the sibling project (src/, CLONE_SPEC.md, tailwind.config.js, index.html, .playwright-mcp/); verify_all.py re-reads every one when that tree is present and degrades to a warning when design-repo/ is used standalone.",
+  "$description": "Build-time evidence ledger. External citations point into the sibling project (src/, CLONE_SPEC.md, tailwind.config.js, index.html) plus tracked verbatim excerpts of the recon dumps under extraction/evidence/; verify_all.py re-reads every one when that tree is present and degrades to a warning when design-repo/ is used standalone.",
   "sourceStack": {
     "note": "Documentation only; never shapes token names, section ids, schema fields or validator logic.",
     "reference": "React 18 + Vite 5 + Tailwind CSS v3 (plus embla-carousel-react for the reviews carousel); single route '/', no router",
@@ -365,19 +365,19 @@
         "expect": "| g | CTA + footer | n/a | 6000 | 870 | |"
       },
       {
-        "ref": ".playwright-mcp/o1440.n:30",
+        "ref": "extraction/evidence/o1440.excerpt.n:1",
         "expect": "## demo root 371,1623.8,1069,645"
       },
       {
-        "ref": ".playwright-mcp/c1440b.n:30",
+        "ref": "extraction/evidence/c1440b.excerpt.n:1",
         "expect": "## demo root 371,1623.8,1069,645"
       },
       {
-        "ref": ".playwright-mcp/c1440b.n:162",
+        "ref": "extraction/evidence/c1440b.excerpt.n:3",
         "expect": "## faq root 371,5065.3,1069,934.6"
       },
       {
-        "ref": ".playwright-mcp/o390.n:16",
+        "ref": "extraction/evidence/o390.excerpt.n:1",
         "expect": "## mhero root 0,0,390,552.5"
       }
     ]
@@ -616,7 +616,7 @@
         "expect": "featureImages: ["
       },
       "dimensions": {
-        "ref": ".playwright-mcp/c1440b.n:101",
+        "ref": "extraction/evidence/c1440b.excerpt.n:2",
         "expect": "## features root 371,2268.8,1069,1503"
       },
       "motion": {
@@ -839,11 +839,16 @@
       "tailwind.config.js",
       "index.html",
       "package.json",
-      ".playwright-mcp/o1440.n",
-      ".playwright-mcp/c1440b.n",
-      ".playwright-mcp/o390.n",
       "_reference/original.html (read only to compute copy fingerprints; no text copied)"
     ],
-    "standalonePolicy": "When these sibling files are absent, verify_all.py reports one warning and skips the citation re-read; every other check still runs."
+    "trackedEvidence": {
+      "note": "Verbatim single-line excerpts of the local, gitignored recon dumps (.playwright-mcp/ is not in any clone). Each excerpt file holds the exact captured lines, nothing edited; citations point at these tracked files so verify_all re-reads them in every clone, standalone included. geometry_parity.py still reads the full dumps when they exist locally.",
+      "excerpts": [
+        {"file": "extraction/evidence/o1440.excerpt.n", "capturedFrom": "o1440.n (original, 1440 viewport)", "capturedLines": [30], "capturedSourceSha256": "489b7910778f8047dd93d5f5e260552c3f617359344537da765238cde5bb3312"},
+        {"file": "extraction/evidence/c1440b.excerpt.n", "capturedFrom": "c1440b.n (clone after pixel-audit, 1440 viewport)", "capturedLines": [30, 101, 162], "capturedSourceSha256": "dec9b360af6946100e5e6169e61a65d3100b4b87f38a32bea8319809e9d406f9"},
+        {"file": "extraction/evidence/o390.excerpt.n", "capturedFrom": "o390.n (original, 390 viewport)", "capturedLines": [16], "capturedSourceSha256": "0f6cd0d7d72b949d1212b50d6841b3c3364d07589d214bd16cbb06ae1164ea91"}
+      ]
+    },
+    "standalonePolicy": "When these sibling files are absent, verify_all.py reports one warning and skips the citation re-read; every other check still runs; citations into extraction/evidence/ are inside the package and are always re-read."
   }
 }

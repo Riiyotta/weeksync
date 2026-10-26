@@ -21,8 +21,7 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 PROJECT = REPO.parent
-SOURCE_ITEMS = ["src", "CLONE_SPEC.md", "tailwind.config.js", "index.html", "package.json",
-                ".playwright-mcp/o1440.n", ".playwright-mcp/c1440b.n", ".playwright-mcp/o390.n"]
+SOURCE_ITEMS = ["src", "CLONE_SPEC.md", "tailwind.config.js", "index.html", "package.json"]
 SOURCE_PRESENT = (PROJECT / "CLONE_SPEC.md").is_file() and (PROJECT / "src").is_dir()
 
 
@@ -85,6 +84,14 @@ CASES = [
     ("absolute machine path", False, lambda r: tedit(r, "README.md", "# ", "# " + "/" + "Users/someone/project ", 1), "hygiene.absolute-paths"),
     ("entryPoint outside the package", False, lambda r: jedit(r, "registry.manifest.json", lambda d: d["entryPoints"].update(external="../CLONE_SPEC.md")), "hygiene.entryPoints"),
     ("generated example leaks the source brand", False, lambda r: jedit(r, "schema/examples/generated.home.pagespec.json", lambda d: d.update(title="WeekSync. Shift plans for kitchens.")), "schema.example"),
+    ("wrapper-gate threshold loosened", False, lambda r: tedit(r, "extraction/wrapper_gate.py", "HERO_ERROR_PX = 3000", "HERO_ERROR_PX = 30000"), "gate.thresholds-pinned"),
+    ("wrapper-gate share threshold loosened", False, lambda r: tedit(r, "extraction/wrapper_gate.py", "SHARE_ERROR = 0.60", "SHARE_ERROR = 0.99"), "gate.thresholds-pinned"),
+    ("whitelist entry without justification", False, lambda r: jedit(r, "extraction/wrapper-whitelist.json", lambda d: d["entries"].append({"page": "/", "section": "hero.ticket", "reviewedBy": "someone", "justification": "ok", "maxHeightPx": 4000})), "gate.whitelist-reviewed"),
+    ("stale whitelist entry (page no longer over threshold)", False, lambda r: jedit(r, "extraction/wrapper-whitelist.json", lambda d: d["entries"].append({"page": "/", "section": "hero.ticket", "reviewedBy": "someone", "justification": "this entry exempts a section that is not over any threshold", "maxHeightPx": 4000})), "gate.wrapper"),
+    ("mode removed from PageSpec required list", False, lambda r: jedit(r, "schema/pagespec.schema.json", lambda d: d["required"].remove("mode")), "mode.schema-required-closed"),
+    ("generated-mode rule dropped from the validator", False, lambda r: tedit(r, "schema/semantic_validate.py", '"GENERATED_MODE_RATING")', '"GENERATED_MODE_X")'), "mode.generated-rules-pinned"),
+    ("tracked evidence excerpt altered", False, lambda r: tedit(r, "extraction/evidence/o1440.excerpt.n", "371,1623.8,1069,645", "371,1623.8,1069,999"), "citations"),
+    ("tracked evidence excerpt deleted", False, lambda r: (r / "extraction/evidence/o390.excerpt.n").unlink(), "citations"),
 ]
 
 
