@@ -1,0 +1,36 @@
+{
+  "$description": "Border styles. Dotted frames are the site's signature (sidebar, hero ticket, review ellipse, mobile ovals).",
+  "category": "border",
+  "tokens": {
+    "border.dotted": {
+      "value": "4.032rem dotted #000",
+      "cssVar": "--landing-border-dotted",
+      "source": {
+        "ref": "src/index.css:16",
+        "expect": "--landing-border-dotted: 4.032rem dotted #000;"
+      }
+    },
+    "border.dotted-mobile": {
+      "value": "3.5rem dotted #000",
+      "cssVar": "--landing-mobile-border-dotted",
+      "source": {
+        "ref": "src/index.css:17",
+        "expect": "--landing-mobile-border-dotted: 3.5rem dotted #000;"
+      }
+    },
+    "border.marker": {
+      "value": "1.584rem solid currentColor",
+      "source": {
+        "ref": "src/components/Faq.jsx:45",
+        "expect": "border-[1.584rem]"
+      }
+    },
+    "border.hairline": {
+      "value": "1px solid",
+      "source": {
+        "ref": "CLONE_SPEC.md:44",
+        "expect": "Exceptions that the original keeps in raw px: 1px borders"
+      }
+    }
+  }
+}

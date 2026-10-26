@@ -1,0 +1,74 @@
+{
+  "$description": "Radius scale (radius histogram: rounded-[5rem] x6, rounded-[100%] x4, rounded-[50%] x3, rounded-[999rem] x3, rounded-[100rem] x2).",
+  "category": "radius",
+  "tokens": {
+    "radius.landing": {
+      "value": "33.12rem",
+      "cssVar": "--landing-border-radius",
+      "source": {
+        "ref": "tailwind.config.js:68",
+        "expect": "landing: '33.12rem'"
+      }
+    },
+    "radius.big": {
+      "value": "15px",
+      "cssVar": "--border-radius-big",
+      "source": {
+        "ref": "tailwind.config.js:69",
+        "expect": "big: '15px'"
+      }
+    },
+    "radius.medium": {
+      "value": "10px",
+      "cssVar": "--border-radius-medium",
+      "source": {
+        "ref": "tailwind.config.js:70",
+        "expect": "medium: '10px'"
+      }
+    },
+    "radius.small": {
+      "value": "5px",
+      "cssVar": "--border-radius-small",
+      "source": {
+        "ref": "tailwind.config.js:71",
+        "expect": "small: '5px'"
+      }
+    },
+    "radius.chip": {
+      "value": "5rem",
+      "source": {
+        "ref": "src/components/AppDemo.jsx:178",
+        "expect": "rounded-[5rem] [transition:border-color_.5s_ease]"
+      },
+      "usageCount": 6
+    },
+    "radius.cell": {
+      "value": "10rem",
+      "source": {
+        "ref": "src/components/AppDemo.jsx:246",
+        "expect": "rounded-[10rem]"
+      }
+    },
+    "radius.pill": {
+      "value": "100rem",
+      "source": {
+        "ref": "src/components/AppDemo.jsx:328",
+        "expect": "rounded-[100rem] bg-gray-700"
+      }
+    },
+    "radius.ellipse": {
+      "value": "50%",
+      "source": {
+        "ref": "src/components/Reviews.jsx:40",
+        "expect": "rounded-[50%]"
+      }
+    },
+    "radius.oval": {
+      "value": "100%",
+      "source": {
+        "ref": "src/components/MobileHero.jsx:12",
+        "expect": "rounded-[100%] flex flex-col"
+      }
+    }
+  }
+}

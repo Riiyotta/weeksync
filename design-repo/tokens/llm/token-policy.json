@@ -1,0 +1,110 @@
+{
+  "$description": "What is enforced (by schema/semantic_validate.py) versus convention. PageSpec nodes may declare tokens only through the closed `tokens` slots below; values must be referenceable catalog ids allowed for that slot and section (section allow-lists live in tokens/llm/component-allowlist.json).",
+  "policyVersion": "1.0.0",
+  "themes": {
+    "light": {
+      "default": true,
+      "source": "tokens/themes/light.json"
+    }
+  },
+  "slots": {
+    "surface": {
+      "category": "color",
+      "allowedPrefixes": [
+        "color.surface."
+      ]
+    },
+    "text": {
+      "category": "color",
+      "allowedPrefixes": [
+        "color.text."
+      ]
+    },
+    "fontFamily": {
+      "category": "fontFamily",
+      "allowedPrefixes": [
+        "font."
+      ]
+    },
+    "paddingTop": {
+      "category": "spacing",
+      "allowedPrefixes": [
+        "spacing."
+      ]
+    }
+  },
+  "rawValueRestrictions": {
+    "color": {
+      "rule": "TOKEN_RAW_COLOR",
+      "rejectPatterns": [
+        "^#[0-9a-fA-F]{3,8}$",
+        "^(rgb|rgba|hsl|hsla|color|color-mix|oklch)\\("
+      ]
+    },
+    "spacing": {
+      "rule": "TOKEN_ARBITRARY_SPACING",
+      "rejectPatterns": [
+        "^-?[0-9.]+(px|rem|em|vh|vw|%)?$",
+        "^calc\\("
+      ]
+    },
+    "fontFamily": {
+      "rule": "TOKEN_UNSUPPORTED_FONT",
+      "allowed": [
+        "font.sans",
+        "font.mono",
+        "font.display",
+        "font.text"
+      ]
+    }
+  },
+  "contrastPairs": [
+    {
+      "rule": "TOKEN_CONTRAST_PAIR",
+      "if": {
+        "surface": "color.surface.inverse"
+      },
+      "require": {
+        "text": [
+          "color.text.inverse"
+        ]
+      },
+      "evidence": {
+        "ref": "src/components/Price.jsx:13",
+        "expect": "className=\"t-para text-center text-landing-white\""
+      }
+    },
+    {
+      "rule": "TOKEN_CONTRAST_PAIR",
+      "if": {
+        "text": "color.text.inverse"
+      },
+      "require": {
+        "surface": [
+          "color.surface.inverse",
+          "color.surface.overlay"
+        ]
+      },
+      "evidence": {
+        "ref": "src/components/MobileMenu.jsx:31",
+        "expect": "text-landing-white no-underline"
+      }
+    }
+  ],
+  "enforced": [
+    "TOKEN_UNKNOWN",
+    "TOKEN_NOT_REFERENCEABLE",
+    "TOKEN_RAW_COLOR",
+    "TOKEN_ARBITRARY_SPACING",
+    "TOKEN_UNSUPPORTED_FONT",
+    "TOKEN_WRONG_CATEGORY",
+    "TOKEN_NOT_ALLOWED_FOR_SECTION",
+    "TOKEN_THEME_COMBINATION",
+    "TOKEN_CONTRAST_PAIR"
+  ],
+  "conventionOnly": [
+    "Prefer semantic ids (color.surface.*) over foundation ids when both are allowed",
+    "Text roles (textRole.*) are applied by section contracts; PageSpecs do not choose font sizes"
+  ],
+  "overrides": "There is no per-instance style override in the source: every section owns its styling. The `tokens` slots exist so a PageSpec can declare (and the validator can check) the token choices it relies on, restricted per section to values the source actually uses there."
+}

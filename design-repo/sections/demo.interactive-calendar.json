@@ -1,0 +1,233 @@
+{
+  "id": "demo.interactive-calendar",
+  "title": "Interactive demo calendar",
+  "purpose": "In-page, fully local product simulation ('Try It'): a week planner visitors can edit while three bot cursors demonstrate it.",
+  "semantic": {
+    "id": "demo.interactive-calendar",
+    "category": "PRODUCT_DEMO"
+  },
+  "source": {
+    "id": "AppDemo<section>@448",
+    "file": "src/components/AppDemo.jsx",
+    "tag": "section",
+    "lines": "448-484",
+    "citation": {
+      "ref": "src/components/AppDemo.jsx:448-484",
+      "expect": "<section id=\"demo-section\""
+    }
+  },
+  "retrievalEligible": true,
+  "layer": {
+    "desktop": "in-flow-loop",
+    "mobile": "in-flow"
+  },
+  "variants": [
+    "default"
+  ],
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "ariaLabel",
+      "viewLabels",
+      "emptyLabel",
+      "people",
+      "projects",
+      "rosterAsset"
+    ],
+    "properties": {
+      "ariaLabel": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 40,
+        "maxWords": 5
+      },
+      "viewLabels": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "days",
+          "weeks"
+        ],
+        "properties": {
+          "days": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 5,
+            "maxWords": 1
+          },
+          "weeks": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 5,
+            "maxWords": 1
+          }
+        }
+      },
+      "emptyLabel": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 5,
+        "maxWords": 1
+      },
+      "people": {
+        "type": "array",
+        "minItems": 3,
+        "maxItems": 3,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "role",
+            "cursorName"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 11,
+              "maxWords": 2
+            },
+            "role": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 9,
+              "maxWords": 2
+            },
+            "cursorName": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 6,
+              "maxWords": 1
+            }
+          }
+        }
+      },
+      "projects": {
+        "type": "array",
+        "minItems": 6,
+        "maxItems": 6,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "name"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 8,
+              "maxWords": 2
+            }
+          }
+        }
+      },
+      "rosterAsset": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "assetRole"
+        ],
+        "properties": {
+          "assetRole": {
+            "type": "string",
+            "enum": [
+              "person.reference-demo-roster",
+              "person.fictional-demo-roster"
+            ]
+          },
+          "src": {
+            "type": "string",
+            "maxLength": 200
+          },
+          "alt": {
+            "type": "string",
+            "maxLength": 120
+          }
+        }
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "sharedStateAcrossLoopCopies": true
+  },
+  "motion": {
+    "patterns": [
+      "bot-cursors"
+    ],
+    "reducedMotionFallbacks": {
+      "bot-cursors": "no-cursors"
+    }
+  },
+  "responsive": [
+    {
+      "breakpoint": "desktop",
+      "change": "1039 x 630rem frame, editable, drag and drop",
+      "evidence": {
+        "ref": "CLONE_SPEC.md:236",
+        "expect": "- `AppDemo_frame`: `width:100%` (1039); `height:630rem;"
+      }
+    },
+    {
+      "breakpoint": "mobile",
+      "change": "frame stays 1039rem wide and is scaled to the outer box (0.308 at 390), view-only (pointer-events none)",
+      "evidence": {
+        "ref": "src/components/AppDemo.jsx:424",
+        "expect": "frame.style.transform = `scale(${outer.clientWidth / frame.offsetWidth})`"
+      }
+    }
+  ],
+  "generatedAssetRoles": [
+    "person.fictional-demo-roster"
+  ],
+  "referenceAssetRoles": [
+    "person.reference-demo-roster"
+  ],
+  "allowedTokenSlots": {
+    "surface": [
+      "color.surface.card"
+    ],
+    "text": [
+      "color.text.body"
+    ],
+    "fontFamily": [
+      "font.sans"
+    ],
+    "paddingTop": [
+      "spacing.section",
+      "spacing.pad-section"
+    ]
+  },
+  "composes": [
+    "component.demo-calendar",
+    "component.demo-entry-chip",
+    "component.demo-controls-pill"
+  ],
+  "accessibility": [
+    "section has an aria-label",
+    "listbox/option roles in the project picker",
+    "aria-pressed on the view toggle"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:232",
+      "expect": "## 5. Demo calendar (\"Try It\", `#demo-section`)"
+    },
+    {
+      "ref": "src/components/AppDemo.jsx:10",
+      "expect": "// Interactive demo calendar (spec 5). Data, view and period are shared between loop copies"
+    }
+  ],
+  "measured": {
+    "1440x900": 645,
+    "1280x800": 573.3,
+    "390x844": 307.7
+  },
+  "notes": [
+    "Category PRODUCT_DEMO, not CTA/CONVERSION: it is not a 'book a demo' form, it submits nothing and collects no data; it simulates the product in the page.",
+    "Seed hours are relative to the visitor's current Monday (CLONE_SPEC 5.4) and are owned by the component, not the PageSpec."
+  ]
+}

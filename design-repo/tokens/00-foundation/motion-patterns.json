@@ -1,0 +1,338 @@
+{
+  "$description": "Closed set of motion patterns a section may declare. Each pattern pins exactly one reducedMotionFallback (the schema const-locks it per pattern). sourceHonoursReducedMotion records what the reference build actually does today: only bot-cursors checks prefers-reduced-motion; the other fallbacks are requirements for pages built from this repo, not observed source behaviour.",
+  "version": "1.0.0",
+  "patterns": {
+    "loop-scroll": {
+      "kind": "page-scroll-model",
+      "trigger": "wheel / touch / scrollTo events (desktop >= 1024 only)",
+      "summary": "Fixed root, content rendered twice (wrap + wrap-clone), translate3d per frame; velocity += -deltaY*.25, friction .55; wraps at +-H; re-measures every 500px and on content resize.",
+      "constants": {
+        "speedFactor": 0.25,
+        "friction": 0.55,
+        "remeasureEveryPx": 500,
+        "touchStepClampPx": 50
+      },
+      "evidence": [
+        {
+          "ref": "src/components/LoopScroller.jsx:9",
+          "expect": "const SPEED_FACTOR = 0.25"
+        },
+        {
+          "ref": "src/components/LoopScroller.jsx:10",
+          "expect": "const FRICTION = 0.55"
+        },
+        {
+          "ref": "src/components/LoopScroller.jsx:11",
+          "expect": "const REMEASURE_EVERY = 500"
+        },
+        {
+          "ref": "src/components/LoopScroller.jsx:156",
+          "expect": "data-loop-scroll=\"wrap-clone\""
+        },
+        {
+          "ref": "CLONE_SPEC.md:384",
+          "expect": "### 12.1 Loop scroller (desktop >= 1024 only)"
+        }
+      ],
+      "reducedMotionFallback": "native-scroll-single-copy",
+      "sourceHonoursReducedMotion": false
+    },
+    "smooth-scroll-to": {
+      "kind": "programmatic-scroll",
+      "trigger": "scissors button click (smooth: true); sidebar clicks pass smooth undefined = instant jump",
+      "constants": {
+        "durationMs": 1600,
+        "easing": "easing.ease-in-out-quad",
+        "path": "shortest path around the loop"
+      },
+      "evidence": [
+        {
+          "ref": "src/lib/motion.js:326",
+          "expect": "export function startSmoothScroll({ delta, duration = 1600 })"
+        },
+        {
+          "ref": "src/components/HeroSlide.jsx:73",
+          "expect": "onClick={() => scrollToSection('features-section', { smooth: true })}"
+        },
+        {
+          "ref": "src/components/Sidebar.jsx:84",
+          "expect": "onClick={() => scrollToSection(item.target)}"
+        }
+      ],
+      "reducedMotionFallback": "instant-jump",
+      "sourceHonoursReducedMotion": false
+    },
+    "hero-ticket-flight": {
+      "kind": "scroll-linked",
+      "trigger": "loop progress within the first/last 20% of the wrap (distance .2)",
+      "summary": "Ticket flies up-right to -12deg (ty -1.5vh, tx +0.2vw) scrolling away; scissors travel down the perforation snipping 10 times in ap [.55,.7]; zipper pull replaces scissors in ap [.30,.49).",
+      "constants": {
+        "distance": 0.2,
+        "steps": [
+          0.3,
+          0.3,
+          0.45,
+          0.55,
+          0.7,
+          0.7
+        ],
+        "maxRotateDeg": 12,
+        "snipCycles": 10,
+        "restingAp": 0.5
+      },
+      "evidence": [
+        {
+          "ref": "src/lib/motion.js:14",
+          "expect": "const HERO_DISTANCE = 0.2"
+        },
+        {
+          "ref": "src/lib/motion.js:16",
+          "expect": "const STEP3 = 0.45"
+        },
+        {
+          "ref": "src/lib/motion.js:79",
+          "expect": "const rotate = r2((0.5 - t) * 24)"
+        },
+        {
+          "ref": "src/lib/motion.js:91",
+          "expect": "const bladeOpen = ap >= STEP4 && ap <= STEP5 ? (1 + Math.sin(10 * v * 2 * Math.PI)) / 2 : 1"
+        },
+        {
+          "ref": "src/lib/motion.js:21",
+          "expect": "const ZIP_END = STEP3 + 0.4 * (STEP4 - STEP3)"
+        },
+        {
+          "ref": "CLONE_SPEC.md:190",
+          "expect": "### 4.3 Hero scroll animation (exact formulas)"
+        }
+      ],
+      "reducedMotionFallback": "static-ticket-at-rest",
+      "sourceHonoursReducedMotion": false
+    },
+    "typewriter": {
+      "kind": "viewport-entrance",
+      "trigger": "IntersectionObserver threshold .3; leaving resets to empty, re-types on re-entry",
+      "constants": {
+        "threshold": 0.3,
+        "speedsMs": {
+          "fast": 15,
+          "normal": 30,
+          "slow": 50
+        }
+      },
+      "evidence": [
+        {
+          "ref": "src/lib/motion.js:156",
+          "expect": "{ threshold: 0.3 })"
+        },
+        {
+          "ref": "src/lib/motion.js:146",
+          "expect": "export const TYPE_SPEEDS = { fast: 15, normal: 30, slow: 50 }"
+        },
+        {
+          "ref": "src/components/TypewriterText.jsx:13",
+          "expect": "<span className=\"opacity-0\">{text.slice(count)}</span>"
+        },
+        {
+          "ref": "CLONE_SPEC.md:394",
+          "expect": "### 12.3 TypewriterText (entrance animation for most copy)"
+        }
+      ],
+      "reducedMotionFallback": "full-text-static",
+      "sourceHonoursReducedMotion": false
+    },
+    "bot-cursors": {
+      "kind": "autoplay-simulation",
+      "trigger": "demo frame >= 30% visible; pauses 2.5s after user input; stops below 30%",
+      "constants": {
+        "startStaggerMs": 600,
+        "userPauseMs": 2500,
+        "recentUserMoveMs": 20000,
+        "waitMs": [
+          700,
+          1800
+        ],
+        "pressMs": [
+          90,
+          150
+        ],
+        "dragSlowdown": 1.35,
+        "actionWeights": {
+          "swap": 0.45,
+          "changeProject": 0.2,
+          "split": 0.15,
+          "merge": 0.1,
+          "move2h": 0.1
+        }
+      },
+      "evidence": [
+        {
+          "ref": "src/lib/botCursors.js:23",
+          "expect": "const START_STAGGER = 600"
+        },
+        {
+          "ref": "src/lib/botCursors.js:24",
+          "expect": "const USER_PAUSE = 2500"
+        },
+        {
+          "ref": "src/lib/botCursors.js:18",
+          "expect": "const WAIT = { min: 700, max: 1800 }"
+        },
+        {
+          "ref": "src/lib/botCursors.js:22",
+          "expect": "const DRAG_SLOWDOWN = 1.35"
+        },
+        {
+          "ref": "src/lib/botCursors.js:275",
+          "expect": "[swap, 0.45],"
+        },
+        {
+          "ref": "src/lib/botCursors.js:568",
+          "expect": "if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return"
+        },
+        {
+          "ref": "CLONE_SPEC.md:276",
+          "expect": "### 5.5 Autoplay \"bot cursors\""
+        }
+      ],
+      "reducedMotionFallback": "no-cursors",
+      "sourceHonoursReducedMotion": true
+    },
+    "fish-wheel-scrub": {
+      "kind": "scroll-linked + continuous",
+      "trigger": "loop progress (outer rotate 360*c); inner rotates 18deg/s, direction follows scroll; sprite frames 0..28 over 800ms on direction change; each sprite swings 10s",
+      "constants": {
+        "innerDegPerSec": 18,
+        "spriteFrames": 29,
+        "scrubMs": 800,
+        "swingMs": 10000
+      },
+      "evidence": [
+        {
+          "ref": "src/lib/motion.js:207",
+          "expect": "angle = (((angle + 18 * dir * dt) % 360) + 360) % 360"
+        },
+        {
+          "ref": "src/lib/motion.js:214",
+          "expect": "if (outerRef.current) outerRef.current.style.transform = `rotate(${(((360 * c) % 360) + 360) % 360}deg)`"
+        },
+        {
+          "ref": "src/lib/motion.js:245",
+          "expect": "const p = Math.min((ts - start) / 800, 1)"
+        },
+        {
+          "ref": "tailwind.config.js:123",
+          "expect": "'fish-swing': 'swingAndMove 10s ease infinite'"
+        },
+        {
+          "ref": "CLONE_SPEC.md:417",
+          "expect": "### 12.5 Fish wheel and sprite (CTA)"
+        }
+      ],
+      "reducedMotionFallback": "static-frame-0",
+      "sourceHonoursReducedMotion": false
+    },
+    "cursor-trail": {
+      "kind": "pointer-follow",
+      "trigger": "pointermove, desktop with (pointer: fine) only; points live 200ms",
+      "constants": {
+        "pointLifetimeMs": 200,
+        "fadeMs": 180
+      },
+      "evidence": [
+        {
+          "ref": "src/lib/motion.js:291",
+          "expect": "points = points.filter((p) => now - p.t <= 200)"
+        },
+        {
+          "ref": "src/App.jsx:62",
+          "expect": "{isDesktop && pointerFine && <CursorTrail />}"
+        },
+        {
+          "ref": "CLONE_SPEC.md:425",
+          "expect": "### 12.7 Cursor trail (desktop, `(pointer: fine)` only)"
+        }
+      ],
+      "reducedMotionFallback": "hidden",
+      "sourceHonoursReducedMotion": false
+    },
+    "oval-breathe": {
+      "kind": "css-loop",
+      "trigger": "page load, mobile only; three keyframes in phase, 6s linear infinite",
+      "constants": {
+        "durationS": 6,
+        "keyframes": [
+          "ovalGrowShrink",
+          "smallOvalGrowShrink",
+          "ovalContentScaleShrink"
+        ]
+      },
+      "evidence": [
+        {
+          "ref": "tailwind.config.js:120",
+          "expect": "'oval-grow': 'ovalGrowShrink 6s linear infinite'"
+        },
+        {
+          "ref": "src/components/MobileHero.jsx:6",
+          "expect": "ovalContentScaleShrink, all `6s linear infinite`, no delay"
+        },
+        {
+          "ref": "CLONE_SPEC.md:423",
+          "expect": "### 12.6 Mobile hero ovals"
+        }
+      ],
+      "reducedMotionFallback": "static-50pct-frame",
+      "sourceHonoursReducedMotion": false
+    },
+    "overlay-slide": {
+      "kind": "toggle-transition",
+      "trigger": "menu button click (mobile)",
+      "constants": {
+        "durationMs": 350,
+        "easing": "easing.menu",
+        "from": "translateY(-100%)",
+        "to": "translateY(0)"
+      },
+      "evidence": [
+        {
+          "ref": "src/components/MobileMenu.jsx:23",
+          "expect": "[transition:transform_.35s_cubic-bezier(.22,.61,.36,1)]"
+        }
+      ],
+      "reducedMotionFallback": "instant-toggle",
+      "sourceHonoursReducedMotion": false
+    },
+    "instant-swap": {
+      "kind": "state-swap",
+      "trigger": "Prev/Next (reviews jump, no tween) or FAQ toggle (no height animation)",
+      "evidence": [
+        {
+          "ref": "src/components/Reviews.jsx:33",
+          "expect": "if (emblaApi.canScrollNext()) emblaApi.scrollNext(true)"
+        },
+        {
+          "ref": "src/components/Faq.jsx:53",
+          "expect": "<div id={answerId} hidden={!isOpen}"
+        },
+        {
+          "ref": "CLONE_SPEC.md:342",
+          "expect": "**Opens and closes instantly, with no height animation.**"
+        }
+      ],
+      "reducedMotionFallback": "instant-swap",
+      "sourceHonoursReducedMotion": true
+    },
+    "none": {
+      "kind": "static",
+      "trigger": "n/a",
+      "evidence": [
+        {
+          "ref": "CLONE_SPEC.md:431",
+          "expect": "### 12.9 Not animated"
+        }
+      ],
+      "reducedMotionFallback": "none",
+      "sourceHonoursReducedMotion": true
+    }
+  }
+}

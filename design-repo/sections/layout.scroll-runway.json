@@ -1,0 +1,92 @@
+{
+  "id": "layout.scroll-runway",
+  "title": "Loop scroll runway",
+  "purpose": "Empty in-flow spacer: the hero variant is the scroll distance over which the fixed ticket animates away; the tail variant is the gap before the loop wraps back to the hero.",
+  "semantic": {
+    "id": "layout.scroll-runway",
+    "category": "SPACER"
+  },
+  "source": {
+    "id": "App<div>@19",
+    "file": "src/App.jsx",
+    "tag": "div",
+    "lines": "19-21",
+    "citation": {
+      "ref": "src/App.jsx:19-21",
+      "expect": "function EmptySlide({ id, height }) {"
+    }
+  },
+  "retrievalEligible": false,
+  "retrievalIneligibleReason": "Structural empty spacer that only provides scroll distance for the loop scroller; it has no content to retrieve.",
+  "layer": {
+    "desktop": "in-flow-loop",
+    "mobile": "collapsed"
+  },
+  "variants": [
+    "hero",
+    "tail"
+  ],
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [],
+    "properties": {}
+  },
+  "constraints": {
+    "variantsOncePerPage": true,
+    "heroVariantFirstInLoop": true,
+    "tailVariantLastInLoop": true
+  },
+  "motion": {
+    "patterns": [
+      "none"
+    ],
+    "reducedMotionFallbacks": {
+      "none": "none"
+    }
+  },
+  "responsive": [
+    {
+      "breakpoint": "desktop",
+      "change": "hero calc(118.75vh + 37.5vw) (1608.8px at 1440x900); tail calc(22.5vh + 30vw) (634.5px)",
+      "evidence": {
+        "ref": "src/App.jsx:28",
+        "expect": "height=\"calc(118.75vh + 37.5vw)\""
+      }
+    },
+    {
+      "breakpoint": "mobile",
+      "change": "height 0 (mob:!h-0)",
+      "evidence": {
+        "ref": "src/App.jsx:20",
+        "expect": "return <div id={id} className=\"mob:!h-0\" style={{ height }} />"
+      }
+    }
+  ],
+  "generatedAssetRoles": [],
+  "referenceAssetRoles": [],
+  "allowedTokenSlots": {},
+  "composes": [],
+  "accessibility": [],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:154",
+      "expect": "Spacer formula used by the original: `height: calc(heightVw/2 vw + heightVh/4 vh)`. Hero: (75, 475). Tail: (60, 90). Both are 0 on mobile."
+    }
+  ],
+  "measured": {
+    "hero": {
+      "1440x900": 1608.8,
+      "1280x800": 1430,
+      "390x844": 0
+    },
+    "tail": {
+      "1440x900": 634.5,
+      "1280x800": 564,
+      "390x844": 0
+    }
+  },
+  "notes": [
+    "Same contract, two variants: structural rules key on (section, variant)."
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "$description": "Spacing tokens. The three CSS-variable tokens are the source's named scale; spacing.scale.* are the recurring arbitrary values the components use (counted from src/).",
+  "category": "spacing",
+  "tokens": {
+    "spacing.pad-base": {
+      "value": "24.99984rem",
+      "cssVar": "--landing-padding-base",
+      "source": {
+        "ref": "tailwind.config.js:61",
+        "expect": "'pad-base': '24.99984rem'"
+      }
+    },
+    "spacing.pad-section": {
+      "value": "15rem",
+      "cssVar": "--landing-padding-section",
+      "source": {
+        "ref": "tailwind.config.js:62",
+        "expect": "'pad-section': '15rem'"
+      }
+    },
+    "spacing.gap-base": {
+      "value": "15rem",
+      "cssVar": "--landing-gap-base",
+      "source": {
+        "ref": "tailwind.config.js:63",
+        "expect": "'gap-base': '15rem'"
+      }
+    },
+    "spacing.scale.100_8": {
+      "value": "100.8rem",
+      "source": {
+        "ref": "src/components/Reviews.jsx:38",
+        "expect": "pt-[100.8rem] pb-[100.8rem]"
+      },
+      "derivation": "recurring arbitrary padding/margin/gap value in src/ (histogram count >= 2)"
+    },
+    "spacing.scale.72": {
+      "value": "72rem",
+      "source": {
+        "ref": "src/components/Features.jsx:10",
+        "expect": "px-[72rem]"
+      },
+      "derivation": "recurring arbitrary padding/margin/gap value in src/ (histogram count >= 2)"
+    },
+    "spacing.scale.43_2": {
+      "value": "43.2rem",
+      "source": {
+        "ref": "src/components/Sidebar.jsx:62",
+        "expect": "py-[43.2rem]"
+      },
+      "derivation": "recurring arbitrary padding/margin/gap value in src/ (histogram count >= 2)"
+    },
+    "spacing.scale.34_56": {
+      "value": "34.56rem",
+      "source": {
+        "ref": "src/components/Faq.jsx:28",
+        "expect": "gap-[34.56rem]"
+      },
+      "derivation": "recurring arbitrary padding/margin/gap value in src/ (histogram count >= 2)"
+    },
+    "spacing.scale.30_24": {
+      "value": "30.24rem",
+      "source": {
+        "ref": "src/components/HeroSlide.jsx:84",
+        "expect": "pt-[30.24rem]"
+      },
+      "derivation": "recurring arbitrary padding/margin/gap value in src/ (histogram count >= 2)"
+    },
+    "spacing.scale.28_8": {
+      "value": "28.8rem",
+      "source": {
+        "ref": "src/components/Sidebar.jsx:77",
+        "expect": "gap-[28.8rem]"
+      },
+      "derivation": "recurring arbitrary padding/margin/gap value in src/ (histogram count >= 2)"
+    },
+    "spacing.scale.14_4": {
+      "value": "14.4rem",
+      "source": {
+        "ref": "src/components/Faq.jsx:42",
+        "expect": "gap-[14.4rem]"
+      },
+      "derivation": "recurring arbitrary padding/margin/gap value in src/ (histogram count >= 2)"
+    },
+    "spacing.scale.11_52": {
+      "value": "11.52rem",
+      "source": {
+        "ref": "src/components/Faq.jsx:54",
+        "expect": "gap-[11.52rem]"
+      },
+      "derivation": "recurring arbitrary padding/margin/gap value in src/ (histogram count >= 2)"
+    },
+    "spacing.scale.7_2": {
+      "value": "7.2rem",
+      "source": {
+        "ref": "src/components/CtaButton.jsx:5",
+        "expect": "gap-[7.2rem]"
+      },
+      "derivation": "recurring arbitrary padding/margin/gap value in src/ (histogram count >= 2)"
+    },
+    "spacing.scale.mobile-60": {
+      "value": "60rem",
+      "source": {
+        "ref": "src/components/AppDemo.jsx:448",
+        "expect": "mob:pt-[60rem]"
+      },
+      "derivation": "recurring arbitrary padding/margin/gap value in src/ (histogram count >= 2)"
+    },
+    "spacing.scale.mobile-30": {
+      "value": "30rem",
+      "source": {
+        "ref": "src/components/Faq.jsx:28",
+        "expect": "mob:pt-[30rem] mob:pb-[30rem]"
+      },
+      "derivation": "recurring arbitrary padding/margin/gap value in src/ (histogram count >= 2)"
+    },
+    "spacing.scale.mobile-20": {
+      "value": "20rem",
+      "source": {
+        "ref": "src/components/Faq.jsx:28",
+        "expect": "mob:gap-[20rem]"
+      },
+      "derivation": "recurring arbitrary padding/margin/gap value in src/ (histogram count >= 2)"
+    },
+    "spacing.scale.mobile-10": {
+      "value": "10rem",
+      "source": {
+        "ref": "src/components/Price.jsx:11",
+        "expect": "mob:gap-[10rem]"
+      },
+      "derivation": "recurring arbitrary padding/margin/gap value in src/ (histogram count >= 2)"
+    }
+  },
+  "sizes": {
+    "size.sidebar": {
+      "value": "371rem",
+      "source": {
+        "ref": "tailwind.config.js:64",
+        "expect": "sidebar: '371rem'"
+      }
+    },
+    "size.mobile-column": {
+      "value": "360rem",
+      "source": {
+        "ref": "tailwind.config.js:65",
+        "expect": "'mob-col': '360rem'"
+      }
+    }
+  }
+}

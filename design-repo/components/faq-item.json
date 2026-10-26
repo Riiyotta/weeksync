@@ -1,0 +1,24 @@
+{
+  "id": "component.faq-item",
+  "kind": "component",
+  "title": "FAQ item",
+  "purpose": "Question button with circle marker; answer of paragraphs and dash lists, shown/hidden instantly.",
+  "source": {
+    "ref": "src/components/Faq.jsx:36",
+    "expect": "<li key={i}>"
+  },
+  "props": {
+    "question": "string <= 55 chars",
+    "answer": "1-3 blocks (paragraph <= 260 chars | list of <= 4 items <= 99 chars)"
+  },
+  "tokens": [
+    "textRole.title",
+    "marker.size"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:337",
+      "expect": "- Question button: `width:100%; display:flex; align-items:flex-start; gap:14.4rem;"
+    }
+  ]
+}

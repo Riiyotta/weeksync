@@ -1,0 +1,24 @@
+{
+  "id": "component.card-surface",
+  "kind": "component",
+  "title": "Card surface",
+  "purpose": "486rem-tall rounded card on the beige, accent or inverse surface; the building block of features and pricing.",
+  "source": {
+    "ref": "src/components/Price.jsx:7",
+    "expect": "'box-border w-full h-[486rem] rounded-landing p-pad-base flex flex-col justify-between items-center mob:h-[370rem] mob:px-[30rem]'"
+  },
+  "props": {
+    "surface": "color.surface.card | color.surface.accent | color.surface.inverse"
+  },
+  "tokens": [
+    "card.height",
+    "radius.card",
+    "spacing.card"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:301",
+      "expect": "Wrapper same as features (grid 1fr 1fr, gap 15, padding 15 15 0); cards are 512 x 486."
+    }
+  ]
+}

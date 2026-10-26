@@ -1,0 +1,114 @@
+{
+  "$description": "Rhythm/position rules that JSON Schema cannot express. Each id here is implemented in schema/semantic_validate.py (IMPLEMENTED_GRAPH_RULES); verify_all.py fails if the two sets diverge. Every rule was checked against templates/templates.json at the time it was written.",
+  "graphVersion": "1.0.0",
+  "rules": [
+    {
+      "id": "ONE_HERO",
+      "severity": "error",
+      "rule": "Exactly one HERO-category node per page.",
+      "exceptions": "none: template.loop-landing has exactly one hero (hero.ticket). shell.mobile-brand-intro is SHELL, not a second hero.",
+      "evidence": {
+        "ref": "CLONE_SPEC.md:174",
+        "expect": "## 4. Hero (fixed \"ticket\")"
+      }
+    },
+    {
+      "id": "HERO_BEFORE_LOOP_CONTENT",
+      "severity": "error",
+      "rule": "The hero node precedes every in-flow-loop node.",
+      "evidence": {
+        "ref": "src/App.jsx:66",
+        "expect": "<HeroSlide />"
+      }
+    },
+    {
+      "id": "RUNWAY_BRACKETS",
+      "severity": "error",
+      "rule": "The first in-flow-loop node is layout.scroll-runway variant hero and the last is variant tail; each variant appears once.",
+      "evidence": {
+        "ref": "src/App.jsx:28",
+        "expect": "<EmptySlide id=\"hero-section\" height=\"calc(118.75vh + 37.5vw)\" />"
+      }
+    },
+    {
+      "id": "CTA_LAST_CONTENT",
+      "severity": "error",
+      "rule": "cta.closing-band is the last non-spacer in-flow-loop node (it carries the footer).",
+      "evidence": {
+        "ref": "src/App.jsx:34",
+        "expect": "<CtaFooter />"
+      }
+    },
+    {
+      "id": "NAV_TARGETS_EXIST",
+      "severity": "error",
+      "rule": "Every navItems target names a section that is present on the page.",
+      "targets": {
+        "demo-section": "demo.interactive-calendar",
+        "features-section": "features.stacked-cards",
+        "price-section": "pricing.plan-contact",
+        "reviews-section": "testimonials.ellipse-carousel",
+        "faq-section": "faq.accordion"
+      },
+      "evidence": {
+        "ref": "src/content.js:39",
+        "expect": "export const nav = ["
+      }
+    },
+    {
+      "id": "NAV_PARITY",
+      "severity": "error",
+      "rule": "shell.mobile-menu navItems equal shell.sidebar-nav navItems (same labels, same targets, same order): both render the same nav list.",
+      "evidence": {
+        "ref": "src/components/MobileMenu.jsx:26",
+        "expect": "{nav.map((item) => ("
+      }
+    },
+    {
+      "id": "SHARED_TAGLINE",
+      "severity": "warn",
+      "rule": "shell.mobile-brand-intro tagline equals shell.sidebar-nav tagline (both render the same tagline constant).",
+      "evidence": {
+        "ref": "src/components/MobileHero.jsx:18",
+        "expect": "<p className=\"t-para text-center\">{tagline}</p>"
+      }
+    },
+    {
+      "id": "NO_ADJACENT_SAME_CATEGORY",
+      "severity": "warn",
+      "rule": "Adjacent in-flow-loop nodes have different semantic categories.",
+      "exceptions": "none observed in the source order",
+      "evidence": {
+        "ref": "CLONE_SPEC.md:143",
+        "expect": "| # | Block | id | y | height | Notes |"
+      }
+    },
+    {
+      "id": "MOTION_SINGLETONS",
+      "severity": "error",
+      "rule": "Patterns bound to global loop progress or the pointer (hero-ticket-flight, fish-wheel-scrub, bot-cursors, cursor-trail, oval-breathe, overlay-slide) appear at most once per page.",
+      "evidence": {
+        "ref": "src/lib/motion.js:69",
+        "expect": "window.addEventListener(LOOP_PROGRESS, onProgress)"
+      }
+    },
+    {
+      "id": "REVIEW_TOTAL_CHARS",
+      "severity": "error",
+      "rule": "Each review's paragraphs total <= 399 characters (the measured 8-line maximum inside the ellipse).",
+      "evidence": {
+        "ref": "CLONE_SPEC.md:323",
+        "expect": "    - Review 2: 1 paragraph of **399 chars** (8 lines at 1440)."
+      }
+    },
+    {
+      "id": "FAQ_OPEN_INDEX",
+      "severity": "error",
+      "rule": "initiallyOpenIndex, when given, points at an existing item (source opens item 1 on load).",
+      "evidence": {
+        "ref": "src/lib/store.js:28",
+        "expect": "export const faqStore = createStore({ open: 0 })"
+      }
+    }
+  ]
+}

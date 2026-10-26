@@ -1,0 +1,25 @@
+{
+  "id": "component.demo-entry-chip",
+  "kind": "component",
+  "title": "Demo entry chip",
+  "purpose": "Draggable chip: project name button (opens a project list), hours input, remove button.",
+  "source": {
+    "ref": "src/components/AppDemo.jsx:164",
+    "expect": "function Entry({ entry, itemKey, readOnly, carried, frameRef, onHours, onProject, onRemove, onDragStart, onDragEnd }) {"
+  },
+  "props": {
+    "project": "string | null ('Empty')",
+    "hours": "integer 0-99"
+  },
+  "tokens": [
+    "radius.chip",
+    "duration.chip-border",
+    "duration.demo-field"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:247",
+      "expect": "- **Entry chip**: `width:100%;"
+    }
+  ]
+}

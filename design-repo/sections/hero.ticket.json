@@ -1,0 +1,133 @@
+{
+  "id": "hero.ticket",
+  "title": "Hero ticket",
+  "purpose": "Page-opening composition: a dotted 'ticket' that joins the sidebar along a perforation and holds the 4-line headline; scrolling away snips it with scissors and flies it off.",
+  "semantic": {
+    "id": "hero.ticket",
+    "category": "HERO"
+  },
+  "source": {
+    "id": "HeroSlide<div>@50",
+    "file": "src/components/HeroSlide.jsx",
+    "tag": "div",
+    "lines": "50-88",
+    "citation": {
+      "ref": "src/components/HeroSlide.jsx:50-88",
+      "expect": "<div className=\"fixed top-0 right-0 w-[calc(100%-367.2rem)]"
+    }
+  },
+  "retrievalEligible": true,
+  "layer": {
+    "desktop": "fixed",
+    "mobile": "in-flow"
+  },
+  "variants": [
+    "default"
+  ],
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "headline",
+      "scissorsLabel"
+    ],
+    "properties": {
+      "headline": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 166,
+        "maxWords": 27
+      },
+      "scissorsLabel": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 30,
+        "maxWords": 6
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "mustPrecedeLoopContent": true,
+    "scrollRunway": "layout.scroll-runway#hero",
+    "scissorsTarget": "features-section"
+  },
+  "motion": {
+    "patterns": [
+      "hero-ticket-flight",
+      "typewriter"
+    ],
+    "reducedMotionFallbacks": {
+      "hero-ticket-flight": "static-ticket-at-rest",
+      "typewriter": "full-text-static"
+    }
+  },
+  "responsive": [
+    {
+      "breakpoint": "desktop",
+      "change": "fixed right panel calc(100% - 367.2rem) x 100vh, z 1002; headline 42.624rem, 4 lines at 1440",
+      "evidence": {
+        "ref": "CLONE_SPEC.md:176",
+        "expect": "### 4.1 Desktop geometry"
+      }
+    },
+    {
+      "breakpoint": "mobile",
+      "change": "relative 360rem block, no border, headline centred 27rem, 6 lines at 390; no scissors",
+      "evidence": {
+        "ref": "CLONE_SPEC.md:226",
+        "expect": "2. `heroSlide_wrapper` (relative, `width:360rem; margin:0 auto;"
+      }
+    }
+  ],
+  "generatedAssetRoles": [
+    "copy.original"
+  ],
+  "referenceAssetRoles": [],
+  "allowedTokenSlots": {
+    "text": [
+      "color.text.primary"
+    ],
+    "fontFamily": [
+      "font.sans",
+      "font.display"
+    ]
+  },
+  "composes": [
+    "primitive.dotted-frame",
+    "primitive.typewriter-text",
+    "component.scissors-affordance"
+  ],
+  "accessibility": [
+    "the page's only h1",
+    "scissors is a labelled button"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:174",
+      "expect": "## 4. Hero (fixed \"ticket\")"
+    },
+    {
+      "ref": "src/lib/motion.js:34",
+      "expect": "export function useHeroMotion() {"
+    }
+  ],
+  "measured": {
+    "fixedHeights": {
+      "1440x900": {
+        "position": "fixed",
+        "height": 900,
+        "display": "block"
+      },
+      "390x844": {
+        "position": "relative",
+        "height": 234.3,
+        "display": "block"
+      }
+    },
+    "headlineLines": {
+      "1440": 4,
+      "390": 6
+    }
+  }
+}

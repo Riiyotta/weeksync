@@ -1,0 +1,382 @@
+{
+  "$description": "Closed asset-role vocabulary. availability: reference-only (may appear only in mode=reference PageSpecs), generation-safe (may appear in generated pages), blocked-for-generation (the original's proprietary identity; never referenced by any PageSpec in any mode). Availability is ALSO pinned in code (PINNED_AVAILABILITY in schema/semantic_validate.py and extraction/verify_all.py) so editing this file alone cannot loosen it.",
+  "registryVersion": "1.0.0",
+  "licensing": {
+    "summary": "The measured original is a live commercial product. Its logo/wordmark, illustrations, fish artwork, marketing copy, testimonials and real reviewer names must never be reproduced, traced, imitated or paraphrased by anything generated from this repository. The reference clone already replaces all of them with original placeholders; generated pages must go one step further and replace the clone's placeholder identity too.",
+    "doNotPublish": "This design-repo documents a real company's live site; keep it private. Do not publish it or make any repository containing it public.",
+    "evidence": [
+      {
+        "ref": "CLONE_SPEC.md:163",
+        "expect": "**Do not copy; use a placeholder mark of the same box.**"
+      },
+      {
+        "ref": "src/content.js:3",
+        "expect": "// weekly-planning product (\"Sevenday\"). Lengths match CLONE_SPEC.md section 14"
+      }
+    ]
+  },
+  "roles": [
+    {
+      "id": "brand.source-mark",
+      "availability": "blocked-for-generation",
+      "purpose": "The original product's 'W' wordmark (inline SVG in the original sidebar and mobile hero).",
+      "generationPolicy": "must-not-reproduce",
+      "usedBySections": [],
+      "evidence": [
+        {
+          "ref": "CLONE_SPEC.md:163",
+          "expect": "It is a \"W\" wordmark built from rounded vertical bars. **Do not copy; use a placeholder mark of the same box.**"
+        }
+      ],
+      "generationSafeSubstitutes": [
+        "brand.placeholder-mark"
+      ],
+      "licensing": "Trademark of the original commercial product. Never reproduce, trace, or imitate, in any mode.",
+      "dimensions": "viewBox 34x26"
+    },
+    {
+      "id": "brand.reference-mark",
+      "availability": "reference-only",
+      "purpose": "The clone's own placeholder mark (public/assets/logo-mark.svg).",
+      "generationPolicy": "must-reuse-exact-in-reference-only",
+      "usedBySections": [
+        "shell.sidebar-nav",
+        "shell.mobile-brand-intro"
+      ],
+      "evidence": [
+        {
+          "ref": "src/content.js:12",
+          "expect": "logoMark: '/assets/logo-mark.svg', // 34x26 viewBox placeholder wordmark"
+        },
+        {
+          "ref": "src/components/Sidebar.jsx:70",
+          "expect": "<img src={assets.logoMark} alt=\"\" className=\"w-[33.12rem] h-[25.92rem]\" />"
+        }
+      ],
+      "generationSafeSubstitutes": [
+        "brand.placeholder-mark"
+      ],
+      "files": [
+        "public/assets/logo-mark.svg"
+      ],
+      "dimensions": "34x26 viewBox; 33.12x25.92rem sidebar, 34x26rem mobile"
+    },
+    {
+      "id": "brand.placeholder-mark",
+      "availability": "generation-safe",
+      "purpose": "A brand mark for a generated page: user-supplied or newly generated, fitted to a 34x26 box.",
+      "generationPolicy": "may-generate-new",
+      "usedBySections": [
+        "shell.sidebar-nav",
+        "shell.mobile-brand-intro"
+      ],
+      "evidence": [
+        {
+          "ref": "src/components/MobileHero.jsx:17",
+          "expect": "<img src={assets.logoMark} alt=\"\" className=\"w-[34rem] h-[26rem]\" />"
+        }
+      ],
+      "dimensions": "34x26 aspect"
+    },
+    {
+      "id": "favicon.reference",
+      "availability": "reference-only",
+      "purpose": "The clone's placeholder tab icon.",
+      "generationPolicy": "must-reuse-exact-in-reference-only",
+      "usedBySections": [],
+      "evidence": [
+        {
+          "ref": "index.html:7",
+          "expect": "<link rel=\"icon\" type=\"image/svg+xml\" href=\"/assets/icon.svg\" />"
+        }
+      ],
+      "generationSafeSubstitutes": [
+        "favicon.generated"
+      ],
+      "files": [
+        "public/assets/icon.svg"
+      ]
+    },
+    {
+      "id": "favicon.generated",
+      "availability": "generation-safe",
+      "purpose": "Tab icon for a generated page (derived from the placeholder mark).",
+      "generationPolicy": "may-generate-new",
+      "usedBySections": [],
+      "evidence": [
+        {
+          "ref": "CLONE_SPEC.md:445",
+          "expect": "| Favicon | `/favicon.ico` (16), `/icon.svg` (64x64)"
+        }
+      ]
+    },
+    {
+      "id": "feature.source-illustration",
+      "availability": "blocked-for-generation",
+      "purpose": "The original's hand-drawn line illustrations in the feature cards.",
+      "generationPolicy": "must-not-reproduce",
+      "usedBySections": [],
+      "evidence": [
+        {
+          "ref": "CLONE_SPEC.md:294",
+          "expect": "All are black hand-drawn line illustrations (cartoon crowds) on a transparent background. **Replace with original placeholders, 1058 x 668 aspect.**"
+        }
+      ],
+      "generationSafeSubstitutes": [
+        "feature.generated-illustration"
+      ],
+      "licensing": "Proprietary artwork of the original product. Do not copy, trace, restyle or describe for re-creation.",
+      "dimensions": "1058x668"
+    },
+    {
+      "id": "feature.reference-illustration",
+      "availability": "reference-only",
+      "purpose": "The clone's placeholder feature images (feature-a/b/c.svg).",
+      "generationPolicy": "must-reuse-exact-in-reference-only",
+      "usedBySections": [
+        "features.stacked-cards"
+      ],
+      "evidence": [
+        {
+          "ref": "src/content.js:15",
+          "expect": "'/assets/feature-a.svg', // 1058x668"
+        }
+      ],
+      "generationSafeSubstitutes": [
+        "feature.generated-illustration"
+      ],
+      "files": [
+        "public/assets/feature-a.svg",
+        "public/assets/feature-b.svg",
+        "public/assets/feature-c.svg"
+      ],
+      "dimensions": "1058x668"
+    },
+    {
+      "id": "feature.generated-illustration",
+      "availability": "generation-safe",
+      "purpose": "Newly generated product/concept illustration for a feature card; black line art on transparent reads best on the accent surface.",
+      "generationPolicy": "may-generate-new",
+      "usedBySections": [
+        "features.stacked-cards"
+      ],
+      "evidence": [
+        {
+          "ref": "src/components/Features.jsx:21",
+          "expect": "<img loading=\"lazy\" src={image} alt={alt} width=\"1058\" height=\"668\" className=\"w-full h-full object-contain\" />"
+        }
+      ],
+      "dimensions": "1058x668 aspect, object-fit contain in a 462x436 box at 1440"
+    },
+    {
+      "id": "cta.source-fish-sprite",
+      "availability": "blocked-for-generation",
+      "purpose": "The original's 29-frame fish animation strip in the closing CTA wheel.",
+      "generationPolicy": "must-not-reproduce",
+      "usedBySections": [],
+      "evidence": [
+        {
+          "ref": "CLONE_SPEC.md:364",
+          "expect": "**Fish artwork: do not copy; use a placeholder.**"
+        }
+      ],
+      "generationSafeSubstitutes": [
+        "cta.generated-sprite-strip"
+      ],
+      "licensing": "Proprietary artwork of the original product.",
+      "dimensions": "15660x540 (29 frames of 540x540)"
+    },
+    {
+      "id": "cta.reference-sprite-strip",
+      "availability": "reference-only",
+      "purpose": "The clone's placeholder 29-frame strip (sprite-strip.svg).",
+      "generationPolicy": "must-reuse-exact-in-reference-only",
+      "usedBySections": [
+        "cta.closing-band"
+      ],
+      "evidence": [
+        {
+          "ref": "src/content.js:19",
+          "expect": "spriteStrip: '/assets/sprite-strip.svg', // 29 frames of 540x540 = 15660x540"
+        }
+      ],
+      "generationSafeSubstitutes": [
+        "cta.generated-sprite-strip"
+      ],
+      "files": [
+        "public/assets/sprite-strip.svg"
+      ],
+      "dimensions": "15660x540"
+    },
+    {
+      "id": "cta.generated-sprite-strip",
+      "availability": "generation-safe",
+      "purpose": "A newly generated 29-frame horizontal strip (540x540 frames) or a static single-frame shape.",
+      "generationPolicy": "may-generate-new",
+      "usedBySections": [
+        "cta.closing-band"
+      ],
+      "evidence": [
+        {
+          "ref": "src/index.css:207",
+          "expect": "background-size: 2900% 100%;"
+        }
+      ],
+      "dimensions": "29 frames, square"
+    },
+    {
+      "id": "person.source-reviewer",
+      "availability": "blocked-for-generation",
+      "purpose": "Real testimonial authors of the original product (names, roles, words).",
+      "generationPolicy": "must-not-reproduce",
+      "usedBySections": [],
+      "evidence": [
+        {
+          "ref": "CLONE_SPEC.md:327",
+          "expect": "- SEO: a visually-hidden div (`position:absolute; width:1px; height:1px; clip:rect(0,0,0,0); overflow:hidden`) repeats both reviews"
+        }
+      ],
+      "generationSafeSubstitutes": [
+        "person.fictional-reviewer"
+      ],
+      "licensing": "Real people's identities and endorsements. Never reproduce or paraphrase; generated pages use clearly fictional reviewers."
+    },
+    {
+      "id": "person.fictional-reviewer",
+      "availability": "generation-safe",
+      "purpose": "A clearly fictional reviewer (name + role text only; the source shows no photos or avatars).",
+      "generationPolicy": "may-generate-new",
+      "usedBySections": [
+        "testimonials.ellipse-carousel"
+      ],
+      "evidence": [
+        {
+          "ref": "src/components/Reviews.jsx:47",
+          "expect": "<p className=\"t-para text-center\">{r.name}</p>"
+        }
+      ]
+    },
+    {
+      "id": "person.fictional-demo-roster",
+      "availability": "generation-safe",
+      "purpose": "Fictional people and project names that populate the interactive demo calendar.",
+      "generationPolicy": "may-generate-new",
+      "usedBySections": [
+        "demo.interactive-calendar"
+      ],
+      "evidence": [
+        {
+          "ref": "CLONE_SPEC.md:264",
+          "expect": "### 5.4 Seed data (fictional demo content; fine to keep or rename)"
+        }
+      ]
+    },
+    {
+      "id": "person.reference-demo-roster",
+      "availability": "reference-only",
+      "purpose": "The demo roster kept from recon (Mia/Leo/Sofia and their projects).",
+      "generationPolicy": "must-reuse-exact-in-reference-only",
+      "usedBySections": [
+        "demo.interactive-calendar"
+      ],
+      "evidence": [
+        {
+          "ref": "src/content.js:210",
+          "expect": "// Demo calendar seed (spec 5.4). Generic demo names/projects kept from the spec."
+        }
+      ],
+      "generationSafeSubstitutes": [
+        "person.fictional-demo-roster"
+      ]
+    },
+    {
+      "id": "rating.placeholder",
+      "availability": "generation-safe",
+      "purpose": "Reserved: neither the source nor the clone shows a rating, so no section exposes a rating slot. Kept so any future rating stays an explicit placeholder.",
+      "generationPolicy": "must-not-fabricate",
+      "usedBySections": [],
+      "evidence": [
+        {
+          "ref": "CLONE_SPEC.md:314",
+          "expect": "## 8. Reviews (testimonials carousel)"
+        }
+      ]
+    },
+    {
+      "id": "url.source-endpoint",
+      "availability": "blocked-for-generation",
+      "purpose": "The original's domain, auth API, contact mailbox and social profiles.",
+      "generationPolicy": "must-not-reproduce",
+      "usedBySections": [],
+      "evidence": [
+        {
+          "ref": "CLONE_SPEC.md:483",
+          "expect": "`GET https://api.weeksync.app/auth/session`"
+        }
+      ],
+      "generationSafeSubstitutes": [
+        "url.placeholder"
+      ],
+      "licensing": "Live third-party endpoints and personal profiles. Never link from generated pages."
+    },
+    {
+      "id": "url.placeholder",
+      "availability": "generation-safe",
+      "purpose": "Placeholder links on reserved domains only (*.example / *.invalid) or relative paths.",
+      "generationPolicy": "may-generate-new",
+      "usedBySections": [
+        "shell.sidebar-nav",
+        "shell.mobile-menu",
+        "shell.mobile-brand-intro",
+        "pricing.plan-contact",
+        "cta.closing-band"
+      ],
+      "evidence": [
+        {
+          "ref": "src/content.js:34",
+          "expect": "{ label: 'Email', href: 'mailto:hello@sevenday.example' },"
+        }
+      ]
+    },
+    {
+      "id": "copy.source-marketing",
+      "availability": "blocked-for-generation",
+      "purpose": "The original's headlines, claims, FAQ answers, testimonials and legal entity text.",
+      "generationPolicy": "must-not-reproduce",
+      "usedBySections": [],
+      "evidence": [
+        {
+          "ref": "CLONE_SPEC.md:464",
+          "expect": "Short UI labels can be reused as-is:"
+        }
+      ],
+      "generationSafeSubstitutes": [
+        "copy.original"
+      ],
+      "licensing": "Proprietary marketing copy. Only the generic short UI labels listed in CLONE_SPEC section 14 may be reused."
+    },
+    {
+      "id": "copy.original",
+      "availability": "generation-safe",
+      "purpose": "Newly written copy that respects each field's measured character budget.",
+      "generationPolicy": "may-generate-new",
+      "usedBySections": [
+        "hero.ticket",
+        "features.stacked-cards",
+        "pricing.plan-contact",
+        "testimonials.ellipse-carousel",
+        "faq.accordion",
+        "cta.closing-band",
+        "utility.cookie-consent",
+        "shell.sidebar-nav",
+        "shell.mobile-brand-intro"
+      ],
+      "evidence": [
+        {
+          "ref": "src/content.js:2",
+          "expect": "// Product, copy, reviewers and links are original placeholders for a fictional"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "id": "shell.mobile-brand-intro",
+  "title": "Mobile brand intro (breathing ovals)",
+  "purpose": "Mobile replacement for the sidebar header: brand mark, tagline and CTA inside a dotted oval that grows and shrinks on a 6s loop.",
+  "semantic": {
+    "id": "shell.mobile-brand-intro",
+    "category": "SHELL"
+  },
+  "source": {
+    "id": "MobileHero<section>@10",
+    "file": "src/components/MobileHero.jsx",
+    "tag": "section",
+    "lines": "10-22",
+    "citation": {
+      "ref": "src/components/MobileHero.jsx:10-22",
+      "expect": "<section className=\"w-mob-col h-auto mx-auto"
+    }
+  },
+  "retrievalEligible": true,
+  "layer": {
+    "desktop": "absent",
+    "mobile": "in-flow"
+  },
+  "variants": [
+    "default"
+  ],
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "brandMark",
+      "tagline",
+      "cta"
+    ],
+    "properties": {
+      "brandMark": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "assetRole"
+        ],
+        "properties": {
+          "assetRole": {
+            "type": "string",
+            "enum": [
+              "brand.reference-mark",
+              "brand.placeholder-mark"
+            ]
+          },
+          "src": {
+            "type": "string",
+            "maxLength": 200
+          },
+          "alt": {
+            "type": "string",
+            "maxLength": 120
+          }
+        }
+      },
+      "tagline": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 34,
+        "maxWords": 6
+      },
+      "cta": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "label",
+          "href"
+        ],
+        "properties": {
+          "label": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 9,
+            "maxWords": 2
+          },
+          "href": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          }
+        }
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "sharedTaglineWith": "shell.sidebar-nav"
+  },
+  "motion": {
+    "patterns": [
+      "oval-breathe"
+    ],
+    "reducedMotionFallbacks": {
+      "oval-breathe": "static-50pct-frame"
+    }
+  },
+  "responsive": [
+    {
+      "breakpoint": "desktop",
+      "change": "not rendered (sidebar header shows the same mark/tagline/CTA)",
+      "evidence": {
+        "ref": "src/App.jsx:65",
+        "expect": "{!isDesktop && <MobileHero />}"
+      }
+    },
+    {
+      "breakpoint": "mobile",
+      "change": "360x350rem oval container, 80rem vertical padding; 552.5px tall at 390",
+      "evidence": {
+        "ref": "CLONE_SPEC.md:222",
+        "expect": "1. `mobileHeroSection_root`: `width:360rem; margin:0 auto; padding:80rem 0`."
+      }
+    }
+  ],
+  "generatedAssetRoles": [
+    "brand.placeholder-mark",
+    "url.placeholder",
+    "copy.original"
+  ],
+  "referenceAssetRoles": [
+    "brand.reference-mark"
+  ],
+  "allowedTokenSlots": {},
+  "composes": [
+    "primitive.dotted-frame",
+    "primitive.brand-mark",
+    "primitive.cta-button"
+  ],
+  "accessibility": [],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:220",
+      "expect": "### 4.4 Mobile hero (<= 1023)"
+    },
+    {
+      "ref": "CLONE_SPEC.md:221",
+      "expect": "Two stacked blocks replace the sidebar header and the fixed ticket:"
+    }
+  ],
+  "measured": {
+    "mobileHeightPx390": 552.5
+  },
+  "notes": [
+    "Classed SHELL, not HERO: it is the mobile form of the sidebar header (brand + tagline + CTA); the page's single HERO is hero.ticket, which also renders on mobile directly below this block."
+  ]
+}

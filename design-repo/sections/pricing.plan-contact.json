@@ -1,0 +1,215 @@
+{
+  "id": "pricing.plan-contact",
+  "title": "Plan and get-in-touch cards",
+  "purpose": "One pricing row: the inverse 'Plan' card (trial, price, two benefits, CTA) beside a beige contact card with three channel buttons.",
+  "semantic": {
+    "id": "pricing.plan-contact",
+    "category": "PRICING"
+  },
+  "source": {
+    "id": "Price<div>@11",
+    "file": "src/components/Price.jsx",
+    "tag": "div",
+    "lines": "11-37",
+    "citation": {
+      "ref": "src/components/Price.jsx:11-37",
+      "expect": "<div id=\"price-section\""
+    }
+  },
+  "retrievalEligible": true,
+  "layer": {
+    "desktop": "in-flow-loop",
+    "mobile": "in-flow"
+  },
+  "variants": [
+    "default"
+  ],
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "plan",
+      "contact"
+    ],
+    "properties": {
+      "plan": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "title",
+          "lines",
+          "cta"
+        ],
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12,
+            "maxWords": 3
+          },
+          "lines": {
+            "type": "array",
+            "minItems": 4,
+            "maxItems": 4,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 35,
+              "maxWords": 7
+            }
+          },
+          "cta": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "label",
+              "href"
+            ],
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 9,
+                "maxWords": 2
+              },
+              "href": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              }
+            }
+          }
+        }
+      },
+      "contact": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "title",
+          "text",
+          "channels"
+        ],
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 12,
+            "maxWords": 3
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 77,
+            "maxWords": 15
+          },
+          "channels": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "label",
+                "href"
+              ],
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 9,
+                  "maxWords": 1
+                },
+                "href": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "planLines": 4,
+    "typewriterDelaysMs": [
+      300,
+      600,
+      900,
+      1200
+    ]
+  },
+  "motion": {
+    "patterns": [
+      "typewriter"
+    ],
+    "reducedMotionFallbacks": {
+      "typewriter": "full-text-static"
+    }
+  },
+  "responsive": [
+    {
+      "breakpoint": "desktop",
+      "change": "two 512x486 cards side by side",
+      "evidence": {
+        "ref": "CLONE_SPEC.md:301",
+        "expect": "Wrapper same as features (grid 1fr 1fr, gap 15, padding 15 15 0); cards are 512 x 486."
+      }
+    },
+    {
+      "breakpoint": "mobile",
+      "change": "stacked, gap 10rem, cards 370rem tall with 30rem side padding; channel gap 13rem",
+      "evidence": {
+        "ref": "CLONE_SPEC.md:310",
+        "expect": "- **Mobile:** `flex-direction:column; gap:10rem`. Each card `height:370rem;"
+      }
+    }
+  ],
+  "generatedAssetRoles": [
+    "url.placeholder",
+    "copy.original"
+  ],
+  "referenceAssetRoles": [],
+  "allowedTokenSlots": {
+    "surface": [
+      "color.surface.inverse",
+      "color.surface.card"
+    ],
+    "text": [
+      "color.text.inverse",
+      "color.text.primary"
+    ],
+    "fontFamily": [
+      "font.mono",
+      "font.text"
+    ],
+    "paddingTop": [
+      "spacing.section",
+      "spacing.pad-section"
+    ]
+  },
+  "composes": [
+    "component.plan-card",
+    "component.contact-card",
+    "component.card-surface",
+    "primitive.cta-button"
+  ],
+  "accessibility": [],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:299",
+      "expect": "## 7. Price and contact (`#price-section`)"
+    }
+  ],
+  "measured": {
+    "1440x900": 501,
+    "1280x800": 445.3,
+    "390x844": 828.7
+  },
+  "notes": [
+    "Contact channels open in a new tab with rel noopener noreferrer (source)."
+  ]
+}

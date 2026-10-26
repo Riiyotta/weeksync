@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1058" height="668" viewBox="0 0 1058 668">
+<!-- zoom: day cells into one week ring -->
+<rect x="120" y="244" width="56" height="140" rx="14" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="192" y="284" width="56" height="140" rx="14" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="264" y="244" width="56" height="140" rx="14" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="336" y="284" width="56" height="140" rx="14" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="408" y="244" width="56" height="140" rx="14" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M500 334H580" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M560 314L580 334L560 354" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="770" cy="334" r="170" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="770" cy="334" r="110" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 16"/>
+<path d="M770 234V334L840 384" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

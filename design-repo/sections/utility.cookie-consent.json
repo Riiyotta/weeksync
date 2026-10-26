@@ -1,0 +1,124 @@
+{
+  "id": "utility.cookie-consent",
+  "title": "Triangle cookie notice",
+  "purpose": "Consent notice in a dotted right-triangle anchored bottom-right; one OK button stores consent and removes it.",
+  "semantic": {
+    "id": "utility.cookie-consent",
+    "category": "UTILITY"
+  },
+  "source": {
+    "id": "CookiePopup<div>@29",
+    "file": "src/components/CookiePopup.jsx",
+    "tag": "div",
+    "lines": "29-46",
+    "citation": {
+      "ref": "src/components/CookiePopup.jsx:29-46",
+      "expect": "<div className=\"fixed bottom-0 right-0 z-cookie"
+    }
+  },
+  "retrievalEligible": false,
+  "retrievalIneligibleReason": "Cookie/consent banner: runtime utility UI shown until dismissed; never a content section for retrieval.",
+  "layer": {
+    "desktop": "fixed",
+    "mobile": "fixed"
+  },
+  "variants": [
+    "default"
+  ],
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "message",
+      "acceptLabel"
+    ],
+    "properties": {
+      "message": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 100,
+        "maxWords": 20
+      },
+      "acceptLabel": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 2,
+        "maxWords": 1
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "layer": "fixed",
+    "zIndex": "zIndex.cookie"
+  },
+  "motion": {
+    "patterns": [
+      "typewriter"
+    ],
+    "reducedMotionFallbacks": {
+      "typewriter": "full-text-static"
+    }
+  },
+  "responsive": [
+    {
+      "breakpoint": "mobile",
+      "change": "triangle 316.8rem -> 250rem; wrapper padding 40rem -> 14rem; content padding 172.8/43.2 -> 125/20rem",
+      "evidence": {
+        "ref": "src/components/CookiePopup.jsx:30",
+        "expect": "w-[316.8rem] h-[316.8rem] mob:w-[250rem] mob:h-[250rem]"
+      }
+    }
+  ],
+  "generatedAssetRoles": [
+    "copy.original"
+  ],
+  "referenceAssetRoles": [],
+  "allowedTokenSlots": {
+    "surface": [
+      "color.surface.page"
+    ],
+    "text": [
+      "color.text.primary"
+    ],
+    "fontFamily": [
+      "font.mono",
+      "font.text"
+    ]
+  },
+  "composes": [
+    "primitive.dotted-stroke",
+    "primitive.typewriter-text",
+    "primitive.cta-button"
+  ],
+  "accessibility": [
+    "message rendered as a heading element in source (h1); keep a single page h1 in generated pages by using a paragraph"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:372",
+      "expect": "## 11. Cookie banner (triangle)"
+    },
+    {
+      "ref": "src/components/CookiePopup.jsx:6",
+      "expect": "// Triangle cookie banner (spec 11). OK stores \"true\" and unmounts (no exit animation)."
+    }
+  ],
+  "measured": {
+    "fixedHeights": {
+      "1440x900": {
+        "position": "fixed",
+        "height": 396.8,
+        "display": "block"
+      },
+      "390x844": {
+        "position": "fixed",
+        "height": 301.1,
+        "display": "block"
+      }
+    }
+  },
+  "notes": [
+    "Message chars measured 100 / 4 lines (CLONE_SPEC section 11)."
+  ]
+}

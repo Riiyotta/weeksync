@@ -1,0 +1,25 @@
+{
+  "id": "component.demo-controls-pill",
+  "kind": "component",
+  "title": "Demo controls pills",
+  "purpose": "Bottom-centred dark pills: period pager (+-1 week / +-7 weeks) and Days|Weeks toggle.",
+  "source": {
+    "ref": "src/components/AppDemo.jsx:324",
+    "expect": "function Controls({ view, period }) {"
+  },
+  "props": {
+    "view": "days | weeks"
+  },
+  "tokens": [
+    "radius.pill",
+    "color.surface.control",
+    "color.surface.control-active",
+    "duration.control"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:257",
+      "expect": "### 5.3 Controls (bottom-center overlay)"
+    }
+  ]
+}

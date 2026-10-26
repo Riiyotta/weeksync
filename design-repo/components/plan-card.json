@@ -1,0 +1,25 @@
+{
+  "id": "component.plan-card",
+  "kind": "component",
+  "title": "Plan card",
+  "purpose": "Inverse card: title, four single-line benefit lines typed in with staggered delays, light CTA.",
+  "source": {
+    "ref": "src/components/Price.jsx:12",
+    "expect": "<div className={`${card} bg-landing-black`}>"
+  },
+  "props": {
+    "title": "string",
+    "lines": "4 x string <= 35 chars",
+    "cta": "link"
+  },
+  "tokens": [
+    "color.surface.inverse",
+    "color.text.inverse"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:302",
+      "expect": "- **Left \"Plan\" card**: `background:#000;"
+    }
+  ]
+}

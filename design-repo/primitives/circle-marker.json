@@ -1,0 +1,24 @@
+{
+  "id": "primitive.circle-marker",
+  "kind": "primitive",
+  "title": "Circle marker",
+  "purpose": "14.4rem outlined circle that fills when its item is hovered/active (sidebar nav, FAQ).",
+  "source": {
+    "ref": "src/components/Sidebar.jsx:34",
+    "expect": "w-[14.4rem] h-[14.4rem] rounded-[50%] border-[1.584rem]"
+  },
+  "props": {
+    "active": "boolean"
+  },
+  "tokens": [
+    "marker.size",
+    "border.marker",
+    "duration.marker-fill"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:167",
+      "expect": "Item: circle `14.4 x 14.4; border:1.584rem solid #000; border-radius:50%"
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "$comment": "IA of the local WeekSync-layout clone (placeholder brand 'Sevenday'). Derived from src/App.jsx render order and src/components/*, cross-checked against CLONE_SPEC.md section order. Single route; desktop (>=1024px) renders the scrolling content twice inside an infinite-loop scroller, mobile renders it once with native scroll — modelled as viewport-specific sections on one template, not as two templates, so the route total stays honest.",
+  "meta": {
+    "source": "Local clone at http://localhost:5175/ of the layout of https://weeksync.app/ (single-page landing)",
+    "status": "measured-from-codebase",
+    "totalRoutes": 1,
+    "totalTemplates": 1
+  },
+  "categories": {
+    "SHELL": "Fixed, page-level layers that sit outside the scrolling content: scroller, navigation, overlays, consent.",
+    "HERO": "First-screen brand statement and primary call to action.",
+    "PRODUCT": "Blocks that show what the product does: the interactive demo and feature explanations.",
+    "CONVERSION": "Pricing, contact and closing call-to-action blocks.",
+    "PROOF": "Social proof from users.",
+    "SUPPORT": "Answers to common questions.",
+    "FOOTER": "Legal links and copyright."
+  },
+  "sections": {
+    "shell.loop-scroller": {
+      "category": "SHELL",
+      "description": "Desktop-only fixed scroller that renders the scrolling content twice (wrap + wrap-clone) and wraps the scroll position for an endless loop, with damped wheel physics and 1600ms easeInOutQuad smooth jumps; disabled on mobile, where the page scrolls natively as a single copy.",
+      "scope": "Wraps all scrolling content on the single route at desktop widths.",
+      "implementedBy": "src/components/LoopScroller.jsx"
+    },
+    "shell.cookie-popup": {
+      "category": "SHELL",
+      "description": "Fixed triangular cookie notice with a single OK button that stores a dismissal flag and unmounts instantly.",
+      "scope": "Shown on the single route until dismissed.",
+      "implementedBy": "src/components/CookiePopup.jsx"
+    },
+    "shell.cursor-trail": {
+      "category": "SHELL",
+      "description": "Dotted SVG path following the last 200ms of pointer movement, fading out when idle.",
+      "scope": "Desktop widths with a fine pointer only.",
+      "implementedBy": "src/components/CursorTrail.jsx"
+    },
+    "shell.mobile-menu": {
+      "category": "SHELL",
+      "description": "Fixed top menu bar with a black full-screen overlay that slides down (0.35s) listing the section anchors.",
+      "scope": "Mobile widths only (below the desktop breakpoint); replaces the sidebar.",
+      "implementedBy": "src/components/MobileMenu.jsx"
+    },
+    "shell.sidebar": {
+      "category": "SHELL",
+      "description": "Fixed left dotted-frame column with logo, tagline, Start Now button and five section links whose active state follows scroll position.",
+      "scope": "Desktop widths only; hidden on mobile where the mobile menu takes over.",
+      "implementedBy": "src/components/Sidebar.jsx"
+    },
+    "hero.ticket": {
+      "category": "HERO",
+      "description": "Fixed desktop 'ticket' card holding the headline; scroll-linked scissors/zipper cut along a dotted line, then the ticket flies up-right rotating to -12deg and hides, revealing the content behind it.",
+      "scope": "Desktop widths on the single route; a spacer slide in the scrolling content reserves its scroll distance.",
+      "implementedBy": "src/components/HeroSlide.jsx"
+    },
+    "hero.mobile": {
+      "category": "HERO",
+      "description": "Static-flow mobile hero inside animated dotted ovals (6s loop) with tagline and CTA.",
+      "scope": "Mobile widths only; the ticket is not used there.",
+      "implementedBy": "src/components/MobileHero.jsx"
+    },
+    "product.demo": {
+      "category": "PRODUCT",
+      "description": "Interactive team-workload calendar: person rows by day columns, editable task chips with hours, drag between cells, Days/Weeks toggle, period arrows, and autonomous bot cursors that edit the schedule.",
+      "scope": "Single route, all widths (scaled frame on mobile).",
+      "implementedBy": "src/components/AppDemo.jsx"
+    },
+    "product.features": {
+      "category": "PRODUCT",
+      "description": "Three stacked feature cards alternating text and illustration sides, each labelled with an 'n of 3' counter (not a carousel).",
+      "scope": "Single route, all widths.",
+      "implementedBy": "src/components/Features.jsx"
+    },
+    "conversion.price-card": {
+      "category": "CONVERSION",
+      "description": "Black pricing card with typewritten plan title, staggered price/benefit lines and a Start Now button.",
+      "scope": "Single route, left half of the price row on desktop.",
+      "implementedBy": "src/components/Price.jsx > price card"
+    },
+    "conversion.contact-card": {
+      "category": "CONVERSION",
+      "description": "Beige 'get in touch' card with a short prompt and three contact-channel buttons.",
+      "scope": "Single route, right half of the price row on desktop, stacked below on mobile.",
+      "implementedBy": "src/components/Price.jsx > contact card"
+    },
+    "proof.reviews": {
+      "category": "PROOF",
+      "description": "Testimonials inside a dotted ellipse with Prev / counter / Next controls that swap slides instantly and drag/swipe via a carousel.",
+      "scope": "Single route, all widths.",
+      "implementedBy": "src/components/Reviews.jsx"
+    },
+    "support.faq": {
+      "category": "SUPPORT",
+      "description": "Single-open accordion of questions, first item open on load, instant open/close with no height animation.",
+      "scope": "Single route, all widths.",
+      "implementedBy": "src/components/Faq.jsx"
+    },
+    "conversion.cta-block": {
+      "category": "CONVERSION",
+      "description": "Lime closing block with a Start Now button and a rotating wheel of sprite-animated fish driven by time and scroll direction.",
+      "scope": "Single route, all widths; contains the footer row.",
+      "implementedBy": "src/components/CtaFooter.jsx > FishWheel"
+    },
+    "footer.legal": {
+      "category": "FOOTER",
+      "description": "Copyright line and legal links row pinned to the bottom of the lime CTA block.",
+      "scope": "Single route, inside the CTA block.",
+      "implementedBy": "src/components/CtaFooter.jsx"
+    }
+  },
+  "templates": [
+    {
+      "id": "template.landing",
+      "name": "Landing page",
+      "routeCount": 1,
+      "routes": ["/"],
+      "routePattern": null,
+      "chrome": "fixed-shell",
+      "sections": [
+        "shell.loop-scroller",
+        "shell.cookie-popup",
+        "shell.cursor-trail",
+        "shell.mobile-menu",
+        "shell.sidebar",
+        "hero.ticket",
+        "hero.mobile",
+        "product.demo",
+        "product.features",
+        "conversion.price-card",
+        "conversion.contact-card",
+        "proof.reviews",
+        "support.faq",
+        "conversion.cta-block",
+        "footer.legal"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "component.fish-wheel",
+  "kind": "component",
+  "title": "Sprite wheel",
+  "purpose": "Four sprite instances in a rotating cross behind the closing CTA (outer scroll-linked, inner 18deg/s).",
+  "source": {
+    "ref": "src/components/CtaFooter.jsx:24",
+    "expect": "function FishWheel() {"
+  },
+  "props": {
+    "sprite": "assetRole cta.reference-sprite-strip | cta.generated-sprite-strip"
+  },
+  "tokens": [
+    "fish.sprite-height",
+    "fish.wheel-gap"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:364",
+      "expect": "- **Fish wheel** (`Wheel_mainContainer`)"
+    }
+  ],
+  "motionPattern": "fish-wheel-scrub"
+}

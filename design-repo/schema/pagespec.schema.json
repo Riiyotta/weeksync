@@ -1,0 +1,1826 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "weeksync-design-repo/pagespec.schema.json",
+  "title": "PageSpec",
+  "description": "A page composition built from this design-repo. mode=reference reconstructs the reference clone; mode=generated is a new page for someone else and may contain nothing that identifies or reproduces the source (enforced by schema/semantic_validate.py). maxWords is a custom annotation enforced by the semantic validator (Draft-07 ignores unknown keywords); maxLength carries the measured character budget.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "pageSpecVersion",
+    "mode",
+    "template",
+    "route",
+    "title",
+    "brand",
+    "theme",
+    "nodes"
+  ],
+  "properties": {
+    "pageSpecVersion": {
+      "const": "1.0.0"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "reference",
+        "generated"
+      ]
+    },
+    "template": {
+      "type": "string",
+      "enum": [
+        "template.loop-landing"
+      ]
+    },
+    "route": {
+      "type": "string",
+      "pattern": "^/[A-Za-z0-9/_.-]*$",
+      "maxLength": 120
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 44,
+      "maxWords": 7
+    },
+    "brand": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "mark"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "mark": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "assetRole"
+          ],
+          "properties": {
+            "assetRole": {
+              "type": "string",
+              "enum": [
+                "brand.reference-mark",
+                "brand.placeholder-mark"
+              ]
+            },
+            "src": {
+              "type": "string",
+              "maxLength": 200
+            },
+            "alt": {
+              "type": "string",
+              "maxLength": 120
+            }
+          }
+        }
+      }
+    },
+    "theme": {
+      "type": "string",
+      "enum": [
+        "light"
+      ]
+    },
+    "nodes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/node"
+      }
+    }
+  },
+  "definitions": {
+    "content_utility_cursor-trail": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [],
+      "properties": {}
+    },
+    "motion_utility_cursor-trail": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "patterns",
+        "reducedMotionFallback"
+      ],
+      "properties": {
+        "patterns": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "cursor-trail"
+            ]
+          }
+        },
+        "reducedMotionFallback": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "cursor-trail"
+          ],
+          "properties": {
+            "cursor-trail": {
+              "const": "hidden"
+            }
+          }
+        }
+      }
+    },
+    "content_utility_cookie-consent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "message",
+        "acceptLabel"
+      ],
+      "properties": {
+        "message": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "maxWords": 20
+        },
+        "acceptLabel": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2,
+          "maxWords": 1
+        }
+      }
+    },
+    "motion_utility_cookie-consent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "patterns",
+        "reducedMotionFallback"
+      ],
+      "properties": {
+        "patterns": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "typewriter"
+            ]
+          }
+        },
+        "reducedMotionFallback": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "typewriter"
+          ],
+          "properties": {
+            "typewriter": {
+              "const": "full-text-static"
+            }
+          }
+        }
+      }
+    },
+    "content_shell_mobile-menu": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "menuLabel",
+        "closeLabel",
+        "cta",
+        "navItems"
+      ],
+      "properties": {
+        "menuLabel": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4,
+          "maxWords": 1
+        },
+        "closeLabel": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 5,
+          "maxWords": 1
+        },
+        "cta": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "label",
+            "href"
+          ],
+          "properties": {
+            "label": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 9,
+              "maxWords": 2
+            },
+            "href": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            }
+          }
+        },
+        "navItems": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "label",
+              "target"
+            ],
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 18,
+                "maxWords": 3
+              },
+              "target": {
+                "type": "string",
+                "enum": [
+                  "demo-section",
+                  "features-section",
+                  "price-section",
+                  "reviews-section",
+                  "faq-section"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "motion_shell_mobile-menu": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "patterns",
+        "reducedMotionFallback"
+      ],
+      "properties": {
+        "patterns": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "overlay-slide"
+            ]
+          }
+        },
+        "reducedMotionFallback": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "overlay-slide"
+          ],
+          "properties": {
+            "overlay-slide": {
+              "const": "instant-toggle"
+            }
+          }
+        }
+      }
+    },
+    "content_shell_mobile-brand-intro": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "brandMark",
+        "tagline",
+        "cta"
+      ],
+      "properties": {
+        "brandMark": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "assetRole"
+          ],
+          "properties": {
+            "assetRole": {
+              "type": "string",
+              "enum": [
+                "brand.reference-mark",
+                "brand.placeholder-mark"
+              ]
+            },
+            "src": {
+              "type": "string",
+              "maxLength": 200
+            },
+            "alt": {
+              "type": "string",
+              "maxLength": 120
+            }
+          }
+        },
+        "tagline": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 34,
+          "maxWords": 6
+        },
+        "cta": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "label",
+            "href"
+          ],
+          "properties": {
+            "label": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 9,
+              "maxWords": 2
+            },
+            "href": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            }
+          }
+        }
+      }
+    },
+    "motion_shell_mobile-brand-intro": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "patterns",
+        "reducedMotionFallback"
+      ],
+      "properties": {
+        "patterns": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "oval-breathe"
+            ]
+          }
+        },
+        "reducedMotionFallback": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "oval-breathe"
+          ],
+          "properties": {
+            "oval-breathe": {
+              "const": "static-50pct-frame"
+            }
+          }
+        }
+      }
+    },
+    "content_hero_ticket": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "headline",
+        "scissorsLabel"
+      ],
+      "properties": {
+        "headline": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 166,
+          "maxWords": 27
+        },
+        "scissorsLabel": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 30,
+          "maxWords": 6
+        }
+      }
+    },
+    "motion_hero_ticket": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "patterns",
+        "reducedMotionFallback"
+      ],
+      "properties": {
+        "patterns": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "hero-ticket-flight",
+              "typewriter"
+            ]
+          }
+        },
+        "reducedMotionFallback": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "hero-ticket-flight",
+            "typewriter"
+          ],
+          "properties": {
+            "hero-ticket-flight": {
+              "const": "static-ticket-at-rest"
+            },
+            "typewriter": {
+              "const": "full-text-static"
+            }
+          }
+        }
+      }
+    },
+    "content_shell_sidebar-nav": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "brandMark",
+        "tagline",
+        "cta",
+        "navItems"
+      ],
+      "properties": {
+        "brandMark": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "assetRole"
+          ],
+          "properties": {
+            "assetRole": {
+              "type": "string",
+              "enum": [
+                "brand.reference-mark",
+                "brand.placeholder-mark"
+              ]
+            },
+            "src": {
+              "type": "string",
+              "maxLength": 200
+            },
+            "alt": {
+              "type": "string",
+              "maxLength": 120
+            }
+          }
+        },
+        "tagline": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 34,
+          "maxWords": 6
+        },
+        "cta": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "label",
+            "href"
+          ],
+          "properties": {
+            "label": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 9,
+              "maxWords": 2
+            },
+            "href": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            }
+          }
+        },
+        "navItems": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "label",
+              "target"
+            ],
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 18,
+                "maxWords": 3
+              },
+              "target": {
+                "type": "string",
+                "enum": [
+                  "demo-section",
+                  "features-section",
+                  "price-section",
+                  "reviews-section",
+                  "faq-section"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "motion_shell_sidebar-nav": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "patterns",
+        "reducedMotionFallback"
+      ],
+      "properties": {
+        "patterns": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "none"
+            ]
+          }
+        },
+        "reducedMotionFallback": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "none"
+          ],
+          "properties": {
+            "none": {
+              "const": "none"
+            }
+          }
+        }
+      }
+    },
+    "content_layout_scroll-runway": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [],
+      "properties": {}
+    },
+    "motion_layout_scroll-runway": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "patterns",
+        "reducedMotionFallback"
+      ],
+      "properties": {
+        "patterns": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "none"
+            ]
+          }
+        },
+        "reducedMotionFallback": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "none"
+          ],
+          "properties": {
+            "none": {
+              "const": "none"
+            }
+          }
+        }
+      }
+    },
+    "content_demo_interactive-calendar": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ariaLabel",
+        "viewLabels",
+        "emptyLabel",
+        "people",
+        "projects",
+        "rosterAsset"
+      ],
+      "properties": {
+        "ariaLabel": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40,
+          "maxWords": 5
+        },
+        "viewLabels": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "days",
+            "weeks"
+          ],
+          "properties": {
+            "days": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 5,
+              "maxWords": 1
+            },
+            "weeks": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 5,
+              "maxWords": 1
+            }
+          }
+        },
+        "emptyLabel": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 5,
+          "maxWords": 1
+        },
+        "people": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "role",
+              "cursorName"
+            ],
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 11,
+                "maxWords": 2
+              },
+              "role": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 9,
+                "maxWords": 2
+              },
+              "cursorName": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 6,
+                "maxWords": 1
+              }
+            }
+          }
+        },
+        "projects": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "name"
+            ],
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 8,
+                "maxWords": 2
+              }
+            }
+          }
+        },
+        "rosterAsset": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "assetRole"
+          ],
+          "properties": {
+            "assetRole": {
+              "type": "string",
+              "enum": [
+                "person.reference-demo-roster",
+                "person.fictional-demo-roster"
+              ]
+            },
+            "src": {
+              "type": "string",
+              "maxLength": 200
+            },
+            "alt": {
+              "type": "string",
+              "maxLength": 120
+            }
+          }
+        }
+      }
+    },
+    "motion_demo_interactive-calendar": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "patterns",
+        "reducedMotionFallback"
+      ],
+      "properties": {
+        "patterns": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "bot-cursors"
+            ]
+          }
+        },
+        "reducedMotionFallback": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "bot-cursors"
+          ],
+          "properties": {
+            "bot-cursors": {
+              "const": "no-cursors"
+            }
+          }
+        }
+      }
+    },
+    "content_features_stacked-cards": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cards"
+      ],
+      "properties": {
+        "cards": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "text",
+              "image"
+            ],
+            "properties": {
+              "text": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 88,
+                "maxWords": 19
+              },
+              "image": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "assetRole"
+                ],
+                "properties": {
+                  "assetRole": {
+                    "type": "string",
+                    "enum": [
+                      "feature.reference-illustration",
+                      "feature.generated-illustration"
+                    ]
+                  },
+                  "src": {
+                    "type": "string",
+                    "maxLength": 200
+                  },
+                  "alt": {
+                    "type": "string",
+                    "maxLength": 120
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "motion_features_stacked-cards": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "patterns",
+        "reducedMotionFallback"
+      ],
+      "properties": {
+        "patterns": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "typewriter"
+            ]
+          }
+        },
+        "reducedMotionFallback": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "typewriter"
+          ],
+          "properties": {
+            "typewriter": {
+              "const": "full-text-static"
+            }
+          }
+        }
+      }
+    },
+    "content_pricing_plan-contact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "plan",
+        "contact"
+      ],
+      "properties": {
+        "plan": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "title",
+            "lines",
+            "cta"
+          ],
+          "properties": {
+            "title": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 12,
+              "maxWords": 3
+            },
+            "lines": {
+              "type": "array",
+              "minItems": 4,
+              "maxItems": 4,
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 35,
+                "maxWords": 7
+              }
+            },
+            "cta": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "label",
+                "href"
+              ],
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 9,
+                  "maxWords": 2
+                },
+                "href": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200
+                }
+              }
+            }
+          }
+        },
+        "contact": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "title",
+            "text",
+            "channels"
+          ],
+          "properties": {
+            "title": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 12,
+              "maxWords": 3
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 77,
+              "maxWords": 15
+            },
+            "channels": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "label",
+                  "href"
+                ],
+                "properties": {
+                  "label": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 9,
+                    "maxWords": 1
+                  },
+                  "href": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 200
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "motion_pricing_plan-contact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "patterns",
+        "reducedMotionFallback"
+      ],
+      "properties": {
+        "patterns": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "typewriter"
+            ]
+          }
+        },
+        "reducedMotionFallback": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "typewriter"
+          ],
+          "properties": {
+            "typewriter": {
+              "const": "full-text-static"
+            }
+          }
+        }
+      }
+    },
+    "content_testimonials_ellipse-carousel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reviews",
+        "prevLabel",
+        "nextLabel"
+      ],
+      "properties": {
+        "reviews": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "role",
+              "paragraphs",
+              "person"
+            ],
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 13,
+                "maxWords": 2
+              },
+              "role": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 35,
+                "maxWords": 5
+              },
+              "paragraphs": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 3,
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 399,
+                  "maxWords": 69
+                }
+              },
+              "person": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "assetRole"
+                ],
+                "properties": {
+                  "assetRole": {
+                    "type": "string",
+                    "enum": [
+                      "person.fictional-reviewer"
+                    ]
+                  },
+                  "src": {
+                    "type": "string",
+                    "maxLength": 200
+                  },
+                  "alt": {
+                    "type": "string",
+                    "maxLength": 120
+                  }
+                }
+              }
+            }
+          }
+        },
+        "prevLabel": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4,
+          "maxWords": 1
+        },
+        "nextLabel": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4,
+          "maxWords": 1
+        }
+      }
+    },
+    "motion_testimonials_ellipse-carousel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "patterns",
+        "reducedMotionFallback"
+      ],
+      "properties": {
+        "patterns": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "instant-swap"
+            ]
+          }
+        },
+        "reducedMotionFallback": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "instant-swap"
+          ],
+          "properties": {
+            "instant-swap": {
+              "const": "instant-swap"
+            }
+          }
+        }
+      }
+    },
+    "content_faq_accordion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "items"
+      ],
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 12,
+          "maxWords": 3
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 10,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "question",
+              "answer"
+            ],
+            "properties": {
+              "question": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 55,
+                "maxWords": 11
+              },
+              "answer": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 3,
+                "items": {
+                  "oneOf": [
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "paragraph"
+                      ],
+                      "properties": {
+                        "paragraph": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 260,
+                          "maxWords": 46
+                        }
+                      }
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "list"
+                      ],
+                      "properties": {
+                        "list": {
+                          "type": "array",
+                          "minItems": 1,
+                          "maxItems": 4,
+                          "items": {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 99,
+                            "maxWords": 19
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "initiallyOpenIndex": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9
+        }
+      }
+    },
+    "motion_faq_accordion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "patterns",
+        "reducedMotionFallback"
+      ],
+      "properties": {
+        "patterns": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "instant-swap"
+            ]
+          }
+        },
+        "reducedMotionFallback": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "instant-swap"
+          ],
+          "properties": {
+            "instant-swap": {
+              "const": "instant-swap"
+            }
+          }
+        }
+      }
+    },
+    "content_cta_closing-band": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cta",
+        "sprite",
+        "copyright",
+        "legalLinks"
+      ],
+      "properties": {
+        "cta": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "label",
+            "href"
+          ],
+          "properties": {
+            "label": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 9,
+              "maxWords": 2
+            },
+            "href": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            }
+          }
+        },
+        "sprite": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "assetRole"
+          ],
+          "properties": {
+            "assetRole": {
+              "type": "string",
+              "enum": [
+                "cta.reference-sprite-strip",
+                "cta.generated-sprite-strip"
+              ]
+            },
+            "src": {
+              "type": "string",
+              "maxLength": 200
+            },
+            "alt": {
+              "type": "string",
+              "maxLength": 120
+            }
+          }
+        },
+        "copyright": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 41,
+          "maxWords": 7
+        },
+        "legalLinks": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "label",
+              "href"
+            ],
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 18,
+                "maxWords": 3
+              },
+              "href": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              }
+            }
+          }
+        }
+      }
+    },
+    "motion_cta_closing-band": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "patterns",
+        "reducedMotionFallback"
+      ],
+      "properties": {
+        "patterns": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "fish-wheel-scrub"
+            ]
+          }
+        },
+        "reducedMotionFallback": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "fish-wheel-scrub"
+          ],
+          "properties": {
+            "fish-wheel-scrub": {
+              "const": "static-frame-0"
+            }
+          }
+        }
+      }
+    },
+    "tokenRef": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64
+    },
+    "node": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "section",
+        "variant",
+        "content",
+        "motion"
+      ],
+      "properties": {
+        "section": {
+          "type": "string",
+          "enum": [
+            "utility.cursor-trail",
+            "utility.cookie-consent",
+            "shell.mobile-menu",
+            "shell.mobile-brand-intro",
+            "hero.ticket",
+            "shell.sidebar-nav",
+            "layout.scroll-runway",
+            "demo.interactive-calendar",
+            "features.stacked-cards",
+            "pricing.plan-contact",
+            "testimonials.ellipse-carousel",
+            "faq.accordion",
+            "cta.closing-band"
+          ]
+        },
+        "variant": {
+          "type": "string"
+        },
+        "content": {
+          "type": "object"
+        },
+        "motion": {
+          "type": "object"
+        },
+        "tokens": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "surface": {
+              "$ref": "#/definitions/tokenRef"
+            },
+            "text": {
+              "$ref": "#/definitions/tokenRef"
+            },
+            "fontFamily": {
+              "$ref": "#/definitions/tokenRef"
+            },
+            "paddingTop": {
+              "$ref": "#/definitions/tokenRef"
+            }
+          }
+        },
+        "retrievalEligible": {
+          "type": "boolean"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "utility.cursor-trail"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "variant": {
+                "enum": [
+                  "default"
+                ]
+              },
+              "content": {
+                "$ref": "#/definitions/content_utility_cursor-trail"
+              },
+              "motion": {
+                "$ref": "#/definitions/motion_utility_cursor-trail"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "utility.cookie-consent"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "variant": {
+                "enum": [
+                  "default"
+                ]
+              },
+              "content": {
+                "$ref": "#/definitions/content_utility_cookie-consent"
+              },
+              "motion": {
+                "$ref": "#/definitions/motion_utility_cookie-consent"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "shell.mobile-menu"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "variant": {
+                "enum": [
+                  "default"
+                ]
+              },
+              "content": {
+                "$ref": "#/definitions/content_shell_mobile-menu"
+              },
+              "motion": {
+                "$ref": "#/definitions/motion_shell_mobile-menu"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "shell.mobile-brand-intro"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "variant": {
+                "enum": [
+                  "default"
+                ]
+              },
+              "content": {
+                "$ref": "#/definitions/content_shell_mobile-brand-intro"
+              },
+              "motion": {
+                "$ref": "#/definitions/motion_shell_mobile-brand-intro"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "hero.ticket"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "variant": {
+                "enum": [
+                  "default"
+                ]
+              },
+              "content": {
+                "$ref": "#/definitions/content_hero_ticket"
+              },
+              "motion": {
+                "$ref": "#/definitions/motion_hero_ticket"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "shell.sidebar-nav"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "variant": {
+                "enum": [
+                  "default"
+                ]
+              },
+              "content": {
+                "$ref": "#/definitions/content_shell_sidebar-nav"
+              },
+              "motion": {
+                "$ref": "#/definitions/motion_shell_sidebar-nav"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "layout.scroll-runway"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "variant": {
+                "enum": [
+                  "hero",
+                  "tail"
+                ]
+              },
+              "content": {
+                "$ref": "#/definitions/content_layout_scroll-runway"
+              },
+              "motion": {
+                "$ref": "#/definitions/motion_layout_scroll-runway"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "demo.interactive-calendar"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "variant": {
+                "enum": [
+                  "default"
+                ]
+              },
+              "content": {
+                "$ref": "#/definitions/content_demo_interactive-calendar"
+              },
+              "motion": {
+                "$ref": "#/definitions/motion_demo_interactive-calendar"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "features.stacked-cards"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "variant": {
+                "enum": [
+                  "default"
+                ]
+              },
+              "content": {
+                "$ref": "#/definitions/content_features_stacked-cards"
+              },
+              "motion": {
+                "$ref": "#/definitions/motion_features_stacked-cards"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "pricing.plan-contact"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "variant": {
+                "enum": [
+                  "default"
+                ]
+              },
+              "content": {
+                "$ref": "#/definitions/content_pricing_plan-contact"
+              },
+              "motion": {
+                "$ref": "#/definitions/motion_pricing_plan-contact"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "testimonials.ellipse-carousel"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "variant": {
+                "enum": [
+                  "default"
+                ]
+              },
+              "content": {
+                "$ref": "#/definitions/content_testimonials_ellipse-carousel"
+              },
+              "motion": {
+                "$ref": "#/definitions/motion_testimonials_ellipse-carousel"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "faq.accordion"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "variant": {
+                "enum": [
+                  "default"
+                ]
+              },
+              "content": {
+                "$ref": "#/definitions/content_faq_accordion"
+              },
+              "motion": {
+                "$ref": "#/definitions/motion_faq_accordion"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "cta.closing-band"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "variant": {
+                "enum": [
+                  "default"
+                ]
+              },
+              "content": {
+                "$ref": "#/definitions/content_cta_closing-band"
+              },
+              "motion": {
+                "$ref": "#/definitions/motion_cta_closing-band"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "x-assetRoleVocabulary": [
+    "brand.source-mark",
+    "brand.reference-mark",
+    "brand.placeholder-mark",
+    "favicon.reference",
+    "favicon.generated",
+    "feature.source-illustration",
+    "feature.reference-illustration",
+    "feature.generated-illustration",
+    "cta.source-fish-sprite",
+    "cta.reference-sprite-strip",
+    "cta.generated-sprite-strip",
+    "person.source-reviewer",
+    "person.fictional-reviewer",
+    "person.fictional-demo-roster",
+    "person.reference-demo-roster",
+    "rating.placeholder",
+    "url.source-endpoint",
+    "url.placeholder",
+    "copy.source-marketing",
+    "copy.original"
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "id": "shell.sidebar-nav",
+  "title": "Sidebar navigation",
+  "purpose": "Fixed left frame: brand mark (back to hero), 2-line tagline, CTA, and five section links with scroll-spy markers.",
+  "semantic": {
+    "id": "shell.sidebar-nav",
+    "category": "SHELL"
+  },
+  "source": {
+    "id": "Sidebar<aside>@61",
+    "file": "src/components/Sidebar.jsx",
+    "tag": "aside",
+    "lines": "61-89",
+    "citation": {
+      "ref": "src/components/Sidebar.jsx:61-89",
+      "expect": "<aside"
+    }
+  },
+  "retrievalEligible": true,
+  "layer": {
+    "desktop": "fixed",
+    "mobile": "absent"
+  },
+  "variants": [
+    "default"
+  ],
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "brandMark",
+      "tagline",
+      "cta",
+      "navItems"
+    ],
+    "properties": {
+      "brandMark": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "assetRole"
+        ],
+        "properties": {
+          "assetRole": {
+            "type": "string",
+            "enum": [
+              "brand.reference-mark",
+              "brand.placeholder-mark"
+            ]
+          },
+          "src": {
+            "type": "string",
+            "maxLength": 200
+          },
+          "alt": {
+            "type": "string",
+            "maxLength": 120
+          }
+        }
+      },
+      "tagline": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 34,
+        "maxWords": 6
+      },
+      "cta": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "label",
+          "href"
+        ],
+        "properties": {
+          "label": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 9,
+            "maxWords": 2
+          },
+          "href": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          }
+        }
+      },
+      "navItems": {
+        "type": "array",
+        "minItems": 5,
+        "maxItems": 5,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "label",
+            "target"
+          ],
+          "properties": {
+            "label": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 18,
+              "maxWords": 3
+            },
+            "target": {
+              "type": "string",
+              "enum": [
+                "demo-section",
+                "features-section",
+                "price-section",
+                "reviews-section",
+                "faq-section"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "layer": "fixed",
+    "activeLine": "0.33 * innerHeight",
+    "navClick": "instant jump (smooth only for the scissors)"
+  },
+  "motion": {
+    "patterns": [
+      "none"
+    ],
+    "reducedMotionFallbacks": {
+      "none": "none"
+    }
+  },
+  "responsive": [
+    {
+      "breakpoint": "desktop",
+      "change": "fixed 371rem x 100vh, z 1000, dotted frame rounded on the left",
+      "evidence": {
+        "ref": "CLONE_SPEC.md:160",
+        "expect": "- `position:fixed; top:0; left:0; width:371rem; height:100vh;"
+      }
+    },
+    {
+      "breakpoint": "mobile",
+      "change": "display none; replaced by shell.mobile-menu + shell.mobile-brand-intro",
+      "evidence": {
+        "ref": "src/components/Sidebar.jsx:61",
+        "expect": "z-sidebar mob:hidden"
+      }
+    }
+  ],
+  "generatedAssetRoles": [
+    "brand.placeholder-mark",
+    "url.placeholder",
+    "copy.original"
+  ],
+  "referenceAssetRoles": [
+    "brand.reference-mark"
+  ],
+  "allowedTokenSlots": {
+    "text": [
+      "color.text.primary"
+    ],
+    "fontFamily": [
+      "font.mono",
+      "font.text"
+    ]
+  },
+  "composes": [
+    "primitive.dotted-frame",
+    "primitive.brand-mark",
+    "primitive.cta-button",
+    "primitive.circle-marker"
+  ],
+  "accessibility": [
+    "logo is a labelled button"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:158",
+      "expect": "## 3. Sidebar (desktop only, `display:none` <= 1023)"
+    },
+    {
+      "ref": "src/components/Sidebar.jsx:10",
+      "expect": "const line = window.innerHeight * 0.33"
+    }
+  ],
+  "measured": {
+    "fixedHeights": {
+      "1440x900": {
+        "position": "fixed",
+        "height": 900,
+        "display": "block"
+      },
+      "390x844": {
+        "position": "fixed",
+        "height": 0,
+        "display": "none"
+      }
+    }
+  }
+}

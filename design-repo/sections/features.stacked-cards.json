@@ -1,0 +1,153 @@
+{
+  "id": "features.stacked-cards",
+  "title": "Stacked feature cards",
+  "purpose": "Three stacked two-card rows, each a one-sentence capability (typed in) with an 'n of 3' counter beside an illustration; not a carousel.",
+  "semantic": {
+    "id": "features.stacked-cards",
+    "category": "FEATURES"
+  },
+  "source": {
+    "id": "Features<div>@33",
+    "file": "src/components/Features.jsx",
+    "tag": "div",
+    "lines": "33-37",
+    "citation": {
+      "ref": "src/components/Features.jsx:33-37",
+      "expect": "<div id=\"features-section\">"
+    }
+  },
+  "retrievalEligible": true,
+  "layer": {
+    "desktop": "in-flow-loop",
+    "mobile": "in-flow"
+  },
+  "variants": [
+    "default"
+  ],
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "cards"
+    ],
+    "properties": {
+      "cards": {
+        "type": "array",
+        "minItems": 3,
+        "maxItems": 3,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "text",
+            "image"
+          ],
+          "properties": {
+            "text": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 88,
+              "maxWords": 19
+            },
+            "image": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "assetRole"
+              ],
+              "properties": {
+                "assetRole": {
+                  "type": "string",
+                  "enum": [
+                    "feature.reference-illustration",
+                    "feature.generated-illustration"
+                  ]
+                },
+                "src": {
+                  "type": "string",
+                  "maxLength": 200
+                },
+                "alt": {
+                  "type": "string",
+                  "maxLength": 120
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "cardCount": 3,
+    "alternation": "text-image / image-text / text-image"
+  },
+  "motion": {
+    "patterns": [
+      "typewriter"
+    ],
+    "reducedMotionFallbacks": {
+      "typewriter": "full-text-static"
+    }
+  },
+  "responsive": [
+    {
+      "breakpoint": "desktop",
+      "change": "grid 1fr 1fr, two 512x486 cards per row; middle row image-left",
+      "evidence": {
+        "ref": "CLONE_SPEC.md:289",
+        "expect": "Each `FeatureCard_wrapper`: `padding:15rem 15rem 0; display:grid; grid-template-columns:1fr 1fr; gap:15rem`"
+      }
+    },
+    {
+      "breakpoint": "mobile",
+      "change": "single column, transparent cards, image always first, text 16rem 3 lines",
+      "evidence": {
+        "ref": "CLONE_SPEC.md:295",
+        "expect": "- **Mobile:** wrapper becomes `display:flex; flex-direction:column; gap:0`"
+      }
+    }
+  ],
+  "generatedAssetRoles": [
+    "feature.generated-illustration",
+    "copy.original"
+  ],
+  "referenceAssetRoles": [
+    "feature.reference-illustration"
+  ],
+  "allowedTokenSlots": {
+    "surface": [
+      "color.surface.card",
+      "color.surface.accent"
+    ],
+    "text": [
+      "color.text.primary"
+    ],
+    "fontFamily": [
+      "font.mono",
+      "font.text"
+    ],
+    "paddingTop": [
+      "spacing.section",
+      "spacing.pad-section"
+    ]
+  },
+  "composes": [
+    "component.feature-card-pair",
+    "component.card-surface",
+    "primitive.typewriter-text"
+  ],
+  "accessibility": [],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:287",
+      "expect": "## 6. Features (`#features-section`): three stacked cards (not a carousel)"
+    }
+  ],
+  "measured": {
+    "1440x900": 1503,
+    "1280x800": 1336,
+    "390x844": 1108.6
+  }
+}

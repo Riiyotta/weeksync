@@ -1,0 +1,197 @@
+{
+  "$description": "One template per distinct page shape. The clone serves exactly one route, so there is one template family. Node order is the DOM order in src/App.jsx: fixed/overlay layers first, then the loop-scrolled content column. layer: fixed (position:fixed, takes no page height), in-flow, in-flow-loop (inside the loop wrap, rendered twice at >=1024), collapsed (height 0), absent (not rendered at that breakpoint).",
+  "templatesVersion": "1.0.0",
+  "templates": {
+    "template.loop-landing": {
+      "title": "Loop-scrolled single landing page",
+      "purpose": "Convert visitors to sign-up for a small-team planning product through a hands-on demo, three capability cards, a single plan, reviews and FAQ, closing on one CTA.",
+      "routes": [
+        "/"
+      ],
+      "scrollModel": {
+        "desktop": "loop-scroll: no native scroll; content column rendered twice (wrap + wrap-clone) and translated per frame",
+        "mobile": "native document scroll, single copy",
+        "evidence": [
+          {
+            "ref": "src/components/LoopScroller.jsx:156",
+            "expect": "data-loop-scroll=\"wrap-clone\""
+          },
+          {
+            "ref": "src/index.css:98",
+            "expect": "body.landing-page {"
+          }
+        ]
+      },
+      "nodes": [
+        {
+          "section": "utility.cursor-trail",
+          "variant": "default",
+          "required": true,
+          "repeatable": false,
+          "layer": {
+            "desktop": "fixed",
+            "mobile": "absent"
+          },
+          "category": "UTILITY"
+        },
+        {
+          "section": "utility.cookie-consent",
+          "variant": "default",
+          "required": true,
+          "repeatable": false,
+          "layer": {
+            "desktop": "fixed",
+            "mobile": "fixed"
+          },
+          "category": "UTILITY"
+        },
+        {
+          "section": "shell.mobile-menu",
+          "variant": "default",
+          "required": true,
+          "repeatable": false,
+          "layer": {
+            "desktop": "absent",
+            "mobile": "fixed"
+          },
+          "category": "SHELL"
+        },
+        {
+          "section": "shell.mobile-brand-intro",
+          "variant": "default",
+          "required": true,
+          "repeatable": false,
+          "layer": {
+            "desktop": "absent",
+            "mobile": "in-flow"
+          },
+          "category": "SHELL"
+        },
+        {
+          "section": "hero.ticket",
+          "variant": "default",
+          "required": true,
+          "repeatable": false,
+          "layer": {
+            "desktop": "fixed",
+            "mobile": "in-flow"
+          },
+          "category": "HERO"
+        },
+        {
+          "section": "shell.sidebar-nav",
+          "variant": "default",
+          "required": true,
+          "repeatable": false,
+          "layer": {
+            "desktop": "fixed",
+            "mobile": "absent"
+          },
+          "category": "SHELL"
+        },
+        {
+          "section": "layout.scroll-runway",
+          "variant": "hero",
+          "required": true,
+          "repeatable": false,
+          "layer": {
+            "desktop": "in-flow-loop",
+            "mobile": "collapsed"
+          },
+          "category": "SPACER"
+        },
+        {
+          "section": "demo.interactive-calendar",
+          "variant": "default",
+          "required": true,
+          "repeatable": false,
+          "layer": {
+            "desktop": "in-flow-loop",
+            "mobile": "in-flow"
+          },
+          "category": "PRODUCT_DEMO"
+        },
+        {
+          "section": "features.stacked-cards",
+          "variant": "default",
+          "required": true,
+          "repeatable": false,
+          "layer": {
+            "desktop": "in-flow-loop",
+            "mobile": "in-flow"
+          },
+          "category": "FEATURES"
+        },
+        {
+          "section": "pricing.plan-contact",
+          "variant": "default",
+          "required": true,
+          "repeatable": false,
+          "layer": {
+            "desktop": "in-flow-loop",
+            "mobile": "in-flow"
+          },
+          "category": "PRICING"
+        },
+        {
+          "section": "testimonials.ellipse-carousel",
+          "variant": "default",
+          "required": true,
+          "repeatable": false,
+          "layer": {
+            "desktop": "in-flow-loop",
+            "mobile": "in-flow"
+          },
+          "category": "TESTIMONIALS"
+        },
+        {
+          "section": "faq.accordion",
+          "variant": "default",
+          "required": true,
+          "repeatable": false,
+          "layer": {
+            "desktop": "in-flow-loop",
+            "mobile": "in-flow"
+          },
+          "category": "FAQ"
+        },
+        {
+          "section": "cta.closing-band",
+          "variant": "default",
+          "required": true,
+          "repeatable": false,
+          "layer": {
+            "desktop": "in-flow-loop",
+            "mobile": "in-flow"
+          },
+          "category": "CTA"
+        },
+        {
+          "section": "layout.scroll-runway",
+          "variant": "tail",
+          "required": true,
+          "repeatable": false,
+          "layer": {
+            "desktop": "in-flow-loop",
+            "mobile": "collapsed"
+          },
+          "category": "SPACER"
+        }
+      ],
+      "evidence": [
+        {
+          "ref": "src/App.jsx:68",
+          "expect": "<LoopScroller enabled={isDesktop}>"
+        },
+        {
+          "ref": "src/App.jsx:24-39",
+          "expect": "function PageContent() {"
+        },
+        {
+          "ref": "CLONE_SPEC.md:137",
+          "expect": "## 2. Section order and desktop geometry (1440x900)"
+        }
+      ]
+    }
+  }
+}

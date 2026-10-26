@@ -1,0 +1,574 @@
+{
+  "pageSpecVersion": "1.0.0",
+  "mode": "reference",
+  "template": "template.loop-landing",
+  "route": "/",
+  "title": "Sevenday. Calm weekly plans for small teams.",
+  "brand": {
+    "name": "Sevenday",
+    "mark": {
+      "assetRole": "brand.reference-mark",
+      "src": "/assets/logo-mark.svg",
+      "alt": ""
+    }
+  },
+  "theme": "light",
+  "nodes": [
+    {
+      "section": "utility.cursor-trail",
+      "variant": "default",
+      "content": {},
+      "motion": {
+        "patterns": [
+          "cursor-trail"
+        ],
+        "reducedMotionFallback": {
+          "cursor-trail": "hidden"
+        }
+      }
+    },
+    {
+      "section": "utility.cookie-consent",
+      "variant": "default",
+      "content": {
+        "message": "We use a few cookies to keep this page running smoothly and to learn which parts help you plan best.",
+        "acceptLabel": "OK"
+      },
+      "motion": {
+        "patterns": [
+          "typewriter"
+        ],
+        "reducedMotionFallback": {
+          "typewriter": "full-text-static"
+        }
+      }
+    },
+    {
+      "section": "shell.mobile-menu",
+      "variant": "default",
+      "content": {
+        "menuLabel": "menu",
+        "closeLabel": "close",
+        "cta": {
+          "label": "start now",
+          "href": "/login"
+        },
+        "navItems": [
+          {
+            "label": "Try It",
+            "target": "demo-section"
+          },
+          {
+            "label": "Problems It Solves",
+            "target": "features-section"
+          },
+          {
+            "label": "Pricing",
+            "target": "price-section"
+          },
+          {
+            "label": "Reviews",
+            "target": "reviews-section"
+          },
+          {
+            "label": "FAQ",
+            "target": "faq-section"
+          }
+        ]
+      },
+      "motion": {
+        "patterns": [
+          "overlay-slide"
+        ],
+        "reducedMotionFallback": {
+          "overlay-slide": "instant-toggle"
+        }
+      }
+    },
+    {
+      "section": "shell.mobile-brand-intro",
+      "variant": "default",
+      "content": {
+        "brandMark": {
+          "assetRole": "brand.reference-mark",
+          "src": "/assets/logo-mark.svg",
+          "alt": ""
+        },
+        "tagline": "Calm weekly plans for small teams.",
+        "cta": {
+          "label": "Start Now",
+          "href": "/login"
+        }
+      },
+      "motion": {
+        "patterns": [
+          "oval-breathe"
+        ],
+        "reducedMotionFallback": {
+          "oval-breathe": "static-50pct-frame"
+        }
+      }
+    },
+    {
+      "section": "hero.ticket",
+      "variant": "default",
+      "content": {
+        "headline": "Sevenday fits your teammates, projects and their hours for the week into one tidy list, so splitting the load fairly and spotting overfull days early becomes trivial.",
+        "scissorsLabel": "Go to the next section"
+      },
+      "motion": {
+        "patterns": [
+          "hero-ticket-flight",
+          "typewriter"
+        ],
+        "reducedMotionFallback": {
+          "hero-ticket-flight": "static-ticket-at-rest",
+          "typewriter": "full-text-static"
+        }
+      },
+      "tokens": {
+        "text": "color.text.primary",
+        "fontFamily": "font.sans"
+      }
+    },
+    {
+      "section": "shell.sidebar-nav",
+      "variant": "default",
+      "content": {
+        "brandMark": {
+          "assetRole": "brand.reference-mark",
+          "src": "/assets/logo-mark.svg",
+          "alt": ""
+        },
+        "tagline": "Calm weekly plans for small teams.",
+        "cta": {
+          "label": "Start Now",
+          "href": "/login"
+        },
+        "navItems": [
+          {
+            "label": "Try It",
+            "target": "demo-section"
+          },
+          {
+            "label": "Problems It Solves",
+            "target": "features-section"
+          },
+          {
+            "label": "Pricing",
+            "target": "price-section"
+          },
+          {
+            "label": "Reviews",
+            "target": "reviews-section"
+          },
+          {
+            "label": "FAQ",
+            "target": "faq-section"
+          }
+        ]
+      },
+      "motion": {
+        "patterns": [
+          "none"
+        ],
+        "reducedMotionFallback": {
+          "none": "none"
+        }
+      }
+    },
+    {
+      "section": "layout.scroll-runway",
+      "variant": "hero",
+      "content": {},
+      "motion": {
+        "patterns": [
+          "none"
+        ],
+        "reducedMotionFallback": {
+          "none": "none"
+        }
+      }
+    },
+    {
+      "section": "demo.interactive-calendar",
+      "variant": "default",
+      "content": {
+        "ariaLabel": "Sevenday live demo",
+        "viewLabels": {
+          "days": "Days",
+          "weeks": "Weeks"
+        },
+        "emptyLabel": "Empty",
+        "people": [
+          {
+            "name": "Mia Chen",
+            "role": "Designer",
+            "cursorName": "Mia"
+          },
+          {
+            "name": "Leo Novak",
+            "role": "Developer",
+            "cursorName": "Leo"
+          },
+          {
+            "name": "Sofia Reyes",
+            "role": "Manager",
+            "cursorName": "Sofia"
+          }
+        ],
+        "projects": [
+          {
+            "name": "Website"
+          },
+          {
+            "name": "Logo"
+          },
+          {
+            "name": "iOS app"
+          },
+          {
+            "name": "Launch"
+          },
+          {
+            "name": "Ads"
+          },
+          {
+            "name": "Internal"
+          }
+        ],
+        "rosterAsset": {
+          "assetRole": "person.reference-demo-roster"
+        }
+      },
+      "motion": {
+        "patterns": [
+          "bot-cursors"
+        ],
+        "reducedMotionFallback": {
+          "bot-cursors": "no-cursors"
+        }
+      },
+      "tokens": {
+        "surface": "color.surface.card",
+        "text": "color.text.body",
+        "fontFamily": "font.sans",
+        "paddingTop": "spacing.section"
+      }
+    },
+    {
+      "section": "features.stacked-cards",
+      "variant": "default",
+      "content": {
+        "cards": [
+          {
+            "text": "See who is free and who is overloaded before Monday starts, not halfway into a Thursday.",
+            "image": {
+              "assetRole": "feature.reference-illustration",
+              "src": "/assets/feature-a.svg",
+              "alt": ""
+            }
+          },
+          {
+            "text": "Drag work between people and days in seconds and watch every total update as you move.",
+            "image": {
+              "assetRole": "feature.reference-illustration",
+              "src": "/assets/feature-b.svg",
+              "alt": ""
+            }
+          },
+          {
+            "text": "Plan in days for detail or in weeks for the big picture, all on one and the same board.",
+            "image": {
+              "assetRole": "feature.reference-illustration",
+              "src": "/assets/feature-c.svg",
+              "alt": ""
+            }
+          }
+        ]
+      },
+      "motion": {
+        "patterns": [
+          "typewriter"
+        ],
+        "reducedMotionFallback": {
+          "typewriter": "full-text-static"
+        }
+      },
+      "tokens": {
+        "surface": "color.surface.card",
+        "text": "color.text.primary",
+        "paddingTop": "spacing.section"
+      }
+    },
+    {
+      "section": "pricing.plan-contact",
+      "variant": "default",
+      "content": {
+        "plan": {
+          "title": "Plan",
+          "lines": [
+            "Try every feature free for 14 days.",
+            "$4 per teammate each month",
+            "Unlimited projects",
+            "Chat directly with the developers"
+          ],
+          "cta": {
+            "label": "Start Now",
+            "href": "/login"
+          }
+        },
+        "contact": {
+          "title": "Get in touch",
+          "text": "Got questions, ideas or a bug? Write to us and a real person replies quickly.",
+          "channels": [
+            {
+              "label": "Telegram",
+              "href": "https://t.me/sevenday_example"
+            },
+            {
+              "label": "X-Twitter",
+              "href": "https://x.com/sevenday_example"
+            },
+            {
+              "label": "Email",
+              "href": "mailto:hello@sevenday.example"
+            }
+          ]
+        }
+      },
+      "motion": {
+        "patterns": [
+          "typewriter"
+        ],
+        "reducedMotionFallback": {
+          "typewriter": "full-text-static"
+        }
+      },
+      "tokens": {
+        "surface": "color.surface.inverse",
+        "text": "color.text.inverse"
+      }
+    },
+    {
+      "section": "testimonials.ellipse-carousel",
+      "variant": "default",
+      "content": {
+        "reviews": [
+          {
+            "name": "Ada Whitlock",
+            "role": "Studio lead, small branding team",
+            "paragraphs": [
+              "It still feels odd to recall that a list in a file ran all of our jobs.",
+              "Now every Monday starts with one board that shows exactly who is booked, who has room and which project is about to slip, and the whole planning call is done before coffee gets cold.",
+              "It is so simple that even our least organised designer keeps her own week up to date, never needing a nudge."
+            ],
+            "person": {
+              "assetRole": "person.fictional-reviewer"
+            }
+          },
+          {
+            "name": "Ivo Marchetti",
+            "role": "Operations manager, mobile app shop",
+            "paragraphs": [
+              "We juggle six client projects with a team of nine, and before this we only noticed overload when someone was already working late. Seeing each day as a stack of hours made the problem obvious at a glance. We now rebalance work on Friday afternoon in about ten minutes, the weekly totals keep everyone honest, and switching between days and weeks helps us promise realistic delivery dates to clients."
+            ],
+            "person": {
+              "assetRole": "person.fictional-reviewer"
+            }
+          }
+        ],
+        "prevLabel": "Prev",
+        "nextLabel": "Next"
+      },
+      "motion": {
+        "patterns": [
+          "instant-swap"
+        ],
+        "reducedMotionFallback": {
+          "instant-swap": "instant-swap"
+        }
+      },
+      "tokens": {
+        "paddingTop": "spacing.section-loose"
+      }
+    },
+    {
+      "section": "faq.accordion",
+      "variant": "default",
+      "content": {
+        "title": "FAQ",
+        "initiallyOpenIndex": 0,
+        "items": [
+          {
+            "question": "What is Sevenday?",
+            "answer": [
+              {
+                "paragraph": "Sevenday is a planning board for small teams built around weeks. Each person gets a row, each day a cell, and each task is a chip with its project and hours."
+              }
+            ]
+          },
+          {
+            "question": "Do I need to install anything to get started?",
+            "answer": [
+              {
+                "paragraph": "No. Sevenday runs in any modern browser on desktop or laptop, so there is nothing to download or configure. Create an account, add your teammates and projects, and you can start dragging work onto the board within a few minutes. Your data syncs on each change."
+              }
+            ]
+          },
+          {
+            "question": "How is pricing done?",
+            "answer": [
+              {
+                "paragraph": "You pay a flat monthly price for every active teammate on the board. Projects, boards and history are unlimited, and you can cancel at any time."
+              }
+            ]
+          },
+          {
+            "question": "Can I see the hours of one person across many projects?",
+            "answer": [
+              {
+                "paragraph": "Yes. Every person row shows a running total against their capacity, broken down by project, such as:"
+              },
+              {
+                "list": [
+                  "Totals per week",
+                  "Hours per day",
+                  "Breakdown by client",
+                  "Capacity left for the week"
+                ]
+              },
+              {
+                "paragraph": "Totals turn orange at one hour over capacity and red at two, so you know where to look before the week gets away from anybody."
+              }
+            ]
+          },
+          {
+            "question": "Is there a free trial?",
+            "answer": [
+              {
+                "paragraph": "Yes. Every new workspace gets the full product free for fourteen days, with no card required up front. You can invite the whole team and plan real work during the trial."
+              },
+              {
+                "paragraph": "When the trial ends you choose how many seats you need, or you simply stop using it and your data is deleted."
+              }
+            ]
+          },
+          {
+            "question": "Can I plan in weeks rather than in days?",
+            "answer": [
+              {
+                "paragraph": "Yes. Switch the view to Weeks and each column becomes a full week, with chips grouped by project and totals measured against forty hours per person, per week."
+              }
+            ]
+          },
+          {
+            "question": "What happens if anyone is overbooked?",
+            "answer": [
+              {
+                "paragraph": "The person total and the day summary change colour as soon as planned hours go above capacity, so it is easy to spot. From there you can fix it in a few sensible ways, for example:"
+              },
+              {
+                "list": [
+                  "Drag a chip to a teammate who still has free time that day",
+                  "Move part of the work to a later day where there is still space",
+                  "Split one long task into two smaller chips and spread them across the week so that no day overflows",
+                  "Switch to the Weeks view to see whether the full week is over or just one day"
+                ]
+              }
+            ]
+          },
+          {
+            "question": "Can I add the whole team?",
+            "answer": [
+              {
+                "paragraph": "Of course. Invite as many teammates as you like, and every person gets their own row on the board."
+              }
+            ]
+          },
+          {
+            "question": "Is my planning data safe?",
+            "answer": [
+              {
+                "paragraph": "Your boards are stored on encrypted servers in the EU, backed up every day, and never shared or sold. You can export or delete all of it anytime."
+              }
+            ]
+          },
+          {
+            "question": "How do I contact the people behind it?",
+            "answer": [
+              {
+                "paragraph": "Use the Telegram, X or Email buttons in the Get in touch card. Messages go straight to the developers, who reply within a day."
+              }
+            ]
+          }
+        ]
+      },
+      "motion": {
+        "patterns": [
+          "instant-swap"
+        ],
+        "reducedMotionFallback": {
+          "instant-swap": "instant-swap"
+        }
+      }
+    },
+    {
+      "section": "cta.closing-band",
+      "variant": "default",
+      "content": {
+        "cta": {
+          "label": "Start Now",
+          "href": "/login"
+        },
+        "sprite": {
+          "assetRole": "cta.reference-sprite-strip",
+          "src": "/assets/sprite-strip.svg"
+        },
+        "copyright": "© 2026 Sevenday Ltd. All rights reserved.",
+        "legalLinks": [
+          {
+            "label": "Terms & Conditions",
+            "href": "/terms-and-conditions/"
+          },
+          {
+            "label": "Privacy Policy",
+            "href": "/privacy-policy/"
+          },
+          {
+            "label": "Terms of Use",
+            "href": "/terms-of-use/"
+          },
+          {
+            "label": "Refund Policy",
+            "href": "/refund-policy/"
+          }
+        ]
+      },
+      "motion": {
+        "patterns": [
+          "fish-wheel-scrub"
+        ],
+        "reducedMotionFallback": {
+          "fish-wheel-scrub": "static-frame-0"
+        }
+      },
+      "tokens": {
+        "surface": "color.surface.accent"
+      }
+    },
+    {
+      "section": "layout.scroll-runway",
+      "variant": "tail",
+      "content": {},
+      "motion": {
+        "patterns": [
+          "none"
+        ],
+        "reducedMotionFallback": {
+          "none": "none"
+        }
+      }
+    }
+  ]
+}

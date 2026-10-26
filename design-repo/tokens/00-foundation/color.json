@@ -1,0 +1,264 @@
+{
+  "$description": "Foundation colour values, verbatim from the source token files. usageCount = occurrences of the utility class / CSS var in src/ at build time (the colour histogram). Unused palette entries stay here for completeness but are not referenceable in tokens/llm/token-catalog.json.",
+  "category": "color",
+  "tokens": {
+    "color.landing.black": {
+      "value": "#000000",
+      "cssVar": "--landing-color-black",
+      "usageCount": 19,
+      "source": {
+        "ref": "src/index.css:7",
+        "expect": "--landing-color-black: #000;"
+      },
+      "referenceable": true
+    },
+    "color.landing.white": {
+      "value": "#ffffff",
+      "cssVar": "--landing-color-white",
+      "usageCount": 4,
+      "source": {
+        "ref": "src/index.css:8",
+        "expect": "--landing-color-white: #fff;"
+      },
+      "referenceable": true
+    },
+    "color.landing.beige": {
+      "value": "#f9f7f3",
+      "cssVar": "--landing-color-beige",
+      "usageCount": 2,
+      "source": {
+        "ref": "src/index.css:9",
+        "expect": "--landing-color-beige: #f9f7f3;"
+      },
+      "referenceable": true
+    },
+    "color.landing.accent": {
+      "value": "#dfe296",
+      "cssVar": "--landing-color-accent",
+      "usageCount": 3,
+      "source": {
+        "ref": "src/index.css:10",
+        "expect": "--landing-color-accent: #dfe296;"
+      },
+      "referenceable": true
+    },
+    "color.landing.gray": {
+      "value": "#cec9c0",
+      "cssVar": "--landing-color-gray",
+      "usageCount": 4,
+      "source": {
+        "ref": "src/index.css:11",
+        "expect": "--landing-color-gray: #cec9c0;"
+      },
+      "referenceable": true
+    },
+    "color.ink": {
+      "value": "#222222",
+      "cssVar": "--black",
+      "usageCount": 0,
+      "source": {
+        "ref": "src/index.css:21",
+        "expect": "--black: #222222;"
+      },
+      "referenceable": false
+    },
+    "color.sand.100": {
+      "value": "#f9f7f3",
+      "cssVar": "--sand-100",
+      "usageCount": 9,
+      "source": {
+        "ref": "src/index.css:22",
+        "expect": "--sand-100: #f9f7f3;"
+      },
+      "referenceable": true
+    },
+    "color.sand.200": {
+      "value": "#efede7",
+      "cssVar": "--sand-200",
+      "usageCount": 6,
+      "source": {
+        "ref": "src/index.css:23",
+        "expect": "--sand-200: #efede7;"
+      },
+      "referenceable": true
+    },
+    "color.sand.300": {
+      "value": "#e5e1d9",
+      "cssVar": "--sand-300",
+      "usageCount": 0,
+      "source": {
+        "ref": "src/index.css:24",
+        "expect": "--sand-300: #e5e1d9;"
+      },
+      "referenceable": false
+    },
+    "color.sand.400": {
+      "value": "#cec9c0",
+      "cssVar": "--sand-400",
+      "usageCount": 3,
+      "source": {
+        "ref": "src/index.css:25",
+        "expect": "--sand-400: #cec9c0;"
+      },
+      "referenceable": true
+    },
+    "color.sand.500": {
+      "value": "#b8b2a6",
+      "cssVar": "--sand-500",
+      "usageCount": 5,
+      "source": {
+        "ref": "src/index.css:26",
+        "expect": "--sand-500: #b8b2a6;"
+      },
+      "referenceable": true
+    },
+    "color.sand.600": {
+      "value": "#969490",
+      "cssVar": "--sand-600",
+      "usageCount": 1,
+      "source": {
+        "ref": "src/index.css:27",
+        "expect": "--sand-600: #969490;"
+      },
+      "referenceable": true
+    },
+    "color.sand.700": {
+      "value": "#757471",
+      "cssVar": "--sand-700",
+      "usageCount": 0,
+      "source": {
+        "ref": "src/index.css:28",
+        "expect": "--sand-700: #757471;"
+      },
+      "referenceable": false
+    },
+    "color.gray.500": {
+      "value": "#80868b",
+      "cssVar": "--gray-500",
+      "usageCount": 0,
+      "source": {
+        "ref": "src/index.css:29",
+        "expect": "--gray-500: #80868b;"
+      },
+      "referenceable": false
+    },
+    "color.gray.600": {
+      "value": "#535353",
+      "cssVar": "--gray-600",
+      "usageCount": 12,
+      "source": {
+        "ref": "src/index.css:30",
+        "expect": "--gray-600: #535353;"
+      },
+      "referenceable": true
+    },
+    "color.gray.700": {
+      "value": "#333333",
+      "cssVar": "--gray-700",
+      "usageCount": 8,
+      "source": {
+        "ref": "src/index.css:31",
+        "expect": "--gray-700: #333333;"
+      },
+      "referenceable": true
+    },
+    "color.red.300": {
+      "value": "#f9a8a8",
+      "cssVar": "--red-300",
+      "usageCount": 0,
+      "source": {
+        "ref": "src/index.css:32",
+        "expect": "--red-300: #f9a8a8;"
+      },
+      "referenceable": false
+    },
+    "color.red.500": {
+      "value": "#e77d5f",
+      "cssVar": "--red-500",
+      "usageCount": 2,
+      "source": {
+        "ref": "src/index.css:33",
+        "expect": "--red-500: #e77d5f;"
+      },
+      "referenceable": true
+    },
+    "color.red.700": {
+      "value": "#c15051",
+      "cssVar": "--red-700",
+      "usageCount": 0,
+      "source": {
+        "ref": "src/index.css:34",
+        "expect": "--red-700: #c15051;"
+      },
+      "referenceable": false
+    },
+    "color.orange.300": {
+      "value": "#ffca9e",
+      "cssVar": "--orange-300",
+      "usageCount": 0,
+      "source": {
+        "ref": "src/index.css:35",
+        "expect": "--orange-300: #ffca9e;"
+      },
+      "referenceable": false
+    },
+    "color.orange.500": {
+      "value": "#eaa165",
+      "cssVar": "--orange-500",
+      "usageCount": 1,
+      "source": {
+        "ref": "src/index.css:36",
+        "expect": "--orange-500: #eaa165;"
+      },
+      "referenceable": true
+    },
+    "color.orange.700": {
+      "value": "#e77d5f",
+      "cssVar": "--orange-700",
+      "usageCount": 0,
+      "source": {
+        "ref": "src/index.css:37",
+        "expect": "--orange-700: #e77d5f;"
+      },
+      "referenceable": false
+    },
+    "color.green.200": {
+      "value": "#80e1c2",
+      "cssVar": "--green-200",
+      "usageCount": 0,
+      "source": {
+        "ref": "src/index.css:38",
+        "expect": "--green-200: #80e1c2;"
+      },
+      "referenceable": false
+    },
+    "color.landing.body": {
+      "value": "#d2d2d2",
+      "cssVar": null,
+      "usageCount": 1,
+      "source": {
+        "ref": "src/index.css:93",
+        "expect": "background-color: #d2d2d2;"
+      },
+      "note": "body.landing-page background, visible on overscroll only",
+      "referenceable": true
+    },
+    "color.demo-active": {
+      "value": "color-mix(in srgb, #333333 78%, #f9f7f3 22%)",
+      "cssVar": null,
+      "usageCount": 2,
+      "computed": "color(srgb .3708 .3691 .3656) ~ #5e5e5d",
+      "source": {
+        "ref": "tailwind.config.js:41",
+        "expect": "'demo-active': 'color-mix(in srgb, #333333 78%, #f9f7f3 22%)'"
+      },
+      "referenceable": true
+    }
+  },
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:78",
+      "expect": "(The CSS also defines `--workload-*` and `--stage-*` palettes, which are unused on the landing page.)"
+    }
+  ]
+}

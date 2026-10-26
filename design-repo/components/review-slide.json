@@ -1,0 +1,25 @@
+{
+  "id": "component.review-slide",
+  "kind": "component",
+  "title": "Review slide",
+  "purpose": "Centered testimonial inside the ellipse: name + role header, 1-3 title-role paragraphs.",
+  "source": {
+    "ref": "src/components/Reviews.jsx:44",
+    "expect": "<div key={i} className=\"flex-[0_0_100%] min-w-0 flex justify-center items-start\">"
+  },
+  "props": {
+    "name": "string <= 13",
+    "role": "string <= 35",
+    "paragraphs": "1-3, <= 399 chars total"
+  },
+  "tokens": [
+    "textRole.para",
+    "textRole.title"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:319",
+      "expect": "- Card: `height:100%; padding:34.56rem 100.8rem;"
+    }
+  ]
+}

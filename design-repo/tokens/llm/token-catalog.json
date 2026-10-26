@@ -1,0 +1,1123 @@
+{
+  "$description": "Curated, generator-facing view of every token: derived mechanically from tokens/00-foundation/{color,spacing,radius,border,typography,motion}.json and tokens/10-semantic/semantic.json (verify_all.py recomputes it and fails on drift). referenceable=false marks palette entries the source defines but never uses.",
+  "catalogVersion": "1.0.0",
+  "themes": [
+    "light"
+  ],
+  "derivedFrom": [
+    "tokens/00-foundation/color.json",
+    "tokens/00-foundation/spacing.json",
+    "tokens/00-foundation/radius.json",
+    "tokens/00-foundation/border.json",
+    "tokens/00-foundation/typography.json",
+    "tokens/00-foundation/motion.json",
+    "tokens/10-semantic/semantic.json"
+  ],
+  "counts": {
+    "total": 119,
+    "referenceable": 110
+  },
+  "tokens": {
+    "border.dotted": {
+      "category": "border",
+      "layer": "foundation",
+      "value": "4.032rem dotted #000",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "border.dotted-mobile": {
+      "category": "border",
+      "layer": "foundation",
+      "value": "3.5rem dotted #000",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "border.hairline": {
+      "category": "border",
+      "layer": "foundation",
+      "value": "1px solid",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "border.marker": {
+      "category": "border",
+      "layer": "foundation",
+      "value": "1.584rem solid currentColor",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.border.column": {
+      "category": "color",
+      "layer": "semantic",
+      "resolvesTo": "color.sand.400",
+      "value": "#cec9c0",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.border.column-current": {
+      "category": "color",
+      "layer": "semantic",
+      "resolvesTo": "color.gray.700",
+      "value": "#333333",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.border.frame": {
+      "category": "color",
+      "layer": "semantic",
+      "resolvesTo": "color.landing.black",
+      "value": "#000000",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.demo-active": {
+      "category": "color",
+      "layer": "foundation",
+      "value": "color-mix(in srgb, #333333 78%, #f9f7f3 22%)",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.gray.500": {
+      "category": "color",
+      "layer": "foundation",
+      "value": "#80868b",
+      "themes": [
+        "light"
+      ],
+      "referenceable": false
+    },
+    "color.gray.600": {
+      "category": "color",
+      "layer": "foundation",
+      "value": "#535353",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.gray.700": {
+      "category": "color",
+      "layer": "foundation",
+      "value": "#333333",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.green.200": {
+      "category": "color",
+      "layer": "foundation",
+      "value": "#80e1c2",
+      "themes": [
+        "light"
+      ],
+      "referenceable": false
+    },
+    "color.icon.remove": {
+      "category": "color",
+      "layer": "semantic",
+      "resolvesTo": "color.sand.600",
+      "value": "#969490",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.ink": {
+      "category": "color",
+      "layer": "foundation",
+      "value": "#222222",
+      "themes": [
+        "light"
+      ],
+      "referenceable": false
+    },
+    "color.landing.accent": {
+      "category": "color",
+      "layer": "foundation",
+      "value": "#dfe296",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.landing.beige": {
+      "category": "color",
+      "layer": "foundation",
+      "value": "#f9f7f3",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.landing.black": {
+      "category": "color",
+      "layer": "foundation",
+      "value": "#000000",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.landing.body": {
+      "category": "color",
+      "layer": "foundation",
+      "value": "#d2d2d2",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.landing.gray": {
+      "category": "color",
+      "layer": "foundation",
+      "value": "#cec9c0",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.landing.white": {
+      "category": "color",
+      "layer": "foundation",
+      "value": "#ffffff",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.orange.300": {
+      "category": "color",
+      "layer": "foundation",
+      "value": "#ffca9e",
+      "themes": [
+        "light"
+      ],
+      "referenceable": false
+    },
+    "color.orange.500": {
+      "category": "color",
+      "layer": "foundation",
+      "value": "#eaa165",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.orange.700": {
+      "category": "color",
+      "layer": "foundation",
+      "value": "#e77d5f",
+      "themes": [
+        "light"
+      ],
+      "referenceable": false
+    },
+    "color.red.300": {
+      "category": "color",
+      "layer": "foundation",
+      "value": "#f9a8a8",
+      "themes": [
+        "light"
+      ],
+      "referenceable": false
+    },
+    "color.red.500": {
+      "category": "color",
+      "layer": "foundation",
+      "value": "#e77d5f",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.red.700": {
+      "category": "color",
+      "layer": "foundation",
+      "value": "#c15051",
+      "themes": [
+        "light"
+      ],
+      "referenceable": false
+    },
+    "color.sand.100": {
+      "category": "color",
+      "layer": "foundation",
+      "value": "#f9f7f3",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.sand.200": {
+      "category": "color",
+      "layer": "foundation",
+      "value": "#efede7",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.sand.300": {
+      "category": "color",
+      "layer": "foundation",
+      "value": "#e5e1d9",
+      "themes": [
+        "light"
+      ],
+      "referenceable": false
+    },
+    "color.sand.400": {
+      "category": "color",
+      "layer": "foundation",
+      "value": "#cec9c0",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.sand.500": {
+      "category": "color",
+      "layer": "foundation",
+      "value": "#b8b2a6",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.sand.600": {
+      "category": "color",
+      "layer": "foundation",
+      "value": "#969490",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.sand.700": {
+      "category": "color",
+      "layer": "foundation",
+      "value": "#757471",
+      "themes": [
+        "light"
+      ],
+      "referenceable": false
+    },
+    "color.surface.accent": {
+      "category": "color",
+      "layer": "semantic",
+      "resolvesTo": "color.landing.accent",
+      "value": "#dfe296",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.surface.card": {
+      "category": "color",
+      "layer": "semantic",
+      "resolvesTo": "color.landing.beige",
+      "value": "#f9f7f3",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.surface.control": {
+      "category": "color",
+      "layer": "semantic",
+      "resolvesTo": "color.gray.700",
+      "value": "#333333",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.surface.control-active": {
+      "category": "color",
+      "layer": "semantic",
+      "resolvesTo": "color.demo-active",
+      "value": "color-mix(in srgb, #333333 78%, #f9f7f3 22%)",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.surface.control-hover": {
+      "category": "color",
+      "layer": "semantic",
+      "resolvesTo": "color.gray.600",
+      "value": "#535353",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.surface.demo-cell": {
+      "category": "color",
+      "layer": "semantic",
+      "resolvesTo": "color.sand.200",
+      "value": "#efede7",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.surface.inverse": {
+      "category": "color",
+      "layer": "semantic",
+      "resolvesTo": "color.landing.black",
+      "value": "#000000",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.surface.overlay": {
+      "category": "color",
+      "layer": "semantic",
+      "resolvesTo": "color.landing.black",
+      "value": "#000000",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.surface.overscroll": {
+      "category": "color",
+      "layer": "semantic",
+      "resolvesTo": "color.landing.body",
+      "value": "#d2d2d2",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.surface.page": {
+      "category": "color",
+      "layer": "semantic",
+      "resolvesTo": "color.landing.gray",
+      "value": "#cec9c0",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.text.body": {
+      "category": "color",
+      "layer": "semantic",
+      "resolvesTo": "color.gray.600",
+      "value": "#535353",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.text.danger": {
+      "category": "color",
+      "layer": "semantic",
+      "resolvesTo": "color.red.500",
+      "value": "#e77d5f",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.text.inverse": {
+      "category": "color",
+      "layer": "semantic",
+      "resolvesTo": "color.landing.white",
+      "value": "#ffffff",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.text.muted": {
+      "category": "color",
+      "layer": "semantic",
+      "resolvesTo": "color.sand.500",
+      "value": "#b8b2a6",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.text.primary": {
+      "category": "color",
+      "layer": "semantic",
+      "resolvesTo": "color.landing.black",
+      "value": "#000000",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "color.text.warning": {
+      "category": "color",
+      "layer": "semantic",
+      "resolvesTo": "color.orange.500",
+      "value": "#eaa165",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "duration.appear": {
+      "category": "duration",
+      "layer": "foundation",
+      "value": "400ms",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "duration.blade-hover": {
+      "category": "duration",
+      "layer": "foundation",
+      "value": "250ms",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "duration.chip-border": {
+      "category": "duration",
+      "layer": "foundation",
+      "value": "500ms",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "duration.control": {
+      "category": "duration",
+      "layer": "foundation",
+      "value": "200ms",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "duration.cta-hover": {
+      "category": "duration",
+      "layer": "foundation",
+      "value": "200ms",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "duration.cursor-press": {
+      "category": "duration",
+      "layer": "foundation",
+      "value": "120ms",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "duration.demo-field": {
+      "category": "duration",
+      "layer": "foundation",
+      "value": "300ms",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "duration.fish-swing": {
+      "category": "duration",
+      "layer": "foundation",
+      "value": "10s",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "duration.marker-fill": {
+      "category": "duration",
+      "layer": "foundation",
+      "value": "200ms",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "duration.menu-overlay": {
+      "category": "duration",
+      "layer": "foundation",
+      "value": "350ms",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "duration.oval-loop": {
+      "category": "duration",
+      "layer": "foundation",
+      "value": "6s",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "duration.smooth-scroll": {
+      "category": "duration",
+      "layer": "foundation",
+      "value": "1600ms",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "duration.sprite-scrub": {
+      "category": "duration",
+      "layer": "foundation",
+      "value": "800ms",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "duration.trail-fade": {
+      "category": "duration",
+      "layer": "foundation",
+      "value": "180ms",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "duration.typewriter-fast": {
+      "category": "duration",
+      "layer": "foundation",
+      "value": "15ms",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "duration.typewriter-normal": {
+      "category": "duration",
+      "layer": "foundation",
+      "value": "30ms",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "duration.typewriter-slow": {
+      "category": "duration",
+      "layer": "foundation",
+      "value": "50ms",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "easing.ease": {
+      "category": "easing",
+      "layer": "foundation",
+      "value": "ease",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "easing.ease-in-out-quad": {
+      "category": "easing",
+      "layer": "foundation",
+      "value": "t<.5 ? 2t^2 : 1-(-2t+2)^2/2",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "easing.ease-out": {
+      "category": "easing",
+      "layer": "foundation",
+      "value": "ease-out",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "easing.linear": {
+      "category": "easing",
+      "layer": "foundation",
+      "value": "linear",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "easing.menu": {
+      "category": "easing",
+      "layer": "foundation",
+      "value": "cubic-bezier(.22,.61,.36,1)",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "font.display": {
+      "category": "fontFamily",
+      "layer": "semantic",
+      "resolvesTo": "font.sans",
+      "value": "Inter, \"Inter Fallback\", sans-serif",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "font.mono": {
+      "category": "fontFamily",
+      "layer": "foundation",
+      "value": "\"Red Hat Mono\", \"Red Hat Mono Fallback\", monospace",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "font.sans": {
+      "category": "fontFamily",
+      "layer": "foundation",
+      "value": "Inter, \"Inter Fallback\", sans-serif",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "font.text": {
+      "category": "fontFamily",
+      "layer": "semantic",
+      "resolvesTo": "font.mono",
+      "value": "\"Red Hat Mono\", \"Red Hat Mono Fallback\", monospace",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "fontSize.demo": {
+      "category": "fontSize",
+      "layer": "foundation",
+      "value": "12rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "fontSize.demo-md": {
+      "category": "fontSize",
+      "layer": "foundation",
+      "value": "16rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "fontSize.demo-sm": {
+      "category": "fontSize",
+      "layer": "foundation",
+      "value": "10rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "fontSize.hero": {
+      "category": "fontSize",
+      "layer": "foundation",
+      "value": "42.624rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "fontSize.hero-mobile": {
+      "category": "fontSize",
+      "layer": "foundation",
+      "value": "27rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "fontSize.menu-bar": {
+      "category": "fontSize",
+      "layer": "foundation",
+      "value": "16rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "fontSize.menu-item": {
+      "category": "fontSize",
+      "layer": "foundation",
+      "value": "27rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "fontSize.para": {
+      "category": "fontSize",
+      "layer": "foundation",
+      "value": "12rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "fontSize.para-mobile": {
+      "category": "fontSize",
+      "layer": "foundation",
+      "value": "9rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "fontSize.title": {
+      "category": "fontSize",
+      "layer": "foundation",
+      "value": "19.4rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "fontSize.title-mobile": {
+      "category": "fontSize",
+      "layer": "foundation",
+      "value": "16rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "radius.big": {
+      "category": "radius",
+      "layer": "foundation",
+      "value": "15px",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "radius.card": {
+      "category": "radius",
+      "layer": "semantic",
+      "resolvesTo": "radius.landing",
+      "value": "33.12rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "radius.cell": {
+      "category": "radius",
+      "layer": "foundation",
+      "value": "10rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "radius.chip": {
+      "category": "radius",
+      "layer": "foundation",
+      "value": "5rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "radius.ellipse": {
+      "category": "radius",
+      "layer": "foundation",
+      "value": "50%",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "radius.landing": {
+      "category": "radius",
+      "layer": "foundation",
+      "value": "33.12rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "radius.medium": {
+      "category": "radius",
+      "layer": "foundation",
+      "value": "10px",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "radius.oval": {
+      "category": "radius",
+      "layer": "foundation",
+      "value": "100%",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "radius.pill": {
+      "category": "radius",
+      "layer": "foundation",
+      "value": "100rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "radius.small": {
+      "category": "radius",
+      "layer": "foundation",
+      "value": "5px",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "spacing.card": {
+      "category": "spacing",
+      "layer": "semantic",
+      "resolvesTo": "spacing.pad-base",
+      "value": "24.99984rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "spacing.card-inline": {
+      "category": "spacing",
+      "layer": "semantic",
+      "resolvesTo": "spacing.scale.72",
+      "value": "72rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "spacing.gap": {
+      "category": "spacing",
+      "layer": "semantic",
+      "resolvesTo": "spacing.gap-base",
+      "value": "15rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "spacing.gap-base": {
+      "category": "spacing",
+      "layer": "foundation",
+      "value": "15rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "spacing.inline-tight": {
+      "category": "spacing",
+      "layer": "semantic",
+      "resolvesTo": "spacing.scale.7_2",
+      "value": "7.2rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "spacing.pad-base": {
+      "category": "spacing",
+      "layer": "foundation",
+      "value": "24.99984rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "spacing.pad-section": {
+      "category": "spacing",
+      "layer": "foundation",
+      "value": "15rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "spacing.scale.100_8": {
+      "category": "spacing",
+      "layer": "foundation",
+      "value": "100.8rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "spacing.scale.11_52": {
+      "category": "spacing",
+      "layer": "foundation",
+      "value": "11.52rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "spacing.scale.14_4": {
+      "category": "spacing",
+      "layer": "foundation",
+      "value": "14.4rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "spacing.scale.28_8": {
+      "category": "spacing",
+      "layer": "foundation",
+      "value": "28.8rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "spacing.scale.30_24": {
+      "category": "spacing",
+      "layer": "foundation",
+      "value": "30.24rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "spacing.scale.34_56": {
+      "category": "spacing",
+      "layer": "foundation",
+      "value": "34.56rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "spacing.scale.43_2": {
+      "category": "spacing",
+      "layer": "foundation",
+      "value": "43.2rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "spacing.scale.72": {
+      "category": "spacing",
+      "layer": "foundation",
+      "value": "72rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "spacing.scale.7_2": {
+      "category": "spacing",
+      "layer": "foundation",
+      "value": "7.2rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "spacing.scale.mobile-10": {
+      "category": "spacing",
+      "layer": "foundation",
+      "value": "10rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "spacing.scale.mobile-20": {
+      "category": "spacing",
+      "layer": "foundation",
+      "value": "20rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "spacing.scale.mobile-30": {
+      "category": "spacing",
+      "layer": "foundation",
+      "value": "30rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "spacing.scale.mobile-60": {
+      "category": "spacing",
+      "layer": "foundation",
+      "value": "60rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "spacing.section": {
+      "category": "spacing",
+      "layer": "semantic",
+      "resolvesTo": "spacing.pad-section",
+      "value": "15rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "spacing.section-loose": {
+      "category": "spacing",
+      "layer": "semantic",
+      "resolvesTo": "spacing.scale.100_8",
+      "value": "100.8rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    },
+    "spacing.stack": {
+      "category": "spacing",
+      "layer": "semantic",
+      "resolvesTo": "spacing.scale.34_56",
+      "value": "34.56rem",
+      "themes": [
+        "light"
+      ],
+      "referenceable": true
+    }
+  }
+}

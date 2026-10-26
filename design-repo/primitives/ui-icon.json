@@ -1,0 +1,20 @@
+{
+  "id": "primitive.ui-icon",
+  "kind": "primitive",
+  "title": "UI icon set",
+  "purpose": "Simple stroke/fill-currentColor icons: chevrons, plus, close, bot arrow, scissors blade.",
+  "source": {
+    "ref": "src/components/Icons.jsx:1",
+    "expect": "// Simple UI icons redrawn per spec section 13 (stroke/fill currentColor)."
+  },
+  "props": {
+    "name": "chevron-left | chevron-right | plus | close | bot-arrow | blade"
+  },
+  "tokens": [],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:449",
+      "expect": "Simple UI icons (redraw as inline SVG, stroke/fill `currentColor`):"
+    }
+  ]
+}

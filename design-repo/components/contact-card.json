@@ -1,0 +1,24 @@
+{
+  "id": "component.contact-card",
+  "kind": "component",
+  "title": "Contact card",
+  "purpose": "Beige card: title, short paragraph, row of three channel CTA buttons.",
+  "source": {
+    "ref": "src/components/Price.jsx:28",
+    "expect": "<div className={`${card} bg-landing-beige px-[72rem]`}>"
+  },
+  "props": {
+    "title": "string",
+    "text": "string <= 77 chars",
+    "channels": "3 x link"
+  },
+  "tokens": [
+    "color.surface.card"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:306",
+      "expect": "- **Right \"Get in touch\" card**"
+    }
+  ]
+}

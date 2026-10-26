@@ -1,0 +1,211 @@
+{
+  "$description": "Font families, the rem type scale (1rem = 1 design px at 1440) and the text roles that combine them.",
+  "category": "typography",
+  "fontFamily": {
+    "font.sans": {
+      "value": "Inter, \"Inter Fallback\", sans-serif",
+      "source": {
+        "ref": "tailwind.config.js:44",
+        "expect": "inter: ['Inter'"
+      },
+      "usedFor": "hero headline, demo calendar text, mobile menu overlay items"
+    },
+    "font.mono": {
+      "value": "\"Red Hat Mono\", \"Red Hat Mono Fallback\", monospace",
+      "source": {
+        "ref": "tailwind.config.js:45",
+        "expect": "mono: ['\"Red Hat Mono\"'"
+      },
+      "usedFor": "titles, paragraphs, labels, buttons"
+    }
+  },
+  "fontSize": {
+    "fontSize.hero": {
+      "value": "42.624rem",
+      "lineHeight": "110%",
+      "letterSpacing": "-0.05em",
+      "fontWeight": 500,
+      "source": {
+        "ref": "tailwind.config.js:48",
+        "expect": "hero: ['42.624rem'"
+      }
+    },
+    "fontSize.hero-mobile": {
+      "value": "27rem",
+      "lineHeight": "115%",
+      "letterSpacing": "-0.05em",
+      "fontWeight": 500,
+      "source": {
+        "ref": "tailwind.config.js:49",
+        "expect": "'hero-m': ['27rem'"
+      }
+    },
+    "fontSize.title": {
+      "value": "19.4rem",
+      "lineHeight": "122%",
+      "letterSpacing": "-0.03em",
+      "fontWeight": 600,
+      "source": {
+        "ref": "tailwind.config.js:50",
+        "expect": "title: ['19.4rem'"
+      }
+    },
+    "fontSize.title-mobile": {
+      "value": "16rem",
+      "lineHeight": "122%",
+      "letterSpacing": "-0.03em",
+      "fontWeight": 600,
+      "source": {
+        "ref": "tailwind.config.js:51",
+        "expect": "'title-m': ['16rem'"
+      }
+    },
+    "fontSize.para": {
+      "value": "12rem",
+      "lineHeight": "132%",
+      "letterSpacing": "0.03em",
+      "fontWeight": 400,
+      "source": {
+        "ref": "tailwind.config.js:52",
+        "expect": "para: ['12rem'"
+      }
+    },
+    "fontSize.para-mobile": {
+      "value": "9rem",
+      "lineHeight": "132%",
+      "letterSpacing": "0.03em",
+      "fontWeight": 400,
+      "source": {
+        "ref": "tailwind.config.js:53",
+        "expect": "'para-m': ['9rem'"
+      }
+    },
+    "fontSize.demo-md": {
+      "value": "16rem",
+      "lineHeight": "135%",
+      "letterSpacing": "normal",
+      "fontWeight": 500,
+      "source": {
+        "ref": "tailwind.config.js:54",
+        "expect": "'demo-md': ['16rem'"
+      }
+    },
+    "fontSize.demo": {
+      "value": "12rem",
+      "lineHeight": "135%",
+      "letterSpacing": "normal",
+      "fontWeight": 500,
+      "source": {
+        "ref": "tailwind.config.js:55",
+        "expect": "demo: ['12rem'"
+      }
+    },
+    "fontSize.demo-sm": {
+      "value": "10rem",
+      "lineHeight": "135%",
+      "letterSpacing": "normal",
+      "fontWeight": 500,
+      "source": {
+        "ref": "tailwind.config.js:56",
+        "expect": "'demo-sm': ['10rem'"
+      }
+    },
+    "fontSize.menu-bar": {
+      "value": "16rem",
+      "lineHeight": "normal",
+      "letterSpacing": "normal",
+      "fontWeight": 400,
+      "source": {
+        "ref": "tailwind.config.js:57",
+        "expect": "'menu-bar': ['16rem'"
+      }
+    },
+    "fontSize.menu-item": {
+      "value": "27rem",
+      "lineHeight": "normal",
+      "letterSpacing": "normal",
+      "fontWeight": 400,
+      "source": {
+        "ref": "tailwind.config.js:58",
+        "expect": "'menu-item': ['27rem'"
+      }
+    }
+  },
+  "textRoles": {
+    "textRole.hero": {
+      "fontFamily": "font.sans",
+      "fontSize": "fontSize.hero",
+      "mobile": "fontSize.hero-mobile",
+      "source": {
+        "ref": "src/index.css:133-134",
+        "expect": ".t-hero {"
+      }
+    },
+    "textRole.title": {
+      "fontFamily": "font.mono",
+      "fontSize": "fontSize.title",
+      "mobile": "fontSize.title-mobile",
+      "source": {
+        "ref": "src/index.css:136-137",
+        "expect": ".t-title {"
+      }
+    },
+    "textRole.para": {
+      "fontFamily": "font.mono",
+      "fontSize": "fontSize.para",
+      "mobile": "fontSize.para-mobile",
+      "source": {
+        "ref": "src/index.css:139-140",
+        "expect": ".t-para {"
+      }
+    },
+    "textRole.demo-md": {
+      "fontFamily": "font.sans",
+      "fontSize": "fontSize.demo-md",
+      "source": {
+        "ref": "src/index.css:150",
+        "expect": ".d-md {"
+      }
+    },
+    "textRole.demo": {
+      "fontFamily": "font.sans",
+      "fontSize": "fontSize.demo",
+      "source": {
+        "ref": "src/index.css:153",
+        "expect": ".d-n {"
+      }
+    },
+    "textRole.demo-sm": {
+      "fontFamily": "font.sans",
+      "fontSize": "fontSize.demo-sm",
+      "source": {
+        "ref": "src/index.css:156",
+        "expect": ".d-sm {"
+      }
+    }
+  },
+  "textDecoration": {
+    "underline": {
+      "thickness": "0.11em",
+      "offset": "0.3em",
+      "source": {
+        "ref": "src/index.css:145",
+        "expect": "text-decoration-thickness: 0.11em;"
+      }
+    }
+  },
+  "fontLoading": {
+    "ref": "index.html:12",
+    "expect": "family=Inter:wght@100..900&family=Red+Hat+Mono"
+  },
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:109",
+      "expect": "| Hero h1 `landing_heroText` | Inter | 42.624 | 500"
+    },
+    {
+      "ref": "CLONE_SPEC.md:110",
+      "expect": "| Title / big paragraph `landing_title`"
+    }
+  ]
+}

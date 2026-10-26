@@ -1,0 +1,188 @@
+{
+  "id": "cta.closing-band",
+  "title": "Closing CTA band with footer",
+  "purpose": "Full-viewport-height lime band: one centred CTA over a rotating sprite wheel, with the footer row (copyright + legal links) pinned to its bottom edge.",
+  "semantic": {
+    "id": "cta.closing-band",
+    "category": "CTA"
+  },
+  "source": {
+    "id": "CtaFooter<div>@60",
+    "file": "src/components/CtaFooter.jsx",
+    "tag": "div",
+    "lines": "60-85",
+    "citation": {
+      "ref": "src/components/CtaFooter.jsx:60-85",
+      "expect": "<div className=\"px-pad-section\">"
+    }
+  },
+  "retrievalEligible": true,
+  "layer": {
+    "desktop": "in-flow-loop",
+    "mobile": "in-flow"
+  },
+  "variants": [
+    "default"
+  ],
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "cta",
+      "sprite",
+      "copyright",
+      "legalLinks"
+    ],
+    "properties": {
+      "cta": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "label",
+          "href"
+        ],
+        "properties": {
+          "label": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 9,
+            "maxWords": 2
+          },
+          "href": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          }
+        }
+      },
+      "sprite": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "assetRole"
+        ],
+        "properties": {
+          "assetRole": {
+            "type": "string",
+            "enum": [
+              "cta.reference-sprite-strip",
+              "cta.generated-sprite-strip"
+            ]
+          },
+          "src": {
+            "type": "string",
+            "maxLength": 200
+          },
+          "alt": {
+            "type": "string",
+            "maxLength": 120
+          }
+        }
+      },
+      "copyright": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 41,
+        "maxWords": 7
+      },
+      "legalLinks": {
+        "type": "array",
+        "minItems": 4,
+        "maxItems": 4,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "label",
+            "href"
+          ],
+          "properties": {
+            "label": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 18,
+              "maxWords": 3
+            },
+            "href": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            }
+          }
+        }
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "lastContentSection": true,
+    "containsFooter": true
+  },
+  "motion": {
+    "patterns": [
+      "fish-wheel-scrub"
+    ],
+    "reducedMotionFallbacks": {
+      "fish-wheel-scrub": "static-frame-0"
+    }
+  },
+  "responsive": [
+    {
+      "breakpoint": "desktop",
+      "change": "height calc(100vh - 29.999952rem), accent surface, footer row space-between",
+      "evidence": {
+        "ref": "CLONE_SPEC.md:362",
+        "expect": "- Container: `height:calc(100vh - 29.999952rem)` (870 at 900 tall);"
+      }
+    },
+    {
+      "breakpoint": "mobile",
+      "change": "band transparent; CTA wheel becomes a 1:1 accent square; footer becomes a centred column",
+      "evidence": {
+        "ref": "CLONE_SPEC.md:368",
+        "expect": "- **Mobile:** container `background:transparent; height:auto; gap:20rem`."
+      }
+    }
+  ],
+  "generatedAssetRoles": [
+    "cta.generated-sprite-strip",
+    "url.placeholder",
+    "copy.original"
+  ],
+  "referenceAssetRoles": [
+    "cta.reference-sprite-strip"
+  ],
+  "allowedTokenSlots": {
+    "surface": [
+      "color.surface.accent"
+    ],
+    "text": [
+      "color.text.primary"
+    ],
+    "fontFamily": [
+      "font.mono",
+      "font.text"
+    ]
+  },
+  "composes": [
+    "component.fish-wheel",
+    "primitive.cta-button",
+    "primitive.text-link"
+  ],
+  "accessibility": [],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:359",
+      "expect": "## 10. CTA block and footer"
+    }
+  ],
+  "measured": {
+    "1440x900": 870,
+    "1280x800": 773.3,
+    "390x844": 450.3
+  },
+  "notes": [
+    "The footer is a slot of this band (same container in source), so there is no separate footer section.",
+    "Legal links point at pages the clone does not serve (single route); see templates/routes.json -> linkedButUnserved."
+  ]
+}

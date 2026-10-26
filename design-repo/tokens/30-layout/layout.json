@@ -1,0 +1,72 @@
+{
+  "$description": "Page-level layout tokens: the unit system, the fixed sidebar offset, the two-column card grid and the loop-scroller runways.",
+  "tokens": {
+    "layout.page-padding-top": {
+      "value": "15rem",
+      "source": {
+        "ref": "src/App.jsx:26",
+        "expect": "pt-pad-section pl-sidebar"
+      }
+    },
+    "layout.content-offset-left": {
+      "value": "371rem (sidebar width)",
+      "source": {
+        "ref": "src/App.jsx:26",
+        "expect": "pt-pad-section pl-sidebar"
+      }
+    },
+    "layout.content-width-1440": {
+      "value": "1069px (cards 1039px)",
+      "source": {
+        "ref": "CLONE_SPEC.md:139",
+        "expect": "The content column is 1069 wide at x=371."
+      }
+    },
+    "layout.mobile-column": {
+      "value": "360rem centred",
+      "source": {
+        "ref": "src/App.jsx:27",
+        "expect": "mob:w-mob-col mob:mx-auto"
+      }
+    },
+    "layout.hero-ticket-width": {
+      "value": "calc(100% - 367.2rem)",
+      "source": {
+        "ref": "src/components/HeroSlide.jsx:50",
+        "expect": "w-[calc(100%-367.2rem)]"
+      }
+    },
+    "layout.two-column-grid": {
+      "value": "1fr 1fr, gap 15rem",
+      "source": {
+        "ref": "src/components/Price.jsx:11",
+        "expect": "grid grid-cols-2 gap-gap-base"
+      }
+    },
+    "layout.hero-runway-height": {
+      "value": "calc(118.75vh + 37.5vw)",
+      "measured1440x900": 1608.8,
+      "source": {
+        "ref": "src/App.jsx:28",
+        "expect": "height=\"calc(118.75vh + 37.5vw)\""
+      }
+    },
+    "layout.tail-runway-height": {
+      "value": "calc(22.5vh + 30vw)",
+      "measured1440x900": 634.5,
+      "source": {
+        "ref": "src/App.jsx:35",
+        "expect": "height=\"calc(22.5vh + 30vw)\""
+      }
+    },
+    "layout.loop-wrap-height": {
+      "value": "content height H",
+      "measured1440x900": 7504.4,
+      "measured1280x800": 6670.3,
+      "source": {
+        "ref": "CLONE_SPEC.md:19",
+        "expect": "height H = 7504px at 1440x900, 6671px at 1280x800"
+      }
+    }
+  }
+}

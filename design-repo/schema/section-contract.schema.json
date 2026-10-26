@@ -1,0 +1,299 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "weeksync-design-repo/section-contract.schema.json",
+  "title": "Section contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "title",
+    "purpose",
+    "semantic",
+    "source",
+    "retrievalEligible",
+    "layer",
+    "variants",
+    "content",
+    "constraints",
+    "motion",
+    "responsive",
+    "generatedAssetRoles",
+    "referenceAssetRoles",
+    "allowedTokenSlots",
+    "composes",
+    "accessibility",
+    "evidence",
+    "measured"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z]+\\.[a-z0-9-]+$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 3
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 20
+    },
+    "semantic": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "category"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "category": {
+          "enum": [
+            "SHELL",
+            "HERO",
+            "SPACER",
+            "PRODUCT_DEMO",
+            "FEATURES",
+            "PRICING",
+            "TESTIMONIALS",
+            "FAQ",
+            "CTA",
+            "UTILITY"
+          ]
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "file",
+        "tag",
+        "lines",
+        "citation"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "file": {
+          "type": "string"
+        },
+        "tag": {
+          "type": "string"
+        },
+        "lines": {
+          "type": "string",
+          "pattern": "^[0-9]+(-[0-9]+)?$"
+        },
+        "citation": {
+          "$ref": "#/definitions/citation"
+        }
+      }
+    },
+    "retrievalEligible": {
+      "type": "boolean"
+    },
+    "retrievalIneligibleReason": {
+      "type": "string",
+      "minLength": 30
+    },
+    "layer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "desktop",
+        "mobile"
+      ],
+      "properties": {
+        "desktop": {
+          "$ref": "#/definitions/layer"
+        },
+        "mobile": {
+          "$ref": "#/definitions/layer"
+        }
+      }
+    },
+    "variants": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "content": {
+      "type": "object"
+    },
+    "constraints": {
+      "type": "object"
+    },
+    "motion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "patterns",
+        "reducedMotionFallbacks"
+      ],
+      "properties": {
+        "patterns": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "reducedMotionFallbacks": {
+          "type": "object"
+        }
+      }
+    },
+    "responsive": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "breakpoint",
+          "change",
+          "evidence"
+        ],
+        "properties": {
+          "breakpoint": {
+            "enum": [
+              "desktop",
+              "mobile"
+            ]
+          },
+          "change": {
+            "type": "string"
+          },
+          "evidence": {
+            "$ref": "#/definitions/citation"
+          }
+        }
+      }
+    },
+    "generatedAssetRoles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "referenceAssetRoles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "allowedTokenSlots": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "surface": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "text": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "fontFamily": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "paddingTop": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "composes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "accessibility": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/citation"
+      }
+    },
+    "measured": {
+      "type": "object"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "retrievalEligible": {
+            "const": false
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "retrievalIneligibleReason"
+        ]
+      }
+    }
+  ],
+  "definitions": {
+    "citation": {
+      "type": "object",
+      "required": [
+        "ref",
+        "expect"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "ref": {
+          "type": "string",
+          "pattern": "^[^:]+:[0-9]+(-[0-9]+)?$"
+        },
+        "expect": {
+          "type": "string",
+          "minLength": 1
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    },
+    "layer": {
+      "enum": [
+        "fixed",
+        "in-flow",
+        "in-flow-loop",
+        "collapsed",
+        "absent"
+      ]
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "component.feature-card-pair",
+  "kind": "component",
+  "title": "Feature card pair",
+  "purpose": "Two-column row: text card (beige) + image card (accent); image-left on the middle card; image first on mobile.",
+  "source": {
+    "ref": "src/components/Features.jsx:6",
+    "expect": "function FeatureCard({ text, image, alt, index, total, imageFirst }) {"
+  },
+  "props": {
+    "text": "string <= 88 chars",
+    "image": "assetRole",
+    "imageFirst": "boolean"
+  },
+  "tokens": [
+    "color.surface.card",
+    "color.surface.accent",
+    "spacing.gap"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:289",
+      "expect": "Cards alternate: card 1 is text-left/image-right, card 2 is image-left/text-right"
+    }
+  ]
+}

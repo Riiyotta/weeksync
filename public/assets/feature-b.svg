@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1058" height="668" viewBox="0 0 1058 668">
+<!-- figures passing a block along an arc -->
+<circle cx="230" cy="300" r="46" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M150 470C150 390 190 360 230 360C270 360 310 390 310 470" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="529" cy="300" r="46" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M449 470C449 390 489 360 529 360C569 360 609 390 609 470" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="828" cy="300" r="46" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M748 470C748 390 788 360 828 360C868 360 908 390 908 470" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M260 190C360 90 450 90 500 170" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 16"/>
+<path d="M560 170C610 90 700 90 800 190" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 16"/>
+<rect x="489" y="150" width="80" height="50" rx="10" fill="none" stroke="#000" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+# Third-party material from the original site (saved page, CSS/JS bundles, screenshots) — keep local only
+_reference/
+.playwright-mcp/
+design-repo.zip

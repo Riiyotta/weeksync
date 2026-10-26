@@ -1,0 +1,531 @@
+{
+  "pageSpecVersion": "1.0.0",
+  "mode": "generated",
+  "template": "template.loop-landing",
+  "route": "/",
+  "title": "Brindlewick. Shift plans for busy kitchens.",
+  "brand": {
+    "name": "Brindlewick",
+    "mark": {
+      "assetRole": "brand.placeholder-mark",
+      "src": "placeholder://brand-mark-34x26",
+      "alt": "Brindlewick"
+    }
+  },
+  "theme": "light",
+  "nodes": [
+    {
+      "section": "utility.cursor-trail",
+      "variant": "default",
+      "content": {},
+      "motion": {
+        "patterns": [
+          "cursor-trail"
+        ],
+        "reducedMotionFallback": {
+          "cursor-trail": "hidden"
+        }
+      }
+    },
+    {
+      "section": "utility.cookie-consent",
+      "variant": "default",
+      "content": {
+        "message": "We keep a few cookies so this page loads quickly and to see which parts help your planning.",
+        "acceptLabel": "OK"
+      },
+      "motion": {
+        "patterns": [
+          "typewriter"
+        ],
+        "reducedMotionFallback": {
+          "typewriter": "full-text-static"
+        }
+      }
+    },
+    {
+      "section": "shell.mobile-menu",
+      "variant": "default",
+      "content": {
+        "menuLabel": "menu",
+        "closeLabel": "close",
+        "cta": {
+          "label": "start now",
+          "href": "https://brindlewick.example/signup"
+        },
+        "navItems": [
+          {
+            "label": "Try It",
+            "target": "demo-section"
+          },
+          {
+            "label": "Why It Helps",
+            "target": "features-section"
+          },
+          {
+            "label": "Pricing",
+            "target": "price-section"
+          },
+          {
+            "label": "Reviews",
+            "target": "reviews-section"
+          },
+          {
+            "label": "FAQ",
+            "target": "faq-section"
+          }
+        ]
+      },
+      "motion": {
+        "patterns": [
+          "overlay-slide"
+        ],
+        "reducedMotionFallback": {
+          "overlay-slide": "instant-toggle"
+        }
+      }
+    },
+    {
+      "section": "shell.mobile-brand-intro",
+      "variant": "default",
+      "content": {
+        "brandMark": {
+          "assetRole": "brand.placeholder-mark",
+          "src": "placeholder://brand-mark-34x26",
+          "alt": "Brindlewick"
+        },
+        "tagline": "Shift plans for small kitchens.",
+        "cta": {
+          "label": "Start Now",
+          "href": "https://brindlewick.example/signup"
+        }
+      },
+      "motion": {
+        "patterns": [
+          "oval-breathe"
+        ],
+        "reducedMotionFallback": {
+          "oval-breathe": "static-50pct-frame"
+        }
+      }
+    },
+    {
+      "section": "hero.ticket",
+      "variant": "default",
+      "content": {
+        "headline": "Brindlewick lays out every cook, station and shift for the week on one calm board, so sharing hard shifts fairly and spotting thin nights early is easy.",
+        "scissorsLabel": "Go to the next section"
+      },
+      "motion": {
+        "patterns": [
+          "hero-ticket-flight",
+          "typewriter"
+        ],
+        "reducedMotionFallback": {
+          "hero-ticket-flight": "static-ticket-at-rest",
+          "typewriter": "full-text-static"
+        }
+      },
+      "tokens": {
+        "text": "color.text.primary",
+        "fontFamily": "font.display"
+      }
+    },
+    {
+      "section": "shell.sidebar-nav",
+      "variant": "default",
+      "content": {
+        "brandMark": {
+          "assetRole": "brand.placeholder-mark",
+          "src": "placeholder://brand-mark-34x26",
+          "alt": "Brindlewick"
+        },
+        "tagline": "Shift plans for small kitchens.",
+        "cta": {
+          "label": "Start Now",
+          "href": "https://brindlewick.example/signup"
+        },
+        "navItems": [
+          {
+            "label": "Try It",
+            "target": "demo-section"
+          },
+          {
+            "label": "Why It Helps",
+            "target": "features-section"
+          },
+          {
+            "label": "Pricing",
+            "target": "price-section"
+          },
+          {
+            "label": "Reviews",
+            "target": "reviews-section"
+          },
+          {
+            "label": "FAQ",
+            "target": "faq-section"
+          }
+        ]
+      },
+      "motion": {
+        "patterns": [
+          "none"
+        ],
+        "reducedMotionFallback": {
+          "none": "none"
+        }
+      }
+    },
+    {
+      "section": "layout.scroll-runway",
+      "variant": "hero",
+      "content": {},
+      "motion": {
+        "patterns": [
+          "none"
+        ],
+        "reducedMotionFallback": {
+          "none": "none"
+        }
+      }
+    },
+    {
+      "section": "demo.interactive-calendar",
+      "variant": "default",
+      "content": {
+        "ariaLabel": "Brindlewick live demo",
+        "viewLabels": {
+          "days": "Days",
+          "weeks": "Weeks"
+        },
+        "emptyLabel": "Empty",
+        "people": [
+          {
+            "name": "Ana Ruiz",
+            "role": "Line cook",
+            "cursorName": "Ana"
+          },
+          {
+            "name": "Bo Lindt",
+            "role": "Pastry",
+            "cursorName": "Bo"
+          },
+          {
+            "name": "Cyd Moreau",
+            "role": "Sous chef",
+            "cursorName": "Cyd"
+          }
+        ],
+        "projects": [
+          {
+            "name": "Grill"
+          },
+          {
+            "name": "Pastry"
+          },
+          {
+            "name": "Prep"
+          },
+          {
+            "name": "Dish"
+          },
+          {
+            "name": "Catering"
+          },
+          {
+            "name": "Training"
+          }
+        ],
+        "rosterAsset": {
+          "assetRole": "person.fictional-demo-roster"
+        }
+      },
+      "motion": {
+        "patterns": [
+          "bot-cursors"
+        ],
+        "reducedMotionFallback": {
+          "bot-cursors": "no-cursors"
+        }
+      },
+      "tokens": {
+        "surface": "color.surface.card",
+        "text": "color.text.body",
+        "fontFamily": "font.sans",
+        "paddingTop": "spacing.section"
+      }
+    },
+    {
+      "section": "features.stacked-cards",
+      "variant": "default",
+      "content": {
+        "cards": [
+          {
+            "text": "Know which cooks have room and which are stretched long before the Friday dinner rush.",
+            "image": {
+              "assetRole": "feature.generated-illustration",
+              "src": "generated://kitchen-board-1058x668",
+              "alt": ""
+            }
+          },
+          {
+            "text": "Drag shifts between cooks and days in one move and watch every station total refresh.",
+            "image": {
+              "assetRole": "feature.generated-illustration",
+              "src": "generated://drag-shift-1058x668",
+              "alt": ""
+            }
+          },
+          {
+            "text": "Zoom into single days for detail or out to whole weeks, without leaving the same board.",
+            "image": {
+              "assetRole": "feature.generated-illustration",
+              "src": "generated://week-view-1058x668",
+              "alt": ""
+            }
+          }
+        ]
+      },
+      "motion": {
+        "patterns": [
+          "typewriter"
+        ],
+        "reducedMotionFallback": {
+          "typewriter": "full-text-static"
+        }
+      },
+      "tokens": {
+        "surface": "color.surface.accent",
+        "text": "color.text.primary",
+        "fontFamily": "font.text",
+        "paddingTop": "spacing.section"
+      }
+    },
+    {
+      "section": "pricing.plan-contact",
+      "variant": "default",
+      "content": {
+        "plan": {
+          "title": "Plan",
+          "lines": [
+            "Every feature free for two weeks.",
+            "$3 per cook each month",
+            "Unlimited stations",
+            "A real person answers your mail"
+          ],
+          "cta": {
+            "label": "Start Now",
+            "href": "https://brindlewick.example/signup"
+          }
+        },
+        "contact": {
+          "title": "Get in touch",
+          "text": "Questions, ideas or a bug? Send us a note and a real human answers fast.",
+          "channels": [
+            {
+              "label": "Chat",
+              "href": "https://chat.brindlewick.example/"
+            },
+            {
+              "label": "Social",
+              "href": "https://social.brindlewick.example/brindlewick"
+            },
+            {
+              "label": "Email",
+              "href": "mailto:hello@brindlewick.example"
+            }
+          ]
+        }
+      },
+      "motion": {
+        "patterns": [
+          "typewriter"
+        ],
+        "reducedMotionFallback": {
+          "typewriter": "full-text-static"
+        }
+      },
+      "tokens": {
+        "surface": "color.surface.inverse",
+        "text": "color.text.inverse",
+        "fontFamily": "font.mono"
+      }
+    },
+    {
+      "section": "testimonials.ellipse-carousel",
+      "variant": "default",
+      "content": {
+        "reviews": [
+          {
+            "name": "Nell Okafor",
+            "role": "Head chef, twelve-seat bistro",
+            "person": {
+              "assetRole": "person.fictional-reviewer"
+            },
+            "paragraphs": [
+              "We used to plan the rota on a whiteboard that nobody trusted.",
+              "Now the whole week sits on one board, every cook can see their shifts, and the Sunday call that used to drag on for an hour is over in ten minutes flat.",
+              "Even our newest commis keeps her own availability current without being asked."
+            ]
+          },
+          {
+            "name": "Rui Tanabe",
+            "role": "Kitchen manager, catering crew",
+            "person": {
+              "assetRole": "person.fictional-reviewer"
+            },
+            "paragraphs": [
+              "We run three event kitchens with eleven cooks, and we only noticed a short-staffed night once service had started. Laying out every shift as hours stacked per station fixed that. We rebalance on Thursday in a few minutes, the totals stop anyone quietly overworking, and the week view helps us quote honest dates to clients."
+            ]
+          }
+        ],
+        "prevLabel": "Prev",
+        "nextLabel": "Next"
+      },
+      "motion": {
+        "patterns": [
+          "instant-swap"
+        ],
+        "reducedMotionFallback": {
+          "instant-swap": "instant-swap"
+        }
+      },
+      "tokens": {
+        "paddingTop": "spacing.section-loose"
+      }
+    },
+    {
+      "section": "faq.accordion",
+      "variant": "default",
+      "content": {
+        "title": "FAQ",
+        "initiallyOpenIndex": 0,
+        "items": [
+          {
+            "question": "What is Brindlewick?",
+            "answer": [
+              {
+                "paragraph": "A shift board for small kitchens. Cooks run down the side, days across the top, and every shift is a small card showing station and hours."
+              }
+            ]
+          },
+          {
+            "question": "Does it work on the tablet by the pass?",
+            "answer": [
+              {
+                "paragraph": "Yes. It runs in any current browser, so the tablet by the pass, the office laptop and a phone all show the same board."
+              }
+            ]
+          },
+          {
+            "question": "How does billing work?",
+            "answer": [
+              {
+                "paragraph": "One flat monthly price per active cook. There is no cap on stations or past weeks, and stopping takes a single click."
+              }
+            ]
+          },
+          {
+            "question": "Can I see one cook across several stations?",
+            "answer": [
+              {
+                "paragraph": "Yes. Next to every cook sits a live tally of booked hours, broken out by station, for example:"
+              },
+              {
+                "list": [
+                  "Hours per shift",
+                  "Totals per week",
+                  "Split by station",
+                  "Hours left this week"
+                ]
+              }
+            ]
+          },
+          {
+            "question": "What if a night is short-staffed?",
+            "answer": [
+              {
+                "paragraph": "The day summary changes colour as soon as a station is under-covered, so you can move a shift across before service."
+              }
+            ]
+          },
+          {
+            "question": "Where is the data kept?",
+            "answer": [
+              {
+                "paragraph": "Boards are encrypted at rest and backed up nightly. Nothing is resold, and a full export or wipe is one button away."
+              }
+            ]
+          }
+        ]
+      },
+      "motion": {
+        "patterns": [
+          "instant-swap"
+        ],
+        "reducedMotionFallback": {
+          "instant-swap": "instant-swap"
+        }
+      }
+    },
+    {
+      "section": "cta.closing-band",
+      "variant": "default",
+      "content": {
+        "cta": {
+          "label": "Start Now",
+          "href": "https://brindlewick.example/signup"
+        },
+        "sprite": {
+          "assetRole": "cta.generated-sprite-strip",
+          "src": "generated://spinning-whisk-29-frames"
+        },
+        "copyright": "© 2026 Brindlewick. All rights reserved.",
+        "legalLinks": [
+          {
+            "label": "Terms of Service",
+            "href": "/terms"
+          },
+          {
+            "label": "Privacy Notice",
+            "href": "/privacy"
+          },
+          {
+            "label": "Cookie Notice",
+            "href": "/cookies"
+          },
+          {
+            "label": "Refund Terms",
+            "href": "/refunds"
+          }
+        ]
+      },
+      "motion": {
+        "patterns": [
+          "fish-wheel-scrub"
+        ],
+        "reducedMotionFallback": {
+          "fish-wheel-scrub": "static-frame-0"
+        }
+      },
+      "tokens": {
+        "surface": "color.surface.accent",
+        "text": "color.text.primary"
+      }
+    },
+    {
+      "section": "layout.scroll-runway",
+      "variant": "tail",
+      "content": {},
+      "motion": {
+        "patterns": [
+          "none"
+        ],
+        "reducedMotionFallback": {
+          "none": "none"
+        }
+      }
+    }
+  ]
+}

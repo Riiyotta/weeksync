@@ -1,0 +1,22 @@
+{
+  "id": "primitive.dotted-stroke",
+  "kind": "primitive",
+  "title": "Dotted SVG stroke",
+  "purpose": "Dotted outline for SVG shapes (cookie triangle, cursor trail).",
+  "source": {
+    "ref": "src/index.css:161",
+    "expect": ".dotted-stroke {"
+  },
+  "props": {
+    "strokeWidth": "1.15 in a 0-100 viewBox (cookie) or 3.9rem (trail)"
+  },
+  "tokens": [
+    "color.border.frame"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:129",
+      "expect": "**Dotted SVG stroke** (cookie triangle, cursor trail)"
+    }
+  ]
+}

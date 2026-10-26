@@ -1,0 +1,192 @@
+{
+  "id": "testimonials.ellipse-carousel",
+  "title": "Testimonials in a dotted ellipse",
+  "purpose": "Two reviews inside an 864x576rem dotted ellipse with Prev / 'n of 2' / Next; Prev/Next swap instantly; drag uses carousel physics.",
+  "semantic": {
+    "id": "testimonials.ellipse-carousel",
+    "category": "TESTIMONIALS"
+  },
+  "source": {
+    "id": "Reviews<section>@38",
+    "file": "src/components/Reviews.jsx",
+    "tag": "section",
+    "lines": "38-81",
+    "citation": {
+      "ref": "src/components/Reviews.jsx:38-81",
+      "expect": "<section className=\"relative w-full flex items-center justify-center"
+    }
+  },
+  "retrievalEligible": true,
+  "layer": {
+    "desktop": "in-flow-loop",
+    "mobile": "in-flow"
+  },
+  "variants": [
+    "default"
+  ],
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "reviews",
+      "prevLabel",
+      "nextLabel"
+    ],
+    "properties": {
+      "reviews": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 2,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "role",
+            "paragraphs",
+            "person"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 13,
+              "maxWords": 2
+            },
+            "role": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 35,
+              "maxWords": 5
+            },
+            "paragraphs": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 3,
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 399,
+                "maxWords": 69
+              }
+            },
+            "person": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "assetRole"
+              ],
+              "properties": {
+                "assetRole": {
+                  "type": "string",
+                  "enum": [
+                    "person.fictional-reviewer"
+                  ]
+                },
+                "src": {
+                  "type": "string",
+                  "maxLength": 200
+                },
+                "alt": {
+                  "type": "string",
+                  "maxLength": 120
+                }
+              }
+            }
+          }
+        }
+      },
+      "prevLabel": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 4,
+        "maxWords": 1
+      },
+      "nextLabel": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 4,
+        "maxWords": 1
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "reviewCount": 2,
+    "maxCharsPerReview": 399,
+    "stateSharedAcrossLoopCopies": false
+  },
+  "motion": {
+    "patterns": [
+      "instant-swap"
+    ],
+    "reducedMotionFallbacks": {
+      "instant-swap": "instant-swap"
+    }
+  },
+  "responsive": [
+    {
+      "breakpoint": "desktop",
+      "change": "ellipse 864x576rem, header absolute top 34.56rem, controls absolute bottom",
+      "evidence": {
+        "ref": "CLONE_SPEC.md:317",
+        "expect": "- **Ellipse frame**: `width:864rem; height:576rem;"
+      }
+    },
+    {
+      "breakpoint": "mobile",
+      "change": "ellipse removed (full width, no border), header and controls become relative",
+      "evidence": {
+        "ref": "CLONE_SPEC.md:328",
+        "expect": "Ellipse becomes `width:100%; height:auto; border:none; border-radius:0`."
+      }
+    }
+  ],
+  "generatedAssetRoles": [
+    "person.fictional-reviewer",
+    "copy.original"
+  ],
+  "referenceAssetRoles": [],
+  "allowedTokenSlots": {
+    "surface": [
+      "color.surface.page"
+    ],
+    "text": [
+      "color.text.primary"
+    ],
+    "fontFamily": [
+      "font.mono",
+      "font.text"
+    ],
+    "paddingTop": [
+      "spacing.section-loose",
+      "spacing.scale.100_8"
+    ]
+  },
+  "composes": [
+    "component.review-slide",
+    "primitive.dotted-frame",
+    "primitive.cta-button"
+  ],
+  "accessibility": [
+    "reviews repeated in a visually-hidden article list for screen readers/SEO"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:314",
+      "expect": "## 8. Reviews (testimonials carousel)"
+    },
+    {
+      "ref": "src/components/Reviews.jsx:7",
+      "expect": "// Each loop copy keeps its own carousel state."
+    }
+  ],
+  "measured": {
+    "1440x900": 792.6,
+    "1280x800": 704.5,
+    "390x844": 485.2
+  },
+  "notes": [
+    "Unlike the demo and FAQ, the carousel index is NOT shared between the two loop copies (CLONE_SPEC 0.1)."
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "component.demo-calendar",
+  "kind": "component",
+  "title": "Demo calendar frame",
+  "purpose": "Interactive week planner: sticky 7-column header, one row per person, cells of draggable entry chips, summaries, bottom controls, bot-cursor layer.",
+  "source": {
+    "ref": "src/components/AppDemo.jsx:398",
+    "expect": "export default function AppDemo() {"
+  },
+  "props": {
+    "people": "3",
+    "projects": "6",
+    "capacity": "8h/day, 40h/week"
+  },
+  "tokens": [
+    "demo.frame-height",
+    "color.surface.card",
+    "color.surface.demo-cell",
+    "color.text.body",
+    "color.text.muted"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:232",
+      "expect": "## 5. Demo calendar (\"Try It\", `#demo-section`)"
+    }
+  ]
+}

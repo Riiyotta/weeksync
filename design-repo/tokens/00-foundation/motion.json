@@ -1,0 +1,194 @@
+{
+  "$description": "Motion primitives (durations, easings, keyframes). Behavioural patterns that combine them live in motion-patterns.json.",
+  "category": "motion",
+  "duration": {
+    "duration.typewriter-fast": {
+      "value": "15ms",
+      "source": {
+        "ref": "src/lib/motion.js:146",
+        "expect": "export const TYPE_SPEEDS = { fast: 15, normal: 30, slow: 50 }"
+      }
+    },
+    "duration.typewriter-normal": {
+      "value": "30ms",
+      "source": {
+        "ref": "src/lib/motion.js:146",
+        "expect": "export const TYPE_SPEEDS = { fast: 15, normal: 30, slow: 50 }"
+      }
+    },
+    "duration.typewriter-slow": {
+      "value": "50ms",
+      "source": {
+        "ref": "src/lib/motion.js:146",
+        "expect": "export const TYPE_SPEEDS = { fast: 15, normal: 30, slow: 50 }"
+      }
+    },
+    "duration.smooth-scroll": {
+      "value": "1600ms",
+      "source": {
+        "ref": "src/lib/motion.js:326",
+        "expect": "export function startSmoothScroll({ delta, duration = 1600 })"
+      }
+    },
+    "duration.cta-hover": {
+      "value": "200ms",
+      "source": {
+        "ref": "src/components/CtaButton.jsx:5",
+        "expect": "[transition:all_.2s_ease]"
+      }
+    },
+    "duration.menu-overlay": {
+      "value": "350ms",
+      "source": {
+        "ref": "src/components/MobileMenu.jsx:23",
+        "expect": "[transition:transform_.35s_cubic-bezier(.22,.61,.36,1)]"
+      }
+    },
+    "duration.oval-loop": {
+      "value": "6s",
+      "source": {
+        "ref": "tailwind.config.js:120",
+        "expect": "'oval-grow': 'ovalGrowShrink 6s linear infinite'"
+      }
+    },
+    "duration.fish-swing": {
+      "value": "10s",
+      "source": {
+        "ref": "tailwind.config.js:123",
+        "expect": "'fish-swing': 'swingAndMove 10s ease infinite'"
+      }
+    },
+    "duration.appear": {
+      "value": "400ms",
+      "source": {
+        "ref": "tailwind.config.js:124",
+        "expect": "appear: 'appear .4s ease both'"
+      }
+    },
+    "duration.trail-fade": {
+      "value": "180ms",
+      "source": {
+        "ref": "src/components/CursorTrail.jsx:14",
+        "expect": "[transition:opacity_.18s_ease-out]"
+      }
+    },
+    "duration.sprite-scrub": {
+      "value": "800ms",
+      "source": {
+        "ref": "src/lib/motion.js:245",
+        "expect": "const p = Math.min((ts - start) / 800, 1)"
+      }
+    },
+    "duration.blade-hover": {
+      "value": "250ms",
+      "source": {
+        "ref": "src/components/HeroSlide.jsx:47",
+        "expect": "[transition:transform_.25s_ease-out]"
+      }
+    },
+    "duration.chip-border": {
+      "value": "500ms",
+      "source": {
+        "ref": "src/components/AppDemo.jsx:178",
+        "expect": "[transition:border-color_.5s_ease]"
+      }
+    },
+    "duration.demo-field": {
+      "value": "300ms",
+      "source": {
+        "ref": "src/components/AppDemo.jsx:136",
+        "expect": "[transition:background-color_.3s_ease]"
+      }
+    },
+    "duration.control": {
+      "value": "200ms",
+      "source": {
+        "ref": "src/components/AppDemo.jsx:330",
+        "expect": "[transition:background-color_.2s_ease]"
+      }
+    },
+    "duration.marker-fill": {
+      "value": "200ms",
+      "source": {
+        "ref": "src/components/Faq.jsx:45",
+        "expect": "[transition:background-color_.2s_ease]"
+      }
+    },
+    "duration.cursor-press": {
+      "value": "120ms",
+      "source": {
+        "ref": "src/components/AppDemo.jsx:373",
+        "expect": "[transition:transform_.12s_ease]"
+      }
+    }
+  },
+  "easing": {
+    "easing.menu": {
+      "value": "cubic-bezier(.22,.61,.36,1)",
+      "source": {
+        "ref": "tailwind.config.js:85",
+        "expect": "menu: 'cubic-bezier(.22,.61,.36,1)'"
+      }
+    },
+    "easing.ease-in-out-quad": {
+      "value": "t<.5 ? 2t^2 : 1-(-2t+2)^2/2",
+      "source": {
+        "ref": "src/lib/motion.js:334",
+        "expect": "const eased = delta * (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2)"
+      }
+    },
+    "easing.ease": {
+      "value": "ease",
+      "source": {
+        "ref": "src/components/CtaButton.jsx:5",
+        "expect": "[transition:all_.2s_ease]"
+      }
+    },
+    "easing.ease-out": {
+      "value": "ease-out",
+      "source": {
+        "ref": "src/components/HeroSlide.jsx:47",
+        "expect": "[transition:transform_.25s_ease-out]"
+      }
+    },
+    "easing.linear": {
+      "value": "linear",
+      "source": {
+        "ref": "tailwind.config.js:120",
+        "expect": "'oval-grow': 'ovalGrowShrink 6s linear infinite'"
+      }
+    }
+  },
+  "keyframes": {
+    "ovalGrowShrink": {
+      "source": {
+        "ref": "tailwind.config.js:90",
+        "expect": "ovalGrowShrink: {"
+      }
+    },
+    "smallOvalGrowShrink": {
+      "source": {
+        "ref": "tailwind.config.js:95",
+        "expect": "smallOvalGrowShrink: {"
+      }
+    },
+    "ovalContentScaleShrink": {
+      "source": {
+        "ref": "tailwind.config.js:102",
+        "expect": "ovalContentScaleShrink: {"
+      }
+    },
+    "swingAndMove": {
+      "source": {
+        "ref": "tailwind.config.js:109",
+        "expect": "swingAndMove: {"
+      }
+    },
+    "appear": {
+      "source": {
+        "ref": "tailwind.config.js:114",
+        "expect": "appear: {"
+      }
+    }
+  }
+}

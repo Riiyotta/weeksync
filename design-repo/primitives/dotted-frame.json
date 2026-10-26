@@ -1,0 +1,26 @@
+{
+  "id": "primitive.dotted-frame",
+  "kind": "primitive",
+  "title": "Dotted frame",
+  "purpose": "Signature dotted border used for the sidebar, hero ticket, review ellipse and mobile ovals.",
+  "source": {
+    "ref": "src/index.css:16",
+    "expect": "--landing-border-dotted: 4.032rem dotted #000;"
+  },
+  "props": {
+    "shape": "rounded-left | rounded-right | ellipse | oval"
+  },
+  "tokens": [
+    "border.dotted",
+    "border.dotted-mobile",
+    "radius.landing",
+    "radius.ellipse",
+    "radius.oval"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:127",
+      "expect": "**Dotted frames:** `border: 4.032rem dotted #000`"
+    }
+  ]
+}

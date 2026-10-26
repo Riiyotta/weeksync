@@ -1,0 +1,195 @@
+{
+  "id": "faq.accordion",
+  "title": "FAQ accordion",
+  "purpose": "Single-open question list (item 1 open on load); answers are paragraphs and dash lists that show/hide instantly.",
+  "semantic": {
+    "id": "faq.accordion",
+    "category": "FAQ"
+  },
+  "source": {
+    "id": "Faq<div>@26",
+    "file": "src/components/Faq.jsx",
+    "tag": "div",
+    "lines": "26-76",
+    "citation": {
+      "ref": "src/components/Faq.jsx:26-76",
+      "expect": "<div"
+    }
+  },
+  "retrievalEligible": true,
+  "layer": {
+    "desktop": "in-flow-loop",
+    "mobile": "in-flow"
+  },
+  "variants": [
+    "default"
+  ],
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "title",
+      "items"
+    ],
+    "properties": {
+      "title": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 12,
+        "maxWords": 3
+      },
+      "items": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 10,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "question",
+            "answer"
+          ],
+          "properties": {
+            "question": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 55,
+              "maxWords": 11
+            },
+            "answer": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 3,
+              "items": {
+                "oneOf": [
+                  {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "paragraph"
+                    ],
+                    "properties": {
+                      "paragraph": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 260,
+                        "maxWords": 46
+                      }
+                    }
+                  },
+                  {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "list"
+                    ],
+                    "properties": {
+                      "list": {
+                        "type": "array",
+                        "minItems": 1,
+                        "maxItems": 4,
+                        "items": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 99,
+                          "maxWords": 19
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "initiallyOpenIndex": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "singleOpen": true,
+    "initiallyOpenIndexDefault": 0,
+    "itemsMeasured": 10,
+    "itemsAllowed": "1-10 (the loop scroller re-measures on content resize)",
+    "stateSharedAcrossLoopCopies": true
+  },
+  "motion": {
+    "patterns": [
+      "instant-swap"
+    ],
+    "reducedMotionFallbacks": {
+      "instant-swap": "instant-swap"
+    }
+  },
+  "responsive": [
+    {
+      "breakpoint": "desktop",
+      "change": "list max-width 864rem, question title-role 19.4rem, hover italic+underline",
+      "evidence": {
+        "ref": "CLONE_SPEC.md:336",
+        "expect": "- List: `width:100%; max-width:864rem; list-style:none`. 10 items."
+      }
+    },
+    {
+      "breakpoint": "mobile",
+      "change": "padding 30rem 15rem, gap 20rem, smaller markers; hover styles disabled",
+      "evidence": {
+        "ref": "CLONE_SPEC.md:355",
+        "expect": "- **Mobile:** wrapper `padding:30rem 15rem; gap:20rem; scroll-margin-top:60rem`."
+      }
+    }
+  ],
+  "generatedAssetRoles": [
+    "copy.original"
+  ],
+  "referenceAssetRoles": [],
+  "allowedTokenSlots": {
+    "surface": [
+      "color.surface.page"
+    ],
+    "text": [
+      "color.text.primary"
+    ],
+    "fontFamily": [
+      "font.mono",
+      "font.text"
+    ],
+    "paddingTop": [
+      "spacing.section",
+      "spacing.pad-section"
+    ]
+  },
+  "composes": [
+    "component.faq-item",
+    "primitive.circle-marker",
+    "primitive.typewriter-text"
+  ],
+  "accessibility": [
+    "question buttons expose aria-expanded / aria-controls",
+    "answers use the hidden attribute"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:332",
+      "expect": "## 9. FAQ (`#faq-section`)"
+    },
+    {
+      "ref": "src/components/Faq.jsx:20",
+      "expect": "notifyContentResize()"
+    },
+    {
+      "ref": "src/lib/store.js:28",
+      "expect": "export const faqStore = createStore({ open: 0 })"
+    }
+  ],
+  "measured": {
+    "1440x900": 934.6,
+    "1280x800": 830.5,
+    "390x844": 847.1
+  }
+}

@@ -1,0 +1,838 @@
+{
+  "$description": "Build-time evidence ledger. External citations point into the sibling project (src/, CLONE_SPEC.md, tailwind.config.js, index.html, .playwright-mcp/); verify_all.py re-reads every one when that tree is present and degrades to a warning when design-repo/ is used standalone.",
+  "sourceStack": {
+    "note": "Documentation only; never shapes token names, section ids, schema fields or validator logic.",
+    "reference": "React 18 + Vite 5 + Tailwind CSS v3 (plus embla-carousel-react for the reviews carousel); single route '/', no router",
+    "original": "Next.js site (live commercial product, measured by recon only)",
+    "evidence": [
+      {
+        "ref": "package.json:13",
+        "expect": "\"react\": \"^18.3.1\""
+      },
+      {
+        "ref": "package.json:21",
+        "expect": "\"vite\": \"^5.4.11\""
+      },
+      {
+        "ref": "package.json:20",
+        "expect": "\"tailwindcss\": \"^3.4.17\""
+      },
+      {
+        "ref": "package.json:12",
+        "expect": "\"embla-carousel-react\": \"^8.6.0\""
+      },
+      {
+        "ref": "CLONE_SPEC.md:5",
+        "expect": "`/_next/static/chunks/app/page-52680d2de05f6f30.js`"
+      }
+    ]
+  },
+  "sectionHeights": {
+    "viewport": "1440x900",
+    "viewportWidth": 1440,
+    "measuredWith": "headless Chromium (Playwright) running extraction/measure_sections.mjs against the clone dev server; primary loop wrap only (wrap-clone is an identical duplicate)",
+    "measuredAt": "2026-10-26T05:39:53.516Z",
+    "pages": {
+      "/": {
+        "template": "template.loop-landing",
+        "pageHeightPx": 7504.4,
+        "loopCopies": 2,
+        "wrapCloneHeightPx": 7504.4,
+        "sections": [
+          {
+            "section": "utility.cursor-trail",
+            "variant": "default",
+            "layer": "fixed",
+            "renderedHeightPx": 900,
+            "heightPx": 0
+          },
+          {
+            "section": "utility.cookie-consent",
+            "variant": "default",
+            "layer": "fixed",
+            "renderedHeightPx": 396.8,
+            "heightPx": 0
+          },
+          {
+            "section": "shell.mobile-menu",
+            "variant": "default",
+            "layer": "absent",
+            "renderedHeightPx": 0,
+            "heightPx": 0
+          },
+          {
+            "section": "shell.mobile-brand-intro",
+            "variant": "default",
+            "layer": "absent",
+            "renderedHeightPx": 0,
+            "heightPx": 0
+          },
+          {
+            "section": "hero.ticket",
+            "variant": "default",
+            "layer": "fixed",
+            "renderedHeightPx": 900,
+            "heightPx": 0
+          },
+          {
+            "section": "shell.sidebar-nav",
+            "variant": "default",
+            "layer": "fixed",
+            "renderedHeightPx": 900,
+            "heightPx": 0
+          },
+          {
+            "section": "layout.scroll-runway",
+            "variant": "hero",
+            "layer": "in-flow-loop",
+            "heightPx": 1608.8,
+            "renderedHeightPx": 1608.8
+          },
+          {
+            "section": "demo.interactive-calendar",
+            "variant": "default",
+            "layer": "in-flow-loop",
+            "heightPx": 645,
+            "renderedHeightPx": 645
+          },
+          {
+            "section": "features.stacked-cards",
+            "variant": "default",
+            "layer": "in-flow-loop",
+            "heightPx": 1503,
+            "renderedHeightPx": 1503
+          },
+          {
+            "section": "pricing.plan-contact",
+            "variant": "default",
+            "layer": "in-flow-loop",
+            "heightPx": 501,
+            "renderedHeightPx": 501
+          },
+          {
+            "section": "testimonials.ellipse-carousel",
+            "variant": "default",
+            "layer": "in-flow-loop",
+            "heightPx": 792.6,
+            "renderedHeightPx": 792.6
+          },
+          {
+            "section": "faq.accordion",
+            "variant": "default",
+            "layer": "in-flow-loop",
+            "heightPx": 934.6,
+            "renderedHeightPx": 934.6
+          },
+          {
+            "section": "cta.closing-band",
+            "variant": "default",
+            "layer": "in-flow-loop",
+            "heightPx": 870,
+            "renderedHeightPx": 870
+          },
+          {
+            "section": "layout.scroll-runway",
+            "variant": "tail",
+            "layer": "in-flow-loop",
+            "heightPx": 634.5,
+            "renderedHeightPx": 634.5
+          }
+        ]
+      }
+    },
+    "otherViewports": {
+      "1280x800": {
+        "pageHeightPx": 6670.3,
+        "loopCopies": 2,
+        "sections": [
+          {
+            "section": "utility.cursor-trail",
+            "variant": "default",
+            "layer": "fixed",
+            "renderedHeightPx": 800,
+            "heightPx": 0
+          },
+          {
+            "section": "utility.cookie-consent",
+            "variant": "default",
+            "layer": "fixed",
+            "renderedHeightPx": 352.7,
+            "heightPx": 0
+          },
+          {
+            "section": "shell.mobile-menu",
+            "variant": "default",
+            "layer": "absent",
+            "renderedHeightPx": 0,
+            "heightPx": 0
+          },
+          {
+            "section": "shell.mobile-brand-intro",
+            "variant": "default",
+            "layer": "absent",
+            "renderedHeightPx": 0,
+            "heightPx": 0
+          },
+          {
+            "section": "hero.ticket",
+            "variant": "default",
+            "layer": "fixed",
+            "renderedHeightPx": 800,
+            "heightPx": 0
+          },
+          {
+            "section": "shell.sidebar-nav",
+            "variant": "default",
+            "layer": "fixed",
+            "renderedHeightPx": 800,
+            "heightPx": 0
+          },
+          {
+            "section": "layout.scroll-runway",
+            "variant": "hero",
+            "layer": "in-flow-loop",
+            "heightPx": 1430,
+            "renderedHeightPx": 1430
+          },
+          {
+            "section": "demo.interactive-calendar",
+            "variant": "default",
+            "layer": "in-flow-loop",
+            "heightPx": 573.3,
+            "renderedHeightPx": 573.3
+          },
+          {
+            "section": "features.stacked-cards",
+            "variant": "default",
+            "layer": "in-flow-loop",
+            "heightPx": 1336,
+            "renderedHeightPx": 1336
+          },
+          {
+            "section": "pricing.plan-contact",
+            "variant": "default",
+            "layer": "in-flow-loop",
+            "heightPx": 445.3,
+            "renderedHeightPx": 445.3
+          },
+          {
+            "section": "testimonials.ellipse-carousel",
+            "variant": "default",
+            "layer": "in-flow-loop",
+            "heightPx": 704.5,
+            "renderedHeightPx": 704.5
+          },
+          {
+            "section": "faq.accordion",
+            "variant": "default",
+            "layer": "in-flow-loop",
+            "heightPx": 830.5,
+            "renderedHeightPx": 830.5
+          },
+          {
+            "section": "cta.closing-band",
+            "variant": "default",
+            "layer": "in-flow-loop",
+            "heightPx": 773.3,
+            "renderedHeightPx": 773.3
+          },
+          {
+            "section": "layout.scroll-runway",
+            "variant": "tail",
+            "layer": "in-flow-loop",
+            "heightPx": 564,
+            "renderedHeightPx": 564
+          }
+        ]
+      },
+      "390x844": {
+        "pageHeightPx": 4814.4,
+        "loopCopies": 1,
+        "sections": [
+          {
+            "section": "utility.cursor-trail",
+            "variant": "default",
+            "layer": "absent",
+            "renderedHeightPx": 0,
+            "heightPx": 0
+          },
+          {
+            "section": "utility.cookie-consent",
+            "variant": "default",
+            "layer": "fixed",
+            "renderedHeightPx": 301.1,
+            "heightPx": 0
+          },
+          {
+            "section": "shell.mobile-menu",
+            "variant": "default",
+            "layer": "fixed",
+            "renderedHeightPx": 66.3,
+            "heightPx": 0
+          },
+          {
+            "section": "shell.mobile-brand-intro",
+            "variant": "default",
+            "layer": "in-flow",
+            "renderedHeightPx": 552.5,
+            "heightPx": 552.5
+          },
+          {
+            "section": "hero.ticket",
+            "variant": "default",
+            "layer": "in-flow",
+            "renderedHeightPx": 234.3,
+            "heightPx": 234.3
+          },
+          {
+            "section": "shell.sidebar-nav",
+            "variant": "default",
+            "layer": "absent",
+            "renderedHeightPx": 0,
+            "heightPx": 0
+          },
+          {
+            "section": "layout.scroll-runway",
+            "variant": "hero",
+            "layer": "collapsed",
+            "heightPx": 0,
+            "renderedHeightPx": 0
+          },
+          {
+            "section": "demo.interactive-calendar",
+            "variant": "default",
+            "layer": "in-flow",
+            "heightPx": 307.7,
+            "renderedHeightPx": 307.7
+          },
+          {
+            "section": "features.stacked-cards",
+            "variant": "default",
+            "layer": "in-flow",
+            "heightPx": 1108.6,
+            "renderedHeightPx": 1108.6
+          },
+          {
+            "section": "pricing.plan-contact",
+            "variant": "default",
+            "layer": "in-flow",
+            "heightPx": 828.7,
+            "renderedHeightPx": 828.7
+          },
+          {
+            "section": "testimonials.ellipse-carousel",
+            "variant": "default",
+            "layer": "in-flow",
+            "heightPx": 485.2,
+            "renderedHeightPx": 485.2
+          },
+          {
+            "section": "faq.accordion",
+            "variant": "default",
+            "layer": "in-flow",
+            "heightPx": 847.1,
+            "renderedHeightPx": 847.1
+          },
+          {
+            "section": "cta.closing-band",
+            "variant": "default",
+            "layer": "in-flow",
+            "heightPx": 450.3,
+            "renderedHeightPx": 450.3
+          },
+          {
+            "section": "layout.scroll-runway",
+            "variant": "tail",
+            "layer": "collapsed",
+            "heightPx": 0,
+            "renderedHeightPx": 0
+          }
+        ],
+        "note": "mobile: native scroll, single copy; page height = mobile brand intro + hero block + content column"
+      }
+    },
+    "crossChecks": [
+      {
+        "ref": "CLONE_SPEC.md:146",
+        "expect": "| b | Demo calendar | `demo-section` | 1624 | 645 (15 pad + 630 frame) | |"
+      },
+      {
+        "ref": "CLONE_SPEC.md:147",
+        "expect": "| c | Features x3 | `features-section` | 2269 | 3 x 501 = 1503 | |"
+      },
+      {
+        "ref": "CLONE_SPEC.md:151",
+        "expect": "| g | CTA + footer | n/a | 6000 | 870 | |"
+      },
+      {
+        "ref": ".playwright-mcp/o1440.n:30",
+        "expect": "## demo root 371,1623.8,1069,645"
+      },
+      {
+        "ref": ".playwright-mcp/c1440b.n:30",
+        "expect": "## demo root 371,1623.8,1069,645"
+      },
+      {
+        "ref": ".playwright-mcp/c1440b.n:162",
+        "expect": "## faq root 371,5065.3,1069,934.6"
+      },
+      {
+        "ref": ".playwright-mcp/o390.n:16",
+        "expect": "## mhero root 0,0,390,552.5"
+      }
+    ]
+  },
+  "cloneQuality": {
+    "cleanInstall": {
+      "result": "pass",
+      "command": "npm ci && vite build, in an isolated temp copy of src/, public/, index.html, package*.json and the three config files",
+      "npmCi": "exit 0 (132 packages)",
+      "viteBuild": "exit 0 (index.html 0.87 kB, CSS 31.16 kB, JS 225.15 kB)",
+      "runDate": "2026-10-26"
+    },
+    "serves": "dev server answered HTTP 200 with the clone's document title during measurement",
+    "pixelParity": {
+      "measured": false,
+      "reason": "No paired live-vs-clone screenshots at matching scroll offsets exist for this project, and this build did not capture the live original. No pixel-parity number is claimed."
+    },
+    "geometryParity": {
+      "method": "extraction/geometry_parity.py: per section, share of original computed-style rows (box within 1.5px + identical font/border/radius/colour) matched by a clone row; text-free dumps o<vp>.n vs c<vp>b.n",
+      "gate": {
+        "perSectionMinPct": 80,
+        "averageMinPct": 80
+      },
+      "results": {
+        "1440": {
+          "averagePct": 88.5,
+          "sections": {
+            "sidebar": {
+              "rows": 18,
+              "matching": 13,
+              "pct": 72.2
+            },
+            "hero": {
+              "rows": 6,
+              "matching": 6,
+              "pct": 100.0
+            },
+            "demo": {
+              "rows": 70,
+              "matching": 63,
+              "pct": 90.0
+            },
+            "features": {
+              "rows": 15,
+              "matching": 15,
+              "pct": 100.0
+            },
+            "price": {
+              "rows": 25,
+              "matching": 25,
+              "pct": 100.0
+            },
+            "reviews": {
+              "rows": 18,
+              "matching": 17,
+              "pct": 94.4
+            },
+            "faq": {
+              "rows": 42,
+              "matching": 42,
+              "pct": 100.0
+            },
+            "cta": {
+              "rows": 10,
+              "matching": 10,
+              "pct": 100.0
+            },
+            "cookie": {
+              "rows": 5,
+              "matching": 2,
+              "pct": 40.0
+            }
+          }
+        },
+        "1280": {
+          "averagePct": 89.7,
+          "sections": {
+            "sidebar": {
+              "rows": 18,
+              "matching": 13,
+              "pct": 72.2
+            },
+            "hero": {
+              "rows": 6,
+              "matching": 6,
+              "pct": 100.0
+            },
+            "demo": {
+              "rows": 70,
+              "matching": 63,
+              "pct": 90.0
+            },
+            "dctl": {
+              "rows": 9,
+              "matching": 9,
+              "pct": 100.0
+            },
+            "features": {
+              "rows": 15,
+              "matching": 15,
+              "pct": 100.0
+            },
+            "price": {
+              "rows": 25,
+              "matching": 25,
+              "pct": 100.0
+            },
+            "reviews": {
+              "rows": 18,
+              "matching": 17,
+              "pct": 94.4
+            },
+            "faq": {
+              "rows": 42,
+              "matching": 42,
+              "pct": 100.0
+            },
+            "cta": {
+              "rows": 10,
+              "matching": 10,
+              "pct": 100.0
+            },
+            "cookie": {
+              "rows": 5,
+              "matching": 2,
+              "pct": 40.0
+            }
+          }
+        },
+        "390": {
+          "averagePct": 70.9,
+          "sections": {
+            "menu": {
+              "rows": 10,
+              "matching": 10,
+              "pct": 100.0
+            },
+            "sidebar": {
+              "rows": 0,
+              "matching": 0,
+              "pct": 100.0
+            },
+            "hero": {
+              "rows": 1,
+              "matching": 1,
+              "pct": 100.0
+            },
+            "mhero": {
+              "rows": 9,
+              "matching": 0,
+              "pct": 0.0
+            },
+            "demo": {
+              "rows": 70,
+              "matching": 63,
+              "pct": 90.0
+            },
+            "dctl": {
+              "rows": 9,
+              "matching": 9,
+              "pct": 100.0
+            },
+            "features": {
+              "rows": 15,
+              "matching": 15,
+              "pct": 100.0
+            },
+            "price": {
+              "rows": 25,
+              "matching": 25,
+              "pct": 100.0
+            },
+            "reviews": {
+              "rows": 17,
+              "matching": 2,
+              "pct": 11.8
+            },
+            "faq": {
+              "rows": 42,
+              "matching": 4,
+              "pct": 9.5
+            },
+            "cta": {
+              "rows": 11,
+              "matching": 11,
+              "pct": 100.0
+            },
+            "cookie": {
+              "rows": 5,
+              "matching": 2,
+              "pct": 40.0
+            }
+          }
+        }
+      },
+      "verdict": {
+        "1440": "average 88.5% PASSES the 80% average gate; per-section gate FAILS for sidebar and cookie",
+        "1280": "average 89.7% PASSES the 80% average gate; per-section gate FAILS for sidebar and cookie",
+        "390": "average 70.9% FAILS the 80% average gate; per-section gate FAILS for mhero, reviews, faq, cookie"
+      },
+      "explanation": [
+        "sidebar 1440/1280: the original dumps nav labels as separate text rows; the clone's labels live inside the button row, so 5 label rows have no counterpart (dump granularity, boxes coincide).",
+        "cookie: the 100-char placeholder text wraps differently from the original, shifting the typed text boxes.",
+        "390 reviews/faq: the clone's placeholder paragraphs wrap to one more line at 390 (e.g. review paragraph 42.3 -> 63.4px tall), which shifts every following row in the section.",
+        "390 mhero: the ovals run a 6s CSS loop; the two dumps caught different animation phases (original near scaleX 0, clone mid-cycle), so no rows coincide."
+      ]
+    }
+  },
+  "reconciliation": {
+    "runAgainst": "the current clone source and a live headless render on 2026-10-26",
+    "routes": {
+      "served": [
+        "/"
+      ],
+      "mappedExactlyOnce": true,
+      "evidence": {
+        "ref": "src/main.jsx:5",
+        "expect": "ReactDOM.createRoot(document.getElementById('root')).render(<App />)"
+      }
+    },
+    "checked": {
+      "typography": {
+        "ref": "tailwind.config.js:48",
+        "expect": "hero: ['42.624rem'"
+      },
+      "spacing": {
+        "ref": "tailwind.config.js:62",
+        "expect": "'pad-section': '15rem'"
+      },
+      "responsive": {
+        "ref": "src/index.css:65",
+        "expect": "@media screen and (max-width: 1023px) and (min-width: 480px) {"
+      },
+      "imagery": {
+        "ref": "src/content.js:14",
+        "expect": "featureImages: ["
+      },
+      "dimensions": {
+        "ref": ".playwright-mcp/c1440b.n:101",
+        "expect": "## features root 371,2268.8,1069,1503"
+      },
+      "motion": {
+        "ref": "src/lib/motion.js:14",
+        "expect": "const HERO_DISTANCE = 0.2"
+      },
+      "assetMappings": {
+        "ref": "src/content.js:20",
+        "expect": "spriteFrames: 29,"
+      }
+    }
+  },
+  "groundworkSpotChecks": [
+    {
+      "claim": "At >=1024px the whole page renders twice (wrap + wrap-clone, 7504px each at 1440x900)",
+      "holds": true,
+      "evidence": [
+        {
+          "ref": "src/components/LoopScroller.jsx:156",
+          "expect": "data-loop-scroll=\"wrap-clone\""
+        }
+      ],
+      "measured": {
+        "wrapHeightPx": 7504.4,
+        "wrapCloneHeightPx": 7504.4
+      }
+    },
+    {
+      "claim": "The two loop copies share state",
+      "holds": "partly",
+      "detail": "Demo data/view/period and the open FAQ item are shared through module-level stores; the reviews carousel index is NOT shared (each copy keeps its own).",
+      "evidence": [
+        {
+          "ref": "src/lib/store.js:1",
+          "expect": "// Module-level stores shared by both loop copies (wrap + wrap-clone), spec 0.1."
+        },
+        {
+          "ref": "src/components/Reviews.jsx:7",
+          "expect": "// Each loop copy keeps its own carousel state."
+        },
+        {
+          "ref": "CLONE_SPEC.md:23",
+          "expect": "Only the embla reviews carousel keeps its own state per copy."
+        }
+      ]
+    },
+    {
+      "claim": "Root font-size calc(1vw/14.4) >=1024, 1px 480-1023, calc(1vw/3.6) <=479",
+      "holds": true,
+      "evidence": [
+        {
+          "ref": "src/index.css:63",
+          "expect": "font-size: calc(1vw / 14.4);"
+        },
+        {
+          "ref": "src/index.css:68",
+          "expect": "font-size: 1px;"
+        },
+        {
+          "ref": "src/index.css:74",
+          "expect": "font-size: calc(1vw / 3.6);"
+        }
+      ]
+    },
+    {
+      "claim": "Smooth scroll at 1600ms easeInOutQuad",
+      "holds": "partly",
+      "detail": "True for the scissors button only; sidebar and mobile-menu navigation jump instantly (smooth undefined / native anchor).",
+      "evidence": [
+        {
+          "ref": "src/components/Sidebar.jsx:83",
+          "expect": "// Sidebar clicks pass smooth undefined -> instant jump (spec 3)"
+        },
+        {
+          "ref": "src/lib/motion.js:326",
+          "expect": "export function startSmoothScroll({ delta, duration = 1600 })"
+        }
+      ]
+    },
+    {
+      "claim": "Typewriter starts at the 30% threshold",
+      "holds": true,
+      "evidence": [
+        {
+          "ref": "src/lib/motion.js:156",
+          "expect": "{ threshold: 0.3 })"
+        }
+      ]
+    },
+    {
+      "claim": "Mobile hero ovals loop every 6s",
+      "holds": true,
+      "evidence": [
+        {
+          "ref": "tailwind.config.js:120",
+          "expect": "'oval-grow': 'ovalGrowShrink 6s linear infinite'"
+        }
+      ]
+    },
+    {
+      "claim": "Fish sprite has 29 frames",
+      "holds": true,
+      "evidence": [
+        {
+          "ref": "src/content.js:20",
+          "expect": "spriteFrames: 29,"
+        }
+      ]
+    },
+    {
+      "claim": "Features are 3 stacked cards, not a carousel",
+      "holds": true,
+      "evidence": [
+        {
+          "ref": "src/components/Features.jsx:4",
+          "expect": "// Three stacked feature cards (spec 6)."
+        }
+      ]
+    },
+    {
+      "claim": "Reviews: dotted ellipse, Prev/Next swap instantly",
+      "holds": true,
+      "detail": "It is still a carousel (embla, loop:true) with drag physics; only the buttons jump.",
+      "evidence": [
+        {
+          "ref": "src/components/Reviews.jsx:6",
+          "expect": "// Testimonials in a dotted ellipse (spec 8). Embla {loop:true}; Prev/Next jump instantly."
+        }
+      ]
+    },
+    {
+      "claim": "FAQ single-open, item 1 open on load, no height animation",
+      "holds": true,
+      "evidence": [
+        {
+          "ref": "src/lib/store.js:28",
+          "expect": "export const faqStore = createStore({ open: 0 })"
+        },
+        {
+          "ref": "src/components/Faq.jsx:8",
+          "expect": "// State is shared between loop copies; opens/closes instantly (no height animation)."
+        }
+      ]
+    },
+    {
+      "claim": "Section order: cookie triangle, sidebar nav, hero ticket, ...",
+      "holds": "partly",
+      "detail": "Visual stacking yes; DOM order differs: cursor trail, cookie, mobile menu, mobile hero, hero ticket, then sidebar, then the loop content. templates.json follows the DOM order.",
+      "evidence": [
+        {
+          "ref": "src/App.jsx:66",
+          "expect": "<HeroSlide />"
+        }
+      ]
+    },
+    {
+      "claim": "Stack is React 18 + Vite 5 + Tailwind v3",
+      "holds": true,
+      "detail": "Also depends on embla-carousel-react ^8.6.0 (reviews).",
+      "evidence": [
+        {
+          "ref": "package.json:12",
+          "expect": "\"embla-carousel-react\": \"^8.6.0\""
+        }
+      ]
+    },
+    {
+      "claim": "CLONE_SPEC internal cross-references",
+      "holds": false,
+      "detail": "Section 1.4 says typewriter is 'Motion section 9.3' (it is 12.3) and section 10 says 'See 11.5 for motion' (it is 12.5). Values cited here use the correct sections.",
+      "evidence": [
+        {
+          "ref": "CLONE_SPEC.md:133",
+          "expect": "**TypewriterText:** see Motion section 9.3."
+        },
+        {
+          "ref": "CLONE_SPEC.md:364",
+          "expect": "See 11.5 for motion."
+        }
+      ]
+    },
+    {
+      "claim": "Every footer/CTA link resolves inside the clone",
+      "holds": false,
+      "detail": "/login and the four legal pages are linked but not served (single route); recorded in templates/routes.json linkedButUnserved.",
+      "evidence": [
+        {
+          "ref": "src/content.js:24",
+          "expect": "login: '/login',"
+        }
+      ]
+    },
+    {
+      "claim": "Every defined colour token is used",
+      "holds": false,
+      "detail": "ink (#222222), sand-300/700, gray-500, red-300/700, orange-300/700, green-200 have zero usages in src/; kept in foundation, marked referenceable=false in the catalog.",
+      "evidence": [
+        {
+          "ref": "tailwind.config.js:22",
+          "expect": "ink: '#222222', // --black"
+        }
+      ]
+    }
+  ],
+  "externalEvidence": {
+    "files": [
+      "CLONE_SPEC.md",
+      "src/",
+      "tailwind.config.js",
+      "index.html",
+      "package.json",
+      ".playwright-mcp/o1440.n",
+      ".playwright-mcp/c1440b.n",
+      ".playwright-mcp/o390.n",
+      "_reference/original.html (read only to compute copy fingerprints; no text copied)"
+    ],
+    "standalonePolicy": "When these sibling files are absent, verify_all.py reports one warning and skips the citation re-read; every other check still runs."
+  }
+}

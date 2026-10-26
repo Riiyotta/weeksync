@@ -1,0 +1,97 @@
+{
+  "$description": "Component-scoped dimensions (approved application of foundation values).",
+  "tokens": {
+    "cta-button.gap": {
+      "value": "7.2rem",
+      "hover": "14.4rem",
+      "source": {
+        "ref": "src/components/CtaButton.jsx:5",
+        "expect": "gap-[7.2rem] hover:gap-[14.4rem]"
+      }
+    },
+    "marker.size": {
+      "value": "14.4rem",
+      "border": "1.584rem",
+      "source": {
+        "ref": "src/components/Sidebar.jsx:34",
+        "expect": "w-[14.4rem] h-[14.4rem] rounded-[50%] border-[1.584rem]"
+      }
+    },
+    "card.height": {
+      "value": "486rem",
+      "mobilePrice": "370rem",
+      "source": {
+        "ref": "src/components/Price.jsx:7",
+        "expect": "h-[486rem]"
+      }
+    },
+    "demo.frame-height": {
+      "value": "630rem",
+      "source": {
+        "ref": "src/components/AppDemo.jsx:452",
+        "expect": "h-[630rem]"
+      }
+    },
+    "demo.frame-width-mobile": {
+      "value": "1039rem",
+      "note": "scaled to the outer box on mobile",
+      "source": {
+        "ref": "src/components/AppDemo.jsx:452",
+        "expect": "mob:w-[1039rem]"
+      }
+    },
+    "ellipse.size": {
+      "value": "864rem x 576rem",
+      "source": {
+        "ref": "src/components/Reviews.jsx:40",
+        "expect": "w-[864rem] h-[576rem]"
+      }
+    },
+    "faq.max-width": {
+      "value": "864rem",
+      "source": {
+        "ref": "src/components/Faq.jsx:31",
+        "expect": "max-w-[864rem]"
+      }
+    },
+    "cookie.triangle": {
+      "value": "316.8rem",
+      "mobile": "250rem",
+      "source": {
+        "ref": "src/components/CookiePopup.jsx:30",
+        "expect": "w-[316.8rem] h-[316.8rem] mob:w-[250rem] mob:h-[250rem]"
+      }
+    },
+    "fish.sprite-height": {
+      "value": "25vh",
+      "mobile": "10vh",
+      "source": {
+        "ref": "src/index.css:204",
+        "expect": "height: 25vh;"
+      }
+    },
+    "fish.wheel-gap": {
+      "value": "216rem",
+      "mobile": "95rem",
+      "source": {
+        "ref": "src/components/CtaFooter.jsx:33",
+        "expect": "gap-[216rem] mob:gap-[95rem]"
+      }
+    },
+    "cta-band.height": {
+      "value": "calc(100vh - 29.999952rem)",
+      "source": {
+        "ref": "src/components/CtaFooter.jsx:61",
+        "expect": "h-[calc(100vh-29.999952rem)]"
+      }
+    },
+    "logo-mark.size": {
+      "value": "33.12rem x 25.92rem",
+      "mobile": "34rem x 26rem",
+      "source": {
+        "ref": "src/components/Sidebar.jsx:70",
+        "expect": "w-[33.12rem] h-[25.92rem]"
+      }
+    }
+  }
+}

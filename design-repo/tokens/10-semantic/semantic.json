@@ -1,0 +1,215 @@
+{
+  "$description": "Semantic roles (intent) resolving to foundation tokens. Generators reference these ids, never raw values.",
+  "tokens": {
+    "color.text.primary": {
+      "resolvesTo": "color.landing.black",
+      "source": {
+        "ref": "CLONE_SPEC.md:86",
+        "expect": "| Landing text (all headings/paragraphs/buttons) | `#000` |"
+      }
+    },
+    "color.text.inverse": {
+      "resolvesTo": "color.landing.white",
+      "source": {
+        "ref": "CLONE_SPEC.md:87",
+        "expect": "| Light text on black card | `#fff` |"
+      }
+    },
+    "color.text.body": {
+      "resolvesTo": "color.gray.600",
+      "source": {
+        "ref": "src/index.css:85",
+        "expect": "color: var(--gray-600);"
+      }
+    },
+    "color.text.muted": {
+      "resolvesTo": "color.sand.500",
+      "source": {
+        "ref": "CLONE_SPEC.md:93",
+        "expect": "| Demo muted text (totals, summary, \"Empty\") | `#b8b2a6` (sand-500) |"
+      }
+    },
+    "color.text.warning": {
+      "resolvesTo": "color.orange.500",
+      "source": {
+        "ref": "src/components/AppDemo.jsx:90",
+        "expect": "if (diff >= 1) return 'text-orange-500'"
+      }
+    },
+    "color.text.danger": {
+      "resolvesTo": "color.red.500",
+      "source": {
+        "ref": "src/components/AppDemo.jsx:89",
+        "expect": "if (diff >= 2) return 'text-red-500'"
+      }
+    },
+    "color.surface.page": {
+      "resolvesTo": "color.landing.gray",
+      "source": {
+        "ref": "CLONE_SPEC.md:83",
+        "expect": "| Page background (`page_globalWrapper`, `page_wrapper`) | `#cec9c0`"
+      }
+    },
+    "color.surface.overscroll": {
+      "resolvesTo": "color.landing.body",
+      "source": {
+        "ref": "src/index.css:93",
+        "expect": "background-color: #d2d2d2;"
+      }
+    },
+    "color.surface.card": {
+      "resolvesTo": "color.landing.beige",
+      "source": {
+        "ref": "CLONE_SPEC.md:88",
+        "expect": "| Beige card / demo frame | `#f9f7f3` |"
+      }
+    },
+    "color.surface.accent": {
+      "resolvesTo": "color.landing.accent",
+      "source": {
+        "ref": "CLONE_SPEC.md:89",
+        "expect": "| Accent card / CTA block | `#dfe296` |"
+      }
+    },
+    "color.surface.inverse": {
+      "resolvesTo": "color.landing.black",
+      "source": {
+        "ref": "CLONE_SPEC.md:90",
+        "expect": "| Price card | `#000` |"
+      }
+    },
+    "color.surface.demo-cell": {
+      "resolvesTo": "color.sand.200",
+      "source": {
+        "ref": "CLONE_SPEC.md:91",
+        "expect": "| Demo cell box | `#efede7` (sand-200) |"
+      }
+    },
+    "color.surface.control": {
+      "resolvesTo": "color.gray.700",
+      "source": {
+        "ref": "CLONE_SPEC.md:95",
+        "expect": "| Demo control pills | bg `#333333`"
+      }
+    },
+    "color.surface.control-hover": {
+      "resolvesTo": "color.gray.600",
+      "source": {
+        "ref": "src/components/AppDemo.jsx:330",
+        "expect": "hover:bg-gray-600 focus-visible:bg-gray-600 focus-visible:outline-none'"
+      }
+    },
+    "color.surface.control-active": {
+      "resolvesTo": "color.demo-active",
+      "source": {
+        "ref": "src/components/AppDemo.jsx:352",
+        "expect": "bg-demo-active hover:bg-demo-active"
+      }
+    },
+    "color.surface.overlay": {
+      "resolvesTo": "color.landing.black",
+      "source": {
+        "ref": "CLONE_SPEC.md:97",
+        "expect": "| Mobile menu overlay | `#000000`; items `#fff` |"
+      }
+    },
+    "color.border.frame": {
+      "resolvesTo": "color.landing.black",
+      "source": {
+        "ref": "src/index.css:16",
+        "expect": "--landing-border-dotted: 4.032rem dotted #000;"
+      }
+    },
+    "color.border.column": {
+      "resolvesTo": "color.sand.400",
+      "source": {
+        "ref": "CLONE_SPEC.md:92",
+        "expect": "| Demo column underline | `#cec9c0`; current column `#333333` |"
+      }
+    },
+    "color.border.column-current": {
+      "resolvesTo": "color.gray.700",
+      "source": {
+        "ref": "src/components/AppDemo.jsx:460",
+        "expect": "c.current ? 'border-gray-700' : 'border-sand-400'"
+      }
+    },
+    "color.icon.remove": {
+      "resolvesTo": "color.sand.600",
+      "source": {
+        "ref": "CLONE_SPEC.md:96",
+        "expect": "| Remove-x icon | `#969490`; hover `#333333` |"
+      }
+    },
+    "spacing.section": {
+      "resolvesTo": "spacing.pad-section",
+      "source": {
+        "ref": "CLONE_SPEC.md:139",
+        "expect": "Each section has `padding: 15rem 15rem 0` (`--landing-padding-section`)"
+      }
+    },
+    "spacing.section-loose": {
+      "resolvesTo": "spacing.scale.100_8",
+      "source": {
+        "ref": "src/components/Reviews.jsx:38",
+        "expect": "pt-[100.8rem] pb-[100.8rem]"
+      }
+    },
+    "spacing.card": {
+      "resolvesTo": "spacing.pad-base",
+      "source": {
+        "ref": "CLONE_SPEC.md:302",
+        "expect": "padding:24.99984rem; display:flex; flex-direction:column; justify-content:space-between"
+      }
+    },
+    "spacing.card-inline": {
+      "resolvesTo": "spacing.scale.72",
+      "source": {
+        "ref": "src/components/Features.jsx:10",
+        "expect": "px-[72rem]"
+      }
+    },
+    "spacing.gap": {
+      "resolvesTo": "spacing.gap-base",
+      "source": {
+        "ref": "tailwind.config.js:63",
+        "expect": "'gap-base': '15rem'"
+      }
+    },
+    "spacing.stack": {
+      "resolvesTo": "spacing.scale.34_56",
+      "source": {
+        "ref": "src/components/Faq.jsx:28",
+        "expect": "gap-[34.56rem]"
+      }
+    },
+    "spacing.inline-tight": {
+      "resolvesTo": "spacing.scale.7_2",
+      "source": {
+        "ref": "src/components/CtaButton.jsx:5",
+        "expect": "gap-[7.2rem]"
+      }
+    },
+    "radius.card": {
+      "resolvesTo": "radius.landing",
+      "source": {
+        "ref": "tailwind.config.js:68",
+        "expect": "landing: '33.12rem'"
+      }
+    },
+    "font.display": {
+      "resolvesTo": "font.sans",
+      "source": {
+        "ref": "src/index.css:134",
+        "expect": "@apply font-inter text-hero"
+      }
+    },
+    "font.text": {
+      "resolvesTo": "font.mono",
+      "source": {
+        "ref": "src/index.css:137",
+        "expect": "@apply font-mono text-title"
+      }
+    }
+  }
+}

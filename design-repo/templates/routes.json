@@ -1,0 +1,74 @@
+{
+  "$description": "Every route the clone serves, mapped exactly once. There is no router: src/main.jsx renders <App/> for one document.",
+  "routes": [
+    {
+      "route": "/",
+      "template": "template.loop-landing",
+      "evidence": {
+        "ref": "src/main.jsx:5",
+        "expect": "ReactDOM.createRoot(document.getElementById('root')).render(<App />)"
+      }
+    }
+  ],
+  "linkedButUnserved": [
+    {
+      "href": "/login",
+      "from": [
+        "shell.sidebar-nav",
+        "shell.mobile-menu",
+        "shell.mobile-brand-intro",
+        "pricing.plan-contact",
+        "cta.closing-band"
+      ],
+      "evidence": {
+        "ref": "src/content.js:24",
+        "expect": "login: '/login',"
+      }
+    },
+    {
+      "href": "/terms-and-conditions/",
+      "from": [
+        "cta.closing-band"
+      ],
+      "evidence": {
+        "ref": "src/content.js:26",
+        "expect": "{ label: 'Terms & Conditions', href: '/terms-and-conditions/' },"
+      }
+    },
+    {
+      "href": "/privacy-policy/",
+      "from": [
+        "cta.closing-band"
+      ],
+      "evidence": {
+        "ref": "src/content.js:27",
+        "expect": "{ label: 'Privacy Policy', href: '/privacy-policy/' },"
+      }
+    },
+    {
+      "href": "/terms-of-use/",
+      "from": [
+        "cta.closing-band"
+      ],
+      "evidence": {
+        "ref": "src/content.js:28",
+        "expect": "{ label: 'Terms of Use', href: '/terms-of-use/' },"
+      }
+    },
+    {
+      "href": "/refund-policy/",
+      "from": [
+        "cta.closing-band"
+      ],
+      "evidence": {
+        "ref": "src/content.js:29",
+        "expect": "{ label: 'Refund Policy', href: '/refund-policy/' },"
+      }
+    }
+  ],
+  "scopeNote": "The legal pages and /login are linked but neither measured by recon nor served by the clone, so no template exists for them (not an omission: the clone really omits them).",
+  "scopeEvidence": {
+    "ref": "CLONE_SPEC.md:7",
+    "expect": "Only one route is covered: `/` (single landing page)."
+  }
+}

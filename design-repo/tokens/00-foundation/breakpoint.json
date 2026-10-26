@@ -1,0 +1,58 @@
+{
+  "$description": "Desktop-first breakpoints. 480-1023 uses the mobile layout at a fixed 1rem = 1px; <=479 is fluid.",
+  "category": "breakpoint",
+  "tokens": {
+    "breakpoint.desktop": {
+      "value": "min-width: 1024px",
+      "source": {
+        "ref": "tailwind.config.js:9",
+        "expect": "desk: { min: '1024px' }"
+      }
+    },
+    "breakpoint.mobile": {
+      "value": "max-width: 1023px",
+      "source": {
+        "ref": "tailwind.config.js:10",
+        "expect": "mob: { max: '1023px' }"
+      }
+    },
+    "breakpoint.mobile-fluid": {
+      "value": "max-width: 479px",
+      "source": {
+        "ref": "src/index.css:71",
+        "expect": "@media screen and (max-width: 479px)"
+      }
+    }
+  },
+  "rootFontSize": {
+    ">=1024": {
+      "value": "calc(1vw / 14.4)",
+      "meaning": "1rem = 1px at 1440 wide",
+      "source": {
+        "ref": "src/index.css:63",
+        "expect": "font-size: calc(1vw / 14.4);"
+      }
+    },
+    "480-1023": {
+      "value": "1px",
+      "source": {
+        "ref": "src/index.css:68",
+        "expect": "font-size: 1px;"
+      }
+    },
+    "<=479": {
+      "value": "calc(1vw / 3.6)",
+      "meaning": "1rem = 1px at 360 wide",
+      "source": {
+        "ref": "src/index.css:74",
+        "expect": "font-size: calc(1vw / 3.6);"
+      }
+    },
+    "measured": {
+      "1440x900": 1,
+      "1280x800": 0.888889,
+      "390x844": 1.08333,
+      "source": "extraction/measured-values.json#/sectionHeights"
+    }
+  }
+}

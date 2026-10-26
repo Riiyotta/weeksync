@@ -1,0 +1,47 @@
+{
+  "$description": "Fixed-layer stacking order, back to front: loop scroller (auto) < sidebar < hero ticket < mobile menu < cookie < cursor trail.",
+  "category": "zIndex",
+  "tokens": {
+    "zIndex.sidebar": {
+      "value": "1000",
+      "source": {
+        "ref": "tailwind.config.js:78",
+        "expect": "sidebar: '1000'"
+      }
+    },
+    "zIndex.hero": {
+      "value": "1002",
+      "source": {
+        "ref": "tailwind.config.js:79",
+        "expect": "hero: '1002'"
+      }
+    },
+    "zIndex.menu": {
+      "value": "1500",
+      "source": {
+        "ref": "tailwind.config.js:80",
+        "expect": "menu: '1500'"
+      }
+    },
+    "zIndex.cookie": {
+      "value": "9999",
+      "source": {
+        "ref": "tailwind.config.js:81",
+        "expect": "cookie: '9999'"
+      }
+    },
+    "zIndex.trail": {
+      "value": "2147483647",
+      "source": {
+        "ref": "tailwind.config.js:82",
+        "expect": "trail: '2147483647'"
+      }
+    }
+  },
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:27",
+      "expect": "### 0.2 Fixed layers on desktop"
+    }
+  ]
+}

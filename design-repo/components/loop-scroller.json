@@ -1,0 +1,23 @@
+{
+  "id": "component.loop-scroller",
+  "kind": "component",
+  "title": "Loop scroller",
+  "purpose": "Page scroll model for >=1024px: fixed root, content rendered twice (wrap + wrap-clone), wraps seamlessly; native single-copy scroll below 1024px.",
+  "source": {
+    "ref": "src/components/LoopScroller.jsx:14",
+    "expect": "export default function LoopScroller({ enabled, children }) {"
+  },
+  "props": {
+    "enabled": "boolean (desktop)"
+  },
+  "tokens": [
+    "layout.loop-wrap-height"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:13",
+      "expect": "### 0.1 Why the calendar (and everything else) appears twice"
+    }
+  ],
+  "motionPattern": "loop-scroll"
+}

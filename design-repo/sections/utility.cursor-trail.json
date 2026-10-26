@@ -1,0 +1,90 @@
+{
+  "id": "utility.cursor-trail",
+  "title": "Dotted cursor trail",
+  "purpose": "Decorative dotted trail that follows a fine pointer on desktop; carries no content.",
+  "semantic": {
+    "id": "utility.cursor-trail",
+    "category": "UTILITY"
+  },
+  "source": {
+    "id": "CursorTrail<svg>@11",
+    "file": "src/components/CursorTrail.jsx",
+    "tag": "svg",
+    "lines": "11-17",
+    "citation": {
+      "ref": "src/components/CursorTrail.jsx:11-17",
+      "expect": "<svg"
+    }
+  },
+  "retrievalEligible": false,
+  "retrievalIneligibleReason": "Runtime pointer-follow decoration with no content; it is page chrome behaviour, not a retrievable content section.",
+  "layer": {
+    "desktop": "fixed",
+    "mobile": "absent"
+  },
+  "variants": [
+    "default"
+  ],
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [],
+    "properties": {}
+  },
+  "constraints": {
+    "onePerPage": true,
+    "layer": "fixed",
+    "zIndex": "zIndex.trail"
+  },
+  "motion": {
+    "patterns": [
+      "cursor-trail"
+    ],
+    "reducedMotionFallbacks": {
+      "cursor-trail": "hidden"
+    }
+  },
+  "responsive": [
+    {
+      "breakpoint": "desktop",
+      "change": "rendered only with (pointer: fine)",
+      "evidence": {
+        "ref": "src/App.jsx:62",
+        "expect": "{isDesktop && pointerFine && <CursorTrail />}"
+      }
+    },
+    {
+      "breakpoint": "mobile",
+      "change": "not rendered",
+      "evidence": {
+        "ref": "src/App.jsx:62",
+        "expect": "{isDesktop && pointerFine && <CursorTrail />}"
+      }
+    }
+  ],
+  "generatedAssetRoles": [],
+  "referenceAssetRoles": [],
+  "allowedTokenSlots": {},
+  "composes": [
+    "primitive.dotted-stroke"
+  ],
+  "accessibility": [
+    "aria-hidden, pointer-events none"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:425",
+      "expect": "### 12.7 Cursor trail (desktop, `(pointer: fine)` only)"
+    }
+  ],
+  "measured": {
+    "fixedHeights": {
+      "1440x900": {
+        "position": "fixed",
+        "height": 900,
+        "display": "block"
+      },
+      "390x844": null
+    }
+  }
+}

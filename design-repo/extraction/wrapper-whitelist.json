@@ -1,0 +1,4 @@
+{
+  "$description": "Reviewed exceptions to the wrapper-height gate (extraction/wrapper_gate.py). Empty: no section in this repo exceeds a threshold. Entry shape: {page, section, variant, reviewedBy, justification (>=30 chars), maxHeightPx (> measured)}; an agent reviewer must write 'agent attestation, not a human sign-off'.",
+  "entries": []
+}

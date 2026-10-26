@@ -1,0 +1,26 @@
+{
+  "id": "primitive.typewriter-text",
+  "kind": "primitive",
+  "title": "Typewriter text",
+  "purpose": "Text that types itself in when 30% visible and resets when it leaves; reserves its final layout.",
+  "source": {
+    "ref": "src/components/TypewriterText.jsx:7",
+    "expect": "export default function TypewriterText({ as: Tag = 'p', text, speed = 'normal', delay = 0, className = '' })"
+  },
+  "props": {
+    "speed": "fast | normal | slow",
+    "delay": "ms"
+  },
+  "tokens": [
+    "duration.typewriter-fast",
+    "duration.typewriter-normal",
+    "duration.typewriter-slow"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:133",
+      "expect": "**TypewriterText:** see Motion section 9.3."
+    }
+  ],
+  "motionPattern": "typewriter"
+}

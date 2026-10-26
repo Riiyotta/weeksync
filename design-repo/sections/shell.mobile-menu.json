@@ -1,0 +1,163 @@
+{
+  "id": "shell.mobile-menu",
+  "title": "Mobile menu bar and overlay",
+  "purpose": "Fixed top bar (menu / start now) that opens a full-screen black overlay with the section links.",
+  "semantic": {
+    "id": "shell.mobile-menu",
+    "category": "SHELL"
+  },
+  "source": {
+    "id": "MobileMenu<div>@13",
+    "file": "src/components/MobileMenu.jsx",
+    "tag": "div",
+    "lines": "13-38",
+    "citation": {
+      "ref": "src/components/MobileMenu.jsx:13-38",
+      "expect": "<div className=\"fixed top-0 left-0 right-0 z-menu"
+    }
+  },
+  "retrievalEligible": false,
+  "retrievalIneligibleReason": "Mobile drawer/overlay navigation: runtime chrome toggled by a button, duplicating the sidebar links; not retrievable content.",
+  "layer": {
+    "desktop": "absent",
+    "mobile": "fixed"
+  },
+  "variants": [
+    "default"
+  ],
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "menuLabel",
+      "closeLabel",
+      "cta",
+      "navItems"
+    ],
+    "properties": {
+      "menuLabel": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 4,
+        "maxWords": 1
+      },
+      "closeLabel": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 5,
+        "maxWords": 1
+      },
+      "cta": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "label",
+          "href"
+        ],
+        "properties": {
+          "label": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 9,
+            "maxWords": 2
+          },
+          "href": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          }
+        }
+      },
+      "navItems": {
+        "type": "array",
+        "minItems": 5,
+        "maxItems": 5,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "label",
+            "target"
+          ],
+          "properties": {
+            "label": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 18,
+              "maxWords": 3
+            },
+            "target": {
+              "type": "string",
+              "enum": [
+                "demo-section",
+                "features-section",
+                "price-section",
+                "reviews-section",
+                "faq-section"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "layer": "fixed",
+    "zIndex": "zIndex.menu",
+    "navParityWith": "shell.sidebar-nav"
+  },
+  "motion": {
+    "patterns": [
+      "overlay-slide"
+    ],
+    "reducedMotionFallbacks": {
+      "overlay-slide": "instant-toggle"
+    }
+  },
+  "responsive": [
+    {
+      "breakpoint": "desktop",
+      "change": "hidden (desk:hidden); the sidebar carries navigation",
+      "evidence": {
+        "ref": "src/components/MobileMenu.jsx:13",
+        "expect": "z-menu pointer-events-none desk:hidden"
+      }
+    },
+    {
+      "breakpoint": "mobile",
+      "change": "bar 66px tall at 390; overlay translateY(-100%) -> 0 in .35s; bar text turns white while open",
+      "evidence": {
+        "ref": "CLONE_SPEC.md:227",
+        "expect": "3. Fixed **MobileMenu** bar"
+      }
+    }
+  ],
+  "generatedAssetRoles": [
+    "url.placeholder"
+  ],
+  "referenceAssetRoles": [],
+  "allowedTokenSlots": {},
+  "composes": [
+    "primitive.text-link"
+  ],
+  "accessibility": [
+    "menu button exposes aria-expanded"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:228",
+      "expect": "- Overlay: `position:fixed; inset:0; background:#000; transform:translateY(-100%)`"
+    }
+  ],
+  "measured": {
+    "fixedHeights": {
+      "1440x900": null,
+      "390x844": {
+        "position": "fixed",
+        "height": 66.3,
+        "display": "block"
+      }
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "$description": "The only theme the source ships (no dark mode exists in tailwind.config.js or index.css). Every semantic token resolves to a real foundation value.",
+  "theme": "light",
+  "default": true,
+  "resolved": {
+    "color.text.primary": {
+      "resolvesTo": "color.landing.black",
+      "value": "#000000"
+    },
+    "color.text.inverse": {
+      "resolvesTo": "color.landing.white",
+      "value": "#ffffff"
+    },
+    "color.text.body": {
+      "resolvesTo": "color.gray.600",
+      "value": "#535353"
+    },
+    "color.text.muted": {
+      "resolvesTo": "color.sand.500",
+      "value": "#b8b2a6"
+    },
+    "color.text.warning": {
+      "resolvesTo": "color.orange.500",
+      "value": "#eaa165"
+    },
+    "color.text.danger": {
+      "resolvesTo": "color.red.500",
+      "value": "#e77d5f"
+    },
+    "color.surface.page": {
+      "resolvesTo": "color.landing.gray",
+      "value": "#cec9c0"
+    },
+    "color.surface.overscroll": {
+      "resolvesTo": "color.landing.body",
+      "value": "#d2d2d2"
+    },
+    "color.surface.card": {
+      "resolvesTo": "color.landing.beige",
+      "value": "#f9f7f3"
+    },
+    "color.surface.accent": {
+      "resolvesTo": "color.landing.accent",
+      "value": "#dfe296"
+    },
+    "color.surface.inverse": {
+      "resolvesTo": "color.landing.black",
+      "value": "#000000"
+    },
+    "color.surface.demo-cell": {
+      "resolvesTo": "color.sand.200",
+      "value": "#efede7"
+    },
+    "color.surface.control": {
+      "resolvesTo": "color.gray.700",
+      "value": "#333333"
+    },
+    "color.surface.control-hover": {
+      "resolvesTo": "color.gray.600",
+      "value": "#535353"
+    },
+    "color.surface.control-active": {
+      "resolvesTo": "color.demo-active",
+      "value": "color-mix(in srgb, #333333 78%, #f9f7f3 22%)"
+    },
+    "color.surface.overlay": {
+      "resolvesTo": "color.landing.black",
+      "value": "#000000"
+    },
+    "color.border.frame": {
+      "resolvesTo": "color.landing.black",
+      "value": "#000000"
+    },
+    "color.border.column": {
+      "resolvesTo": "color.sand.400",
+      "value": "#cec9c0"
+    },
+    "color.border.column-current": {
+      "resolvesTo": "color.gray.700",
+      "value": "#333333"
+    },
+    "color.icon.remove": {
+      "resolvesTo": "color.sand.600",
+      "value": "#969490"
+    },
+    "spacing.section": {
+      "resolvesTo": "spacing.pad-section",
+      "value": "15rem"
+    },
+    "spacing.section-loose": {
+      "resolvesTo": "spacing.scale.100_8",
+      "value": "100.8rem"
+    },
+    "spacing.card": {
+      "resolvesTo": "spacing.pad-base",
+      "value": "24.99984rem"
+    },
+    "spacing.card-inline": {
+      "resolvesTo": "spacing.scale.72",
+      "value": "72rem"
+    },
+    "spacing.gap": {
+      "resolvesTo": "spacing.gap-base",
+      "value": "15rem"
+    },
+    "spacing.stack": {
+      "resolvesTo": "spacing.scale.34_56",
+      "value": "34.56rem"
+    },
+    "spacing.inline-tight": {
+      "resolvesTo": "spacing.scale.7_2",
+      "value": "7.2rem"
+    },
+    "radius.card": {
+      "resolvesTo": "radius.landing",
+      "value": "33.12rem"
+    },
+    "font.display": {
+      "resolvesTo": "font.sans",
+      "value": "Inter, \"Inter Fallback\", sans-serif"
+    },
+    "font.text": {
+      "resolvesTo": "font.mono",
+      "value": "\"Red Hat Mono\", \"Red Hat Mono Fallback\", monospace"
+    }
+  }
+}

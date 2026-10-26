@@ -1,0 +1,36 @@
+{
+  "id": "primitive.cta-button",
+  "kind": "primitive",
+  "title": "Brace CTA button",
+  "purpose": "The site's only button style: '{ Label }' with braces that spread on hover.",
+  "source": {
+    "ref": "src/components/CtaButton.jsx:3",
+    "expect": "export default function CtaButton({ label, href, onClick, light = false, target, rel, className = '' })"
+  },
+  "props": {
+    "label": "string (<= 9 chars measured: 'Start Now', 'X-Twitter')",
+    "href": "string, renders a link when present",
+    "light": "boolean, inverse text for the inverse surface"
+  },
+  "tokens": [
+    "textRole.para",
+    "cta-button.gap",
+    "duration.cta-hover",
+    "color.text.primary",
+    "color.text.inverse"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:125",
+      "expect": "**CtaButton** (`{ Label }`)"
+    },
+    {
+      "ref": "src/components/CtaButton.jsx:4",
+      "expect": "const color = light ? 'text-landing-white' : 'text-landing-black'"
+    }
+  ],
+  "states": {
+    "hover": "gap 7.2rem -> 14.4rem, .2s ease",
+    "focusVisible": "2px solid black outline, 2px offset"
+  }
+}

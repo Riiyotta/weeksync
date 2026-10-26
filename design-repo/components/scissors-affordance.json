@@ -1,0 +1,24 @@
+{
+  "id": "component.scissors-affordance",
+  "kind": "component",
+  "title": "Scissors / zipper affordance",
+  "purpose": "The hero perforation affordance: scissors button (smooth-scrolls to features) or zipper pull when scrolling back in.",
+  "source": {
+    "ref": "src/components/HeroSlide.jsx:13",
+    "expect": "function ZipperPull() {"
+  },
+  "props": {
+    "ariaLabel": "string"
+  },
+  "tokens": [
+    "duration.blade-hover",
+    "duration.smooth-scroll"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:183",
+      "expect": "### 4.2 Scissors icon"
+    }
+  ],
+  "motionPattern": "hero-ticket-flight"
+}

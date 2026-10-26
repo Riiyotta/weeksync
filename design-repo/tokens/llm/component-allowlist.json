@@ -1,0 +1,583 @@
+{
+  "$description": "Closed list of what a generator may instantiate (sections, as PageSpec nodes) and what exists underneath (primitives/components, composed by sections only). verify_all.py enforces two-way parity with the contract files, settableProperties against the PageSpec node schema, and retrievalEligible against the code pins.",
+  "allowlistVersion": "1.0.0",
+  "entries": {
+    "component.card-surface": {
+      "kind": "component",
+      "contract": "components/card-surface.json",
+      "instantiableInPageSpec": false,
+      "note": "composed by section contracts; not a PageSpec node"
+    },
+    "component.contact-card": {
+      "kind": "component",
+      "contract": "components/contact-card.json",
+      "instantiableInPageSpec": false,
+      "note": "composed by section contracts; not a PageSpec node"
+    },
+    "component.demo-calendar": {
+      "kind": "component",
+      "contract": "components/demo-calendar.json",
+      "instantiableInPageSpec": false,
+      "note": "composed by section contracts; not a PageSpec node"
+    },
+    "component.demo-controls-pill": {
+      "kind": "component",
+      "contract": "components/demo-controls-pill.json",
+      "instantiableInPageSpec": false,
+      "note": "composed by section contracts; not a PageSpec node"
+    },
+    "component.demo-entry-chip": {
+      "kind": "component",
+      "contract": "components/demo-entry-chip.json",
+      "instantiableInPageSpec": false,
+      "note": "composed by section contracts; not a PageSpec node"
+    },
+    "component.faq-item": {
+      "kind": "component",
+      "contract": "components/faq-item.json",
+      "instantiableInPageSpec": false,
+      "note": "composed by section contracts; not a PageSpec node"
+    },
+    "component.feature-card-pair": {
+      "kind": "component",
+      "contract": "components/feature-card-pair.json",
+      "instantiableInPageSpec": false,
+      "note": "composed by section contracts; not a PageSpec node"
+    },
+    "component.fish-wheel": {
+      "kind": "component",
+      "contract": "components/fish-wheel.json",
+      "instantiableInPageSpec": false,
+      "note": "composed by section contracts; not a PageSpec node"
+    },
+    "component.loop-scroller": {
+      "kind": "component",
+      "contract": "components/loop-scroller.json",
+      "instantiableInPageSpec": false,
+      "note": "composed by section contracts; not a PageSpec node"
+    },
+    "component.plan-card": {
+      "kind": "component",
+      "contract": "components/plan-card.json",
+      "instantiableInPageSpec": false,
+      "note": "composed by section contracts; not a PageSpec node"
+    },
+    "component.review-slide": {
+      "kind": "component",
+      "contract": "components/review-slide.json",
+      "instantiableInPageSpec": false,
+      "note": "composed by section contracts; not a PageSpec node"
+    },
+    "component.scissors-affordance": {
+      "kind": "component",
+      "contract": "components/scissors-affordance.json",
+      "instantiableInPageSpec": false,
+      "note": "composed by section contracts; not a PageSpec node"
+    },
+    "cta.closing-band": {
+      "kind": "section",
+      "contract": "sections/cta.closing-band.json",
+      "category": "CTA",
+      "variants": [
+        "default"
+      ],
+      "settableProperties": [
+        "section",
+        "variant",
+        "content",
+        "motion",
+        "tokens",
+        "retrievalEligible"
+      ],
+      "retrievalEligible": true,
+      "allowedTokenSlots": {
+        "surface": [
+          "color.surface.accent"
+        ],
+        "text": [
+          "color.text.primary"
+        ],
+        "fontFamily": [
+          "font.mono",
+          "font.text"
+        ]
+      },
+      "motionPatterns": [
+        "fish-wheel-scrub"
+      ],
+      "generatedAssetRoles": [
+        "cta.generated-sprite-strip",
+        "url.placeholder",
+        "copy.original"
+      ],
+      "referenceAssetRoles": [
+        "cta.reference-sprite-strip"
+      ]
+    },
+    "demo.interactive-calendar": {
+      "kind": "section",
+      "contract": "sections/demo.interactive-calendar.json",
+      "category": "PRODUCT_DEMO",
+      "variants": [
+        "default"
+      ],
+      "settableProperties": [
+        "section",
+        "variant",
+        "content",
+        "motion",
+        "tokens",
+        "retrievalEligible"
+      ],
+      "retrievalEligible": true,
+      "allowedTokenSlots": {
+        "surface": [
+          "color.surface.card"
+        ],
+        "text": [
+          "color.text.body"
+        ],
+        "fontFamily": [
+          "font.sans"
+        ],
+        "paddingTop": [
+          "spacing.section",
+          "spacing.pad-section"
+        ]
+      },
+      "motionPatterns": [
+        "bot-cursors"
+      ],
+      "generatedAssetRoles": [
+        "person.fictional-demo-roster"
+      ],
+      "referenceAssetRoles": [
+        "person.reference-demo-roster"
+      ]
+    },
+    "faq.accordion": {
+      "kind": "section",
+      "contract": "sections/faq.accordion.json",
+      "category": "FAQ",
+      "variants": [
+        "default"
+      ],
+      "settableProperties": [
+        "section",
+        "variant",
+        "content",
+        "motion",
+        "tokens",
+        "retrievalEligible"
+      ],
+      "retrievalEligible": true,
+      "allowedTokenSlots": {
+        "surface": [
+          "color.surface.page"
+        ],
+        "text": [
+          "color.text.primary"
+        ],
+        "fontFamily": [
+          "font.mono",
+          "font.text"
+        ],
+        "paddingTop": [
+          "spacing.section",
+          "spacing.pad-section"
+        ]
+      },
+      "motionPatterns": [
+        "instant-swap"
+      ],
+      "generatedAssetRoles": [
+        "copy.original"
+      ],
+      "referenceAssetRoles": []
+    },
+    "features.stacked-cards": {
+      "kind": "section",
+      "contract": "sections/features.stacked-cards.json",
+      "category": "FEATURES",
+      "variants": [
+        "default"
+      ],
+      "settableProperties": [
+        "section",
+        "variant",
+        "content",
+        "motion",
+        "tokens",
+        "retrievalEligible"
+      ],
+      "retrievalEligible": true,
+      "allowedTokenSlots": {
+        "surface": [
+          "color.surface.card",
+          "color.surface.accent"
+        ],
+        "text": [
+          "color.text.primary"
+        ],
+        "fontFamily": [
+          "font.mono",
+          "font.text"
+        ],
+        "paddingTop": [
+          "spacing.section",
+          "spacing.pad-section"
+        ]
+      },
+      "motionPatterns": [
+        "typewriter"
+      ],
+      "generatedAssetRoles": [
+        "feature.generated-illustration",
+        "copy.original"
+      ],
+      "referenceAssetRoles": [
+        "feature.reference-illustration"
+      ]
+    },
+    "hero.ticket": {
+      "kind": "section",
+      "contract": "sections/hero.ticket.json",
+      "category": "HERO",
+      "variants": [
+        "default"
+      ],
+      "settableProperties": [
+        "section",
+        "variant",
+        "content",
+        "motion",
+        "tokens",
+        "retrievalEligible"
+      ],
+      "retrievalEligible": true,
+      "allowedTokenSlots": {
+        "text": [
+          "color.text.primary"
+        ],
+        "fontFamily": [
+          "font.sans",
+          "font.display"
+        ]
+      },
+      "motionPatterns": [
+        "hero-ticket-flight",
+        "typewriter"
+      ],
+      "generatedAssetRoles": [
+        "copy.original"
+      ],
+      "referenceAssetRoles": []
+    },
+    "layout.scroll-runway": {
+      "kind": "section",
+      "contract": "sections/layout.scroll-runway.json",
+      "category": "SPACER",
+      "variants": [
+        "hero",
+        "tail"
+      ],
+      "settableProperties": [
+        "section",
+        "variant",
+        "content",
+        "motion",
+        "tokens",
+        "retrievalEligible"
+      ],
+      "retrievalEligible": false,
+      "allowedTokenSlots": {},
+      "motionPatterns": [
+        "none"
+      ],
+      "generatedAssetRoles": [],
+      "referenceAssetRoles": []
+    },
+    "pricing.plan-contact": {
+      "kind": "section",
+      "contract": "sections/pricing.plan-contact.json",
+      "category": "PRICING",
+      "variants": [
+        "default"
+      ],
+      "settableProperties": [
+        "section",
+        "variant",
+        "content",
+        "motion",
+        "tokens",
+        "retrievalEligible"
+      ],
+      "retrievalEligible": true,
+      "allowedTokenSlots": {
+        "surface": [
+          "color.surface.inverse",
+          "color.surface.card"
+        ],
+        "text": [
+          "color.text.inverse",
+          "color.text.primary"
+        ],
+        "fontFamily": [
+          "font.mono",
+          "font.text"
+        ],
+        "paddingTop": [
+          "spacing.section",
+          "spacing.pad-section"
+        ]
+      },
+      "motionPatterns": [
+        "typewriter"
+      ],
+      "generatedAssetRoles": [
+        "url.placeholder",
+        "copy.original"
+      ],
+      "referenceAssetRoles": []
+    },
+    "primitive.brand-mark": {
+      "kind": "primitive",
+      "contract": "primitives/brand-mark.json",
+      "instantiableInPageSpec": false,
+      "note": "composed by section contracts; not a PageSpec node"
+    },
+    "primitive.circle-marker": {
+      "kind": "primitive",
+      "contract": "primitives/circle-marker.json",
+      "instantiableInPageSpec": false,
+      "note": "composed by section contracts; not a PageSpec node"
+    },
+    "primitive.cta-button": {
+      "kind": "primitive",
+      "contract": "primitives/cta-button.json",
+      "instantiableInPageSpec": false,
+      "note": "composed by section contracts; not a PageSpec node"
+    },
+    "primitive.dotted-frame": {
+      "kind": "primitive",
+      "contract": "primitives/dotted-frame.json",
+      "instantiableInPageSpec": false,
+      "note": "composed by section contracts; not a PageSpec node"
+    },
+    "primitive.dotted-stroke": {
+      "kind": "primitive",
+      "contract": "primitives/dotted-stroke.json",
+      "instantiableInPageSpec": false,
+      "note": "composed by section contracts; not a PageSpec node"
+    },
+    "primitive.text-link": {
+      "kind": "primitive",
+      "contract": "primitives/text-link.json",
+      "instantiableInPageSpec": false,
+      "note": "composed by section contracts; not a PageSpec node"
+    },
+    "primitive.typewriter-text": {
+      "kind": "primitive",
+      "contract": "primitives/typewriter-text.json",
+      "instantiableInPageSpec": false,
+      "note": "composed by section contracts; not a PageSpec node"
+    },
+    "primitive.ui-icon": {
+      "kind": "primitive",
+      "contract": "primitives/ui-icon.json",
+      "instantiableInPageSpec": false,
+      "note": "composed by section contracts; not a PageSpec node"
+    },
+    "shell.mobile-brand-intro": {
+      "kind": "section",
+      "contract": "sections/shell.mobile-brand-intro.json",
+      "category": "SHELL",
+      "variants": [
+        "default"
+      ],
+      "settableProperties": [
+        "section",
+        "variant",
+        "content",
+        "motion",
+        "tokens",
+        "retrievalEligible"
+      ],
+      "retrievalEligible": true,
+      "allowedTokenSlots": {},
+      "motionPatterns": [
+        "oval-breathe"
+      ],
+      "generatedAssetRoles": [
+        "brand.placeholder-mark",
+        "url.placeholder",
+        "copy.original"
+      ],
+      "referenceAssetRoles": [
+        "brand.reference-mark"
+      ]
+    },
+    "shell.mobile-menu": {
+      "kind": "section",
+      "contract": "sections/shell.mobile-menu.json",
+      "category": "SHELL",
+      "variants": [
+        "default"
+      ],
+      "settableProperties": [
+        "section",
+        "variant",
+        "content",
+        "motion",
+        "tokens",
+        "retrievalEligible"
+      ],
+      "retrievalEligible": false,
+      "allowedTokenSlots": {},
+      "motionPatterns": [
+        "overlay-slide"
+      ],
+      "generatedAssetRoles": [
+        "url.placeholder"
+      ],
+      "referenceAssetRoles": []
+    },
+    "shell.sidebar-nav": {
+      "kind": "section",
+      "contract": "sections/shell.sidebar-nav.json",
+      "category": "SHELL",
+      "variants": [
+        "default"
+      ],
+      "settableProperties": [
+        "section",
+        "variant",
+        "content",
+        "motion",
+        "tokens",
+        "retrievalEligible"
+      ],
+      "retrievalEligible": true,
+      "allowedTokenSlots": {
+        "text": [
+          "color.text.primary"
+        ],
+        "fontFamily": [
+          "font.mono",
+          "font.text"
+        ]
+      },
+      "motionPatterns": [
+        "none"
+      ],
+      "generatedAssetRoles": [
+        "brand.placeholder-mark",
+        "url.placeholder",
+        "copy.original"
+      ],
+      "referenceAssetRoles": [
+        "brand.reference-mark"
+      ]
+    },
+    "testimonials.ellipse-carousel": {
+      "kind": "section",
+      "contract": "sections/testimonials.ellipse-carousel.json",
+      "category": "TESTIMONIALS",
+      "variants": [
+        "default"
+      ],
+      "settableProperties": [
+        "section",
+        "variant",
+        "content",
+        "motion",
+        "tokens",
+        "retrievalEligible"
+      ],
+      "retrievalEligible": true,
+      "allowedTokenSlots": {
+        "surface": [
+          "color.surface.page"
+        ],
+        "text": [
+          "color.text.primary"
+        ],
+        "fontFamily": [
+          "font.mono",
+          "font.text"
+        ],
+        "paddingTop": [
+          "spacing.section-loose",
+          "spacing.scale.100_8"
+        ]
+      },
+      "motionPatterns": [
+        "instant-swap"
+      ],
+      "generatedAssetRoles": [
+        "person.fictional-reviewer",
+        "copy.original"
+      ],
+      "referenceAssetRoles": []
+    },
+    "utility.cookie-consent": {
+      "kind": "section",
+      "contract": "sections/utility.cookie-consent.json",
+      "category": "UTILITY",
+      "variants": [
+        "default"
+      ],
+      "settableProperties": [
+        "section",
+        "variant",
+        "content",
+        "motion",
+        "tokens",
+        "retrievalEligible"
+      ],
+      "retrievalEligible": false,
+      "allowedTokenSlots": {
+        "surface": [
+          "color.surface.page"
+        ],
+        "text": [
+          "color.text.primary"
+        ],
+        "fontFamily": [
+          "font.mono",
+          "font.text"
+        ]
+      },
+      "motionPatterns": [
+        "typewriter"
+      ],
+      "generatedAssetRoles": [
+        "copy.original"
+      ],
+      "referenceAssetRoles": []
+    },
+    "utility.cursor-trail": {
+      "kind": "section",
+      "contract": "sections/utility.cursor-trail.json",
+      "category": "UTILITY",
+      "variants": [
+        "default"
+      ],
+      "settableProperties": [
+        "section",
+        "variant",
+        "content",
+        "motion",
+        "tokens",
+        "retrievalEligible"
+      ],
+      "retrievalEligible": false,
+      "allowedTokenSlots": {},
+      "motionPatterns": [
+        "cursor-trail"
+      ],
+      "generatedAssetRoles": [],
+      "referenceAssetRoles": []
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "primitive.text-link",
+  "kind": "primitive",
+  "title": "Underlined text link",
+  "purpose": "Paragraph-role link with .11em underline that disappears on hover (footer legal links).",
+  "source": {
+    "ref": "src/components/CtaFooter.jsx:77",
+    "expect": "className=\"t-para t-underline cursor-pointer [transition:text-decoration_.2s_ease] hover:no-underline\""
+  },
+  "props": {
+    "label": "string",
+    "href": "string"
+  },
+  "tokens": [
+    "textRole.para"
+  ],
+  "evidence": [
+    {
+      "ref": "CLONE_SPEC.md:367",
+      "expect": "**Hover: underline removed.**"
+    }
+  ]
+}
