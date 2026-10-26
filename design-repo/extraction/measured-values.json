@@ -594,8 +594,8 @@
       ],
       "mappedExactlyOnce": true,
       "evidence": {
-        "ref": "src/main.jsx:5",
-        "expect": "ReactDOM.createRoot(document.getElementById('root')).render(<App />)"
+        "ref": "src/main.jsx:9",
+        "expect": "ReactDOM.createRoot(document.getElementById('root')).render(page ? <PlaceholderPage page={page} /> : <App />)"
       }
     },
     "checked": {
@@ -687,7 +687,7 @@
       "detail": "True for the scissors button only; sidebar and mobile-menu navigation jump instantly (smooth undefined / native anchor).",
       "evidence": [
         {
-          "ref": "src/components/Sidebar.jsx:83",
+          "ref": "src/components/Sidebar.jsx:86",
           "expect": "// Sidebar clicks pass smooth undefined -> instant jump (spec 3)"
         },
         {

@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Source moved: the sidebar active-section rule now skips off-screen elements (matches the original; nothing active once the CTA/footer is in view); /login and the four legal links now render clone-only placeholder pages via a pathname switch in src/main.jsx. Citations re-pointed to the shifted lines; docs updated (links are no longer dead).
+
 ## 1.0.0 (2026-10-26): initial build
 
 Situation A build from scratch against the current clone source, CLONE_SPEC.md, the

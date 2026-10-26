@@ -3,16 +3,19 @@ import { assets, links, nav, tagline, ui } from '../content.js'
 import { LOOP_PROGRESS, scrollToSection } from '../lib/loopEvents.js'
 import CtaButton from './CtaButton.jsx'
 
-// Spec 3.4 active section logic: among all elements with the nav ids (both loop copies),
-// the one spanning 0.33 * innerHeight wins; otherwise the one with the greatest top above
-// that line; otherwise none.
+// Spec 3.4 active section logic: among the on-screen elements with the nav ids (both loop
+// copies), the one spanning 0.33 * innerHeight wins; otherwise the one with the greatest top
+// above that line; otherwise none. Off-screen elements are ignored, as on the original, so
+// nothing is active once the last section has scrolled out (CTA/footer in view).
 function computeActive() {
-  const line = window.innerHeight * 0.33
+  const vh = window.innerHeight
+  const line = vh * 0.33
   let best = null
   let bestTop = -Infinity
   for (const { target } of nav) {
     for (const el of document.querySelectorAll(`[id="${target}"]`)) {
       const r = el.getBoundingClientRect()
+      if (!(r.height > 0 && r.bottom > 0 && r.top < vh)) continue
       if (r.top <= line && r.bottom >= line) return target
       if (r.top < line && r.top > bestTop) {
         bestTop = r.top

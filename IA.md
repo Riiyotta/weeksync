@@ -2,21 +2,24 @@
 
 Source: Local clone at http://localhost:5175/ of the layout of https://weeksync.app/ (single-page landing)
 Status: **measured-from-codebase**
-1 routes · 1 templates · 15 unique sections
+6 routes · 2 templates · 16 unique sections
 
 > Generated from `ia.json` by `build.mjs`. Edit the JSON, not this file.
 
 ## Shape of the site
 
-The largest 1 template (Landing page) accounts for 1 of 1 routes (100%). The remaining 0 routes span 0 templates.
+The largest 2 templates (Placeholder page, Landing page) account for 6 of 6 routes (100%). The remaining 0 routes span 0 templates.
 
 | template | routes | share |
 |---|---:|---:|
-| Landing page | 1 | 100% |
+| Placeholder page | 5 | 83% |
+| Landing page | 1 | 17% |
 
 ## Page chrome
 
 **1 routes carry chrome = `fixed-shell`** — Landing page.
+
+**5 routes carry chrome = `none`** — Placeholder page.
 
 ## Sections by reuse
 
@@ -25,6 +28,7 @@ component library or stays local to its page.
 
 | section | category | templates | routes | implementation | scope |
 |---|---|---:|---:|---|---|
+| `utility.placeholder-notice` | UTILITY | 1 | 5 | `src/components/PlaceholderPage.jsx` | The 5 placeholder routes (login and four legal links). |
 | `shell.loop-scroller` | SHELL | 1 | 1 | `src/components/LoopScroller.jsx` | Wraps all scrolling content on the single route at desktop widths. |
 | `shell.cookie-popup` | SHELL | 1 | 1 | `src/components/CookiePopup.jsx` | Shown on the single route until dismissed. |
 | `shell.cursor-trail` | SHELL | 1 | 1 | `src/components/CursorTrail.jsx` | Desktop widths with a fine pointer only. |
@@ -43,7 +47,7 @@ component library or stays local to its page.
 
 **0 shared sections** appear in more than one template and belong in a component library.
 
-**15 single-use sections** appear in exactly one template. Building these
+**16 single-use sections** appear in exactly one template. Building these
 as "reusable" components up front would be speculative — keep them page-local
 until a second caller actually appears.
 
@@ -70,6 +74,14 @@ until a second caller actually appears.
 | 13 | SUPPORT | `support.faq` | page-local |
 | 14 | CONVERSION | `conversion.cta-block` | page-local |
 | 15 | FOOTER | `footer.legal` | page-local |
+
+### Placeholder page — `template.placeholder`
+
+5 routes · `/login`, `/terms-and-conditions/`, `/privacy-policy/`, `/terms-of-use/`, `/refund-policy/` · chrome: **none**
+
+| # | category | section | |
+|---:|---|---|---|
+| 1 | UTILITY | `utility.placeholder-notice` | page-local |
 
 ## Section reference
 
@@ -160,3 +172,11 @@ _Legal links and copyright._
 **`footer.legal`** — Copyright line and legal links row pinned to the bottom of the lime CTA block.
 
 · Single route, inside the CTA block. · appears on 1 routes · implemented by `src/components/CtaFooter.jsx`
+
+### UTILITY
+
+_Stand-in pages for routes the clone links to but does not reproduce._
+
+**`utility.placeholder-notice`** — Centred beige card with the page title, a one-line notice that the real page is not part of the local clone, and a Back to home button.
+
+· The 5 placeholder routes (login and four legal links). · appears on 5 routes · implemented by `src/components/PlaceholderPage.jsx`

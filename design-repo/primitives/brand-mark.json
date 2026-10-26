@@ -4,7 +4,7 @@
   "title": "Brand mark slot",
   "purpose": "A 34x26 brand mark image slot; content is an assetRole, never inline artwork.",
   "source": {
-    "ref": "src/components/Sidebar.jsx:70",
+    "ref": "src/components/Sidebar.jsx:73",
     "expect": "<img src={assets.logoMark} alt=\"\" className=\"w-[33.12rem] h-[25.92rem]\" />"
   },
   "props": {

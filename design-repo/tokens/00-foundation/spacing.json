@@ -45,7 +45,7 @@
     "spacing.scale.43_2": {
       "value": "43.2rem",
       "source": {
-        "ref": "src/components/Sidebar.jsx:62",
+        "ref": "src/components/Sidebar.jsx:65",
         "expect": "py-[43.2rem]"
       },
       "derivation": "recurring arbitrary padding/margin/gap value in src/ (histogram count >= 2)"
@@ -69,7 +69,7 @@
     "spacing.scale.28_8": {
       "value": "28.8rem",
       "source": {
-        "ref": "src/components/Sidebar.jsx:77",
+        "ref": "src/components/Sidebar.jsx:80",
         "expect": "gap-[28.8rem]"
       },
       "derivation": "recurring arbitrary padding/margin/gap value in src/ (histogram count >= 2)"

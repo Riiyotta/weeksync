@@ -275,3 +275,13 @@ export const demo = {
     '4': [['mia', 'logo', [4, 0, 0, 0, 0]]],
   },
 }
+
+// Placeholder pages behind the footer legal links and the Start Now (/login) CTAs.
+// The clone has no legal text or auth; each page says so and links back home.
+export const placeholderPages = {
+  '/login': { title: 'Log in', text: 'Sign-in is not part of this local clone. There is no account system behind it.' },
+  '/terms-and-conditions': { title: 'Terms & Conditions', text: 'Placeholder page. No terms are published for this local clone.' },
+  '/privacy-policy': { title: 'Privacy Policy', text: 'Placeholder page. This local clone collects no data; the cookie notice only stores a dismissal flag in your browser.' },
+  '/terms-of-use': { title: 'Terms of Use', text: 'Placeholder page. No terms of use are published for this local clone.' },
+  '/refund-policy': { title: 'Refund Policy', text: 'Placeholder page. Nothing is sold through this local clone.' },
+}

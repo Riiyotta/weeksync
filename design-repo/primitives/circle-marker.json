@@ -4,7 +4,7 @@
   "title": "Circle marker",
   "purpose": "14.4rem outlined circle that fills when its item is hovered/active (sidebar nav, FAQ).",
   "source": {
-    "ref": "src/components/Sidebar.jsx:34",
+    "ref": "src/components/Sidebar.jsx:37",
     "expect": "w-[14.4rem] h-[14.4rem] rounded-[50%] border-[1.584rem]"
   },
   "props": {

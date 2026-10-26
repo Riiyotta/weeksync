@@ -1,17 +1,18 @@
-section,category,templates,routes,Landing page
-shell.loop-scroller,SHELL,1,1,x
-shell.cookie-popup,SHELL,1,1,x
-shell.cursor-trail,SHELL,1,1,x
-shell.mobile-menu,SHELL,1,1,x
-shell.sidebar,SHELL,1,1,x
-hero.ticket,HERO,1,1,x
-hero.mobile,HERO,1,1,x
-product.demo,PRODUCT,1,1,x
-product.features,PRODUCT,1,1,x
-conversion.price-card,CONVERSION,1,1,x
-conversion.contact-card,CONVERSION,1,1,x
-proof.reviews,PROOF,1,1,x
-support.faq,SUPPORT,1,1,x
-conversion.cta-block,CONVERSION,1,1,x
-footer.legal,FOOTER,1,1,x
-ROUTE COUNT,,,1,1
+section,category,templates,routes,Landing page,Placeholder page
+utility.placeholder-notice,UTILITY,1,5,,x
+shell.loop-scroller,SHELL,1,1,x,
+shell.cookie-popup,SHELL,1,1,x,
+shell.cursor-trail,SHELL,1,1,x,
+shell.mobile-menu,SHELL,1,1,x,
+shell.sidebar,SHELL,1,1,x,
+hero.ticket,HERO,1,1,x,
+hero.mobile,HERO,1,1,x,
+product.demo,PRODUCT,1,1,x,
+product.features,PRODUCT,1,1,x,
+conversion.price-card,CONVERSION,1,1,x,
+conversion.contact-card,CONVERSION,1,1,x,
+proof.reviews,PROOF,1,1,x,
+support.faq,SUPPORT,1,1,x,
+conversion.cta-block,CONVERSION,1,1,x,
+footer.legal,FOOTER,1,1,x,
+ROUTE COUNT,,,6,1,5

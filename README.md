@@ -18,8 +18,10 @@ node validate.mjs && node build.mjs
 
 What the data shows:
 
-- One route (`/`) and one template carrying 15 sections across 7 categories; all hard invariants reconcile.
-- Every section is single-use (0 shared, 15 page-local), so there is no reuse case for extracting shared
+- 6 routes across 2 templates: the landing page (`/`, 15 sections across 7 categories) and a placeholder template
+  for the 5 routes the landing links to but the clone does not reproduce (`/login` and four legal pages).
+  All hard invariants reconcile.
+- Every section is single-use (0 shared, 16 page-local), so there is no reuse case for extracting shared
   section components — the reusable surface is below section level (`CtaButton`, `TypewriterText`, `Icons`).
 - 6 of the 15 sections are viewport-specific: `shell.sidebar`, `shell.loop-scroller`, `shell.cursor-trail`
   and `hero.ticket` exist only on desktop; `shell.mobile-menu` and `hero.mobile` exist only on mobile

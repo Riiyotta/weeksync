@@ -60,7 +60,7 @@
           "expect": "onClick={() => scrollToSection('features-section', { smooth: true })}"
         },
         {
-          "ref": "src/components/Sidebar.jsx:84",
+          "ref": "src/components/Sidebar.jsx:87",
           "expect": "onClick={() => scrollToSection(item.target)}"
         },
         {

@@ -13,7 +13,7 @@
       "value": "14.4rem",
       "border": "1.584rem",
       "source": {
-        "ref": "src/components/Sidebar.jsx:34",
+        "ref": "src/components/Sidebar.jsx:37",
         "expect": "w-[14.4rem] h-[14.4rem] rounded-[50%] border-[1.584rem]"
       }
     },
@@ -89,7 +89,7 @@
       "value": "33.12rem x 25.92rem",
       "mobile": "34rem x 26rem",
       "source": {
-        "ref": "src/components/Sidebar.jsx:70",
+        "ref": "src/components/Sidebar.jsx:73",
         "expect": "w-[33.12rem] h-[25.92rem]"
       }
     }

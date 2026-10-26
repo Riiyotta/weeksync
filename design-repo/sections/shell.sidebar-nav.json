@@ -7,12 +7,12 @@
     "category": "SHELL"
   },
   "source": {
-    "id": "Sidebar<aside>@61",
+    "id": "Sidebar<aside>@64",
     "file": "src/components/Sidebar.jsx",
     "tag": "aside",
-    "lines": "61-89",
+    "lines": "64-92",
     "citation": {
-      "ref": "src/components/Sidebar.jsx:61-89",
+      "ref": "src/components/Sidebar.jsx:64-92",
       "expect": "<aside"
     }
   },
@@ -145,7 +145,7 @@
       "breakpoint": "mobile",
       "change": "display none; replaced by shell.mobile-menu + shell.mobile-brand-intro",
       "evidence": {
-        "ref": "src/components/Sidebar.jsx:61",
+        "ref": "src/components/Sidebar.jsx:64",
         "expect": "z-sidebar mob:hidden"
       }
     }
@@ -182,8 +182,8 @@
       "expect": "## 3. Sidebar (desktop only, `display:none` <= 1023)"
     },
     {
-      "ref": "src/components/Sidebar.jsx:10",
-      "expect": "const line = window.innerHeight * 0.33"
+      "ref": "src/components/Sidebar.jsx:12",
+      "expect": "const line = vh * 0.33"
     }
   ],
   "measured": {

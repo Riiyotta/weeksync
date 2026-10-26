@@ -3,8 +3,8 @@
   "meta": {
     "source": "Local clone at http://localhost:5175/ of the layout of https://weeksync.app/ (single-page landing)",
     "status": "measured-from-codebase",
-    "totalRoutes": 1,
-    "totalTemplates": 1
+    "totalRoutes": 6,
+    "totalTemplates": 2
   },
   "categories": {
     "SHELL": "Fixed, page-level layers that sit outside the scrolling content: scroller, navigation, overlays, consent.",
@@ -13,7 +13,8 @@
     "CONVERSION": "Pricing, contact and closing call-to-action blocks.",
     "PROOF": "Social proof from users.",
     "SUPPORT": "Answers to common questions.",
-    "FOOTER": "Legal links and copyright."
+    "FOOTER": "Legal links and copyright.",
+    "UTILITY": "Stand-in pages for routes the clone links to but does not reproduce."
   },
   "sections": {
     "shell.loop-scroller": {
@@ -105,6 +106,12 @@
       "description": "Copyright line and legal links row pinned to the bottom of the lime CTA block.",
       "scope": "Single route, inside the CTA block.",
       "implementedBy": "src/components/CtaFooter.jsx"
+    },
+    "utility.placeholder-notice": {
+      "category": "UTILITY",
+      "description": "Centred beige card with the page title, a one-line notice that the real page is not part of the local clone, and a Back to home button.",
+      "scope": "The 5 placeholder routes (login and four legal links).",
+      "implementedBy": "src/components/PlaceholderPage.jsx"
     }
   },
   "templates": [
@@ -112,7 +119,9 @@
       "id": "template.landing",
       "name": "Landing page",
       "routeCount": 1,
-      "routes": ["/"],
+      "routes": [
+        "/"
+      ],
       "routePattern": null,
       "chrome": "fixed-shell",
       "sections": [
@@ -131,6 +140,23 @@
         "support.faq",
         "conversion.cta-block",
         "footer.legal"
+      ]
+    },
+    {
+      "id": "template.placeholder",
+      "name": "Placeholder page",
+      "routeCount": 5,
+      "routes": [
+        "/login",
+        "/terms-and-conditions/",
+        "/privacy-policy/",
+        "/terms-of-use/",
+        "/refund-policy/"
+      ],
+      "routePattern": null,
+      "chrome": "none",
+      "sections": [
+        "utility.placeholder-notice"
       ]
     }
   ]
