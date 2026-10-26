@@ -7,13 +7,13 @@
     "category": "SPACER"
   },
   "source": {
-    "id": "App<div>@19",
+    "id": "App<div>@20",
     "file": "src/App.jsx",
     "tag": "div",
-    "lines": "19-21",
+    "lines": "20",
     "citation": {
-      "ref": "src/App.jsx:19-21",
-      "expect": "function EmptySlide({ id, height }) {"
+      "ref": "src/App.jsx:20",
+      "expect": "return <div id={id} className=\"mob:!h-0\" style={{ height }} />"
     }
   },
   "retrievalEligible": false,

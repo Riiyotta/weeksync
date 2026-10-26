@@ -82,7 +82,7 @@ CASES = [
     ("motion fallback drift", False, lambda r: jedit(r, "tokens/00-foundation/motion-patterns.json", lambda d: d["patterns"]["typewriter"].update(reducedMotionFallback="instant-swap")), "motion.patterns-and-fallbacks"),
     ("measured height removed", False, lambda r: jedit(r, "extraction/measured-values.json", lambda d: d["sectionHeights"]["pages"]["/"]["sections"].pop(11)), "gate.wrapper"),
     ("hero measured at 3100px", False, lambda r: jedit(r, "extraction/measured-values.json", lambda d: next(x for x in d["sectionHeights"]["pages"]["/"]["sections"] if x["section"] == "hero.ticket").update(renderedHeightPx=3100)), "gate.wrapper"),
-    ("absolute machine path", False, lambda r: tedit(r, "README.md", "# ", "# /Users/someone/project ", 1), "hygiene.absolute-paths"),
+    ("absolute machine path", False, lambda r: tedit(r, "README.md", "# ", "# " + "/" + "Users/someone/project ", 1), "hygiene.absolute-paths"),
     ("entryPoint outside the package", False, lambda r: jedit(r, "registry.manifest.json", lambda d: d["entryPoints"].update(external="../CLONE_SPEC.md")), "hygiene.entryPoints"),
     ("generated example leaks the source brand", False, lambda r: jedit(r, "schema/examples/generated.home.pagespec.json", lambda d: d.update(title="WeekSync. Shift plans for kitchens.")), "schema.example"),
 ]

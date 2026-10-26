@@ -799,6 +799,17 @@
       ]
     },
     {
+      "claim": "The clone's copy is entirely original (no source text)",
+      "holds": "partly",
+      "detail": "A repo-wide fingerprint scan found exactly one overlap: the 5-word FAQ question 'Is there a free trial?' in src/content.js is identical to a question on the original. It is generic and is the clone's real content, so the reference example keeps it; mode=generated rejects it (GENERATED_MODE_COPY).",
+      "evidence": [
+        {
+          "ref": "src/content.js:159",
+          "expect": "q: 'Is there a free trial?',"
+        }
+      ]
+    },
+    {
       "claim": "Every footer/CTA link resolves inside the clone",
       "holds": false,
       "detail": "/login and the four legal pages are linked but not served (single route); recorded in templates/routes.json linkedButUnserved.",

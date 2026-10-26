@@ -1,0 +1,143 @@
+{
+  "repositoryId": "weeksync-landing-design-repo",
+  "repositoryVersion": "1.0.0",
+  "pageSpecVersion": "1.0.0",
+  "allowlistVersion": "1.0.0",
+  "versionFieldNote": "pageSpecVersion (vs the schema const) and allowlistVersion (vs tokens/llm/component-allowlist.json) are machine-checked by extraction/verify_all.py. repositoryVersion is documentation-only and hand-maintained; nothing checks it.",
+  "status": "design-review-pending",
+  "productionApproved": false,
+  "defaultTheme": "light",
+  "schemaValidatedThemes": [
+    "light"
+  ],
+  "sourceStack": {
+    "note": "Documentation only; never shapes token names, section ids, schema fields or validator logic.",
+    "reference": "React 18 + Vite 5 + Tailwind CSS v3 (plus embla-carousel-react for the reviews carousel); single route '/', no router",
+    "original": "Next.js site (live commercial product, measured by recon only)"
+  },
+  "sourceProject": {
+    "relation": "design-repo/ sits inside the clone project; external citations (src/, CLONE_SPEC.md, configs, .playwright-mcp/) resolve against that parent folder and degrade to a warning when absent",
+    "reference": "clone of a single landing page, rebranded with original placeholders as the fictional 'Sevenday'",
+    "measuredOriginal": "https://weeksync.app/ (live commercial product; measured by recon only, nothing reproduced)"
+  },
+  "licensing": {
+    "generation": "Generated pages may not contain anything that identifies or reproduces the original product or the reference clone (see assets/asset-roles.json and assets/source-identity.json; enforced by GENERATED_MODE_* rules).",
+    "distribution": "Keep this repository private. Do not publish it or make any repository containing it public."
+  },
+  "structuralNotes": [
+    "Loop scroller (>=1024px): there is no native scroll. A fixed root renders the whole content column TWICE (wrap + wrap-clone, 7504.4px each at 1440x900, 6670.3px at 1280x800, measured) and translates it per frame, wrapping seamlessly. Demo data/view/period and the open FAQ item are shared between the copies through module-level stores; the reviews carousel index is NOT shared. The sidebar scroll-spy scans both copies. Below 1024px the page scrolls natively as a single copy.",
+    "Unit system: 1rem = 1 design px. Root font-size is calc(1vw/14.4) at >=1024, 1px from 480-1023 and calc(1vw/3.6) at <=479, so every rem value scales with the viewport (0.8889px per rem at 1280).",
+    "Fixed layers take no page height: cursor trail, cookie triangle, sidebar and the hero ticket are position:fixed on desktop. The hero's scroll footprint is the in-flow runway spacer layout.scroll-runway#hero (1608.8px at 1440x900); a tail runway (634.5px) sits before the loop wraps. Both collapse to 0 on mobile.",
+    "Motion is mostly scroll-linked: hero ticket flight + scissors snip (+ zipper pull scrolling back in), typewriter entrances at the 30% threshold (reset on exit), demo bot cursors, sprite wheel (scroll-linked outer rotation, 18deg/s inner, 29-frame scrub over 800ms), cursor trail, mobile ovals on a 6s loop, smooth scroll 1600ms easeInOutQuad (scissors only; sidebar links jump instantly).",
+    "Mobile (<=1023): a fixed menu bar + full-screen overlay replaces the sidebar nav; the breathing-oval brand intro replaces the sidebar header; the hero ticket becomes an in-flow block; the demo frame stays 1039rem wide and is scaled down, view-only.",
+    "Single route '/' with no router. /login and four legal pages are linked but not served by the clone (and were not measured), so they have no template.",
+    "Only the bot cursors honour prefers-reduced-motion in the source. The reducedMotionFallback values in this repo are requirements for generated pages, recorded per pattern with sourceHonoursReducedMotion.",
+    "Licensing: the measured original is a live commercial product. The clone already swaps in original placeholder copy ('Sevenday'), placeholder reviewers and placeholder SVGs; this repo stores the original's copy and reviewer names only as salted fingerprints, and blocks the original's logo, illustrations, sprite artwork, copy, testimonials, URLs and people in every mode."
+  ],
+  "counts": {
+    "catalogTokens": 119,
+    "referenceableTokens": 110,
+    "foundationTokens": 89,
+    "semanticTokens": 30,
+    "primitives": 8,
+    "components": 12,
+    "sections": 13,
+    "templates": 1,
+    "routes": 1,
+    "assetRoles": 20,
+    "motionPatterns": 11,
+    "graphRules": 11,
+    "examples": 2,
+    "adversarialMutations": 67,
+    "driftCases": 25
+  },
+  "entryPoints": {
+    "readme": "README.md",
+    "changelog": "CHANGELOG.md",
+    "pagespecSchema": "schema/pagespec.schema.json",
+    "sectionContractSchema": "schema/section-contract.schema.json",
+    "semanticValidator": "schema/semantic_validate.py",
+    "adversarialTests": "schema/tests/adversarial_test.py",
+    "verifyAll": "extraction/verify_all.py",
+    "wrapperGate": "extraction/wrapper_gate.py",
+    "wrapperWhitelist": "extraction/wrapper-whitelist.json",
+    "measureSections": "extraction/measure_sections.mjs",
+    "geometryParity": "extraction/geometry_parity.py",
+    "proveDrift": "scripts/prove_drift.py",
+    "measuredValues": "extraction/measured-values.json",
+    "templates": "templates/templates.json",
+    "routes": "templates/routes.json",
+    "compatibilityGraph": "compatibility/graph.json",
+    "tokenCatalog": "tokens/llm/token-catalog.json",
+    "tokenPolicy": "tokens/llm/token-policy.json",
+    "componentAllowlist": "tokens/llm/component-allowlist.json",
+    "motionPatterns": "tokens/00-foundation/motion-patterns.json",
+    "assetRoles": "assets/asset-roles.json",
+    "sourceIdentity": "assets/source-identity.json",
+    "themeLight": "tokens/themes/light.json",
+    "foundationTokens": [
+      "tokens/00-foundation/border.json",
+      "tokens/00-foundation/breakpoint.json",
+      "tokens/00-foundation/color.json",
+      "tokens/00-foundation/motion-patterns.json",
+      "tokens/00-foundation/motion.json",
+      "tokens/00-foundation/radius.json",
+      "tokens/00-foundation/spacing.json",
+      "tokens/00-foundation/typography.json",
+      "tokens/00-foundation/z-index.json"
+    ],
+    "semanticTokens": "tokens/10-semantic/semantic.json",
+    "componentTokens": "tokens/20-component/components.json",
+    "layoutTokens": "tokens/30-layout/layout.json",
+    "examples": [
+      "schema/example.pagespec.json",
+      "schema/examples/generated.home.pagespec.json"
+    ],
+    "sections": [
+      "sections/cta.closing-band.json",
+      "sections/demo.interactive-calendar.json",
+      "sections/faq.accordion.json",
+      "sections/features.stacked-cards.json",
+      "sections/hero.ticket.json",
+      "sections/layout.scroll-runway.json",
+      "sections/pricing.plan-contact.json",
+      "sections/shell.mobile-brand-intro.json",
+      "sections/shell.mobile-menu.json",
+      "sections/shell.sidebar-nav.json",
+      "sections/testimonials.ellipse-carousel.json",
+      "sections/utility.cookie-consent.json",
+      "sections/utility.cursor-trail.json"
+    ],
+    "primitives": [
+      "primitives/brand-mark.json",
+      "primitives/circle-marker.json",
+      "primitives/cta-button.json",
+      "primitives/dotted-frame.json",
+      "primitives/dotted-stroke.json",
+      "primitives/text-link.json",
+      "primitives/typewriter-text.json",
+      "primitives/ui-icon.json"
+    ],
+    "components": [
+      "components/card-surface.json",
+      "components/contact-card.json",
+      "components/demo-calendar.json",
+      "components/demo-controls-pill.json",
+      "components/demo-entry-chip.json",
+      "components/faq-item.json",
+      "components/feature-card-pair.json",
+      "components/fish-wheel.json",
+      "components/loop-scroller.json",
+      "components/plan-card.json",
+      "components/review-slide.json",
+      "components/scissors-affordance.json"
+    ]
+  },
+  "verification": [
+    "python3 extraction/verify_all.py",
+    "python3 schema/semantic_validate.py",
+    "python3 schema/tests/adversarial_test.py",
+    "python3 scripts/prove_drift.py",
+    "python3 extraction/wrapper_gate.py"
+  ]
+}

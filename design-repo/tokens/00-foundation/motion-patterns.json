@@ -26,6 +26,10 @@
           "expect": "const REMEASURE_EVERY = 500"
         },
         {
+          "ref": "src/components/LoopScroller.jsx:12",
+          "expect": "const TOUCH_STEP_CLAMP = 50"
+        },
+        {
           "ref": "src/components/LoopScroller.jsx:156",
           "expect": "data-loop-scroll=\"wrap-clone\""
         },
@@ -43,7 +47,8 @@
       "constants": {
         "durationMs": 1600,
         "easing": "easing.ease-in-out-quad",
-        "path": "shortest path around the loop"
+        "path": "shortest path around the loop",
+        "target": "section top measured from the page root inside the primary wrap, minus the root's padding-top (15rem), clamped at 0"
       },
       "evidence": [
         {
@@ -57,6 +62,14 @@
         {
           "ref": "src/components/Sidebar.jsx:84",
           "expect": "onClick={() => scrollToSection(item.target)}"
+        },
+        {
+          "ref": "src/lib/loopEvents.js:24",
+          "expect": "const pad = parseFloat(getComputedStyle(root).paddingTop) || 0"
+        },
+        {
+          "ref": "src/lib/loopEvents.js:25",
+          "expect": "const offset = Math.max(0, el.getBoundingClientRect().top - root.getBoundingClientRect().top - pad)"
         }
       ],
       "reducedMotionFallback": "instant-jump",
@@ -86,8 +99,28 @@
           "expect": "const HERO_DISTANCE = 0.2"
         },
         {
+          "ref": "src/lib/motion.js:15",
+          "expect": "const STEP1 = 0.3"
+        },
+        {
           "ref": "src/lib/motion.js:16",
           "expect": "const STEP3 = 0.45"
+        },
+        {
+          "ref": "src/lib/motion.js:17",
+          "expect": "const STEP4 = 0.55"
+        },
+        {
+          "ref": "src/lib/motion.js:18",
+          "expect": "const STEP5 = 0.7"
+        },
+        {
+          "ref": "src/lib/motion.js:19",
+          "expect": "const STEP6 = 0.7"
+        },
+        {
+          "ref": "src/lib/motion.js:35",
+          "expect": "const [ap, setAp] = useState(0.5)"
         },
         {
           "ref": "src/lib/motion.js:79",
@@ -183,8 +216,32 @@
           "expect": "const DRAG_SLOWDOWN = 1.35"
         },
         {
+          "ref": "src/lib/botCursors.js:20",
+          "expect": "const PRESS = { min: 90, max: 150 }"
+        },
+        {
+          "ref": "src/lib/botCursors.js:25",
+          "expect": "const RECENT_USER_MOVE = 20000"
+        },
+        {
           "ref": "src/lib/botCursors.js:275",
           "expect": "[swap, 0.45],"
+        },
+        {
+          "ref": "src/lib/botCursors.js:276",
+          "expect": "[changeProject, 0.2],"
+        },
+        {
+          "ref": "src/lib/botCursors.js:277",
+          "expect": "[split, 0.15],"
+        },
+        {
+          "ref": "src/lib/botCursors.js:278",
+          "expect": "[merge, 0.1],"
+        },
+        {
+          "ref": "src/lib/botCursors.js:279",
+          "expect": "[move2h, 0.1],"
         },
         {
           "ref": "src/lib/botCursors.js:568",
@@ -221,6 +278,10 @@
           "expect": "const p = Math.min((ts - start) / 800, 1)"
         },
         {
+          "ref": "src/content.js:20",
+          "expect": "spriteFrames: 29,"
+        },
+        {
           "ref": "tailwind.config.js:123",
           "expect": "'fish-swing': 'swingAndMove 10s ease infinite'"
         },
@@ -243,6 +304,10 @@
         {
           "ref": "src/lib/motion.js:291",
           "expect": "points = points.filter((p) => now - p.t <= 200)"
+        },
+        {
+          "ref": "src/components/CursorTrail.jsx:14",
+          "expect": "[transition:opacity_.18s_ease-out]"
         },
         {
           "ref": "src/App.jsx:62",
