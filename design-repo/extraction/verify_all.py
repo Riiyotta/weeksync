@@ -112,7 +112,7 @@ def check_hygiene():
     junk = [str(p.relative_to(REPO)) for p in REPO.rglob("*") if p.name in (".DS_Store", "Thumbs.db", "desktop.ini") or "__MACOSX" in p.parts or "__pycache__" in p.parts]
     rec("hygiene.junk", not junk, "none" if not junk else junk[:5])
     # built by concatenation so this detector never matches a repo-wide grep for machine paths
-    pat = re.compile("/" + r"Users/[A-Za-z0-9._-]+|" + "/" + r"home/[A-Za-z0-9._-]+/|" + r"[A-Za-z]:\\" + "Us" + r"ers\\|/private/(tmp|var)/")
+    pat = re.compile("/" + r"Users/[A-Za-z0-9._-]+|" + "/" + r"home/[A-Za-z0-9._-]+/|" + r"[A-Za-z]:\\" + "Us" + r"ers\\|/" + r"private/(tmp|var)/")
     hits = []
     for p in REPO.rglob("*"):
         if p.is_file() and p.suffix in (".json", ".md", ".py", ".mjs", ".txt", ".csv"):
