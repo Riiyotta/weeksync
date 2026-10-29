@@ -61,7 +61,7 @@ export default function Reviews() {
           </div>
           <div className="absolute bottom-[34.56rem] left-0 right-0 z-[2] w-full flex items-center justify-center gap-[34.56rem] mob:relative mob:bottom-0 mob:pt-[25rem]">
             <CtaButton label={ui.prev} onClick={prev} />
-            <p className="t-para">{ui.of(index + 1, reviews.length)}</p>
+            <p className="t-para text-center">{ui.of(index + 1, reviews.length)}</p>
             <CtaButton label={ui.next} onClick={next} />
           </div>
         </div>

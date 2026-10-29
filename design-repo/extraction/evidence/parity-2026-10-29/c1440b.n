@@ -1,0 +1,410 @@
+VIEW 1440x900 rem=1px
+## menu MISSING
+## sidebar root 0,0,371,900 bg=rgba(0, 0, 0, 0)
+T 15,15,356,870 | bd=4/4/4/4 dotted rgb(0, 0, 0) | rad=33.1 0 0 33.1
+button 176.4,62.2,33.1,25.9
+img 176.4,62.2,33.1,25.9
+T 91,116.9,204,31.7 | Red Hat Mono 12/15.8 w400 ls0.4 rgb(0, 0, 0) ta=center
+a 144.2,165.8,97.5,15.8
+T 144.2,164.7,7.6,15.8 | Red Hat Mono 12/15.8 w600 ls0.4 rgb(0, 0, 0) ta=start
+T 159,165.8,68,15.8 | Red Hat Mono 12/15.8 w600 ls0.4 rgb(0, 0, 0) ta=start
+T 234.2,164.7,7.6,15.8 | Red Hat Mono 12/15.8 w600 ls0.4 rgb(0, 0, 0) ta=start
+button 170.3,535.5,45.4,37.4
+T 185.8,535.5,14.4,14.4 | bd=1/1/1/1 solid rgb(0, 0, 0) | rad=50%
+T 170.3,557.1,45.4,15.8 | Red Hat Mono 12/15.8 w600 ls0.4 rgb(0, 0, 0) ta=center
+button 125,601.7,136.1,37.4
+T 185.8,601.7,14.4,14.4 | bd=1/1/1/1 solid rgb(0, 0, 0) | rad=50%
+T 125,623.3,136.1,15.8 | Red Hat Mono 12/15.8 w600 ls0.4 rgb(0, 0, 0) ta=center
+button 166.5,668,52.9,37.4
+T 185.8,668,14.4,14.4 | bd=1/1/1/1 solid rgb(0, 0, 0) | rad=50%
+T 166.5,689.5,52.9,15.8 | Red Hat Mono 12/15.8 w600 ls0.4 rgb(0, 0, 0) ta=center
+button 166.5,734.2,52.9,37.4
+T 185.8,734.2,14.4,14.4 | bd=1/1/1/1 solid rgb(0, 0, 0) | rad=50%
+T 166.5,755.8,52.9,15.8 | Red Hat Mono 12/15.8 w600 ls0.4 rgb(0, 0, 0) ta=center
+button 181.6,800.4,22.7,37.4
+T 185.8,800.4,14.4,14.4 | bd=1/1/1/1 solid rgb(0, 0, 0) | rad=50%
+T 181.6,822,22.7,15.8 | Red Hat Mono 12/15.8 w600 ls0.4 rgb(0, 0, 0) ta=center
+## hero root 367.2,0,1072.8,900 bg=rgba(0, 0, 0, 0)
+T 0,15,1057.8,870 | bd=4/4/4/4 dotted rgb(0, 0, 0) | rad=0 33.1 33.1 0
+T -19.7,19,43.2,833.2 | bg=rgb(206, 201, 192)
+button -19.7,832.6,43.2,43.2
+svg -9.3,831.6,30.2,46.2
+svg -17.2,831.6,30.2,46.2
+h1 34.2,49.2,947.6,187.6 | Inter 42.6/46.9 w500 ls-2.1 rgb(0, 0, 0) ta=start
+T 34.2,46.2,926.2,191.7 | Inter 42.6/46.9 w500 ls-2.1 rgb(0, 0, 0) ta=start
+## mhero MISSING
+## demo root 371,1623.8,1069,645 bg=rgba(0, 0, 0, 0)
+T 15,15,1039,630 | bg=rgb(249, 247, 243) | rad=33.1
+T 15,15,1039,63.6 | bg=rgb(249, 247, 243)
+T 50,40,132.4,38.6 | bd=0/0/1/0 none rgb(83, 83, 83)
+T 90.6,48,51.2,21.6 | Inter 16/21.6 w500 lsnormal rgb(83, 83, 83) ta=left
+T 189.4,40,132.4,38.6 | bd=0/0/1/0 none rgb(83, 83, 83)
+T 230.5,48,50.2,21.6 | Inter 16/21.6 w500 lsnormal rgb(83, 83, 83) ta=left
+T 328.8,40,132.4,38.6 | bd=0/0/1/0 none rgb(83, 83, 83)
+T 369.5,48,51.1,21.6 | Inter 16/21.6 w500 lsnormal rgb(83, 83, 83) ta=left
+T 468.3,40,132.4,38.6 | bd=0/0/1/0 none rgb(83, 83, 83)
+T 508.9,48,51.2,21.6 | Inter 16/21.6 w500 lsnormal rgb(83, 83, 83) ta=left
+T 607.7,40,132.4,38.6 | bd=0/0/1/0 none rgb(83, 83, 83)
+T 648.1,48,51.6,21.6 | Inter 16/21.6 w500 lsnormal rgb(83, 83, 83) ta=left
+T 747.1,40,132.4,38.6 | bd=0/0/1/0 none rgb(83, 83, 83)
+T 789.4,48,47.9,21.6 | Inter 16/21.6 w500 lsnormal rgb(83, 83, 83) ta=left
+T 886.6,40,132.4,38.6 | bd=0/0/1/0 none rgb(83, 83, 83)
+T 932,48,41.6,21.6 | Inter 16/21.6 w500 lsnormal rgb(83, 83, 83) ta=left
+T 50,93.6,117.9,16.2 | Inter 12/16.2 w500 lsnormal rgb(83, 83, 83) ta=left
+T 173.9,95.6,53.2,13.5 | Inter 10/13.5 w500 lsnormal rgb(184, 178, 166) ta=left
+T 50,119.8,132.4,67.2 | bg=rgb(239, 237, 231) | rad=10
+T 57,126.8,118.4,34.2 | bg=rgb(249, 247, 243) | bd=1/1/1/1 solid rgba(0, 0, 0, 0) | rad=5
+button 63,135.8,66.4,16.2 | Inter 12/16.2 w500 lsnormal rgb(83, 83, 83) ta=left | rad=5
+input 136.4,135.8,16,16.2 | rad=5
+button 152.4,135.8,14,15
+svg 152.4,136.8,14,14
+button 57,166,118.4,14
+T 109.2,166,14,14 | rad=100
+svg 110.2,167,12,12
+T 50,194,132.4,13.5 | Inter 1/normal w400 lsnormal rgb(83, 83, 83) ta=left
+T 50,194,87.7,12 | Inter 10/13.5 w500 lsnormal rgb(184, 178, 166) ta=left
+T 189.4,119.8,132.4,106.4 | bg=rgb(239, 237, 231) | rad=10
+T 196.4,126.8,118.4,34.2 | bg=rgb(249, 247, 243) | bd=1/1/1/1 solid rgba(0, 0, 0, 0) | rad=5
+button 202.4,135.8,66.4,16.2 | Inter 12/16.2 w500 lsnormal rgb(83, 83, 83) ta=left | rad=5
+input 275.8,135.8,16,16.2 | rad=5
+button 291.8,135.8,14,15
+svg 291.8,136.8,14,14
+T 196.4,166,118.4,34.2 | bg=rgb(249, 247, 243) | bd=1/1/1/1 solid rgba(0, 0, 0, 0) | rad=5
+button 202.4,175,66.4,16.2 | Inter 12/16.2 w500 lsnormal rgb(83, 83, 83) ta=left | rad=5
+input 275.8,175,16,16.2 | rad=5
+button 291.8,175,14,15
+svg 291.8,176,14,14
+button 196.4,205.2,118.4,14
+T 248.6,205.2,14,14 | rad=100
+svg 249.6,206.2,12,12
+T 189.4,233.2,132.4,13.5 | Inter 1/normal w400 lsnormal rgb(83, 83, 83) ta=left
+T 189.4,233.2,87.7,12 | Inter 10/13.5 w500 lsnormal rgb(184, 178, 166) ta=left
+T 328.8,119.8,132.4,67.2 | bg=rgb(239, 237, 231) | rad=10
+T 335.8,126.8,118.4,34.2 | bg=rgb(249, 247, 243) | bd=1/1/1/1 solid rgba(0, 0, 0, 0) | rad=5
+button 341.8,135.8,66.4,16.2 | Inter 12/16.2 w500 lsnormal rgb(83, 83, 83) ta=left | rad=5
+input 415.3,135.8,16,16.2 | rad=5
+button 431.3,135.8,14,15
+svg 431.3,136.8,14,14
+button 335.8,166,118.4,14
+T 388.1,166,14,14 | rad=100
+svg 389.1,167,12,12
+T 328.8,194,132.4,13.5 | Inter 1/normal w400 lsnormal rgb(83, 83, 83) ta=left
+T 328.8,194,87.7,12 | Inter 10/13.5 w500 lsnormal rgb(184, 178, 166) ta=left
+T 468.3,119.8,132.4,67.2 | bg=rgb(239, 237, 231) | rad=10
+T 475.3,126.8,118.4,34.2 | bg=rgb(249, 247, 243) | bd=1/1/1/1 solid rgba(0, 0, 0, 0) | rad=5
+button 481.3,135.8,66.4,16.2 | Inter 12/16.2 w500 lsnormal rgb(83, 83, 83) ta=left | rad=5
+input 554.7,135.8,16,16.2 | rad=5
+button 570.7,135.8,14,15
+svg 570.7,136.8,14,14
+button 475.3,166,118.4,14
+T 527.5,166,14,14 | rad=100
+svg 528.5,167,12,12
+T 468.3,194,132.4,13.5 | Inter 1/normal w400 lsnormal rgb(83, 83, 83) ta=left
+T 468.3,194,87.7,12 | Inter 10/13.5 w500 lsnormal rgb(184, 178, 166) ta=left
+T 607.7,119.8,132.4,106.4 | bg=rgb(239, 237, 231) | rad=10
+T 614.7,126.8,118.4,34.2 | bg=rgb(249, 247, 243) | bd=1/1/1/1 solid rgba(0, 0, 0, 0) | rad=5
+button 620.7,135.8,66.4,16.2 | Inter 12/16.2 w500 lsnormal rgb(83, 83, 83) ta=left | rad=5
+input 694.1,135.8,16,16.2 | rad=5
+button 710.1,135.8,14,15
+svg 710.1,136.8,14,14
+T 614.7,166,118.4,34.2 | bg=rgb(249, 247, 243) | bd=1/1/1/1 solid rgba(0, 0, 0, 0) | rad=5
+button 620.7,175,66.4,16.2 | Inter 12/16.2 w500 lsnormal rgb(83, 83, 83) ta=left | rad=5
+input 694.1,175,16,16.2 | rad=5
+button 710.1,175,14,15
+svg 710.1,176,14,14
+button 614.7,205.2,118.4,14
+T 666.9,205.2,14,14 | rad=100
+svg 667.9,206.2,12,12
+T 607.7,233.2,132.4,13.5 | Inter 1/normal w400 lsnormal rgb(83, 83, 83) ta=left
+T 607.7,233.2,87.7,12 | Inter 10/13.5 w500 lsnormal rgb(184, 178, 166) ta=left
+T 747.1,119.8,132.4,28 | bg=rgb(239, 237, 231) | rad=10
+button 754.1,126.8,118.4,14
+T 806.3,126.8,14,14 | rad=100
+svg 807.3,127.8,12,12
+T 886.6,119.8,132.4,28 | bg=rgb(239, 237, 231) | rad=10
+button 893.6,126.8,118.4,14
+T 945.8,126.8,14,14 | rad=100
+svg 946.8,127.8,12,12
+T 50,261.7,131.4,16.2 | Inter 12/16.2 w500 lsnormal rgb(83, 83, 83) ta=left
+T 187.4,263.7,53.2,13.5 | Inter 10/13.5 w500 lsnormal rgb(184, 178, 166) ta=left
+T 50,287.9,132.4,67.2 | bg=rgb(239, 237, 231) | rad=10
+T 57,294.9,118.4,34.2 | bg=rgb(249, 247, 243) | bd=1/1/1/1 solid rgba(0, 0, 0, 0) | rad=5
+button 63,303.9,66.4,16.2 | Inter 12/16.2 w500 lsnormal rgb(83, 83, 83) ta=left | rad=5
+input 136.4,303.9,16,16.2 | rad=5
+button 152.4,303.9,14,15
+svg 152.4,304.9,14,14
+button 57,334.1,118.4,14
+T 109.2,334.1,14,14 | rad=100
+svg 110.2,335.1,12,12
+T 50,362.1,132.4,13.5 | Inter 1/normal w400 lsnormal rgb(83, 83, 83) ta=left
+T 50,362.1,87.7,12 | Inter 10/13.5 w500 lsnormal rgb(184, 178, 166) ta=left
+T 189.4,287.9,132.4,67.2 | bg=rgb(239, 237, 231) | rad=10
+T 196.4,294.9,118.4,34.2 | bg=rgb(249, 247, 243) | bd=1/1/1/1 solid rgba(0, 0, 0, 0) | rad=5
+button 202.4,303.9,66.4,16.2 | Inter 12/16.2 w500 lsnormal rgb(83, 83, 83) ta=left | rad=5
+input 275.8,303.9,16,16.2 | rad=5
+button 291.8,303.9,14,15
+svg 291.8,304.9,14,14
+button 196.4,334.1,118.4,14
+T 248.6,334.1,14,14 | rad=100
+svg 249.6,335.1,12,12
+T 189.4,362.1,132.4,13.5 | Inter 1/normal w400 lsnormal rgb(83, 83, 83) ta=left
+T 189.4,362.1,87.7,12 | Inter 10/13.5 w500 lsnormal rgb(184, 178, 166) ta=left
+T 328.8,287.9,132.4,67.2 | bg=rgb(239, 237, 231) | rad=10
+T 335.8,294.9,118.4,34.2 | bg=rgb(249, 247, 243) | bd=1/1/1/1 solid rgba(0, 0, 0, 0) | rad=5
+button 341.8,303.9,66.4,16.2 | Inter 12/16.2 w500 lsnormal rgb(83, 83, 83) ta=left | rad=5
+input 415.3,303.9,16,16.2 | rad=5
+button 431.3,303.9,14,15
+svg 431.3,304.9,14,14
+button 335.8,334.1,118.4,14
+T 388.1,334.1,14,14 | rad=100
+svg 389.1,335.1,12,12
+T 328.8,362.1,132.4,13.5 | Inter 1/normal w400 lsnormal rgb(83, 83, 83) ta=left
+T 328.8,362.1,87.7,12 | Inter 10/13.5 w500 lsnormal rgb(184, 178, 166) ta=left
+T 468.3,287.9,132.4,106.4 | bg=rgb(239, 237, 231) | rad=10
+T 475.3,294.9,118.4,34.2 | bg=rgb(249, 247, 243) | bd=1/1/1/1 solid rgba(0, 0, 0, 0) | rad=5
+button 481.3,303.9,66.4,16.2 | Inter 12/16.2 w500 lsnormal rgb(83, 83, 83) ta=left | rad=5
+input 554.7,303.9,16,16.2 | rad=5
+button 570.7,303.9,14,15
+svg 570.7,304.9,14,14
+T 475.3,334.1,118.4,34.2 | bg=rgb(249, 247, 243) | bd=1/1/1/1 solid rgba(0, 0, 0, 0) | rad=5
+button 481.3,343.1,66.4,16.2 | Inter 12/16.2 w500 lsnormal rgb(83, 83, 83) ta=left | rad=5
+input 554.7,343.1,16,16.2 | rad=5
+button 570.7,343.1,14,15
+svg 570.7,344.1,14,14
+button 475.3,373.3,118.4,14
+T 527.5,373.3,14,14 | rad=100
+svg 528.5,374.3,12,12
+T 468.3,401.3,132.4,13.5 | Inter 1/normal w400 lsnormal rgb(83, 83, 83) ta=left
+T 468.3,401.3,87.7,12 | Inter 10/13.5 w500 lsnormal rgb(184, 178, 166) ta=left
+T 607.7,287.9,132.4,67.2 | bg=rgb(239, 237, 231) | rad=10
+T 614.7,294.9,118.4,34.2 | bg=rgb(249, 247, 243) | bd=1/1/1/1 solid rgba(0, 0, 0, 0) | rad=5
+button 620.7,303.9,66.4,16.2 | Inter 12/16.2 w500 lsnormal rgb(83, 83, 83) ta=left | rad=5
+input 694.1,303.9,16,16.2 | rad=5
+button 710.1,303.9,14,15
+svg 710.1,304.9,14,14
+button 614.7,334.1,118.4,14
+T 666.9,334.1,14,14 | rad=100
+svg 667.9,335.1,12,12
+T 607.7,362.1,132.4,13.5 | Inter 1/normal w400 lsnormal rgb(83, 83, 83) ta=left
+T 607.7,362.1,87.7,12 | Inter 10/13.5 w500 lsnormal rgb(184, 178, 166) ta=left
+T 747.1,287.9,132.4,28 | bg=rgb(239, 237, 231) | rad=10
+button 754.1,294.9,118.4,14
+T 806.3,294.9,14,14 | rad=100
+svg 807.3,295.9,12,12
+T 886.6,287.9,132.4,28 | bg=rgb(239, 237, 231) | rad=10
+button 893.6,294.9,118.4,14
+T 945.8,294.9,14,14 | rad=100
+svg 946.8,295.9,12,12
+T 50,429.8,130.2,16.2 | Inter 12/16.2 w500 lsnormal rgb(83, 83, 83) ta=left
+T 186.2,431.8,53.2,13.5 | Inter 10/13.5 w500 lsnormal rgb(184, 178, 166) ta=left
+T 50,456,132.4,106.4 | bg=rgb(239, 237, 231) | rad=10
+T 57,463,118.4,34.2 | bg=rgb(249, 247, 243) | bd=1/1/1/1 solid rgba(0, 0, 0, 0) | rad=5
+button 63,472,66.4,16.2 | Inter 12/16.2 w500 lsnormal rgb(83, 83, 83) ta=left | rad=5
+input 136.4,472,16,16.2 | rad=5
+button 152.4,472,14,15
+svg 152.4,473,14,14
+T 57,502.2,118.4,34.2 | bg=rgb(249, 247, 243) | bd=1/1/1/1 solid rgba(0, 0, 0, 0) | rad=5
+button 63,511.2,66.4,16.2 | Inter 12/16.2 w500 lsnormal rgb(83, 83, 83) ta=left | rad=5
+input 136.4,511.2,16,16.2 | rad=5
+button 152.4,511.2,14,15
+svg 152.4,512.2,14,14
+button 57,541.4,118.4,14
+T 109.2,541.4,14,14 | rad=100
+svg 110.2,542.4,12,12
+T 50,569.4,132.4,13.5 | Inter 1/normal w400 lsnormal rgb(83, 83, 83) ta=left
+T 50,569.4,87.7,12 | Inter 10/13.5 w500 lsnormal rgb(184, 178, 166) ta=left
+T 189.4,456,132.4,67.2 | bg=rgb(239, 237, 231) | rad=10
+T 196.4,463,118.4,34.2 | bg=rgb(249, 247, 243) | bd=1/1/1/1 solid rgba(0, 0, 0, 0) | rad=5
+button 202.4,472,66.4,16.2 | Inter 12/16.2 w500 lsnormal rgb(83, 83, 83) ta=left | rad=5
+input 275.8,472,16,16.2 | rad=5
+button 291.8,472,14,15
+svg 291.8,473,14,14
+button 196.4,502.2,118.4,14
+T 248.6,502.2,14,14 | rad=100
+svg 249.6,503.2,12,12
+T 189.4,530.2,132.4,13.5 | Inter 1/normal w400 lsnormal rgb(83, 83, 83) ta=left
+T 189.4,530.2,87.7,12 | Inter 10/13.5 w500 lsnormal rgb(184, 178, 166) ta=left
+T 328.8,456,132.4,67.2 | bg=rgb(239, 237, 231) | rad=10
+T 335.8,463,118.4,34.2 | bg=rgb(249, 247, 243) | bd=1/1/1/1 solid rgba(0, 0, 0, 0) | rad=5
+button 341.8,472,66.4,16.2 | Inter 12/16.2 w500 lsnormal rgb(83, 83, 83) ta=left | rad=5
+input 415.3,472,16,16.2 | rad=5
+button 431.3,472,14,15
+svg 431.3,473,14,14
+button 335.8,502.2,118.4,14
+T 388.1,502.2,14,14 | rad=100
+svg 389.1,503.2,12,12
+T 328.8,530.2,132.4,13.5 | Inter 1/normal w400 lsnormal rgb(83, 83, 83) ta=left
+T 328.8,530.2,87.7,12 | Inter 10/13.5 w500 lsnormal rgb(184, 178, 166) ta=left
+T 468.3,456,132.4,67.2 | bg=rgb(239, 237, 231) | rad=10
+T 475.3,463,118.4,34.2 | bg=rgb(249, 247, 243) | bd=1/1/1/1 solid rgba(0, 0, 0, 0) | rad=5
+button 481.3,472,66.4,16.2 | Inter 12/16.2 w500 lsnormal rgb(83, 83, 83) ta=left | rad=5
+input 554.7,472,16,16.2 | rad=5
+button 570.7,472,14,15
+svg 570.7,473,14,14
+button 475.3,502.2,118.4,14
+T 527.5,502.2,14,14 | rad=100
+svg 528.5,503.2,12,12
+T 468.3,530.2,132.4,13.5 | Inter 1/normal w400 lsnormal rgb(83, 83, 83) ta=left
+T 468.3,530.2,87.7,12 | Inter 10/13.5 w500 lsnormal rgb(184, 178, 166) ta=left
+T 607.7,456,132.4,67.2 | bg=rgb(239, 237, 231) | rad=10
+T 614.7,463,118.4,34.2 | bg=rgb(249, 247, 243) | bd=1/1/1/1 solid rgba(0, 0, 0, 0) | rad=5
+button 620.7,472,66.4,16.2 | Inter 12/16.2 w500 lsnormal rgb(83, 83, 83) ta=left | rad=5
+input 694.1,472,16,16.2 | rad=5
+button 710.1,472,14,15
+svg 710.1,473,14,14
+button 614.7,502.2,118.4,14
+T 666.9,502.2,14,14 | rad=100
+svg 667.9,503.2,12,12
+T 607.7,530.2,132.4,13.5 | Inter 1/normal w400 lsnormal rgb(83, 83, 83) ta=left
+T 607.7,530.2,87.7,12 | Inter 10/13.5 w500 lsnormal rgb(184, 178, 166) ta=left
+T 747.1,456,132.4,28 | bg=rgb(239, 237, 231) | rad=10
+button 754.1,463,118.4,14
+T 806.3,463,14,14 | rad=100
+svg 807.3,464,12,12
+T 886.6,456,132.4,28 | bg=rgb(239, 237, 231) | rad=10
+button 893.6,463,118.4,14
+T 945.8,463,14,14 | rad=100
+svg 946.8,464,12,12
+T 377,595,190,30 | bg=rgb(51, 51, 51) | rad=100
+button 381,599,22,22 | rad=999
+svg 386,604,12,12
+T 408,601.9,128,16.2 | Inter 12/16.2 w500 lsnormal rgb(249, 247, 243) ta=center
+button 541,599,22,22 | rad=999
+svg 546,604,12,12
+T 572,595,120,30 | bg=rgb(51, 51, 51) | rad=100
+button 572,595,60,30 | Inter 12/16.2 w500 lsnormal rgb(249, 247, 243) ta=center | bg=color(srgb 0.370824 0.369098 0.365647) | rad=999
+button 632,595,60,30 | Inter 12/16.2 w500 lsnormal rgb(249, 247, 243) ta=center | rad=999
+T 15,15,1039,630 | rad=33.1
+## dctl root 386,2218.8,1039,30 bg=rgba(0, 0, 0, 0)
+T 362,0,190,30 | bg=rgb(51, 51, 51) | rad=100
+button 366,4,22,22 | rad=999
+svg 371,9,12,12
+T 393,6.9,128,16.2 | Inter 12/16.2 w500 lsnormal rgb(249, 247, 243) ta=center
+button 526,4,22,22 | rad=999
+svg 531,9,12,12
+T 557,0,120,30 | bg=rgb(51, 51, 51) | rad=100
+button 557,0,60,30 | Inter 12/16.2 w500 lsnormal rgb(249, 247, 243) ta=center | bg=color(srgb 0.370824 0.369098 0.365647) | rad=999
+button 617,0,60,30 | Inter 12/16.2 w500 lsnormal rgb(249, 247, 243) ta=center | rad=999
+## features root 371,2268.8,1069,1503 bg=rgba(0, 0, 0, 0)
+T 15,15,512,486 | bg=rgb(249, 247, 243) | rad=33.1
+T 87,195.8,368,71 | Red Hat Mono 19.4/23.7 w600 ls-0.6 rgb(0, 0, 0) ta=center
+h2 248.3,304.3,45.4,15.8 | Red Hat Mono 12/15.8 w400 ls0.4 rgb(0, 0, 0) ta=center
+T 542,15,512,486 | bg=rgb(223, 226, 150) | rad=33.1
+img 567,40,462,436
+T 15,516,512,486 | bg=rgb(223, 226, 150) | rad=33.1
+img 40,541,462,436
+T 542,516,512,486 | bg=rgb(249, 247, 243) | rad=33.1
+T 614,696.8,368,71 | Red Hat Mono 19.4/23.7 w600 ls-0.6 rgb(0, 0, 0) ta=center
+h2 775.3,805.3,45.4,15.8 | Red Hat Mono 12/15.8 w400 ls0.4 rgb(0, 0, 0) ta=center
+T 15,1017,512,486 | bg=rgb(249, 247, 243) | rad=33.1
+T 87,1197.8,368,71 | Red Hat Mono 19.4/23.7 w600 ls-0.6 rgb(0, 0, 0) ta=center
+h2 248.3,1306.3,45.4,15.8 | Red Hat Mono 12/15.8 w400 ls0.4 rgb(0, 0, 0) ta=center
+T 542,1017,512,486 | bg=rgb(223, 226, 150) | rad=33.1
+img 567,1042,462,436
+## price root 371,3771.8,1069,501 bg=rgba(0, 0, 0, 0)
+T 15,15,512,486 | bg=rgb(0, 0, 0) | rad=33.1
+h2 255.9,40,30.3,15.8 | Red Hat Mono 12/15.8 w400 ls0.4 rgb(255, 255, 255) ta=center
+T 77.5,188.2,387,23.7 | Red Hat Mono 19.4/23.7 w600 ls-0.6 rgb(255, 255, 255) ta=center
+T 77.5,226.8,387,23.7 | Red Hat Mono 19.4/23.7 w600 ls-0.6 rgb(255, 255, 255) ta=center
+T 77.5,265.5,387,23.7 | Red Hat Mono 19.4/23.7 w600 ls-0.6 rgb(255, 255, 255) ta=center
+T 77.5,304.2,387,23.7 | Red Hat Mono 19.4/23.7 w600 ls-0.6 rgb(255, 255, 255) ta=center
+a 222.2,460.2,97.5,15.8
+T 222.2,459,7.6,15.8 | Red Hat Mono 12/15.8 w600 ls0.4 rgb(255, 255, 255) ta=start
+T 237,460.2,68,15.8 | Red Hat Mono 12/15.8 w600 ls0.4 rgb(255, 255, 255) ta=start
+T 312.2,459,7.6,15.8 | Red Hat Mono 12/15.8 w600 ls0.4 rgb(255, 255, 255) ta=start
+T 542,15,512,486 | bg=rgb(249, 247, 243) | rad=33.1
+h2 752.6,40,90.7,15.8 | Red Hat Mono 12/15.8 w400 ls0.4 rgb(0, 0, 0) ta=center
+T 614,222.5,368,71 | Red Hat Mono 19.4/23.7 w600 ls-0.6 rgb(0, 0, 0) ta=center
+a 627.4,460.2,90,15.8
+T 627.4,459,7.6,15.8 | Red Hat Mono 12/15.8 w600 ls0.4 rgb(0, 0, 0) ta=start
+T 642.1,460.2,60.5,15.8 | Red Hat Mono 12/15.8 w600 ls0.4 rgb(0, 0, 0) ta=start
+T 709.8,459,7.6,15.8 | Red Hat Mono 12/15.8 w600 ls0.4 rgb(0, 0, 0) ta=start
+a 760.6,460.2,97.5,15.8
+T 760.6,459,7.6,15.8 | Red Hat Mono 12/15.8 w600 ls0.4 rgb(0, 0, 0) ta=start
+T 775.3,460.2,68,15.8 | Red Hat Mono 12/15.8 w600 ls0.4 rgb(0, 0, 0) ta=start
+T 850.5,459,7.6,15.8 | Red Hat Mono 12/15.8 w600 ls0.4 rgb(0, 0, 0) ta=start
+a 901.3,460.2,67.3,15.8
+T 901.3,459,7.6,15.8 | Red Hat Mono 12/15.8 w600 ls0.4 rgb(0, 0, 0) ta=start
+T 916,460.2,37.8,15.8 | Red Hat Mono 12/15.8 w600 ls0.4 rgb(0, 0, 0) ta=start
+T 961,459,7.6,15.8 | Red Hat Mono 12/15.8 w600 ls0.4 rgb(0, 0, 0) ta=start
+## reviews root 473.5,4373.5,864,591 bg=rgba(0, 0, 0, 0)
+T 0,15,864,576 | bd=4/4/4/4 dotted rgb(0, 0, 0) | rad=50%
+T 4,53.5,856,15.8 | Red Hat Mono 12/15.8 w400 ls0.4 rgb(0, 0, 0) ta=center
+T 4,69.4,856,15.8 | Red Hat Mono 12/15.8 w400 ls0.4 rgb(0, 0, 0) ta=center
+T 131,196.8,602,47.3 | Red Hat Mono 19.4/23.7 w600 ls-0.6 rgb(0, 0, 0) ta=center
+T 131,255.7,602,94.7 | Red Hat Mono 19.4/23.7 w600 ls-0.6 rgb(0, 0, 0) ta=center
+T 131,361.9,602,47.3 | Red Hat Mono 19.4/23.7 w600 ls-0.6 rgb(0, 0, 0) ta=center
+T 860,53.5,856,15.8 | Red Hat Mono 12/15.8 w400 ls0.4 rgb(0, 0, 0) ta=center
+T 860,69.4,856,15.8 | Red Hat Mono 12/15.8 w400 ls0.4 rgb(0, 0, 0) ta=center
+T 987,208.3,602,189.4 | Red Hat Mono 19.4/23.7 w600 ls-0.6 rgb(0, 0, 0) ta=center
+button 315,536.6,59.8,15.8
+T 315,535.4,7.6,15.8 | Red Hat Mono 12/15.8 w600 ls0.4 rgb(0, 0, 0) ta=center
+T 329.8,536.6,30.3,15.8 | Red Hat Mono 12/15.8 w600 ls0.4 rgb(0, 0, 0) ta=center
+T 367.2,535.4,7.6,15.8 | Red Hat Mono 12/15.8 w600 ls0.4 rgb(0, 0, 0) ta=center
+T 409.3,536.6,45.4,15.8 | Red Hat Mono 12/15.8 w400 ls0.4 rgb(0, 0, 0) ta=center
+button 489.2,536.6,59.8,15.8
+T 489.2,535.4,7.6,15.8 | Red Hat Mono 12/15.8 w600 ls0.4 rgb(0, 0, 0) ta=center
+T 504,536.6,30.3,15.8 | Red Hat Mono 12/15.8 w600 ls0.4 rgb(0, 0, 0) ta=center
+T 541.4,535.4,7.6,15.8 | Red Hat Mono 12/15.8 w600 ls0.4 rgb(0, 0, 0) ta=center
+## faq root 371,5065.3,1069,934.6 bg=rgba(0, 0, 0, 0)
+h2 523.2,15,22.7,15.8 | Red Hat Mono 12/15.8 w400 ls0.4 rgb(0, 0, 0) ta=center
+li 102.5,65.4,864,166.7 | Inter 1/normal w400 lsnormal rgb(83, 83, 83) ta=start
+button 102.5,65.4,864,66.9
+T 102.5,91.7,14.4,14.4 | bg=rgb(0, 0, 0) | bd=1/1/1/1 solid rgb(0, 0, 0) | rad=50%
+T 131.3,87,188,23.7 | Red Hat Mono 19.4/23.7 w600 ls-0.6 italic rgb(0, 0, 0) ta=left td=underline/solid/2.1/5.8
+T 131.3,132.3,835.2,71 | Red Hat Mono 19.4/23.7 w600 ls-0.6 rgb(0, 0, 0) ta=start
+li 102.5,232.1,864,66.9 | Inter 1/normal w400 lsnormal rgb(83, 83, 83) ta=start
+button 102.5,232.1,864,66.9
+T 102.5,258.3,14.4,14.4 | bd=1/1/1/1 solid rgb(0, 0, 0) | rad=50%
+T 131.3,253.7,497.6,23.7 | Red Hat Mono 19.4/23.7 w600 ls-0.6 rgb(0, 0, 0) ta=left
+li 102.5,298.9,864,66.9 | Inter 1/normal w400 lsnormal rgb(83, 83, 83) ta=start
+button 102.5,298.9,864,66.9
+T 102.5,325.2,14.4,14.4 | bd=1/1/1/1 solid rgb(0, 0, 0) | rad=50%
+T 131.3,320.5,221.2,23.7 | Red Hat Mono 19.4/23.7 w600 ls-0.6 rgb(0, 0, 0) ta=left
+li 102.5,365.8,864,66.9 | Inter 1/normal w400 lsnormal rgb(83, 83, 83) ta=start
+button 102.5,365.8,864,66.9
+T 102.5,392.1,14.4,14.4 | bd=1/1/1/1 solid rgb(0, 0, 0) | rad=50%
+T 131.3,387.4,608.2,23.7 | Red Hat Mono 19.4/23.7 w600 ls-0.6 rgb(0, 0, 0) ta=left
+li 102.5,432.6,864,66.9 | Inter 1/normal w400 lsnormal rgb(83, 83, 83) ta=start
+button 102.5,432.6,864,66.9
+T 102.5,458.9,14.4,14.4 | bd=1/1/1/1 solid rgb(0, 0, 0) | rad=50%
+T 131.3,454.2,243.3,23.7 | Red Hat Mono 19.4/23.7 w600 ls-0.6 rgb(0, 0, 0) ta=left
+li 102.5,499.5,864,66.9 | Inter 1/normal w400 lsnormal rgb(83, 83, 83) ta=start
+button 102.5,499.5,864,66.9
+T 102.5,525.8,14.4,14.4 | bd=1/1/1/1 solid rgb(0, 0, 0) | rad=50%
+T 131.3,521.1,442.3,23.7 | Red Hat Mono 19.4/23.7 w600 ls-0.6 rgb(0, 0, 0) ta=left
+li 102.5,566.4,864,66.9 | Inter 1/normal w400 lsnormal rgb(83, 83, 83) ta=start
+button 102.5,566.4,864,66.9
+T 102.5,592.6,14.4,14.4 | bd=1/1/1/1 solid rgb(0, 0, 0) | rad=50%
+T 131.3,588,409.1,23.7 | Red Hat Mono 19.4/23.7 w600 ls-0.6 rgb(0, 0, 0) ta=left
+li 102.5,633.2,864,66.9 | Inter 1/normal w400 lsnormal rgb(83, 83, 83) ta=start
+button 102.5,633.2,864,66.9
+T 102.5,659.5,14.4,14.4 | bd=1/1/1/1 solid rgb(0, 0, 0) | rad=50%
+T 131.3,654.8,276.5,23.7 | Red Hat Mono 19.4/23.7 w600 ls-0.6 rgb(0, 0, 0) ta=left
+li 102.5,700.1,864,66.9 | Inter 1/normal w400 lsnormal rgb(83, 83, 83) ta=start
+button 102.5,700.1,864,66.9
+T 102.5,726.4,14.4,14.4 | bd=1/1/1/1 solid rgb(0, 0, 0) | rad=50%
+T 131.3,721.7,276.5,23.7 | Red Hat Mono 19.4/23.7 w600 ls-0.6 rgb(0, 0, 0) ta=left
+li 102.5,766.9,864,66.9 | Inter 1/normal w400 lsnormal rgb(83, 83, 83) ta=start
+button 102.5,766.9,864,66.9
+T 102.5,793.2,14.4,14.4 | bd=1/1/1/1 solid rgb(0, 0, 0) | rad=50%
+T 131.3,788.5,420.2,23.7 | Red Hat Mono 19.4/23.7 w600 ls-0.6 rgb(0, 0, 0) ta=left
+## cta root 371,5999.9,1069,870 bg=rgba(0, 0, 0, 0)
+T 15,0,1039,870 | bg=rgb(223, 226, 150) | rad=33.1
+a 485.7,427.1,97.5,15.8
+T 485.7,425.9,7.6,15.8 | Red Hat Mono 12/15.8 w600 ls0.4 rgb(0, 0, 0) ta=start
+T 500.5,427.1,68,15.8 | Red Hat Mono 12/15.8 w600 ls0.4 rgb(0, 0, 0) ta=start
+T 575.7,425.9,7.6,15.8 | Red Hat Mono 12/15.8 w600 ls0.4 rgb(0, 0, 0) ta=start
+T 40,829.2,310,15.8 | Red Hat Mono 12/15.8 w400 ls0.4 rgb(0, 0, 0) ta=start
+a 576.5,829.2,136.1,15.8 | Red Hat Mono 12/15.8 w400 ls0.4 rgb(0, 0, 0) ta=start td=underline/solid/1.3/3.6
+a 719.8,829.2,105.8,15.8 | Red Hat Mono 12/15.8 w400 ls0.4 rgb(0, 0, 0) ta=start td=underline/solid/1.3/3.6
+a 832.8,829.2,90.7,15.8 | Red Hat Mono 12/15.8 w400 ls0.4 rgb(0, 0, 0) ta=start td=underline/solid/1.3/3.6
+a 930.7,829.2,98.3,15.8 | Red Hat Mono 12/15.8 w400 ls0.4 rgb(0, 0, 0) ta=start td=underline/solid/1.3/3.6
+## cookie root 1043.2,503.2,396.8,396.8 bg=rgba(0, 0, 0, 0)
+svg 40,40,316.8,316.8
+h1 127.1,127.1,207.7,207.7 | Red Hat Mono 12/15.8 w400 ls0.4 rgb(0, 0, 0) ta=center
+T 130.4,130.4,186.1,186.1 | Red Hat Mono 12/15.8 w400 ls0.4 rgb(0, 0, 0) ta=center
+button 283.4,283.4,42.8,42.8
+T 282.6,308.8,16.6,16.6 | Red Hat Mono 12/15.8 w600 ls0.4 rgb(0, 0, 0) ta=start
+T 293.8,293.9,21.9,21.9 | Red Hat Mono 12/15.8 w600 ls0.4 rgb(0, 0, 0) ta=start
+T 308.8,282.6,16.6,16.6 | Red Hat Mono 12/15.8 w600 ls0.4 rgb(0, 0, 0) ta=start

@@ -1,0 +1,168 @@
+{
+ "1440": {
+  "sidebar": {
+   "rows": 18,
+   "matching": 13,
+   "pct": 72.2
+  },
+  "hero": {
+   "rows": 7,
+   "matching": 6,
+   "pct": 85.7
+  },
+  "demo": {
+   "rows": 240,
+   "matching": 233,
+   "pct": 97.1
+  },
+  "dctl": {
+   "rows": 9,
+   "matching": 9,
+   "pct": 100.0
+  },
+  "features": {
+   "rows": 15,
+   "matching": 15,
+   "pct": 100.0
+  },
+  "price": {
+   "rows": 25,
+   "matching": 25,
+   "pct": 100.0
+  },
+  "reviews": {
+   "rows": 18,
+   "matching": 17,
+   "pct": 94.4
+  },
+  "faq": {
+   "rows": 42,
+   "matching": 42,
+   "pct": 100.0
+  },
+  "cta": {
+   "rows": 10,
+   "matching": 10,
+   "pct": 100.0
+  },
+  "cookie": {
+   "rows": 6,
+   "matching": 2,
+   "pct": 33.3
+  }
+ },
+ "1280": {
+  "sidebar": {
+   "rows": 18,
+   "matching": 13,
+   "pct": 72.2
+  },
+  "hero": {
+   "rows": 7,
+   "matching": 6,
+   "pct": 85.7
+  },
+  "demo": {
+   "rows": 240,
+   "matching": 233,
+   "pct": 97.1
+  },
+  "dctl": {
+   "rows": 9,
+   "matching": 9,
+   "pct": 100.0
+  },
+  "features": {
+   "rows": 15,
+   "matching": 15,
+   "pct": 100.0
+  },
+  "price": {
+   "rows": 25,
+   "matching": 25,
+   "pct": 100.0
+  },
+  "reviews": {
+   "rows": 18,
+   "matching": 17,
+   "pct": 94.4
+  },
+  "faq": {
+   "rows": 42,
+   "matching": 42,
+   "pct": 100.0
+  },
+  "cta": {
+   "rows": 10,
+   "matching": 10,
+   "pct": 100.0
+  },
+  "cookie": {
+   "rows": 6,
+   "matching": 2,
+   "pct": 33.3
+  }
+ },
+ "390": {
+  "menu": {
+   "rows": 10,
+   "matching": 10,
+   "pct": 100.0
+  },
+  "sidebar": {
+   "rows": 0,
+   "matching": 0,
+   "pct": 100.0
+  },
+  "hero": {
+   "rows": 2,
+   "matching": 1,
+   "pct": 50.0
+  },
+  "mhero": {
+   "rows": 9,
+   "matching": 9,
+   "pct": 100.0
+  },
+  "demo": {
+   "rows": 240,
+   "matching": 233,
+   "pct": 97.1
+  },
+  "dctl": {
+   "rows": 9,
+   "matching": 9,
+   "pct": 100.0
+  },
+  "features": {
+   "rows": 15,
+   "matching": 15,
+   "pct": 100.0
+  },
+  "price": {
+   "rows": 25,
+   "matching": 25,
+   "pct": 100.0
+  },
+  "reviews": {
+   "rows": 17,
+   "matching": 16,
+   "pct": 94.1
+  },
+  "faq": {
+   "rows": 42,
+   "matching": 42,
+   "pct": 100.0
+  },
+  "cta": {
+   "rows": 11,
+   "matching": 11,
+   "pct": 100.0
+  },
+  "cookie": {
+   "rows": 6,
+   "matching": 2,
+   "pct": 33.3
+  }
+ }
+}

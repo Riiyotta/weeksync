@@ -92,6 +92,10 @@ CASES = [
     ("generated-mode rule dropped from the validator", False, lambda r: tedit(r, "schema/semantic_validate.py", '"GENERATED_MODE_RATING")', '"GENERATED_MODE_X")'), "mode.generated-rules-pinned"),
     ("tracked evidence excerpt altered", False, lambda r: tedit(r, "extraction/evidence/o1440.excerpt.n", "371,1623.8,1069,645", "371,1623.8,1069,999"), "citations"),
     ("tracked evidence excerpt deleted", False, lambda r: (r / "extraction/evidence/o390.excerpt.n").unlink(), "citations"),
+    ("recorded geometry parity edited", False, lambda r: jedit(r, "extraction/measured-values.json", lambda d: d["cloneQuality"]["geometryParity"]["results"]["1440"]["sections"]["sidebar"].update(matching=13, pct=72.2)), "parity.geometry-evidence"),
+    ("tracked parity dump altered", False, lambda r: tedit(r, "extraction/evidence/parity-2026-10-29/c390b.n", "## cookie root 88.9,542.9,301.1,301.1", "## cookie root 88.9,542.9,301.1,299.1"), "parity.geometry-evidence"),
+    ("pixel-parity exception dropped", False, lambda r: jedit(r, "extraction/measured-values.json", lambda d: d["cloneQuality"]["pixelParity"].update(exceptions=[])), "parity.gates"),
+    ("pixel-parity exception self-approved", False, lambda r: jedit(r, "extraction/measured-values.json", lambda d: d["cloneQuality"]["pixelParity"]["exceptions"][0].update(status="approved")), "parity.gates"),
 ]
 
 

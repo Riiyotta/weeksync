@@ -3,17 +3,19 @@
 
     python3 extraction/geometry_parity.py [--dumps <dir>] [--json]
 
-Reads the text-free computed-style dumps written during recon/pixel-audit
-(`o<vp>.n` = original, `c<vp>b.n` = clone after pixel-audit fixes) from the
-sibling project's `.playwright-mcp/` folder (default: <repo>/../.playwright-mcp).
+Reads the text-free computed-style dumps written by extraction/dump_geometry.mjs
+(`o<vp>.n` = live original, `c<vp>b.n` = built clone), by default from the tracked
+evidence folder extraction/evidence/parity-2026-10-29/ (captured 2026-10-29 from
+https://weeksync.app/ and a `vite build` + `vite preview` of the clone, same script, same
+viewports: 1440x900, 1280x800, 390x844 emulated as a touch phone).
 For every `## <section>` block it matches each original row to an unused clone
 row with the identical style suffix (font / border / radius / colour) and all
 four box numbers within 1.5 px (element kind ignored, see compare()).
 
-This is GEOMETRY parity over measured boxes and computed styles, not pixel
-parity: no live-vs-clone screenshot diff exists for this project (see
-measured-values.json -> cloneQuality). When the dumps are absent (e.g. a
-standalone copy of design-repo/), it prints a notice and exits 0.
+This is GEOMETRY parity over measured boxes and computed styles; the screenshot
+(pixel) comparison is extraction/pixel_capture.mjs + extraction/pixel_parity.py. Both
+recorded results live in measured-values.json -> cloneQuality, and verify_all re-derives
+the geometry numbers from the tracked dumps on every run.
 """
 import argparse, json, re, sys
 from pathlib import Path
@@ -71,12 +73,12 @@ def compare(o, c):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--dumps", default=str(REPO.parent / ".playwright-mcp"))
+    ap.add_argument("--dumps", default=str(REPO / "extraction" / "evidence" / "parity-2026-10-29"))
     ap.add_argument("--json", action="store_true")
     a = ap.parse_args()
     d = Path(a.dumps)
     if not d.is_dir():
-        print(f"NOTICE: no dump folder at {d.name!r} next to design-repo; geometry parity not re-run (recorded values stay in measured-values.json)")
+        print(f"NOTICE: no dump folder {d.name!r}; geometry parity not re-run (recorded values stay in measured-values.json)")
         return 0
     out = {}
     for vp in VIEWPORTS:

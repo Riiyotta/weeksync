@@ -498,9 +498,53 @@ def check_gate():
     rec("gate.wrapper", not errors, f"{len(errors)} errors, {len(warnings)} warnings" + (f": {errors[:3]}" if errors else ""))
 
 
+# ----------------------------------------------------------------------------- clone parity
+def check_parity():
+    """cloneQuality: the recorded geometry numbers are re-derived from the tracked dumps, the recorded
+    pixel numbers equal the tracked result file, and the 80% gates hold per section and on average,
+    except for sections carried by an exception that is still pending (or carries a named approver)."""
+    import hashlib
+    mv = load("extraction/measured-values.json")
+    cq = mv["cloneQuality"]
+    gp, pp = cq["geometryParity"], cq["pixelParity"]
+    ev = REPO / gp["evidence"]
+    gpm = module("extraction/geometry_parity.py", "geometry_parity")
+    shas = mv["externalEvidence"]["trackedEvidence"]["parityCapture2026_10_29"]["files"]
+    bad_sha = [f for f, h in shas.items() if not (ev / f).is_file() or hashlib.sha256((ev / f).read_bytes()).hexdigest() != h]
+    diff = []
+    for vp in gpm.VIEWPORTS:
+        real = gpm.compare(gpm.parse(ev / f"o{vp}.n"), gpm.parse(ev / f"c{vp}b.n"))
+        rec_ = gp["results"].get(vp, {}).get("sections", {})
+        if real != rec_:
+            diff.append(vp)
+    rec("parity.geometry-evidence", not bad_sha and not diff,
+        "geometry results re-derived from the tracked dumps == recorded; dump sha256 == ledger" if not (bad_sha or diff) else f"sha mismatch {bad_sha}; recorded != re-derived at {diff}")
+    pfile = json.loads((REPO / pp["evidence"][0]).read_text())
+    prec = {vp: {k: {"pct": v["pct"], "tiles": v["tiles"], "pixelsCompared": v["pixels"]} for k, v in secs.items()} for vp, secs in pfile.items()}
+    pdiff = [vp for vp in prec if prec[vp] != pp["results"].get(vp, {}).get("sections")]
+    rec("parity.pixel-evidence", pp.get("measured") is True and not pdiff, "pixel results == tracked pixel-after.json" if not pdiff else f"recorded != tracked at {pdiff}")
+    problems = []
+    for label, block in (("geometry", gp), ("pixel", pp)):
+        gate = block["gate"]
+        exc = {(e["viewport"], e["section"].split(" ")[0]): e for e in block.get("exceptions", [])}
+        for e in exc.values():
+            ok_state = (e.get("status") == "pending human approval" and not e.get("approvedBy")) or (e.get("status") == "approved" and e.get("approvedBy"))
+            if not ok_state or len(e.get("reason", "")) < 80 or not e.get("evidence"):
+                problems.append(f"{label} exception {e.get('id')}: needs status 'pending human approval' (or 'approved' + approvedBy), a reason and evidence")
+        for vp, r in block["results"].items():
+            secs = r["sections"]
+            avg = sum(v["pct"] for v in secs.values()) / max(1, len(secs))
+            if abs(avg - r["averagePct"]) > 0.05 or avg < gate["averageMinPct"]:
+                problems.append(f"{label} {vp} average {avg:.1f} (recorded {r['averagePct']})")
+            for k, v in secs.items():
+                if v["pct"] < gate["perSectionMinPct"] and (vp, k) not in exc:
+                    problems.append(f"{label} {vp} {k} {v['pct']}% < {gate['perSectionMinPct']}% without an exception")
+    rec("parity.gates", not problems, "geometry + pixel: every section >= 80% or under a pending/approved exception; averages >= 80%" if not problems else problems[:4])
+
+
 def main():
     for fn in (check_hygiene, check_schema_examples, check_contracts, check_mode, check_allowlist, check_retrieval, check_assets, check_graph,
-               check_templates, check_tokens, check_motion, check_citations, check_counts, check_gate):
+               check_templates, check_tokens, check_motion, check_citations, check_counts, check_gate, check_parity):
         try:
             fn()
         except Exception as e:  # a crash is a failure, never a silent pass

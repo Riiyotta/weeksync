@@ -31,7 +31,7 @@
       "section": "utility.cookie-consent",
       "variant": "default",
       "content": {
-        "message": "We use a few cookies to keep this page running smoothly and to learn which parts help you plan best.",
+        "message": "We use a small set of cookies essential to running this website and to measure which pages help you.",
         "acceptLabel": "OK"
       },
       "motion": {
@@ -113,7 +113,7 @@
       "section": "hero.ticket",
       "variant": "default",
       "content": {
-        "headline": "Sevenday fits your teammates, projects and their hours for the week into one tidy list, so splitting the load fairly and spotting overfull days early becomes trivial.",
+        "headline": "Sevenday puts your people, projects and their hours for the week into one single view, so splitting the load fairly and spotting overfull days sooner becomes trivial.",
         "scissorsLabel": "Go to the next section"
       },
       "motion": {

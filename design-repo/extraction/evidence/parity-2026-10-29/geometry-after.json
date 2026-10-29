@@ -1,0 +1,168 @@
+{
+ "1440": {
+  "sidebar": {
+   "rows": 18,
+   "matching": 18,
+   "pct": 100.0
+  },
+  "hero": {
+   "rows": 7,
+   "matching": 7,
+   "pct": 100.0
+  },
+  "demo": {
+   "rows": 240,
+   "matching": 240,
+   "pct": 100.0
+  },
+  "dctl": {
+   "rows": 9,
+   "matching": 9,
+   "pct": 100.0
+  },
+  "features": {
+   "rows": 15,
+   "matching": 15,
+   "pct": 100.0
+  },
+  "price": {
+   "rows": 25,
+   "matching": 25,
+   "pct": 100.0
+  },
+  "reviews": {
+   "rows": 18,
+   "matching": 18,
+   "pct": 100.0
+  },
+  "faq": {
+   "rows": 42,
+   "matching": 42,
+   "pct": 100.0
+  },
+  "cta": {
+   "rows": 10,
+   "matching": 10,
+   "pct": 100.0
+  },
+  "cookie": {
+   "rows": 6,
+   "matching": 6,
+   "pct": 100.0
+  }
+ },
+ "1280": {
+  "sidebar": {
+   "rows": 18,
+   "matching": 18,
+   "pct": 100.0
+  },
+  "hero": {
+   "rows": 7,
+   "matching": 7,
+   "pct": 100.0
+  },
+  "demo": {
+   "rows": 240,
+   "matching": 240,
+   "pct": 100.0
+  },
+  "dctl": {
+   "rows": 9,
+   "matching": 9,
+   "pct": 100.0
+  },
+  "features": {
+   "rows": 15,
+   "matching": 15,
+   "pct": 100.0
+  },
+  "price": {
+   "rows": 25,
+   "matching": 25,
+   "pct": 100.0
+  },
+  "reviews": {
+   "rows": 18,
+   "matching": 18,
+   "pct": 100.0
+  },
+  "faq": {
+   "rows": 42,
+   "matching": 42,
+   "pct": 100.0
+  },
+  "cta": {
+   "rows": 10,
+   "matching": 10,
+   "pct": 100.0
+  },
+  "cookie": {
+   "rows": 6,
+   "matching": 6,
+   "pct": 100.0
+  }
+ },
+ "390": {
+  "menu": {
+   "rows": 10,
+   "matching": 10,
+   "pct": 100.0
+  },
+  "sidebar": {
+   "rows": 0,
+   "matching": 0,
+   "pct": 100.0
+  },
+  "hero": {
+   "rows": 2,
+   "matching": 2,
+   "pct": 100.0
+  },
+  "mhero": {
+   "rows": 9,
+   "matching": 9,
+   "pct": 100.0
+  },
+  "demo": {
+   "rows": 240,
+   "matching": 240,
+   "pct": 100.0
+  },
+  "dctl": {
+   "rows": 9,
+   "matching": 9,
+   "pct": 100.0
+  },
+  "features": {
+   "rows": 15,
+   "matching": 15,
+   "pct": 100.0
+  },
+  "price": {
+   "rows": 25,
+   "matching": 25,
+   "pct": 100.0
+  },
+  "reviews": {
+   "rows": 17,
+   "matching": 17,
+   "pct": 100.0
+  },
+  "faq": {
+   "rows": 42,
+   "matching": 42,
+   "pct": 100.0
+  },
+  "cta": {
+   "rows": 11,
+   "matching": 11,
+   "pct": 100.0
+  },
+  "cookie": {
+   "rows": 6,
+   "matching": 6,
+   "pct": 100.0
+  }
+ }
+}

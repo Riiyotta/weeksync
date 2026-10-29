@@ -1,6 +1,6 @@
 {
   "repositoryId": "weeksync-landing-design-repo",
-  "repositoryVersion": "1.0.1",
+  "repositoryVersion": "1.1.0",
   "pageSpecVersion": "1.0.0",
   "allowlistVersion": "1.0.0",
   "versionFieldNote": "pageSpecVersion (vs the schema const) and allowlistVersion (vs tokens/llm/component-allowlist.json) are machine-checked by extraction/verify_all.py. repositoryVersion is documentation-only and hand-maintained; nothing checks it.",
@@ -16,7 +16,7 @@
     "original": "Next.js site (live commercial product, measured by recon only)"
   },
   "sourceProject": {
-    "relation": "design-repo/ sits inside the clone project; external citations (src/, CLONE_SPEC.md, configs) resolve against that parent folder and degrade to a warning when absent; recon-dump evidence is tracked as verbatim excerpts in extraction/evidence/",
+    "relation": "design-repo/ sits inside the clone project; external citations (src/, CLONE_SPEC.md, configs) resolve against that parent folder and degrade to a warning when absent; recon-dump evidence is tracked as verbatim excerpts in extraction/evidence/, and the 2026-10-29 live-vs-clone parity capture (full text-free dumps + results) in extraction/evidence/parity-2026-10-29/",
     "reference": "clone of a single landing page, rebranded with original placeholders as the fictional 'Sevenday'",
     "measuredOriginal": "https://weeksync.app/ (live commercial product; measured by recon only, nothing reproduced)"
   },
@@ -49,7 +49,7 @@
     "graphRules": 11,
     "examples": 2,
     "adversarialMutations": 67,
-    "driftCases": 33
+    "driftCases": 37
   },
   "entryPoints": {
     "readme": "README.md",
@@ -63,7 +63,10 @@
     "wrapperWhitelist": "extraction/wrapper-whitelist.json",
     "measureSections": "extraction/measure_sections.mjs",
     "geometryParity": "extraction/geometry_parity.py",
-    "trackedEvidence": ["extraction/evidence/o1440.excerpt.n", "extraction/evidence/c1440b.excerpt.n", "extraction/evidence/o390.excerpt.n"],
+    "dumpGeometry": "extraction/dump_geometry.mjs",
+    "pixelCapture": "extraction/pixel_capture.mjs",
+    "pixelParity": "extraction/pixel_parity.py",
+    "trackedEvidence": ["extraction/evidence/o1440.excerpt.n", "extraction/evidence/c1440b.excerpt.n", "extraction/evidence/o390.excerpt.n", "extraction/evidence/parity-2026-10-29/"],
     "proveDrift": "scripts/prove_drift.py",
     "measuredValues": "extraction/measured-values.json",
     "templates": "templates/templates.json",

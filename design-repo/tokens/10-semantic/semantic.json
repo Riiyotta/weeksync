@@ -131,7 +131,7 @@
       "resolvesTo": "color.gray.700",
       "source": {
         "ref": "src/components/AppDemo.jsx:460",
-        "expect": "c.current ? 'border-gray-700' : 'border-sand-400'"
+        "expect": "c.current ? '[border-color:currentColor_currentColor_theme(colors.gray.700)]' : '[border-color:currentColor_currentColor_theme(colors.sand.400)]'"
       }
     },
     "color.icon.remove": {

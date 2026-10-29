@@ -1,0 +1,176 @@
+{
+ "1440": {
+  "sidebar": {
+   "pixels": 332982,
+   "matching": 331905,
+   "tiles": 1,
+   "pct": 99.7
+  },
+  "hero": {
+   "pixels": 808091,
+   "matching": 761378,
+   "tiles": 1,
+   "pct": 94.2
+  },
+  "cookie": {
+   "pixels": 157609,
+   "matching": 155237,
+   "tiles": 1,
+   "pct": 98.5
+  },
+  "demo": {
+   "pixels": 632486,
+   "matching": 632486,
+   "tiles": 1,
+   "pct": 100.0
+  },
+  "features": {
+   "pixels": 828110,
+   "matching": 812540,
+   "tiles": 2,
+   "pct": 98.1
+  },
+  "price": {
+   "pixels": 535068,
+   "matching": 521199,
+   "tiles": 1,
+   "pct": 97.4
+  },
+  "reviews": {
+   "pixels": 484752,
+   "matching": 457321,
+   "tiles": 1,
+   "pct": 94.3
+  },
+  "faq": {
+   "pixels": 839903,
+   "matching": 809895,
+   "tiles": 2,
+   "pct": 96.4
+  },
+  "cta": {
+   "pixels": 480459,
+   "matching": 479465,
+   "tiles": 1,
+   "pct": 99.8
+  }
+ },
+ "1280": {
+  "sidebar": {
+   "pixels": 262456,
+   "matching": 261451,
+   "tiles": 1,
+   "pct": 99.6
+  },
+  "hero": {
+   "pixels": 638591,
+   "matching": 601382,
+   "tiles": 1,
+   "pct": 94.2
+  },
+  "cookie": {
+   "pixels": 124609,
+   "matching": 122716,
+   "tiles": 1,
+   "pct": 98.5
+  },
+  "demo": {
+   "pixels": 499872,
+   "matching": 499831,
+   "tiles": 1,
+   "pct": 100.0
+  },
+  "features": {
+   "pixels": 654912,
+   "matching": 642219,
+   "tiles": 2,
+   "pct": 98.1
+  },
+  "price": {
+   "pixels": 422750,
+   "matching": 411714,
+   "tiles": 1,
+   "pct": 97.4
+  },
+  "reviews": {
+   "pixels": 382842,
+   "matching": 360246,
+   "tiles": 1,
+   "pct": 94.1
+  },
+  "faq": {
+   "pixels": 663891,
+   "matching": 641365,
+   "tiles": 2,
+   "pct": 96.6
+  },
+  "cta": {
+   "pixels": 337715,
+   "matching": 336838,
+   "tiles": 1,
+   "pct": 99.7
+  }
+ },
+ "390": {
+  "menu": {
+   "pixels": 25740,
+   "matching": 25740,
+   "tiles": 1,
+   "pct": 100.0
+  },
+  "hero": {
+   "pixels": 20592,
+   "matching": 15497,
+   "tiles": 1,
+   "pct": 75.3
+  },
+  "cookie": {
+   "pixels": 91204,
+   "matching": 78889,
+   "tiles": 1,
+   "pct": 86.5
+  },
+  "mhero": {
+   "pixels": 185028,
+   "matching": 184398,
+   "tiles": 1,
+   "pct": 99.7
+  },
+  "demo": {
+   "pixels": 93600,
+   "matching": 93600,
+   "tiles": 1,
+   "pct": 100.0
+  },
+  "features": {
+   "pixels": 150390,
+   "matching": 138471,
+   "tiles": 2,
+   "pct": 92.1
+  },
+  "price": {
+   "pixels": 210418,
+   "matching": 203505,
+   "tiles": 1,
+   "pct": 96.7
+  },
+  "reviews": {
+   "pixels": 124800,
+   "matching": 103230,
+   "tiles": 1,
+   "pct": 82.7
+  },
+  "faq": {
+   "pixels": 339356,
+   "matching": 312324,
+   "tiles": 2,
+   "pct": 92.0
+  },
+  "cta": {
+   "pixels": 63665,
+   "matching": 63505,
+   "tiles": 1,
+   "pct": 99.7
+  }
+ }
+}

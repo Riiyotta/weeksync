@@ -99,7 +99,7 @@ All values below are in **rem (= px at 1440)** unless marked px.
 ### 1.3 Typography
 Fonts (Google Fonts):
 - **Inter** variable 100–900 (used weights: 500 for hero and demo; 400 default). Stack: `Inter, "Inter Fallback", sans-serif`. Next's fallback: `@font-face{font-family:"Inter Fallback";src:local("Arial");ascent-override:90.44%;descent-override:22.52%;line-gap-override:0%;size-adjust:107.12%}`.
-- **Red Hat Mono**. Loaded faces: 500, 600 normal plus 500, 600 italic (as served by next/font). Computed weights in use are **400** and **600**. The 400 renders with the nearest available face, and *italic* is used on hover/active states. Load `ital,wght@0,400;0,500;0,600;1,400;1,500;1,600` from Google Fonts to be safe. Stack: `"Red Hat Mono", "Red Hat Mono Fallback", monospace`. Fallback: `local("Arial"); ascent-override:75.64%; descent-override:22.66%; line-gap-override:0%; size-adjust:134.59%`.
+- **Red Hat Mono**. Loaded faces: 500, 600 normal plus 500, 600 italic (as served by next/font). Computed weights in use are **400** and **600**. The 400 renders with the nearest available face (500), and *italic* is used on hover/active states. Load only `ital,wght@0,500;0,600;1,500;1,600` from Google Fonts: loading a real 400 face makes every paragraph/label visibly lighter than the original (seen in the 2026-10-29 live-vs-clone screenshot comparison). Stack: `"Red Hat Mono", "Red Hat Mono Fallback", monospace`. Fallback: `local("Arial"); ascent-override:75.64%; descent-override:22.66%; line-gap-override:0%; size-adjust:134.59%`.
 - `-webkit-font-smoothing: antialiased` on body and all landing text.
 
 Text roles (desktop rem values; px at 1440 shown; mobile values in the last column):

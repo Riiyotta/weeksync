@@ -36,7 +36,7 @@ function SidebarButton({ label, active, onClick }) {
       <span
         className={`block w-[14.4rem] h-[14.4rem] rounded-[50%] border-[1.584rem] border-solid border-landing-black mx-auto mb-[7.2rem] group-hover:bg-landing-black ${active ? 'bg-landing-black' : 'bg-transparent'}`}
       />
-      {label}
+      <span className="block text-center">{label /* own block, as the original's label paragraph */}</span>
     </button>
   )
 }

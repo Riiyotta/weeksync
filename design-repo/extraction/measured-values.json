@@ -385,90 +385,273 @@
   "cloneQuality": {
     "cleanInstall": {
       "result": "pass",
-      "command": "npm ci && vite build, in an isolated temp copy of src/, public/, index.html, package*.json and the three config files",
-      "npmCi": "exit 0 (132 packages)",
-      "viteBuild": "exit 0 (index.html 0.87 kB, CSS 31.16 kB, JS 225.15 kB)",
-      "runDate": "2026-10-26"
+      "command": "npm ci && npx vite build --outDir <os-temp-dir> (clone project root), then npx vite preview --outDir <os-temp-dir> --port 5701",
+      "npmCi": "exit 0",
+      "viteBuild": "exit 0 (index.html 1.05 kB, CSS 31.3 kB, JS 226.7 kB)",
+      "runDate": "2026-10-29"
     },
-    "serves": "dev server answered HTTP 200 with the clone's document title during measurement",
+    "serves": "vite preview of the production build answered HTTP 200 with the clone's document title on port 5701 during the 2026-10-29 measurement",
     "pixelParity": {
-      "measured": false,
-      "reason": "No paired live-vs-clone screenshots at matching scroll offsets exist for this project, and this build did not capture the live original. No pixel-parity number is claimed."
-    },
-    "geometryParity": {
-      "method": "extraction/geometry_parity.py: per section, share of original computed-style rows (box within 1.5px + identical font/border/radius/colour) matched by a clone row; text-free dumps o<vp>.n vs c<vp>b.n",
+      "measured": true,
+      "capturedAt": "2026-10-29",
+      "method": "extraction/pixel_capture.mjs (same script on both sites) + extraction/pixel_parity.py. Same viewport (1440x900, 1280x800, 390x844 touch phone), device scale 1, reduced motion (stops the randomised demo bot cursors on both), fonts ready, text stable 2.5 s, animations paused at 3000 ms. Each section is reached by scrolling (wheel on the loop scroller, scrollTo steps on mobile) to the same offset (section top at viewport y 0, then +vh tiles); fixed layers at scroll 0. Score = pixels in the section crop whose max RGB channel difference <= 32, over all unmasked pixels. Masked on both sites: licensing placeholders (brand mark, feature illustrations, fish sprites) and other opaque fixed layers covering the section (sidebar, cookie, mobile menu bar).",
+      "original": "https://weeksync.app/ (live)",
+      "screenshotsTracked": false,
+      "screenshotsNote": "Screenshots of the live original contain its copy and artwork, so they are not committed; the tile crop/mask boxes (pixel-tiles/*.json) and both result sets are tracked.",
+      "evidence": [
+        "extraction/evidence/parity-2026-10-29/pixel-after.json",
+        "extraction/evidence/parity-2026-10-29/pixel-before.json",
+        "extraction/evidence/parity-2026-10-29/pixel-tiles/"
+      ],
       "gate": {
         "perSectionMinPct": 80,
         "averageMinPct": 80
       },
       "results": {
         "1440": {
-          "averagePct": 88.5,
+          "averagePct": 97.6,
           "sections": {
             "sidebar": {
-              "rows": 18,
-              "matching": 13,
-              "pct": 72.2
+              "pct": 99.7,
+              "tiles": 1,
+              "pixelsCompared": 332982
             },
             "hero": {
-              "rows": 6,
-              "matching": 6,
-              "pct": 100.0
-            },
-            "demo": {
-              "rows": 70,
-              "matching": 63,
-              "pct": 90.0
-            },
-            "features": {
-              "rows": 15,
-              "matching": 15,
-              "pct": 100.0
-            },
-            "price": {
-              "rows": 25,
-              "matching": 25,
-              "pct": 100.0
-            },
-            "reviews": {
-              "rows": 18,
-              "matching": 17,
-              "pct": 94.4
-            },
-            "faq": {
-              "rows": 42,
-              "matching": 42,
-              "pct": 100.0
-            },
-            "cta": {
-              "rows": 10,
-              "matching": 10,
-              "pct": 100.0
+              "pct": 94.2,
+              "tiles": 1,
+              "pixelsCompared": 808091
             },
             "cookie": {
-              "rows": 5,
-              "matching": 2,
-              "pct": 40.0
+              "pct": 98.5,
+              "tiles": 1,
+              "pixelsCompared": 157609
+            },
+            "demo": {
+              "pct": 100.0,
+              "tiles": 1,
+              "pixelsCompared": 632486
+            },
+            "features": {
+              "pct": 98.1,
+              "tiles": 2,
+              "pixelsCompared": 828110
+            },
+            "price": {
+              "pct": 97.4,
+              "tiles": 1,
+              "pixelsCompared": 535068
+            },
+            "reviews": {
+              "pct": 94.3,
+              "tiles": 1,
+              "pixelsCompared": 484752
+            },
+            "faq": {
+              "pct": 96.4,
+              "tiles": 2,
+              "pixelsCompared": 839903
+            },
+            "cta": {
+              "pct": 99.8,
+              "tiles": 1,
+              "pixelsCompared": 480459
             }
           }
         },
         "1280": {
-          "averagePct": 89.7,
+          "averagePct": 97.6,
+          "sections": {
+            "sidebar": {
+              "pct": 99.6,
+              "tiles": 1,
+              "pixelsCompared": 262456
+            },
+            "hero": {
+              "pct": 94.2,
+              "tiles": 1,
+              "pixelsCompared": 638591
+            },
+            "cookie": {
+              "pct": 98.5,
+              "tiles": 1,
+              "pixelsCompared": 124609
+            },
+            "demo": {
+              "pct": 100.0,
+              "tiles": 1,
+              "pixelsCompared": 499872
+            },
+            "features": {
+              "pct": 98.1,
+              "tiles": 2,
+              "pixelsCompared": 654912
+            },
+            "price": {
+              "pct": 97.4,
+              "tiles": 1,
+              "pixelsCompared": 422750
+            },
+            "reviews": {
+              "pct": 94.1,
+              "tiles": 1,
+              "pixelsCompared": 382842
+            },
+            "faq": {
+              "pct": 96.6,
+              "tiles": 2,
+              "pixelsCompared": 663891
+            },
+            "cta": {
+              "pct": 99.7,
+              "tiles": 1,
+              "pixelsCompared": 337715
+            }
+          }
+        },
+        "390": {
+          "averagePct": 92.5,
+          "sections": {
+            "menu": {
+              "pct": 100.0,
+              "tiles": 1,
+              "pixelsCompared": 25740
+            },
+            "hero": {
+              "pct": 75.3,
+              "tiles": 1,
+              "pixelsCompared": 20592
+            },
+            "cookie": {
+              "pct": 86.5,
+              "tiles": 1,
+              "pixelsCompared": 91204
+            },
+            "mhero": {
+              "pct": 99.7,
+              "tiles": 1,
+              "pixelsCompared": 185028
+            },
+            "demo": {
+              "pct": 100.0,
+              "tiles": 1,
+              "pixelsCompared": 93600
+            },
+            "features": {
+              "pct": 92.1,
+              "tiles": 2,
+              "pixelsCompared": 150390
+            },
+            "price": {
+              "pct": 96.7,
+              "tiles": 1,
+              "pixelsCompared": 210418
+            },
+            "reviews": {
+              "pct": 82.7,
+              "tiles": 1,
+              "pixelsCompared": 124800
+            },
+            "faq": {
+              "pct": 92.0,
+              "tiles": 2,
+              "pixelsCompared": 339356
+            },
+            "cta": {
+              "pct": 99.7,
+              "tiles": 1,
+              "pixelsCompared": 63665
+            }
+          }
+        }
+      },
+      "beforeThisRevision": {
+        "1440": {
+          "sidebar": 99.7,
+          "hero": 94.1,
+          "cookie": 98.0,
+          "demo": 100.0,
+          "features": 98.1,
+          "price": 97.4,
+          "reviews": 94.3,
+          "faq": 96.4,
+          "cta": 99.8
+        },
+        "1280": {
+          "sidebar": 99.6,
+          "hero": 94.0,
+          "cookie": 98.0,
+          "demo": 100.0,
+          "features": 98.1,
+          "price": 97.4,
+          "reviews": 94.1,
+          "faq": 96.6,
+          "cta": 99.7
+        },
+        "390": {
+          "menu": 99.2,
+          "hero": 75.2,
+          "cookie": 86.5,
+          "mhero": 99.7,
+          "demo": 100.0,
+          "features": 92.1,
+          "price": 96.7,
+          "reviews": 82.7,
+          "faq": 92.0,
+          "cta": 99.7
+        }
+      },
+      "verdict": {
+        "1440": "average 97.6% PASSES; every section >= 80% PASSES",
+        "1280": "average 97.6% PASSES; every section >= 80% PASSES",
+        "390": "average 92.5% PASSES; per-section gate FAILS for hero (75.3%) only -> exception parity-exc-390-hero-copy, pending human approval"
+      },
+      "exceptions": [
+        {
+          "id": "parity-exc-390-hero-copy",
+          "viewport": "390",
+          "section": "hero (in-flow hero ticket headline, mobile)",
+          "metric": "pixelParity",
+          "valuePct": 75.3,
+          "status": "pending human approval",
+          "approvedBy": null,
+          "reason": "Only 20592 px of the hero crop are compared at 390 (the cookie triangle masks most of it) and almost all of them are glyphs of the 6-line 29.25px headline. The clone deliberately uses its own 166-char placeholder copy instead of the original's (licensing rule in CLONE_SPEC section 14 and assets/source-identity.json), so different letterforms sit on the same lines. Layout is identical: geometry parity for this section is 2/2 rows (h1 box and text block within 1.5 px, same font, size, line-height, colour and alignment), and the line rag was matched (longest line 361.4 px on both).",
+          "evidence": [
+            "extraction/evidence/parity-2026-10-29/geometry-after.json",
+            "extraction/evidence/parity-2026-10-29/pixel-after.json",
+            "extraction/evidence/parity-2026-10-29/o390.n",
+            "extraction/evidence/parity-2026-10-29/c390b.n"
+          ],
+          "cannotFixWithout": "reproducing the original's headline text, which the licensing rules forbid"
+        }
+      ]
+    },
+    "geometryParity": {
+      "method": "extraction/geometry_parity.py: per section, share of original computed-style rows (box within 1.5px + identical font/border/radius/colour) matched by a clone row; text-free dumps written by extraction/dump_geometry.mjs (same script on both sites), o<vp>.n (live original) vs c<vp>b.n (production build of the clone)",
+      "capturedAt": "2026-10-29",
+      "original": "https://weeksync.app/ (live)",
+      "evidence": "extraction/evidence/parity-2026-10-29/",
+      "gate": {
+        "perSectionMinPct": 80,
+        "averageMinPct": 80
+      },
+      "results": {
+        "1440": {
+          "averagePct": 100.0,
           "sections": {
             "sidebar": {
               "rows": 18,
-              "matching": 13,
-              "pct": 72.2
+              "matching": 18,
+              "pct": 100.0
             },
             "hero": {
-              "rows": 6,
-              "matching": 6,
+              "rows": 7,
+              "matching": 7,
               "pct": 100.0
             },
             "demo": {
-              "rows": 70,
-              "matching": 63,
-              "pct": 90.0
+              "rows": 240,
+              "matching": 240,
+              "pct": 100.0
             },
             "dctl": {
               "rows": 9,
@@ -487,8 +670,8 @@
             },
             "reviews": {
               "rows": 18,
-              "matching": 17,
-              "pct": 94.4
+              "matching": 18,
+              "pct": 100.0
             },
             "faq": {
               "rows": 42,
@@ -501,14 +684,69 @@
               "pct": 100.0
             },
             "cookie": {
-              "rows": 5,
-              "matching": 2,
-              "pct": 40.0
+              "rows": 6,
+              "matching": 6,
+              "pct": 100.0
+            }
+          }
+        },
+        "1280": {
+          "averagePct": 100.0,
+          "sections": {
+            "sidebar": {
+              "rows": 18,
+              "matching": 18,
+              "pct": 100.0
+            },
+            "hero": {
+              "rows": 7,
+              "matching": 7,
+              "pct": 100.0
+            },
+            "demo": {
+              "rows": 240,
+              "matching": 240,
+              "pct": 100.0
+            },
+            "dctl": {
+              "rows": 9,
+              "matching": 9,
+              "pct": 100.0
+            },
+            "features": {
+              "rows": 15,
+              "matching": 15,
+              "pct": 100.0
+            },
+            "price": {
+              "rows": 25,
+              "matching": 25,
+              "pct": 100.0
+            },
+            "reviews": {
+              "rows": 18,
+              "matching": 18,
+              "pct": 100.0
+            },
+            "faq": {
+              "rows": 42,
+              "matching": 42,
+              "pct": 100.0
+            },
+            "cta": {
+              "rows": 10,
+              "matching": 10,
+              "pct": 100.0
+            },
+            "cookie": {
+              "rows": 6,
+              "matching": 6,
+              "pct": 100.0
             }
           }
         },
         "390": {
-          "averagePct": 70.9,
+          "averagePct": 100.0,
           "sections": {
             "menu": {
               "rows": 10,
@@ -521,19 +759,19 @@
               "pct": 100.0
             },
             "hero": {
-              "rows": 1,
-              "matching": 1,
+              "rows": 2,
+              "matching": 2,
               "pct": 100.0
             },
             "mhero": {
               "rows": 9,
-              "matching": 0,
-              "pct": 0.0
+              "matching": 9,
+              "pct": 100.0
             },
             "demo": {
-              "rows": 70,
-              "matching": 63,
-              "pct": 90.0
+              "rows": 240,
+              "matching": 240,
+              "pct": 100.0
             },
             "dctl": {
               "rows": 9,
@@ -552,13 +790,13 @@
             },
             "reviews": {
               "rows": 17,
-              "matching": 2,
-              "pct": 11.8
+              "matching": 17,
+              "pct": 100.0
             },
             "faq": {
               "rows": 42,
-              "matching": 4,
-              "pct": 9.5
+              "matching": 42,
+              "pct": 100.0
             },
             "cta": {
               "rows": 11,
@@ -566,23 +804,116 @@
               "pct": 100.0
             },
             "cookie": {
-              "rows": 5,
-              "matching": 2,
-              "pct": 40.0
+              "rows": 6,
+              "matching": 6,
+              "pct": 100.0
             }
           }
         }
       },
       "verdict": {
-        "1440": "average 88.5% PASSES the 80% average gate; per-section gate FAILS for sidebar and cookie",
-        "1280": "average 89.7% PASSES the 80% average gate; per-section gate FAILS for sidebar and cookie",
-        "390": "average 70.9% FAILS the 80% average gate; per-section gate FAILS for mhero, reviews, faq, cookie"
+        "1440": "average 100.0% PASSES; every section >= 80% PASSES",
+        "1280": "average 100.0% PASSES; every section >= 80% PASSES",
+        "390": "average 100.0% PASSES; every section >= 80% PASSES"
       },
-      "explanation": [
-        "sidebar 1440/1280: the original dumps nav labels as separate text rows; the clone's labels live inside the button row, so 5 label rows have no counterpart (dump granularity, boxes coincide).",
-        "cookie: the 100-char placeholder text wraps differently from the original, shifting the typed text boxes.",
-        "390 reviews/faq: the clone's placeholder paragraphs wrap to one more line at 390 (e.g. review paragraph 42.3 -> 63.4px tall), which shifts every following row in the section.",
-        "390 mhero: the ovals run a 6s CSS loop; the two dumps caught different animation phases (original near scaleX 0, clone mid-cycle), so no rows coincide."
+      "beforeThisRevision": {
+        "recordedIn1.0.1": {
+          "1440": {
+            "averagePct": 88.5,
+            "sections": {
+              "sidebar": 72.2,
+              "hero": 100.0,
+              "demo": 90.0,
+              "features": 100.0,
+              "price": 100.0,
+              "reviews": 94.4,
+              "faq": 100.0,
+              "cta": 100.0,
+              "cookie": 40.0
+            }
+          },
+          "1280": {
+            "averagePct": 89.7,
+            "sections": {
+              "sidebar": 72.2,
+              "hero": 100.0,
+              "demo": 90.0,
+              "dctl": 100.0,
+              "features": 100.0,
+              "price": 100.0,
+              "reviews": 94.4,
+              "faq": 100.0,
+              "cta": 100.0,
+              "cookie": 40.0
+            }
+          },
+          "390": {
+            "averagePct": 70.9,
+            "sections": {
+              "menu": 100.0,
+              "sidebar": 100.0,
+              "hero": 100.0,
+              "mhero": 0.0,
+              "demo": 90.0,
+              "dctl": 100.0,
+              "features": 100.0,
+              "price": 100.0,
+              "reviews": 11.8,
+              "faq": 9.5,
+              "cta": 100.0,
+              "cookie": 40.0
+            }
+          }
+        },
+        "recordedIn1.0.1Note": "from the 2026-10-26 recon dumps, which were not like for like (retina recon capture of the original, the mobile ovals caught in different animation phases, the original not emulated as a touch phone) - the 390 mhero/reviews/faq failures did not reproduce in a fresh like-for-like capture",
+        "freshCaptureUnchangedClone": {
+          "1440": {
+            "sidebar": 72.2,
+            "hero": 85.7,
+            "demo": 97.1,
+            "dctl": 100.0,
+            "features": 100.0,
+            "price": 100.0,
+            "reviews": 94.4,
+            "faq": 100.0,
+            "cta": 100.0,
+            "cookie": 33.3
+          },
+          "1280": {
+            "sidebar": 72.2,
+            "hero": 85.7,
+            "demo": 97.1,
+            "dctl": 100.0,
+            "features": 100.0,
+            "price": 100.0,
+            "reviews": 94.4,
+            "faq": 100.0,
+            "cta": 100.0,
+            "cookie": 33.3
+          },
+          "390": {
+            "menu": 100.0,
+            "sidebar": 100.0,
+            "hero": 50.0,
+            "mhero": 100.0,
+            "demo": 97.1,
+            "dctl": 100.0,
+            "features": 100.0,
+            "price": 100.0,
+            "reviews": 94.1,
+            "faq": 100.0,
+            "cta": 100.0,
+            "cookie": 33.3
+          }
+        },
+        "freshCaptureUnchangedCloneNote": "same 2026-10-29 original dumps vs a build of the clone at the commit before this revision; stored as extraction/evidence/parity-2026-10-29/geometry-before.json"
+      },
+      "fixes": [
+        "sidebar 72.2 -> 100 (1440/1280): nav label rendered as its own centred block inside the item (src/components/Sidebar.jsx), as the original's circle + label paragraph; the 5 label rows now match",
+        "cookie 33.3 -> 100 (all viewports): the OK control keeps start text-align like the original's non-button control (src/components/CookiePopup.jsx); placeholder text reworded (same 100 chars) so its monospace lines are 29/25/28/15 chars at 1440/1280 and 29/37/32 at 390, as on the original (src/content.js)",
+        "hero 85.7 -> 100 (1440/1280), 50 -> 100 (390): placeholder headline reworded (same 166 chars / 27 words) so the line rag matches: longest line 926 px at 1440, 823 at 1280, 361.4 at 390 (src/content.js)",
+        "reviews 94.4 -> 100: '1 of 2' counter centred like the original (src/components/Reviews.jsx)",
+        "demo 97.1 -> 100: header column cells set only the bottom border (style none/none/solid, top colour currentColor) like the original instead of Tailwind preflight's solid all-round style (src/components/AppDemo.jsx)"
       ]
     }
   },
@@ -844,10 +1175,45 @@
     "trackedEvidence": {
       "note": "Verbatim single-line excerpts of the local, gitignored recon dumps (.playwright-mcp/ is not in any clone). Each excerpt file holds the exact captured lines, nothing edited; citations point at these tracked files so verify_all re-reads them in every clone, standalone included. geometry_parity.py still reads the full dumps when they exist locally.",
       "excerpts": [
-        {"file": "extraction/evidence/o1440.excerpt.n", "capturedFrom": "o1440.n (original, 1440 viewport)", "capturedLines": [30], "capturedSourceSha256": "489b7910778f8047dd93d5f5e260552c3f617359344537da765238cde5bb3312"},
-        {"file": "extraction/evidence/c1440b.excerpt.n", "capturedFrom": "c1440b.n (clone after pixel-audit, 1440 viewport)", "capturedLines": [30, 101, 162], "capturedSourceSha256": "dec9b360af6946100e5e6169e61a65d3100b4b87f38a32bea8319809e9d406f9"},
-        {"file": "extraction/evidence/o390.excerpt.n", "capturedFrom": "o390.n (original, 390 viewport)", "capturedLines": [16], "capturedSourceSha256": "0f6cd0d7d72b949d1212b50d6841b3c3364d07589d214bd16cbb06ae1164ea91"}
-      ]
+        {
+          "file": "extraction/evidence/o1440.excerpt.n",
+          "capturedFrom": "o1440.n (original, 1440 viewport)",
+          "capturedLines": [
+            30
+          ],
+          "capturedSourceSha256": "489b7910778f8047dd93d5f5e260552c3f617359344537da765238cde5bb3312"
+        },
+        {
+          "file": "extraction/evidence/c1440b.excerpt.n",
+          "capturedFrom": "c1440b.n (clone after pixel-audit, 1440 viewport)",
+          "capturedLines": [
+            30,
+            101,
+            162
+          ],
+          "capturedSourceSha256": "dec9b360af6946100e5e6169e61a65d3100b4b87f38a32bea8319809e9d406f9"
+        },
+        {
+          "file": "extraction/evidence/o390.excerpt.n",
+          "capturedFrom": "o390.n (original, 390 viewport)",
+          "capturedLines": [
+            16
+          ],
+          "capturedSourceSha256": "0f6cd0d7d72b949d1212b50d6841b3c3364d07589d214bd16cbb06ae1164ea91"
+        }
+      ],
+      "parityCapture2026_10_29": {
+        "folder": "extraction/evidence/parity-2026-10-29/",
+        "note": "Full text-free computed-style dumps (o<vp>.n live original, c<vp>b.n clone build) written by extraction/dump_geometry.mjs on 2026-10-29, the geometry/pixel result JSON (before and after this revision) and the pixel tile crop/mask boxes. No copy, no screenshots. geometry_parity.py reads this folder by default and verify_all re-derives cloneQuality.geometryParity.results from it.",
+        "files": {
+          "o1440.n": "4b9db9076c78d8d717943cbf9a7544a6d9977cafd419dcc66de2e0267501eb24",
+          "o1280.n": "0fde26349293222683232b77f6add7bd6d9d0f7d0a1518b67986f11f097bd726",
+          "o390.n": "4c43e29062806621c52360ff602373aab288345e204b867fafc628bbc193c97f",
+          "c1440b.n": "cb6ffdb97c9ab75f407ac34b0ee57028bcc4c141732e7ca773b266a740f5e6fc",
+          "c1280b.n": "9b2590054341e7a771fffa2b49ede4546caa7d20535a85fd713b786241e0d80e",
+          "c390b.n": "3a469b38844870ebd4642e80734b4b26377d18a4419622e8290a3111b3bcf956"
+        }
+      }
     },
     "standalonePolicy": "When these sibling files are absent, verify_all.py reports one warning and skips the citation re-read; every other check still runs; citations into extraction/evidence/ are inside the package and are always re-read."
   }

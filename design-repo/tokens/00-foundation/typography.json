@@ -195,8 +195,9 @@
     }
   },
   "fontLoading": {
-    "ref": "index.html:12",
-    "expect": "family=Inter:wght@100..900&family=Red+Hat+Mono"
+    "ref": "index.html:14",
+    "expect": "family=Inter:wght@100..900&family=Red+Hat+Mono:ital,wght@0,500;0,600;1,500;1,600",
+    "note": "Red Hat Mono is loaded with the 500/600 faces only (normal + italic), as the original serves it. Roles with computed fontWeight 400 (para, para-mobile, mobile menu) therefore render with the 500 face on both sites; loading a real 400 face made every paragraph visibly lighter than the original (live-vs-clone screenshots, 2026-10-29)."
   },
   "evidence": [
     {

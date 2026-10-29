@@ -60,13 +60,13 @@ export const ui = {
 // 34 chars, 2 lines in the 204-wide sidebar box
 export const tagline = 'Calm weekly plans for small teams.'
 
-// 166 chars / 27 words, 4 lines at 1440
+// 166 chars / 27 words, 4 lines at 1440/1280, 6 at 390; longest line 926 / 361.4 px as on the original
 export const heroText =
-  'Sevenday fits your teammates, projects and their hours for the week into one tidy list, so splitting the load fairly and spotting overfull days early becomes trivial.'
+  'Sevenday puts your people, projects and their hours for the week into one single view, so splitting the load fairly and spotting overfull days sooner becomes trivial.'
 
-// 100 chars, 4 lines
+// 100 chars; monospace lines of 29/25/28/15 chars at 1440 and 29/37/32 at 390, as on the original
 export const cookieText =
-  'We use a few cookies to keep this page running smoothly and to learn which parts help you plan best.'
+  'We use a small set of cookies essential to running this website and to measure which pages help you.'
 export const cookieStorageKey = 'sevenday_cookie_consent'
 
 // 88 / 86 / 87 chars. Card 1 text-left, card 2 image-left, card 3 text-left.

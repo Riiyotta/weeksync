@@ -457,7 +457,7 @@ export default function AppDemo() {
                 {cols.map((c) => (
                   <div
                     key={c.key}
-                    className={`min-w-0 flex justify-center py-[8rem] border-0 border-b border-solid whitespace-nowrap ${c.current ? 'border-gray-700' : 'border-sand-400'}`}
+                    className={`min-w-0 flex justify-center py-[8rem] border-0 border-b [border-style:none_none_solid] whitespace-nowrap ${c.current ? '[border-color:currentColor_currentColor_theme(colors.gray.700)]' : '[border-color:currentColor_currentColor_theme(colors.sand.400)]'}`}
                   >
                     <span className={view === 'days' ? 'd-md' : 'd-n'}>{c.label}</span>
                   </div>

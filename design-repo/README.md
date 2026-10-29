@@ -27,7 +27,7 @@ documents a real company's live site. Do not publish it or make any repository c
 | Graph rules | 11 |
 | Example PageSpecs | 2 |
 | Adversarial mutations | 67 |
-| Drift cases | 33 |
+| Drift cases | 37 |
 
 ## Read this first: what is unusual about this page
 
@@ -102,15 +102,36 @@ python3 extraction/wrapper_gate.py        # measured section-height gate
 
 Requires Python 3 and the `jsonschema` package. `extraction/measure_sections.mjs` re-measures section
 heights from a running clone (Playwright module path and clone URL via env vars).
-`extraction/geometry_parity.py` recomputes geometry parity from the recon dumps when they exist.
+`extraction/geometry_parity.py` recomputes geometry parity from the tracked dumps in
+`extraction/evidence/parity-2026-10-29/` (verify_all re-derives the recorded numbers from them on every
+run). To re-capture against the live original and a clone build (Playwright module via env var, no
+machine paths stored):
+
+```bash
+# from the clone project root: npm ci; npx vite build --outDir <tmp>; npx vite preview --outDir <tmp> --port 5701
+PLAYWRIGHT_MODULE=<playwright module> TARGET_URL=https://weeksync.app/ OUT_FILE=<dir>/o{vp}.n node design-repo/extraction/dump_geometry.mjs
+PLAYWRIGHT_MODULE=<playwright module> TARGET_URL=http://localhost:5701/ OUT_FILE=<dir>/c{vp}b.n node design-repo/extraction/dump_geometry.mjs
+python3 design-repo/extraction/geometry_parity.py --dumps <dir>
+PLAYWRIGHT_MODULE=<playwright module> TARGET_URL=https://weeksync.app/ OUT_DIR=<shots> PREFIX=o node design-repo/extraction/pixel_capture.mjs
+PLAYWRIGHT_MODULE=<playwright module> TARGET_URL=http://localhost:5701/ OUT_DIR=<shots> PREFIX=c node design-repo/extraction/pixel_capture.mjs
+python3 design-repo/extraction/pixel_parity.py --shots <shots>     # needs Pillow + numpy
+```
 
 ## Clone quality evidence
 
 - Clean install: `npm ci` + `vite build` in an isolated copy, both exit 0 (see `extraction/measured-values.json -> cloneQuality`).
-- Geometry parity (computed-style boxes, original vs clone dumps): 1440px avg 88.5%; 1280px avg 89.7%; 390px avg 70.9%. The 80% per-section gate
-  fails for sidebar and cookie at desktop and for four sections at 390px; the reasons (dump
-  granularity, placeholder copy wrapping, animation phase) are recorded next to the numbers.
-- Pixel parity: **not measured**. No paired live-vs-clone screenshots exist and no number is claimed.
+- Geometry parity (computed-style boxes, live original vs clone build, re-captured 2026-10-29 with the
+  same script on both sites; 390 emulated as a touch phone): **100% for every section at 1440, 1280 and
+  390** (gate: every section >= 80% and average >= 80%). Before this revision a fresh like-for-like
+  capture gave sidebar 72.2 / hero 85.7 / cookie 33.3 at desktop and hero 50.0 / cookie 33.3 at 390;
+  the 1.0.1 numbers (390 average 70.9%, mhero/reviews/faq failing) came from recon dumps that were not
+  like for like and did not reproduce. Details and fixes: `extraction/measured-values.json -> cloneQuality`.
+- Pixel parity (live-vs-clone screenshots per section, same viewport and scroll offset, reached by
+  scrolling, placeholders and overlapping fixed layers masked, tolerance 32/255): 1440 avg 97.6%,
+  1280 avg 97.6%, 390 avg 92.5%. Every section passes 80% except **390 hero 75.3%**, carried by
+  exception `parity-exc-390-hero-copy` (**pending human approval**, not self-approved): the compared area
+  is almost all headline glyphs of the clone's own placeholder copy; the layout itself matches 100%.
+  Screenshots of the live site are not committed (they contain its copy and artwork).
 
 ## Layout
 
@@ -127,7 +148,8 @@ templates/              templates.json, routes.json
 compatibility/          graph.json
 assets/                 asset-roles.json, source-identity.json
 schema/                 pagespec + section-contract schemas, semantic_validate.py, examples, tests/
-extraction/             evidence/ (tracked verbatim recon excerpts), measured-values.json, verify_all.py, wrapper_gate.py, wrapper-whitelist.json,
-                        measure_sections.mjs, geometry_parity.py
+extraction/             evidence/ (tracked verbatim recon excerpts + parity-2026-10-29/ dumps and results), measured-values.json,
+                        verify_all.py, wrapper_gate.py, wrapper-whitelist.json, measure_sections.mjs,
+                        dump_geometry.mjs, geometry_parity.py, pixel_capture.mjs, pixel_parity.py
 scripts/                prove_drift.py
 ```

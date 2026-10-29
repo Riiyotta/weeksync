@@ -39,7 +39,7 @@ export default function CookiePopup() {
         <div className="absolute inset-0 flex flex-col justify-between items-center [transform:rotate(-45deg)] pt-[172.8rem] px-[43.2rem] mob:pt-[125rem] mob:px-[20rem]">
           <TypewriterText as="h1" text={cookieText} speed="fast" className="t-para text-center m-0" />
           <div className="pointer-events-auto">
-            <CtaButton label={ui.ok} onClick={accept} />
+            <CtaButton label={ui.ok} onClick={accept} className="text-start" /* original OK is not a <button>: start-aligned */ />
           </div>
         </div>
       </div>

@@ -1,5 +1,32 @@
 # Changelog
 
+## 1.1.0 (2026-10-29): clone-fidelity revision (live re-measure, geometry + pixel parity)
+
+- Re-captured the live original (https://weeksync.app/) and a production build of the clone at 1440x900,
+  1280x800 and 390x844 (touch phone) with one script on both sites (`extraction/dump_geometry.mjs`, new),
+  and added a per-section live-vs-clone screenshot comparison (`extraction/pixel_capture.mjs` +
+  `extraction/pixel_parity.py`, new). Evidence is tracked in `extraction/evidence/parity-2026-10-29/`
+  (full text-free dumps, before/after results, tile crop/mask boxes; no screenshots, no copy).
+- The 1.0.1 390px failures (mhero 0%, reviews 11.8%, faq 9.5%) did not reproduce like for like: the old
+  dumps mixed a retina recon capture, different oval animation phases and a non-touch emulation. The real
+  gaps found: sidebar 72.2%, hero 85.7%/50.0% (390), cookie 33.3%, reviews 94.4%, demo 97.1%.
+- Clone source fixes (the parent project's `src/`, `index.html`): sidebar nav label as its own centred
+  block; cookie OK control start-aligned like the original; reviews counter centred; demo header cells
+  bottom-border only (no preflight top border style); placeholder hero and cookie copy reworded (same
+  lengths) so line breaks and the longest line match the original; Red Hat Mono loaded with 500/600 faces
+  only, so weight-400 text renders with the 500 face exactly as on the original (it was visibly lighter).
+- Result: geometry parity 100% for every section at all three viewports. Pixel parity: 1440 97.6%,
+  1280 97.6%, 390 92.5% average; every section >= 80% except 390 hero 75.3%, recorded as exception
+  `parity-exc-390-hero-copy`, **pending human approval** (placeholder headline glyphs; layout matches).
+- `geometry_parity.py` now reads the tracked evidence folder by default. `verify_all` gained
+  `parity.geometry-evidence` (recorded numbers re-derived from the tracked dumps, dump sha256 pinned),
+  `parity.pixel-evidence` and `parity.gates` (80% per section and average, exceptions must be pending or
+  carry a named approver). `prove_drift.py` 33 -> 37 cases (recorded parity edited, dump altered,
+  exception dropped, exception self-approved).
+- Token/contract touch-ups: `typography.fontLoading` cites the new font request and records the
+  500-face rule; `color.border.column-current` cites the new demo header class. Section heights unchanged
+  (all section roots identical to the original at every viewport).
+
 ## 1.0.1 (2026-10-26): fresh-clone verification fix
 
 - Fixed: `verify_all` failed in any fresh clone because 5 citations in `extraction/measured-values.json`
