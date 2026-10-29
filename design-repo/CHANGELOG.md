@@ -1,5 +1,28 @@
 # Changelog
 
+## 1.1.1 (2026-10-29): hero pixel parity measured with the cookie banner dismissed
+
+- `extraction/pixel_capture.mjs`: new documented per-section capture state (`SECTION_STATE`). The hero is
+  captured with `cookie: dismissed` on BOTH the live original and the clone, in its own fresh page load:
+  the banner root is hidden with display:none by the same rule on both sites and the capture aborts
+  unless the banner then has no rendered box (the consent control is not clicked, so no consent is given
+  on the live site; the banner is position:fixed, so no layout changes). The cookie section itself is
+  still captured visible and every other section is captured exactly as in 1.1.0. Each tile records its
+  `state`; `pixel_parity.py` refuses to compare tiles whose states differ and prints the state.
+- Re-run (live https://weeksync.app/ vs a production build): pixel 1440 97.6 -> 97.7% (hero 94.2 -> 95.2%,
+  808091 -> 965700 px), 1280 97.6 -> 97.7% (hero 94.2 -> 95.1%), 390 92.5 -> 92.3% (hero 75.3% over 20592 px
+  -> 73.9% over 91260 px). All other sections unchanged (cta pixel counts move slightly with the rotating
+  fish-sprite masks). Geometry re-captured: dumps byte-identical, 100% for every section at all three viewports.
+- Exception `parity-exc-390-hero-copy` is KEPT, still **pending human approval**, with the new numbers. With
+  the full crop compared, the 390 hero is still only the headline block (the ticket/oval graphics are the
+  mhero section, 99.7%): the six line bands sit at the same y on both sites, all non-glyph pixels match, and
+  23760 of the 23790 mismatching pixels are glyph ink of the licensed placeholder copy. No clone layout
+  difference was found, so `src/` is unchanged.
+- Evidence: `pixel-after.json` is the 1.1.1 result (1.1.0 result kept as `pixel-after-1.1.0.json`), tile boxes
+  re-captured with `state`; the pixel result files and tile boxes are now sha256-pinned in
+  `externalEvidence.trackedEvidence` next to the dumps. `verify_all` gained `parity.pixel-capture-state`;
+  `prove_drift.py` 37 -> 39 cases (capture state dropped on one side, tracked pixel result edited).
+
 ## 1.1.0 (2026-10-29): clone-fidelity revision (live re-measure, geometry + pixel parity)
 
 - Re-captured the live original (https://weeksync.app/) and a production build of the clone at 1440x900,

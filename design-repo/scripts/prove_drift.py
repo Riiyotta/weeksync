@@ -96,6 +96,8 @@ CASES = [
     ("tracked parity dump altered", False, lambda r: tedit(r, "extraction/evidence/parity-2026-10-29/c390b.n", "## cookie root 88.9,542.9,301.1,301.1", "## cookie root 88.9,542.9,301.1,299.1"), "parity.geometry-evidence"),
     ("pixel-parity exception dropped", False, lambda r: jedit(r, "extraction/measured-values.json", lambda d: d["cloneQuality"]["pixelParity"].update(exceptions=[])), "parity.gates"),
     ("pixel-parity exception self-approved", False, lambda r: jedit(r, "extraction/measured-values.json", lambda d: d["cloneQuality"]["pixelParity"]["exceptions"][0].update(status="approved")), "parity.gates"),
+    ("hero capture state dropped on the clone side only", False, lambda r: jedit(r, "extraction/evidence/parity-2026-10-29/pixel-tiles/c390.json", lambda d: d["tiles"]["hero_0"].pop("state")), "parity.pixel-capture-state"),
+    ("tracked pixel result edited (hero raised to 80)", False, lambda r: jedit(r, "extraction/evidence/parity-2026-10-29/pixel-after.json", lambda d: d["390"]["hero"].update(pct=80.0)), "parity.pixel-evidence"),
 ]
 
 

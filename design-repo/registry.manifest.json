@@ -1,6 +1,6 @@
 {
   "repositoryId": "weeksync-landing-design-repo",
-  "repositoryVersion": "1.1.0",
+  "repositoryVersion": "1.1.1",
   "pageSpecVersion": "1.0.0",
   "allowlistVersion": "1.0.0",
   "versionFieldNote": "pageSpecVersion (vs the schema const) and allowlistVersion (vs tokens/llm/component-allowlist.json) are machine-checked by extraction/verify_all.py. repositoryVersion is documentation-only and hand-maintained; nothing checks it.",
@@ -49,7 +49,7 @@
     "graphRules": 11,
     "examples": 2,
     "adversarialMutations": 67,
-    "driftCases": 37
+    "driftCases": 39
   },
   "entryPoints": {
     "readme": "README.md",

@@ -394,12 +394,13 @@
     "pixelParity": {
       "measured": true,
       "capturedAt": "2026-10-29",
-      "method": "extraction/pixel_capture.mjs (same script on both sites) + extraction/pixel_parity.py. Same viewport (1440x900, 1280x800, 390x844 touch phone), device scale 1, reduced motion (stops the randomised demo bot cursors on both), fonts ready, text stable 2.5 s, animations paused at 3000 ms. Each section is reached by scrolling (wheel on the loop scroller, scrollTo steps on mobile) to the same offset (section top at viewport y 0, then +vh tiles); fixed layers at scroll 0. Score = pixels in the section crop whose max RGB channel difference <= 32, over all unmasked pixels. Masked on both sites: licensing placeholders (brand mark, feature illustrations, fish sprites) and other opaque fixed layers covering the section (sidebar, cookie, mobile menu bar).",
+      "method": "extraction/pixel_capture.mjs (same script on both sites) + extraction/pixel_parity.py. Same viewport (1440x900, 1280x800, 390x844 touch phone), device scale 1, reduced motion (stops the randomised demo bot cursors on both), fonts ready, text stable 2.5 s, animations paused at 3000 ms. Each section is reached by scrolling (wheel on the loop scroller, scrollTo steps on mobile) to the same offset (section top at viewport y 0, then +vh tiles); fixed layers at scroll 0. Score = pixels in the section crop whose max RGB channel difference <= 32, over all unmasked pixels. Masked on both sites: licensing placeholders (brand mark, feature illustrations, fish sprites) and other opaque fixed layers covering the section (sidebar, cookie, mobile menu bar). Per-section capture state (1.1.1): the hero is captured with `cookie: dismissed` on BOTH sites in its own fresh page load (banner root hidden with display:none by the same rule on both sites, its absence verified before capture; the consent control is not clicked); the cookie section itself is still captured visible, and every other section is captured exactly as in 1.1.0. Each tile records its state and pixel_parity.py refuses to compare tiles whose states differ.",
       "original": "https://weeksync.app/ (live)",
       "screenshotsTracked": false,
       "screenshotsNote": "Screenshots of the live original contain its copy and artwork, so they are not committed; the tile crop/mask boxes (pixel-tiles/*.json) and both result sets are tracked.",
       "evidence": [
         "extraction/evidence/parity-2026-10-29/pixel-after.json",
+        "extraction/evidence/parity-2026-10-29/pixel-after-1.1.0.json",
         "extraction/evidence/parity-2026-10-29/pixel-before.json",
         "extraction/evidence/parity-2026-10-29/pixel-tiles/"
       ],
@@ -409,17 +410,12 @@
       },
       "results": {
         "1440": {
-          "averagePct": 97.6,
+          "averagePct": 97.7,
           "sections": {
             "sidebar": {
               "pct": 99.7,
               "tiles": 1,
               "pixelsCompared": 332982
-            },
-            "hero": {
-              "pct": 94.2,
-              "tiles": 1,
-              "pixelsCompared": 808091
             },
             "cookie": {
               "pct": 98.5,
@@ -454,22 +450,22 @@
             "cta": {
               "pct": 99.8,
               "tiles": 1,
-              "pixelsCompared": 480459
+              "pixelsCompared": 405703
+            },
+            "hero": {
+              "pct": 95.2,
+              "tiles": 1,
+              "pixelsCompared": 965700
             }
           }
         },
         "1280": {
-          "averagePct": 97.6,
+          "averagePct": 97.7,
           "sections": {
             "sidebar": {
               "pct": 99.6,
               "tiles": 1,
               "pixelsCompared": 262456
-            },
-            "hero": {
-              "pct": 94.2,
-              "tiles": 1,
-              "pixelsCompared": 638591
             },
             "cookie": {
               "pct": 98.5,
@@ -502,24 +498,24 @@
               "pixelsCompared": 663891
             },
             "cta": {
-              "pct": 99.7,
+              "pct": 99.8,
               "tiles": 1,
-              "pixelsCompared": 337715
+              "pixelsCompared": 352418
+            },
+            "hero": {
+              "pct": 95.1,
+              "tiles": 1,
+              "pixelsCompared": 763200
             }
           }
         },
         "390": {
-          "averagePct": 92.5,
+          "averagePct": 92.3,
           "sections": {
             "menu": {
               "pct": 100.0,
               "tiles": 1,
               "pixelsCompared": 25740
-            },
-            "hero": {
-              "pct": 75.3,
-              "tiles": 1,
-              "pixelsCompared": 20592
             },
             "cookie": {
               "pct": 86.5,
@@ -557,9 +553,14 @@
               "pixelsCompared": 339356
             },
             "cta": {
-              "pct": 99.7,
+              "pct": 99.8,
               "tiles": 1,
-              "pixelsCompared": 63665
+              "pixelsCompared": 66473
+            },
+            "hero": {
+              "pct": 73.9,
+              "tiles": 1,
+              "pixelsCompared": 91260
             }
           }
         }
@@ -601,9 +602,9 @@
         }
       },
       "verdict": {
-        "1440": "average 97.6% PASSES; every section >= 80% PASSES",
-        "1280": "average 97.6% PASSES; every section >= 80% PASSES",
-        "390": "average 92.5% PASSES; per-section gate FAILS for hero (75.3%) only -> exception parity-exc-390-hero-copy, pending human approval"
+        "1440": "average 97.7% PASSES; every section >= 80% PASSES",
+        "1280": "average 97.7% PASSES; every section >= 80% PASSES",
+        "390": "average 92.3% PASSES; per-section gate FAILS for hero (73.9%) only -> exception parity-exc-390-hero-copy, pending human approval"
       },
       "exceptions": [
         {
@@ -611,19 +612,63 @@
           "viewport": "390",
           "section": "hero (in-flow hero ticket headline, mobile)",
           "metric": "pixelParity",
-          "valuePct": 75.3,
+          "valuePct": 73.9,
           "status": "pending human approval",
           "approvedBy": null,
-          "reason": "Only 20592 px of the hero crop are compared at 390 (the cookie triangle masks most of it) and almost all of them are glyphs of the 6-line 29.25px headline. The clone deliberately uses its own 166-char placeholder copy instead of the original's (licensing rule in CLONE_SPEC section 14 and assets/source-identity.json), so different letterforms sit on the same lines. Layout is identical: geometry parity for this section is 2/2 rows (h1 box and text block within 1.5 px, same font, size, line-height, colour and alignment), and the line rag was matched (longest line 361.4 px on both).",
+          "reason": "Re-measured in 1.1.1 with the cookie banner dismissed on both sites (it previously masked most of the crop, leaving 20592 px at 75.3%): the full hero crop at 390 is now compared, 91260 px, 73.9%. At 390 the hero section is only the in-flow headline block (390 x 234.3 at y 552.5); the ticket, oval and CTA graphics are the separate mhero section (99.7%). The clone deliberately uses its own 166-char placeholder headline instead of the original's (licensing rule in CLONE_SPEC section 14 and assets/source-identity.json), so different letterforms sit on the same lines. Layout is identical: the six line bands sit at the same y on both sites (574-602 ... 742-770, one 1 px glyph-ascender difference), every non-glyph pixel of the crop matches (63507 of 63537 background pixels; 23760 of the 23790 mismatching pixels are glyph ink on one side or the other), geometry parity for this section is 2/2 rows, and the line rag was matched (longest line 361.4 px on both). No clone layout difference was found to fix.",
           "evidence": [
             "extraction/evidence/parity-2026-10-29/geometry-after.json",
             "extraction/evidence/parity-2026-10-29/pixel-after.json",
+            "extraction/evidence/parity-2026-10-29/pixel-tiles/o390.json",
+            "extraction/evidence/parity-2026-10-29/pixel-tiles/c390.json",
             "extraction/evidence/parity-2026-10-29/o390.n",
             "extraction/evidence/parity-2026-10-29/c390b.n"
           ],
-          "cannotFixWithout": "reproducing the original's headline text, which the licensing rules forbid"
+          "cannotFixWithout": "reproducing the original's headline text, which the licensing rules forbid",
+          "measuredWith": {
+            "captureState": {
+              "cookie": "dismissed"
+            },
+            "pixelsCompared": 91260,
+            "previous": {
+              "revision": "1.1.0",
+              "pct": 75.3,
+              "pixelsCompared": 20592,
+              "captureState": "cookie banner visible (masked)"
+            }
+          }
         }
-      ]
+      ],
+      "revision": "1.1.1",
+      "captureState": {
+        "hero": {
+          "cookie": "dismissed"
+        },
+        "note": "Applied identically to the live original and the clone (pixel_capture.mjs SECTION_STATE); recorded per tile in pixel-tiles/*.json as `state`. verify_all checks the tracked tiles carry exactly this state on both sides."
+      },
+      "previousRevision": {
+        "revision": "1.1.0",
+        "note": "cookie banner visible over the hero (masked); results file pixel-after-1.1.0.json",
+        "averagePct": {
+          "1440": 97.6,
+          "1280": 97.6,
+          "390": 92.5
+        },
+        "hero": {
+          "1440": {
+            "pct": 94.2,
+            "pixelsCompared": 808091
+          },
+          "1280": {
+            "pct": 94.2,
+            "pixelsCompared": 638591
+          },
+          "390": {
+            "pct": 75.3,
+            "pixelsCompared": 20592
+          }
+        }
+      }
     },
     "geometryParity": {
       "method": "extraction/geometry_parity.py: per section, share of original computed-style rows (box within 1.5px + identical font/border/radius/colour) matched by a clone row; text-free dumps written by extraction/dump_geometry.mjs (same script on both sites), o<vp>.n (live original) vs c<vp>b.n (production build of the clone)",
@@ -1204,14 +1249,23 @@
       ],
       "parityCapture2026_10_29": {
         "folder": "extraction/evidence/parity-2026-10-29/",
-        "note": "Full text-free computed-style dumps (o<vp>.n live original, c<vp>b.n clone build) written by extraction/dump_geometry.mjs on 2026-10-29, the geometry/pixel result JSON (before and after this revision) and the pixel tile crop/mask boxes. No copy, no screenshots. geometry_parity.py reads this folder by default and verify_all re-derives cloneQuality.geometryParity.results from it.",
+        "note": "Full text-free computed-style dumps (o<vp>.n live original, c<vp>b.n clone build) written by extraction/dump_geometry.mjs on 2026-10-29, the geometry/pixel result JSON (before and after this revision) and the pixel tile crop/mask boxes. No copy, no screenshots. geometry_parity.py reads this folder by default and verify_all re-derives cloneQuality.geometryParity.results from it. 1.1.1: the geometry dumps were re-captured and are byte-identical (same sha256); the pixel results and tile boxes were re-captured with the hero in capture state cookie: dismissed, and the pixel result files and tile boxes are now sha256-pinned too.",
         "files": {
           "o1440.n": "4b9db9076c78d8d717943cbf9a7544a6d9977cafd419dcc66de2e0267501eb24",
           "o1280.n": "0fde26349293222683232b77f6add7bd6d9d0f7d0a1518b67986f11f097bd726",
           "o390.n": "4c43e29062806621c52360ff602373aab288345e204b867fafc628bbc193c97f",
           "c1440b.n": "cb6ffdb97c9ab75f407ac34b0ee57028bcc4c141732e7ca773b266a740f5e6fc",
           "c1280b.n": "9b2590054341e7a771fffa2b49ede4546caa7d20535a85fd713b786241e0d80e",
-          "c390b.n": "3a469b38844870ebd4642e80734b4b26377d18a4419622e8290a3111b3bcf956"
+          "c390b.n": "3a469b38844870ebd4642e80734b4b26377d18a4419622e8290a3111b3bcf956",
+          "pixel-after.json": "d5f79c0c34a41cf2e9a9c2f1f2e171e214282d86627cdc5b2b49d0e8c88244d3",
+          "pixel-after-1.1.0.json": "51f4a9e25a443d4409c5da83c8b2ec397ccc947fcbbe8d15fd6ce0bed2e8d2d0",
+          "pixel-before.json": "c2318bdf521297c758193731266671faba9d5bc4b3edb1acd6270a46a7876b39",
+          "pixel-tiles/o1440.json": "86e318cec4f23b5ae5acdbdd2ad46a643b625c436deabcd467d2378258d368b9",
+          "pixel-tiles/o1280.json": "bce0f608a56695aacb3d1c33c4ca0bd382f32e50692c6c5a26d5629328270ae9",
+          "pixel-tiles/o390.json": "71a37306cee81e41e327bd750e443a66cba9fb2fc90cfa661e427d8f54d36785",
+          "pixel-tiles/c1440.json": "ec03505996d0bd9c7cb90b74384606bf7fa6a678da2edcf2973334125340d627",
+          "pixel-tiles/c1280.json": "a8be125dff26fe018eca1a0f0aa8ca131a81e4a06e00137d8f7cdd50e2ceb51a",
+          "pixel-tiles/c390.json": "9e08df9af29110fa908826bb85b87921fea300c0b3f00c67167faaafce63d3c3"
         }
       }
     },

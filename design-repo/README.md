@@ -27,7 +27,7 @@ documents a real company's live site. Do not publish it or make any repository c
 | Graph rules | 11 |
 | Example PageSpecs | 2 |
 | Adversarial mutations | 67 |
-| Drift cases | 37 |
+| Drift cases | 39 |
 
 ## Read this first: what is unusual about this page
 
@@ -127,10 +127,15 @@ python3 design-repo/extraction/pixel_parity.py --shots <shots>     # needs Pillo
   the 1.0.1 numbers (390 average 70.9%, mhero/reviews/faq failing) came from recon dumps that were not
   like for like and did not reproduce. Details and fixes: `extraction/measured-values.json -> cloneQuality`.
 - Pixel parity (live-vs-clone screenshots per section, same viewport and scroll offset, reached by
-  scrolling, placeholders and overlapping fixed layers masked, tolerance 32/255): 1440 avg 97.6%,
-  1280 avg 97.6%, 390 avg 92.5%. Every section passes 80% except **390 hero 75.3%**, carried by
-  exception `parity-exc-390-hero-copy` (**pending human approval**, not self-approved): the compared area
-  is almost all headline glyphs of the clone's own placeholder copy; the layout itself matches 100%.
+  scrolling, placeholders and overlapping fixed layers masked, tolerance 32/255): 1440 avg 97.7%,
+  1280 avg 97.7%, 390 avg 92.3%. Since 1.1.1 the hero is captured in the documented capture state
+  `cookie: dismissed` on BOTH sites (banner hidden by the same rule in a fresh page load and verified
+  gone, consent control not clicked; the cookie section itself is still captured visible), so the whole
+  hero crop is compared instead of the strip the banner left uncovered. Every section passes 80% except
+  **390 hero 73.9%** (91260 px compared; 75.3% over 20592 px with the banner masked in 1.1.0), carried by
+  exception `parity-exc-390-hero-copy` (**pending human approval**, not self-approved): at 390 the hero
+  section is only the headline block, the line bands and every background pixel match, and 99.9% of the
+  mismatching pixels are glyphs of the clone's own placeholder copy (licensing); no layout gap was found.
   Screenshots of the live site are not committed (they contain its copy and artwork).
 
 ## Layout

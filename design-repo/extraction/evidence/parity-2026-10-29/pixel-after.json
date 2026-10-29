@@ -6,12 +6,6 @@
    "tiles": 1,
    "pct": 99.7
   },
-  "hero": {
-   "pixels": 808091,
-   "matching": 761378,
-   "tiles": 1,
-   "pct": 94.2
-  },
   "cookie": {
    "pixels": 157609,
    "matching": 155237,
@@ -49,10 +43,19 @@
    "pct": 96.4
   },
   "cta": {
-   "pixels": 480459,
-   "matching": 479465,
+   "pixels": 405703,
+   "matching": 404709,
    "tiles": 1,
    "pct": 99.8
+  },
+  "hero": {
+   "pixels": 965700,
+   "matching": 918987,
+   "tiles": 1,
+   "state": {
+    "cookie": "dismissed"
+   },
+   "pct": 95.2
   }
  },
  "1280": {
@@ -61,12 +64,6 @@
    "matching": 261451,
    "tiles": 1,
    "pct": 99.6
-  },
-  "hero": {
-   "pixels": 638591,
-   "matching": 601382,
-   "tiles": 1,
-   "pct": 94.2
   },
   "cookie": {
    "pixels": 124609,
@@ -105,10 +102,19 @@
    "pct": 96.6
   },
   "cta": {
-   "pixels": 337715,
-   "matching": 336838,
+   "pixels": 352418,
+   "matching": 351541,
    "tiles": 1,
-   "pct": 99.7
+   "pct": 99.8
+  },
+  "hero": {
+   "pixels": 763200,
+   "matching": 725991,
+   "tiles": 1,
+   "state": {
+    "cookie": "dismissed"
+   },
+   "pct": 95.1
   }
  },
  "390": {
@@ -117,12 +123,6 @@
    "matching": 25740,
    "tiles": 1,
    "pct": 100.0
-  },
-  "hero": {
-   "pixels": 20592,
-   "matching": 15497,
-   "tiles": 1,
-   "pct": 75.3
   },
   "cookie": {
    "pixels": 91204,
@@ -167,10 +167,19 @@
    "pct": 92.0
   },
   "cta": {
-   "pixels": 63665,
-   "matching": 63505,
+   "pixels": 66473,
+   "matching": 66313,
    "tiles": 1,
-   "pct": 99.7
+   "pct": 99.8
+  },
+  "hero": {
+   "pixels": 91260,
+   "matching": 67470,
+   "tiles": 1,
+   "state": {
+    "cookie": "dismissed"
+   },
+   "pct": 73.9
   }
  }
 }

@@ -518,11 +518,22 @@ def check_parity():
         if real != rec_:
             diff.append(vp)
     rec("parity.geometry-evidence", not bad_sha and not diff,
-        "geometry results re-derived from the tracked dumps == recorded; dump sha256 == ledger" if not (bad_sha or diff) else f"sha mismatch {bad_sha}; recorded != re-derived at {diff}")
+        "geometry results re-derived from the tracked dumps == recorded; tracked parity evidence sha256 == ledger (dumps, pixel results, tile boxes)" if not (bad_sha or diff) else f"sha mismatch {bad_sha}; recorded != re-derived at {diff}")
     pfile = json.loads((REPO / pp["evidence"][0]).read_text())
     prec = {vp: {k: {"pct": v["pct"], "tiles": v["tiles"], "pixelsCompared": v["pixels"]} for k, v in secs.items()} for vp, secs in pfile.items()}
     pdiff = [vp for vp in prec if prec[vp] != pp["results"].get(vp, {}).get("sections")]
     rec("parity.pixel-evidence", pp.get("measured") is True and not pdiff, "pixel results == tracked pixel-after.json" if not pdiff else f"recorded != tracked at {pdiff}")
+    # capture state: every tile of a section listed in captureState carries exactly that state on BOTH
+    # sites (tracked tile boxes), and no other tile carries a state
+    want = {k: v for k, v in pp.get("captureState", {}).items() if isinstance(v, dict)}
+    sdiff = []
+    for vp in prec:
+        for side in "oc":
+            tiles = json.loads((ev / "pixel-tiles" / f"{side}{vp}.json").read_text())["tiles"]
+            for key, t in tiles.items():
+                if t.get("state") != want.get(key.rsplit("_", 1)[0]):
+                    sdiff.append(f"{side}{vp}:{key}")
+    rec("parity.pixel-capture-state", not sdiff, f"tracked tiles carry the recorded capture state on both sites ({want})" if not sdiff else f"state differs at {sdiff[:4]}")
     problems = []
     for label, block in (("geometry", gp), ("pixel", pp)):
         gate = block["gate"]
